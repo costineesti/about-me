@@ -3,8 +3,8 @@ title: Hello Hello, I'm Costin 😎
 ---
 I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year. 
 My expertise currently lies in:
-* Control Engineering (MATLAB/SIMULINK),
-* I'm somewhat of an intermediate when it comes to robotics (definitely working to improve).
+* [[Control Engineering]] (MATLAB/SIMULINK),
+* I'm somewhat of an intermediate when it comes to [[robotics]] (definitely working to improve).
 
 I will upload my personal [[projects]] and accomplishments through the years using **Obsidian**.
 
