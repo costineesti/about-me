@@ -66,3 +66,8 @@ $$
 $$
 \psi = \psi + const \cdot \tan(\theta)
 $$
+### Kalman Filter
+
+>[!NOTE] It performs the fusion of the two sensors, resulting in visual-inertial odometry
+>Since the [[Kalman Filter]] considers linear processes and this process is clearly nonlinear (trigonometric functions), I can say that I have performed a point-by-point linearization so that the value is considered constant for the entire duration of 100 [ms].
+
