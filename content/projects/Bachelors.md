@@ -70,4 +70,98 @@ $$
 
 >[!NOTE] It performs the fusion of the two sensors, resulting in visual-inertial odometry
 >Since the [[Kalman Filter]] considers linear processes and this process is clearly nonlinear (trigonometric functions), I can say that I have performed a point-by-point linearization so that the value is considered constant for the entire duration of 100 [ms].
+>
+>Since this application only approached the Yaw Rate fusion, this Kalman Filter is of 1st order!
+
+I think these next two pictures can perfectly explain the way I implemented the Kalman Filter:
+
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/kalman_personal.png" style="max-width: 100%; height: auto;">
+</div>
+
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/retea_beziana.png" style="max-width: 100%; height: auto;">
+</div>
+
+The formula used for the Kalman Gain (for 1st order) is:
+$$
+K = \frac{\sigma_{predictie}}{\sigma_{predictie} + \sigma_{update}}
+$$
+It tells which phase should get more credibility - the prediction or the update.
+
+
+### The results I achieved
+
+>[!hint] In order to test the final algorithm I had three circuits at my disposal. One offered to me by the team that organizes the contest in which this car is actually used - Bosch Future Mobility Challenge, one with the shape of letter "S" and one with a circular shape.
+
+This being covered, here are my results:
+
+$$
+1st
+$$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/first_run_path.png" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/st_run.png" style="max-width: 100%; height: auto;">
+</div>
+
+> [!question] Here I wanted to test the ability of the camera to see two 90 degree' corners one after another. The threshold I used was 7 in order to amplify the corners and as you can see the straight line portion was sacrificed. 
+
+$$
+2nd
+$$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/second_run_path.png" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/nd_run.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] Normally, the IMU's performances should decrease in time and here I was pleasantly surprised to see that it's absolute orientation property could hold on even on longer tracks. Also, the camera held on pretty well in recreating the initial shape of the circuit.
+
+$$
+3rd
+$$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/spath.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] These are probably the most satisfying results I succeeded to collect. Sure, the distance was fairly smaller in comparison with the ones above but I would call these results pretty close to being 1:1. In all these 3 cases the Kalman Gain (K) was ≈ 0.5 so the final result should of course be the mean.
+>
+>Also, I want to point out that the camera is a sensor that is heavily influenced by environmental factors such as lightning or it's angle, etc. So when I can control these variables I can get the most out of it.
+
+$$
+4th
+$$
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/oval.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] In this particular case I wanted to implement a [[Loop Closure]] algorithm based on [[Pose Graphs]]. Sadly I did not have time to finish it but it would be the first thing I would try to do if I were to start this project again. Maybe I will but now I really want to approach other topics.
+
+### Possible issues and bad results
+
+I want to dedicate a small section of this topic to the things that could go wrong with a visual-inertial approach. Firstly, I've already mentioned that the camera is a sensor that is highly sensitive to environmental factors such as lightning and angle. In the pictures below, in the first you can see what bad lightning does to the image and how bad it can affect it's results in the second one. So; if the initial estimation of the camera is bad then it will ruin the whole run, no matter if the next ones are good. 
+
+To my surprise, the BNO055 absolute orientation sensor did not fail me at all but then again, I did not have runs longer than 5 minutes. Of course, with time it is destined to suffer drift as well. This is where the loop closure would benefit both downsides.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/purici.png" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/drift.png" style="max-width: 100%; height: auto;">
+</div>
+
+### What would follow?
+
+I would try to implement a SLAM algorithm and I would definitely start with the loop-closure algorithm.
 
