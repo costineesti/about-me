@@ -149,15 +149,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2f7bffa2036d88d6",
+  "active": "1bd4d4c03894c8df",
   "lastOpenFiles": [
     "content/Readme.md",
     "content/projects.md",
     "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
+    "content/projects/Kalman Filter.md",
     "content/projects/Loop Closure.md",
     "content/projects/Gaussian distribution.md",
-    "content/projects/Kalman Filter.md",
     "content/projects/inertial-odom.md",
     "content/projects/Bachelors.md",
     "content/projects",
