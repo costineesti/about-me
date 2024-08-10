@@ -69,8 +69,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -149,10 +148,23 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1bd4d4c03894c8df",
+  "active": "61ca3557ecba93a5",
   "lastOpenFiles": [
-    "public/static/Screenshot_1.png",
-    "quartz/static/Screenshot_1.png",
+    "quartz/static/derivativ.png",
+    "quartz/static/bev_err.png",
+    "quartz/static/bell.png",
+    "quartz/static/struct.png",
+    "quartz/static/st_run.png",
+    "quartz/static/spath.png",
+    "quartz/static/second_run_path.png",
+    "quartz/static/retea_beziana.png",
+    "quartz/static/ransacvslinear.png",
+    "quartz/static/purici.png",
+    "quartz/static/oval.png",
+    "quartz/static/combined_video.mp4",
+    "quartz/static/static/contentIndex.json",
+    "quartz/static/static/combined_video.mp4",
+    "quartz/static/static",
     "content/Readme.md",
     "content/projects.md",
     "content/projects/visual-odom.md",
@@ -166,24 +178,11 @@
     "content/index.md",
     "content",
     "docs/plugins/Assets.md",
-    "public/pictures/beligool.jpg",
-    "public/pictures/beligol.jpg",
-    "public/pictures/beligol.jpeg",
     "public/static/combined_video.mp4",
     "public/static/combined_video.mp4",
     "public/projects.html",
-    "public/pictures/profil.jpg",
     "public/pictures",
-    "quartz/static/combined_video.mp4",
-    "quartz/static/combined_video (1).mp4",
-    "public/static/purici.png",
-    "public/static/drift.png",
-    "public/projects/Loop-Closure.html",
-    "public/static/loop_closure.png",
-    "public/static/oval.png",
-    "public/static/spath.png",
     "docs/advanced/creating components.md",
-    "public/tags/h/blu.html",
     "content/projects/Cinematic Model.md",
     "docs/advanced/making plugins.md",
     "docs/advanced/architecture.md",

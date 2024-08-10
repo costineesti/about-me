@@ -10,61 +10,61 @@
     <link>https://quartz.jzhao.xyz/Readme</link>
     <guid>https://quartz.jzhao.xyz/Readme</guid>
     <description></description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item><item>
     <title>projects</title>
     <link>https://quartz.jzhao.xyz/projects</link>
     <guid>https://quartz.jzhao.xyz/projects</guid>
     <description></description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
-  </item><item>
-    <title>Proportional-Derivative Control</title>
-    <link>https://quartz.jzhao.xyz/projects/Proportional-Derivative</link>
-    <guid>https://quartz.jzhao.xyz/projects/Proportional-Derivative</guid>
-    <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item><item>
     <title>Visual Odometry</title>
     <link>https://quartz.jzhao.xyz/projects/visual-odom</link>
     <guid>https://quartz.jzhao.xyz/projects/visual-odom</guid>
     <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
-  </item><item>
-    <title>Loop Closure</title>
-    <link>https://quartz.jzhao.xyz/projects/Loop-Closure</link>
-    <guid>https://quartz.jzhao.xyz/projects/Loop-Closure</guid>
-    <description> .</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
-  </item><item>
-    <title>Kalman Filter</title>
-    <link>https://quartz.jzhao.xyz/projects/Kalman-Filter</link>
-    <guid>https://quartz.jzhao.xyz/projects/Kalman-Filter</guid>
-    <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item><item>
     <title>Gaussian Distribution</title>
     <link>https://quartz.jzhao.xyz/projects/Gaussian-distribution</link>
     <guid>https://quartz.jzhao.xyz/projects/Gaussian-distribution</guid>
     <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
+  </item><item>
+    <title>Kalman Filter</title>
+    <link>https://quartz.jzhao.xyz/projects/Kalman-Filter</link>
+    <guid>https://quartz.jzhao.xyz/projects/Kalman-Filter</guid>
+    <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
+  </item><item>
+    <title>Loop Closure</title>
+    <link>https://quartz.jzhao.xyz/projects/Loop-Closure</link>
+    <guid>https://quartz.jzhao.xyz/projects/Loop-Closure</guid>
+    <description> .</description>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
+  </item><item>
+    <title>Proportional-Derivative Control</title>
+    <link>https://quartz.jzhao.xyz/projects/Proportional-Derivative</link>
+    <guid>https://quartz.jzhao.xyz/projects/Proportional-Derivative</guid>
+    <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item><item>
     <title>Inertial Odometry</title>
     <link>https://quartz.jzhao.xyz/projects/inertial-odom</link>
     <guid>https://quartz.jzhao.xyz/projects/inertial-odom</guid>
     <description>Inertial Odometry is great because it does not care of the environment variables. I used a BNO055 which is an “absolute orientation” sensor made by Bosch.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
-  </item><item>
-    <title>My Bachelor&#039;s Degree Thesis</title>
-    <link>https://quartz.jzhao.xyz/projects/Bachelors</link>
-    <guid>https://quartz.jzhao.xyz/projects/Bachelors</guid>
-    <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item><item>
     <title>Hello Hello, I&#039;m Costin 😎</title>
     <link>https://quartz.jzhao.xyz/</link>
     <guid>https://quartz.jzhao.xyz/</guid>
     <description> I&#039;m a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</description>
-    <pubDate>Sat, 10 Aug 2024 18:06:58 GMT</pubDate>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
+  </item><item>
+    <title>My Bachelor&#039;s Degree Thesis</title>
+    <link>https://quartz.jzhao.xyz/projects/Bachelors</link>
+    <guid>https://quartz.jzhao.xyz/projects/Bachelors</guid>
+    <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
+    <pubDate>Sat, 10 Aug 2024 18:08:44 GMT</pubDate>
   </item>
     </channel>
   </rss>
