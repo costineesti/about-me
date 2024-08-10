@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "b959308c6c5a09d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "f36594b2482e4281",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9789d416b54f48fd",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "be311c84fc691aed",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e6d804cbe924fdf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "61ca3557ecba93a5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1bd4d4c03894c8df",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "21aea71134dbf37d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "7802fae90c960230",
+            "type": "leaf",
+            "state": {
+              "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1be38b2436e3a0ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "c4209462d723ed1c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c20f196fd242eb8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "925876f53c8ba57d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2f7bffa2036d88d6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "61c5ef8c841b38a3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "9789d416b54f48fd",
+  "lastOpenFiles": [
+    "content/Readme.md",
+    "content/projects.md",
+    "content/projects/Proportional-Derivative.md",
+    "content/projects/visual-odom.md",
+    "content/projects/Loop Closure.md",
+    "content/projects/Kalman Filter.md",
+    "content/projects/Bachelors.md",
+    "content/projects/Gaussian distribution.md",
+    "content/projects/inertial-odom.md",
+    "content/projects",
+    "content/index.md",
+    "content",
+    "public/pictures/beligool.jpg",
+    "public/pictures/beligol.jpg",
+    "public/pictures/beligol.jpeg",
+    "public/static/combined_video.mp4",
+    "public/static/combined_video.mp4",
+    "public/projects.html",
+    "public/pictures/profil.jpg",
+    "public/pictures",
+    "quartz/static/combined_video.mp4",
+    "quartz/static/combined_video (1).mp4",
+    "public/static/purici.png",
+    "public/static/drift.png",
+    "public/projects/Loop-Closure.html",
+    "public/static/loop_closure.png",
+    "public/static/oval.png",
+    "public/static/spath.png",
+    "public/static/nd_run.png",
+    "docs/advanced/creating components.md",
+    "public/tags/h/blu.html",
+    "content/projects/Cinematic Model.md",
+    "docs/advanced/making plugins.md",
+    "docs/advanced/architecture.md",
+    "README.md",
+    "docs/layout.md",
+    "templates/Chapter.md",
+    "ego's.md",
+    "content/projects/My Bachelor's Degree Thesis.md",
+    "projects.md",
+    "docs/tags/component.md",
+    "docs/features/explorer.md",
+    "().md",
+    "CODE_OF_CONDUCT.md",
+    "2024-07-21.md",
+    "Untitled.canvas"
+  ]
+}

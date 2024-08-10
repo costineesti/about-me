@@ -1,0 +1,15 @@
+/* CSS for note box styling */
+.markdown-preview-view h2 {
+    background-color: #1e1e2e;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.markdown-preview-view p {
+    background-color: #2e2e3e;
+    border-radius: 8px;
+    padding: 10px;
+    color: #ccc;
+}
