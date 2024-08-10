@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9f8fe40126cb4212",
+        "id": "4eb88d257dd5dd7b",
         "type": "tabs",
         "children": [
           {
-            "id": "44ad5080c9909b20",
+            "id": "9e59aa6258ff9799",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -149,21 +149,21 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "44ad5080c9909b20",
+  "active": "2f7bffa2036d88d6",
   "lastOpenFiles": [
-    "content/projects/Bachelors.md",
-    "docs/plugins/Assets.md",
     "content/Readme.md",
     "content/projects.md",
     "content/projects/visual-odom.md",
-    "content/projects/Loop Closure.md",
     "content/projects/Proportional-Derivative.md",
+    "content/projects/Loop Closure.md",
+    "content/projects/Gaussian distribution.md",
     "content/projects/Kalman Filter.md",
     "content/projects/inertial-odom.md",
-    "content/projects/Gaussian distribution.md",
+    "content/projects/Bachelors.md",
     "content/projects",
     "content/index.md",
     "content",
+    "docs/plugins/Assets.md",
     "public/pictures/beligool.jpg",
     "public/pictures/beligol.jpg",
     "public/pictures/beligol.jpeg",
@@ -196,7 +196,6 @@
     "docs/features/explorer.md",
     "().md",
     "CODE_OF_CONDUCT.md",
-    "2024-07-21.md",
     "Untitled.canvas"
   ]
 }
