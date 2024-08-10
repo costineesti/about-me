@@ -13,13 +13,13 @@ The main disadvantage of this approach is that the camera is very sensitive to a
 > By taking the POV to Bird-Eye-View, I succeeded in constraining the lines to always be parallel to each other. Having this achieved, I only needed to find out how to determine the rotation from one frame to the next one. 
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/bev_err.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/bev_err.png" style="max-width: 100%; height: auto;">
 </div>
 
 To enhance the confidence of the rotation I used [[RANSAC]] because the camera measurements can be very noisy depending on the lightning, angle, etc. It succeeds in separating the data into [[inliers]] and [[outliers]] and it tries to fit a model based on the inliers.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/ransacvslinear.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/ransacvslinear.png" style="max-width: 100%; height: auto;">
 </div>
 
 The [[algorithm]] used is based on affine transformations which preserves the parallelism of the lanes by solving the next equational system:
@@ -97,4 +97,4 @@ The third equation is only the second one but extended. In my case I has a vecto
 > By using a threshold of 7, I managed to accentuate the angle of the curves, but the straight path suffered in this representation. On the other hand, a treshold of 10 accentuated the straight path while the curves had a little bit more to suffer.
 
 
-<div style="display: flex; justify-content: space-around;"> <div> <p style="text-align: center;">Threshold of 10</p> <img src="../static/offline.png" alt="Threshold of 10" width="350" height="400"> </div> <div> <p style="text-align: center;">Threshold of 7</p> <img src="../static/offline7.png" alt="Threshold of 7" width="350" height="400"> </div> </div>
+<div style="display: flex; justify-content: space-around;"> <div> <p style="text-align: center;">Threshold of 10</p> <img src="../public/static/offline.png" alt="Threshold of 10" width="350" height="400"> </div> <div> <p style="text-align: center;">Threshold of 7</p> <img src="../public/static/offline7.png" alt="Threshold of 7" width="350" height="400"> </div> </div>

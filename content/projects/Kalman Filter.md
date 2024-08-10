@@ -108,5 +108,5 @@ $$
 >**f)** The update phase.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/kalman.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/kalman.png" style="max-width: 100%; height: auto;">
 </div>

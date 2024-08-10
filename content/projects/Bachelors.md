@@ -20,7 +20,7 @@ tags:
 >	[[Odometry]] is transforming data coming from sensors that give movement or displacement in order to estimate the [[ego's]] change in position over time.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/orientation.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/orientation.png" style="max-width: 100%; height: auto;">
 </div>
 
 > [!question] Why constant speed?
@@ -39,7 +39,7 @@ tags:
 I will further touch on the connections between the components that I used:
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="about-me/public/static/connDiag.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/connDiag.png" style="max-width: 100%; height: auto;">
 </div>
 Here, the NUCLEO took care of the real-time algorithms:
 
@@ -79,12 +79,12 @@ I think these next two pictures can perfectly explain the way I implemented the 
 
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/kalman_personal.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/kalman_personal.png" style="max-width: 100%; height: auto;">
 </div>
 
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/retea_beziana.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/retea_beziana.png" style="max-width: 100%; height: auto;">
 </div>
 
 The formula used for the Kalman Gain (for 1st order) is:
@@ -105,11 +105,11 @@ $$
 $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/first_run_path.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/first_run_path.png" style="max-width: 100%; height: auto;">
 </div>
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/st_run.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/st_run.png" style="max-width: 100%; height: auto;">
 </div>
 
 > [!question] Here I wanted to test the ability of the camera to see two 90 degree' corners one after another. The threshold I used was 7 in order to amplify the corners and as you can see the straight line portion was sacrificed. 
@@ -119,11 +119,11 @@ $$
 $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/second_run_path.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/second_run_path.png" style="max-width: 100%; height: auto;">
 </div>
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/nd_run.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/nd_run.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!question] Normally, the IMU's performances should decrease in time and here I was pleasantly surprised to see that it's absolute orientation property could hold on even on longer tracks. Also, the camera held on pretty well in recreating the initial shape of the circuit.
@@ -133,7 +133,7 @@ $$
 $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/spath.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/spath.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!question] These are probably the most satisfying results I succeeded to collect. Sure, the distance was fairly smaller in comparison with the ones above but I would call these results pretty close to being 1:1. In all these 3 cases the Kalman Gain (K) was ≈ 0.5 so the final result should of course be the mean.
@@ -144,7 +144,7 @@ $$
 4th
 $$
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/oval.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/oval.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!question] In this particular case I wanted to implement a [[Loop Closure]] algorithm based on [[Pose Graphs]]. Sadly I did not have time to finish it but it would be the first thing I would try to do if I were to start this project again. Maybe I will but now I really want to approach other topics.
@@ -156,11 +156,11 @@ I want to dedicate a small section of this topic to the things that could go wro
 To my surprise, the BNO055 absolute orientation sensor did not fail me at all but then again, I did not have runs longer than 5 minutes. Of course, with time it is destined to suffer drift as well. This is where the loop closure would benefit both downsides.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/purici.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/purici.png" style="max-width: 100%; height: auto;">
 </div>
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/drift.png" style="max-width: 100%; height: auto;">
+    <img src="../public/static/drift.png" style="max-width: 100%; height: auto;">
 </div>
 
 ### What would follow?
