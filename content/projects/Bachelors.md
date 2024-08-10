@@ -39,7 +39,7 @@ tags:
 I will further touch on the connections between the components that I used:
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/connDiag.png" style="max-width: 100%; height: auto;">
+    <img src="about-me/public/static/connDiag.png" style="max-width: 100%; height: auto;">
 </div>
 Here, the NUCLEO took care of the real-time algorithms:
 

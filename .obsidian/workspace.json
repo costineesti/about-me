@@ -11,8 +11,12 @@
             "id": "9789d416b54f48fd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/projects/Bachelors.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/projects/Bachelors.md"
+              }
             }
           }
         ],
@@ -150,17 +158,17 @@
   },
   "active": "9789d416b54f48fd",
   "lastOpenFiles": [
-    "content/Readme.md",
-    "content/projects.md",
-    "content/projects/Proportional-Derivative.md",
-    "content/projects/visual-odom.md",
-    "content/projects/Loop Closure.md",
     "content/projects/Kalman Filter.md",
     "content/projects/Bachelors.md",
+    "content/projects/Proportional-Derivative.md",
     "content/projects/Gaussian distribution.md",
     "content/projects/inertial-odom.md",
-    "content/projects",
     "content/index.md",
+    "content/Readme.md",
+    "content/projects.md",
+    "content/projects/visual-odom.md",
+    "content/projects/Loop Closure.md",
+    "content/projects",
     "content",
     "public/pictures/beligool.jpg",
     "public/pictures/beligol.jpg",
