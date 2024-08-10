@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f36594b2482e4281",
+        "id": "c2d0f389f7286e99",
         "type": "tabs",
         "children": [
           {
-            "id": "9789d416b54f48fd",
+            "id": "6a82ed84d1b27231",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/projects/Bachelors.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/projects/Bachelors.md"
+              }
             }
           }
         ],
@@ -148,19 +156,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9789d416b54f48fd",
+  "active": "6a82ed84d1b27231",
   "lastOpenFiles": [
-    "content/Readme.md",
+    "content/index.md",
     "content/projects.md",
-    "content/projects/Proportional-Derivative.md",
-    "content/projects/inertial-odom.md",
+    "content/Readme.md",
     "content/projects/visual-odom.md",
     "content/projects/Loop Closure.md",
+    "content/projects/Proportional-Derivative.md",
     "content/projects/Kalman Filter.md",
-    "content/projects/Bachelors.md",
+    "content/projects/inertial-odom.md",
     "content/projects/Gaussian distribution.md",
+    "content/projects/Bachelors.md",
     "content/projects",
-    "content/index.md",
     "content",
     "public/pictures/beligool.jpg",
     "public/pictures/beligol.jpg",
