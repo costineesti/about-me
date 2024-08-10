@@ -6,7 +6,7 @@ tags:
 ---
  In 2024 I finished my Bachelor's studies at Technical University of Cluj-Napoca. My diploma project is intitulated [[Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed]].
 
-![Your Video](../static/combined_video.mp4)
+![Your Video](../public/static/combined_video.mp4)
 
 ### Motivation
 * I chose this project because of [Steven Gong](https://stevengong.co/) and his experience at F1Tenth; an autonomous racing contest for 1:10 RC Cars. 

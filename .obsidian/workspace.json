@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c2d0f389f7286e99",
+        "id": "9f8fe40126cb4212",
         "type": "tabs",
         "children": [
           {
-            "id": "6a82ed84d1b27231",
+            "id": "44ad5080c9909b20",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/index.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "static",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +69,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -93,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +127,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/index.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -156,19 +149,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6a82ed84d1b27231",
+  "active": "44ad5080c9909b20",
   "lastOpenFiles": [
     "content/projects/Bachelors.md",
-    "content/projects/Gaussian distribution.md",
-    "content/projects/inertial-odom.md",
-    "content/projects/Kalman Filter.md",
-    "content/projects/Loop Closure.md",
-    "content/projects/Proportional-Derivative.md",
-    "content/projects/visual-odom.md",
-    "content/index.md",
+    "docs/plugins/Assets.md",
     "content/Readme.md",
     "content/projects.md",
+    "content/projects/visual-odom.md",
+    "content/projects/Loop Closure.md",
+    "content/projects/Proportional-Derivative.md",
+    "content/projects/Kalman Filter.md",
+    "content/projects/inertial-odom.md",
+    "content/projects/Gaussian distribution.md",
     "content/projects",
+    "content/index.md",
     "content",
     "public/pictures/beligool.jpg",
     "public/pictures/beligol.jpg",
