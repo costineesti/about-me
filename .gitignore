@@ -2,7 +2,6 @@
 .gitignore
 prof
 tsconfig.tsbuildinfo
-node_modules
 private/
 .replit
 replit.nix
