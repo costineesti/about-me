@@ -2,7 +2,7 @@
 title: Loop Closure
 draft: false
 tags:
-  - "#projects"
+  - projects
 ---
  
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
