@@ -11,8 +11,12 @@
             "id": "9e59aa6258ff9799",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/projects/Bachelors.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/projects/Bachelors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/projects/Bachelors.md"
+              }
             }
           }
         ],
@@ -150,37 +158,37 @@
   },
   "active": "9e59aa6258ff9799",
   "lastOpenFiles": [
-    "quartz/static/pictures/profil.jpg",
-    "quartz/static/pictures/beligool.jpg",
-    "quartz/static/pictures/beligol.jpg",
-    "quartz/static/pictures",
-    "quartz/static/bachelors/struct.png",
-    "quartz/static/bachelors/st_run.png",
-    "quartz/static/bachelors/spath.png",
-    "quartz/static/bachelors/second_run_path.png",
-    "quartz/static/bachelors/retea_beziana.png",
-    "quartz/static/bachelors/ransacvslinear.png",
-    "quartz/static/bachelors/purici.png",
-    "quartz/static/bachelors/oval.png",
-    "quartz/static/bachelors/combined_video.mp4",
-    "quartz/static/bachelors",
+    "public/static/bachelors/og-image.png",
+    "public/static/bachelors/offline7.png",
+    "public/static/bachelors/offline.png",
+    "public/static/bachelors/nd_run.png",
+    "public/static/bachelors/loop_closure.png",
+    "public/static/bachelors/kalman_personal.png",
+    "public/static/bachelors/kalman.png",
+    "public/static/bachelors/icon.png",
+    "public/static/bachelors/first_run_path.png",
+    "public/static/bachelors/drift.png",
+    "public/static/bachelors/derivativ.png",
     "public/static/bachelors/combined_video.mp4",
     "public/static/bachelors",
+    "public/static/contentIndex.json",
+    "public/static",
+    "content/index.md",
+    "content/Readme.md",
+    "content/projects.md",
+    "content/projects/Gaussian distribution.md",
+    "content/projects/Bachelors.md",
+    "quartz/static/pictures",
+    "quartz/static/bachelors/combined_video.mp4",
+    "quartz/static/bachelors",
     "public/static/pictures",
     "quartz/static/combined_video.mp4",
     "quartz/static/static/contentIndex.json",
-    "quartz/static/static/combined_video.mp4",
-    "quartz/static/static",
-    "content/Readme.md",
-    "content/projects.md",
     "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
     "content/projects/Kalman Filter.md",
     "content/projects/Loop Closure.md",
     "content/projects/inertial-odom.md",
-    "content/projects/Gaussian distribution.md",
-    "content/projects/Bachelors.md",
-    "content/index.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
     "content/projects/Cinematic Model.md",
