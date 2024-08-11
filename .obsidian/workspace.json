@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/projects/Bachelors.md",
+                "file": "content/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "static",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/projects/Bachelors.md",
+                "file": "content/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/projects/Bachelors.md",
+                "file": "content/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/projects/Bachelors.md"
+                "file": "content/index.md"
               }
             }
           }
@@ -158,20 +158,24 @@
   },
   "active": "9e59aa6258ff9799",
   "lastOpenFiles": [
-    "content/projects.md",
-    "content/projects/Bachelors.md",
-    "public/static/pictures/profil.jpg",
-    "public/static/pictures/beligool.jpg",
-    "public/static/pictures/beligol.jpg",
-    "public/static/pictures",
-    "public/static/bachelors/st_run.png",
-    "public/static/bachelors/og-image.png",
-    "public/static/bachelors/offline7.png",
-    "public/static/bachelors/offline.png",
-    "public/static/bachelors/nd_run.png",
-    "public/static/bachelors/loop_closure.png",
-    "public/static/bachelors/kalman_personal.png",
     "public/static/bachelors/combined_video.mp4",
+    "public/static/pictures/beligool.jpg",
+    "public/static/bachelors/struct.png",
+    "public/static/bachelors/ransacvslinear.png",
+    "content/projects/Bachelors.md",
+    "content/projects/Kalman Filter.md",
+    "public/static/bachelors/purici.png",
+    "public/static/bachelors/oval.png",
+    "public/static/bachelors/spath.png",
+    "public/static/bachelors/second_run_path.png",
+    "public/static/bachelors/retea_beziana.png",
+    "public/static/bachelors/orientation.png",
+    "content/projects/inertial-odom.md",
+    "content/projects/Loop Closure.md",
+    "content/projects/visual-odom.md",
+    "content/projects.md",
+    "public/static/pictures/profil.jpg",
+    "public/static/pictures",
     "public/static/bachelors",
     "public/static/contentIndex.json",
     "public/static",
@@ -183,11 +187,7 @@
     "quartz/static/bachelors",
     "quartz/static/combined_video.mp4",
     "quartz/static/static/contentIndex.json",
-    "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
-    "content/projects/Kalman Filter.md",
-    "content/projects/Loop Closure.md",
-    "content/projects/inertial-odom.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
     "content/projects/Cinematic Model.md",

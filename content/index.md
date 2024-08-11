@@ -1,7 +1,71 @@
 ---
 title: Hello Hello, I'm Costin 😎
 ---
-<div style="display: flex; align-items: center;"> <!-- Profile Picture on the Left --> <div style="flex: 1; text-align: center;"> <img src="static/pictures/beligool.jpg" alt="Profile Picture" style="width: 200px;"> </div> <!-- Text on the Right --> <div style="flex: 2; padding-left: 20px;"> <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</p> <p>My expertise currently lies in:</p> <ul> <li><a href="obsidian://open?vault=YourVaultName&file=Control%20Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li> <li>I'm somewhat of an intermediate when it comes to <a href="obsidian://open?vault=YourVaultName&file=robotics">robotics</a> (definitely working to improve).</li> </ul> </div> </div>
+<div class="profile-section">
+  <img src="static/pictures/beligool.jpg" alt="Profile Picture" class="profile-image">
+  <div class="profile-text">
+    <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</p>
+    <p>My expertise currently lies in:</p>
+    <ul>
+      <li><a href="/projects/Control Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li>
+      <li>I'm somewhat of an intermediate when it comes to <a href="/projects/robotics">robotics</a> (definitely working to improve).</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .profile-text {
+    max-width: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .profile-section {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .profile-image {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    .profile-text {
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 40px; /* Maintain indentation for desktop */
+    }
+  }
+
+  @media (max-width: 767px) {
+    .profile-text {
+      padding: 0 15px; /* Add padding on mobile for better spacing */
+      text-align: left; /* Align text to the left on mobile */
+    }
+
+    ul {
+      padding-left: 20px; /* Reduce padding for better mobile view */
+    }
+
+    li {
+      margin-bottom: 10px; /* Add space between list items for clarity */
+    }
+  }
+</style>
 
 I will upload my personal [[projects]] and accomplishments through the years using **Obsidian**.
 

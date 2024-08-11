@@ -45,7 +45,7 @@ Here, the NUCLEO took care of the real-time algorithms:
 
 * control of the servomotor and the BLDC Motor,
 * [[inertial-odom|Inertial Odometry]]
-* [[Kalman Filter]],
+* [[Kalman Filter|Kalman Filter]]
 
 and the Raspberry Pi 4B executed all of the perception algorithms:
 * Lane-Detection
