@@ -15,5 +15,5 @@ $$
 $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../public/static/bell.png" style="max-width: 100%; height: auto;">
+    <img src="../static/bachelors/bell.png" style="max-width: 100%; height: auto;">
 </div>
