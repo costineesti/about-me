@@ -67,7 +67,7 @@ title: Hello Hello, I'm Costin 😎
   }
 </style>
 
-I will upload my personal [[projects]] and [[notes]] through the years using **Obsidian**.
+I will upload my personal <a href="/projects/">projects</a> and <a href="/notes/">notes</a> through the years using **Obsidian**.
 
 You can find me @:
 * [LinkedIn](https://www.linkedin.com/in/costin-chitic-1169a6235/)

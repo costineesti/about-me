@@ -6,65 +6,59 @@
       <description>Last 10 notes on 🚀 Costin Chitic</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>projects</title>
-    <link>https://costineesti.github.io/about-me/projects</link>
-    <guid>https://costineesti.github.io/about-me/projects</guid>
-    <description></description>
-    <pubDate>Thu, 15 Aug 2024 15:40:31 GMT</pubDate>
-  </item><item>
-    <title>C++ Basics</title>
-    <link>https://costineesti.github.io/about-me/notes/cppbasics</link>
-    <guid>https://costineesti.github.io/about-me/notes/cppbasics</guid>
-    <description>One of my short-term goals is learning C++ as well as possible. I used it in my Bachelors and I want to actually understand this programming language. For this, I am using as reference the C++ Primer.</description>
-    <pubDate>Wed, 14 Aug 2024 10:50:12 GMT</pubDate>
-  </item><item>
     <title>Visual Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/visual-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/visual-odom</guid>
     <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
     <title>Proportional-Derivative Control</title>
     <link>https://costineesti.github.io/about-me/projects/Proportional-Derivative</link>
     <guid>https://costineesti.github.io/about-me/projects/Proportional-Derivative</guid>
     <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
     <title>Loop Closure</title>
     <link>https://costineesti.github.io/about-me/projects/Loop-Closure</link>
     <guid>https://costineesti.github.io/about-me/projects/Loop-Closure</guid>
     <description> .</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
-  </item><item>
-    <title>Gaussian Distribution</title>
-    <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
-    <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
-    <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
     <title>Kalman Filter</title>
     <link>https://costineesti.github.io/about-me/projects/Kalman-Filter</link>
     <guid>https://costineesti.github.io/about-me/projects/Kalman-Filter</guid>
     <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
     <title>Inertial Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/inertial-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/inertial-odom</guid>
     <description>Inertial Odometry is great because it does not care of the environment variables. I used a BNO055 which is an “absolute orientation” sensor made by Bosch.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
-    <title>Hello Hello, I&#039;m Costin 😎</title>
-    <link>https://costineesti.github.io/about-me/</link>
-    <guid>https://costineesti.github.io/about-me/</guid>
-    <description> I&#039;m a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <title>Gaussian Distribution</title>
+    <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
+    <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
+    <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item><item>
     <title>My Bachelor&#039;s Degree Thesis</title>
     <link>https://costineesti.github.io/about-me/projects/Bachelors</link>
     <guid>https://costineesti.github.io/about-me/projects/Bachelors</guid>
     <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
-    <pubDate>Sun, 11 Aug 2024 16:50:59 GMT</pubDate>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
+  </item><item>
+    <title>C++ Basics</title>
+    <link>https://costineesti.github.io/about-me/notes/cppbasics</link>
+    <guid>https://costineesti.github.io/about-me/notes/cppbasics</guid>
+    <description>One of my short-term goals is learning C++ as well as possible. I used it in my Bachelors and I want to actually understand this programming language. For this, I am using as reference the C++ Primer.</description>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
+  </item><item>
+    <title>Hello Hello, I&#039;m Costin 😎</title>
+    <link>https://costineesti.github.io/about-me/</link>
+    <guid>https://costineesti.github.io/about-me/</guid>
+    <description> I&#039;m a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</description>
+    <pubDate>Thu, 15 Aug 2024 15:54:15 GMT</pubDate>
   </item>
     </channel>
   </rss>
