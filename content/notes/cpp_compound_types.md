@@ -6,16 +6,20 @@ tags:
 ---
  I hate these fuckers.
  
->[!NOTE] A compound type is a type that is defined in terms of another type. C++ has several compound types, two of which—references and pointers
->A reference defines an alternative name for an object. A reference type “refers to” another type. We define a reference type by writing a declarator of the form &d, where d is the name being declared:
+>[!NOTE] A compound type is a type that is defined in terms of another type. C++ has several compound types, two of which—references and pointers.
+>
+>A reference defines an alternative name for an object. A reference type “refers to” another type. We define a reference type by writing a declarator of the form `&d`, where `d` is the name being declared:
+>
 >```cpp
-  int ival = 1024;
-  int &refVal = ival; // refVal refers to (is another name for) ival
-  int &refVal2; // error: a reference must be initialized
-  >```
-  >
+>int ival = 1024;
+>int &refVal = ival; // refVal refers to (is another name for) ival
+>int &refVal2; // error: a reference must be initialized
+>```
+>
 >A reference is not an object. Instead, a reference is just another name for an already existing object.
->There is no way to rebind a reference to refer to a different object. Because there is no way to rebind a reference, references must be initialized
+>
+>There is no way to rebind a reference to refer to a different object. Because there is no way to rebind a reference, references must be initialized.
+
 
 ```cpp
 int ival = 42;
@@ -69,6 +73,7 @@ cout << *p; // prints 0
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/cpp_pointers_ref_keyconcepts.png" style="max-width: 100%; height: auto;">
 </div>
+
 ### Pointers to pointers
 
 A pointer is an object in memory, so like any object it has an address. Therefore, we can store the address of a pointer in another pointer. We indicate each pointer level by its own *. That is, we write ** for a pointer to a pointer, *** for a pointer to a pointer to a pointer, and so on. (fucking hell, I got a 4/10 in the programming class because of these fuckers :D)
