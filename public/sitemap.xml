@@ -1,28 +1,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://costineesti.github.io/about-me/</loc>
-    <lastmod>2024-08-15T15:54:15.682Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.293Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/cpp_compound_types</loc>
+    <lastmod>2024-08-15T16:20:55.040Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cppbasics</loc>
-    <lastmod>2024-08-15T15:54:15.690Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.300Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Bachelors</loc>
-    <lastmod>2024-08-15T15:54:15.698Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.311Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Gaussian-distribution</loc>
-    <lastmod>2024-08-15T15:54:15.703Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.315Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Kalman-Filter</loc>
-    <lastmod>2024-08-15T15:54:15.711Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.325Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Loop-Closure</loc>
-    <lastmod>2024-08-15T15:54:15.715Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.330Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Proportional-Derivative</loc>
-    <lastmod>2024-08-15T15:54:15.718Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.334Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/inertial-odom</loc>
-    <lastmod>2024-08-15T15:54:15.707Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.319Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/visual-odom</loc>
-    <lastmod>2024-08-15T15:54:15.722Z</lastmod>
+    <lastmod>2024-08-15T16:04:10.341Z</lastmod>
   </url></urlset>

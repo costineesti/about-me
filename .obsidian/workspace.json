@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/index.md",
+                "file": "content/notes/cpp_compound_types.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/index.md",
+                "file": "content/notes/cpp_compound_types.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/index.md",
+                "file": "content/notes/cpp_compound_types.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/index.md"
+                "file": "content/notes/cpp_compound_types.md"
               }
             }
           }
@@ -153,14 +153,19 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "30333c21a525c316",
   "lastOpenFiles": [
-    "content/projects.md",
-    "content/index.md",
+    "public/static/notes/cpp_pointer2pointer.png",
     "content/notes/cppbasics.md",
+    "content/notes/cpp_compound_types.md",
+    "public/static/notes/cpp_pointers_ref_keyconcepts.png",
+    "public/notes/cpp_compound_types.html",
+    "content/index.md",
+    "content/projects.md",
     "content/projects/Bachelors.md",
     "public/static/notes/cpp_arith_types.png",
     "public/static/notes/Pasted image 20240814135819.png",
@@ -171,7 +176,6 @@
     "public/static/notes/cpp_machine_level_repr.png",
     "public/static/notes/Pasted image 20240814135237.png",
     "quartz/static/notes/Pasted image 20240814135237.png",
-    "quartz/static/notes/Pasted image 20240814135819.png",
     "quartz/static/notes",
     "public/static/notes",
     "content/notes",
@@ -187,7 +191,6 @@
     "content/Readme.md",
     "content/projects/Gaussian distribution.md",
     "quartz/static/pictures",
-    "quartz/static/bachelors/combined_video.mp4",
     "content/projects/Proportional-Derivative.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
@@ -202,7 +205,6 @@
     "projects.md",
     "docs/tags/component.md",
     "docs/features/explorer.md",
-    "().md",
     "Untitled.canvas"
   ]
 }

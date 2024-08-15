@@ -1,4 +1,6 @@
 [
   "longform",
-  "templater-obsidian"
+  "templater-obsidian",
+  "table-editor-obsidian",
+  "code-styler"
 ]
