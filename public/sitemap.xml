@@ -1,25 +1,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://costineesti.github.io/about-me/</loc>
-    <lastmod>2024-08-11T12:06:26.640Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.699Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/cppbasics</loc>
+    <lastmod>2024-08-14T10:50:12.625Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Bachelors</loc>
-    <lastmod>2024-08-11T12:06:26.645Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.699Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Gaussian-distribution</loc>
-    <lastmod>2024-08-11T12:06:26.652Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.716Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Kalman-Filter</loc>
-    <lastmod>2024-08-11T12:06:26.659Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.716Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Loop-Closure</loc>
-    <lastmod>2024-08-11T12:06:26.668Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.731Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Proportional-Derivative</loc>
-    <lastmod>2024-08-11T12:06:26.671Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.736Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/inertial-odom</loc>
-    <lastmod>2024-08-11T12:06:26.657Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.716Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/visual-odom</loc>
-    <lastmod>2024-08-11T12:06:26.674Z</lastmod>
+    <lastmod>2024-08-11T16:50:59.740Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/projects</loc>
+    <lastmod>2024-08-15T15:40:31.843Z</lastmod>
   </url></urlset>

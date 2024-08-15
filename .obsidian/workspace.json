@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4eb88d257dd5dd7b",
+        "id": "ebfdb7c72f68a245",
         "type": "tabs",
         "children": [
           {
-            "id": "9e59aa6258ff9799",
+            "id": "30333c21a525c316",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 388.5
   },
   "right": {
     "id": "1be38b2436e3a0ca",
@@ -156,37 +156,38 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9e59aa6258ff9799",
+  "active": "30333c21a525c316",
   "lastOpenFiles": [
-    "public/static/bachelors/combined_video.mp4",
-    "public/static/pictures/beligool.jpg",
-    "public/static/bachelors/struct.png",
-    "public/static/bachelors/ransacvslinear.png",
+    "content/projects.md",
+    "content/index.md",
+    "content/notes/cppbasics.md",
     "content/projects/Bachelors.md",
+    "public/static/notes/cpp_arith_types.png",
+    "public/static/notes/Pasted image 20240814135819.png",
+    "public/static/notes/cpp_caution.png",
+    "public/static/notes/Pasted image 20240814135553.png",
+    "public/static/notes/cpp_advice.png",
+    "public/static/notes/Pasted image 20240814135333.png",
+    "public/static/notes/cpp_machine_level_repr.png",
+    "public/static/notes/Pasted image 20240814135237.png",
+    "quartz/static/notes/Pasted image 20240814135237.png",
+    "quartz/static/notes/Pasted image 20240814135819.png",
+    "quartz/static/notes",
+    "public/static/notes",
+    "content/notes",
+    "public/static/bachelors/combined_video.mp4",
     "content/projects/Kalman Filter.md",
-    "public/static/bachelors/purici.png",
-    "public/static/bachelors/oval.png",
-    "public/static/bachelors/spath.png",
-    "public/static/bachelors/second_run_path.png",
-    "public/static/bachelors/retea_beziana.png",
-    "public/static/bachelors/orientation.png",
     "content/projects/inertial-odom.md",
     "content/projects/Loop Closure.md",
     "content/projects/visual-odom.md",
-    "content/projects.md",
-    "public/static/pictures/profil.jpg",
     "public/static/pictures",
     "public/static/bachelors",
     "public/static/contentIndex.json",
     "public/static",
-    "content/index.md",
     "content/Readme.md",
     "content/projects/Gaussian distribution.md",
     "quartz/static/pictures",
     "quartz/static/bachelors/combined_video.mp4",
-    "quartz/static/bachelors",
-    "quartz/static/combined_video.mp4",
-    "quartz/static/static/contentIndex.json",
     "content/projects/Proportional-Derivative.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
@@ -202,7 +203,6 @@
     "docs/tags/component.md",
     "docs/features/explorer.md",
     "().md",
-    "CODE_OF_CONDUCT.md",
     "Untitled.canvas"
   ]
 }
