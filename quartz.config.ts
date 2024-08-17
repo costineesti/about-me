@@ -23,7 +23,7 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        body: "Roboto",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -39,7 +39,7 @@ const config: QuartzConfig = {
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
+          light: "#1e1e21",
           lightgray: "#393639",
           gray: "#646464",
           darkgray: "#d4d4d4",

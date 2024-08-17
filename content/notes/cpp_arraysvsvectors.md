@@ -40,7 +40,7 @@ int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
 ```
 
 >[!tip] It can be easier to understand array declarations by starting with the array’s name and reading them from the inside out.
->							int *(&arry)[10] = ptrs;
+>					int *(&arry)[10] = ptrs;
 >Reading this declaration from the inside out, we see that arry is a reference. Looking right, we see that the object to which arry refers is an array of size 10. Looking left, we see that the element type is pointer to int. Thus, arry is a reference to an array of ten pointers.
 
 
