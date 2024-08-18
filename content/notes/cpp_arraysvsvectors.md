@@ -7,7 +7,7 @@ tags:
  
 
 >[!tip] If you don’t know exactly how many elements you need, use a vector.
->An array is a data structure that is similar to the library vector type (§ 3.3, p. 96) but offers a different trade-off between performance and flexibility. Like a vector, an array is a container of unnamed objects of a single type that we access by position. Unlike a vector, arrays have fixed size; we cannot add elements to an array. Because arrays have fixed size, they sometimes offer better run-time performance for specialized applications. However, that run-time advantage comes at the cost of lost flexibility
+>An array is a data structure that is similar to the library vector type but offers a different trade-off between performance and flexibility. Like a vector, an array is a container of unnamed objects of a single type that we access by position. Unlike a vector, arrays have fixed size; we cannot add elements to an array. Because arrays have fixed size, they sometimes offer better run-time performance for specialized applications. However, that run-time advantage comes at the cost of lost flexibility
 
 ### Character Arrays Are Special
 
@@ -40,7 +40,7 @@ int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
 ```
 
 >[!tip] It can be easier to understand array declarations by starting with the array’s name and reading them from the inside out.
->					int *(&arry)[10] = ptrs;
+>		int *(&arry)[10] = ptrs;
 >Reading this declaration from the inside out, we see that arry is a reference. Looking right, we see that the object to which arry refers is an array of size 10. Looking left, we see that the element type is pointer to int. Thus, arry is a reference to an array of ten pointers.
 
 
