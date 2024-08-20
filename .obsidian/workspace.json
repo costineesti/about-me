@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/cpp_pointersAndArrays.md",
+                "file": "content/notes/cpp_nesting_cond_op.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/cpp_pointersAndArrays.md",
+                "file": "content/notes/cpp_nesting_cond_op.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/cpp_pointersAndArrays.md",
+                "file": "content/notes/cpp_nesting_cond_op.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/cpp_pointersAndArrays.md"
+                "file": "content/notes/cpp_nesting_cond_op.md"
               }
             }
           }
@@ -159,10 +159,11 @@
   },
   "active": "30333c21a525c316",
   "lastOpenFiles": [
+    "content/notes/cpp_pointersAndArrays.md",
+    "content/notes/cpp_nesting_cond_op.md",
     "content/notes/cpp_arraysvsvectors.md",
     "content/notes/cpp_compound_types.md",
     "content/notes/cpp_auto_const_iterator.md",
-    "content/notes/cpp_pointersAndArrays.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_extern.md",
     "public/static/notes/cpp_pointer2pointer.png",
@@ -204,7 +205,6 @@
     "README.md",
     "docs/layout.md",
     "templates/Chapter.md",
-    "ego's.md",
     "Untitled.canvas"
   ]
 }
