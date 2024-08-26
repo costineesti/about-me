@@ -12,8 +12,10 @@ Apparently the way we write mathematical expressions is `infix` notation - Opera
 
 >[!NOTE] The `shunting yard algorithm` assigns each operator it's correct operands, taking into account the order of the precedence.
 
-Let's take for example the following infix notation: $$ 4+18/(9+3) $$
+Let's take for example the following infix notation: 
+$$ 4+18/(9+3) $$
 The shunting yard will output the reverse polish notation as
+
 $$ 4, 18, 9, 3, -, /, + $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
