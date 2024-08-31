@@ -6,65 +6,65 @@
       <description>Last 10 notes on 🚀 Costin Chitic</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed</title>
+    <link>https://costineesti.github.io/about-me/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed</link>
+    <guid>https://costineesti.github.io/about-me/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed</guid>
+    <description></description>
+    <pubDate>Sat, 31 Aug 2024 08:57:58 GMT</pubDate>
+  </item><item>
+    <title>Abstract Syntax Tree</title>
+    <link>https://costineesti.github.io/about-me/notes/Abstract-Syntax-Tree</link>
+    <guid>https://costineesti.github.io/about-me/notes/Abstract-Syntax-Tree</guid>
+    <description>How does the compiler make sense of my code? The information is gathered from this link During my implementation of the Shunting yard algorithm, I used tokens to split the function ...</description>
+    <pubDate>Sat, 31 Aug 2024 08:53:39 GMT</pubDate>
+  </item><item>
     <title>Visual Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/visual-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/visual-odom</guid>
     <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>Proportional-Derivative Control</title>
     <link>https://costineesti.github.io/about-me/projects/Proportional-Derivative</link>
     <guid>https://costineesti.github.io/about-me/projects/Proportional-Derivative</guid>
     <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>Loop Closure</title>
     <link>https://costineesti.github.io/about-me/projects/Loop-Closure</link>
     <guid>https://costineesti.github.io/about-me/projects/Loop-Closure</guid>
     <description> .</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>Kalman Filter</title>
     <link>https://costineesti.github.io/about-me/projects/Kalman-Filter</link>
     <guid>https://costineesti.github.io/about-me/projects/Kalman-Filter</guid>
     <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>Inertial Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/inertial-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/inertial-odom</guid>
     <description>Inertial Odometry is great because it does not care of the environment variables. I used a BNO055 which is an “absolute orientation” sensor made by Bosch.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>Gaussian Distribution</title>
     <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
     <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
     <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
     <title>My Bachelor&#039;s Degree Thesis</title>
     <link>https://costineesti.github.io/about-me/projects/Bachelors</link>
     <guid>https://costineesti.github.io/about-me/projects/Bachelors</guid>
     <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item><item>
-    <title>C++ Preprocessor</title>
-    <link>https://costineesti.github.io/about-me/notes/cpp_preprocessor</link>
-    <guid>https://costineesti.github.io/about-me/notes/cpp_preprocessor</guid>
-    <description> Whenever a header is updated, the source files that use that header must be recompiled to get the new or changed declarations. The most common technique for making it safe to include a header multiple times relies on the preprocessor.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
-  </item><item>
-    <title>Keyword extern</title>
-    <link>https://costineesti.github.io/about-me/notes/cpp_extern</link>
-    <guid>https://costineesti.github.io/about-me/notes/cpp_extern</guid>
-    <description>Found this in the book and I thought I would note it somewhere. To define a single instance of a const variable, we use the keyword extern on both it&#039;s definition and declaration(s).</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
-  </item><item>
-    <title>Pointers and References - Compound Types</title>
-    <link>https://costineesti.github.io/about-me/notes/cpp_compound_types</link>
-    <guid>https://costineesti.github.io/about-me/notes/cpp_compound_types</guid>
-    <description>I hate these fuckers. A compound type is a type that is defined in terms of another type. C++ has several compound types, two of which—references and pointers.</description>
-    <pubDate>Sat, 17 Aug 2024 10:33:45 GMT</pubDate>
+    <title>Shunting Yard Algorithm</title>
+    <link>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</link>
+    <guid>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</guid>
+    <description>brilliant.org/wiki/shunting-yard-algorithm/ — source I will apply this in order to parse a mathematical expression in C++. For example, f(x) = 6*x^4 + 3*x^2 - sin(x+1).</description>
+    <pubDate>Mon, 26 Aug 2024 15:42:53 GMT</pubDate>
   </item>
     </channel>
   </rss>

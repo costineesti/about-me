@@ -1,43 +1,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://costineesti.github.io/about-me/</loc>
-    <lastmod>2024-08-17T10:33:45.750Z</lastmod>
+    <lastmod>2024-08-26T15:42:52.987Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Abstract-Syntax-Tree</loc>
+    <lastmod>2024-08-31T08:53:39.633Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</loc>
+    <lastmod>2024-08-26T15:42:53.021Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_arraysvsvectors</loc>
-    <lastmod>2024-08-17T10:33:45.759Z</lastmod>
+    <lastmod>2024-08-26T15:42:52.997Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_auto_const_iterator</loc>
-    <lastmod>2024-08-17T10:33:45.763Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.000Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_compound_types</loc>
-    <lastmod>2024-08-17T10:33:45.766Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.004Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_extern</loc>
-    <lastmod>2024-08-17T10:33:45.770Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.006Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/cpp_nesting_cond_op</loc>
+    <lastmod>2024-08-26T15:42:53.009Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</loc>
+    <lastmod>2024-08-26T15:42:53.012Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/cpp_pointers_functions</loc>
+    <lastmod>2024-08-26T15:42:53.015Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_preprocessor</loc>
-    <lastmod>2024-08-17T10:33:45.773Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.017Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cppbasics</loc>
-    <lastmod>2024-08-17T10:33:45.756Z</lastmod>
+    <lastmod>2024-08-26T15:42:52.993Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Bachelors</loc>
-    <lastmod>2024-08-17T10:33:45.779Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.025Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Gaussian-distribution</loc>
-    <lastmod>2024-08-17T10:33:45.783Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.028Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Kalman-Filter</loc>
-    <lastmod>2024-08-17T10:33:45.791Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.033Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Loop-Closure</loc>
-    <lastmod>2024-08-17T10:33:45.795Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.036Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Proportional-Derivative</loc>
-    <lastmod>2024-08-17T10:33:45.798Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.039Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed</loc>
+    <lastmod>2024-08-31T08:57:58.527Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/inertial-odom</loc>
-    <lastmod>2024-08-17T10:33:45.786Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.030Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/visual-odom</loc>
-    <lastmod>2024-08-17T10:33:45.802Z</lastmod>
+    <lastmod>2024-08-26T15:42:53.041Z</lastmod>
   </url></urlset>

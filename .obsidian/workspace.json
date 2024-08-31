@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ebfdb7c72f68a245",
+        "id": "701e3339771c32e8",
         "type": "tabs",
         "children": [
           {
-            "id": "30333c21a525c316",
+            "id": "a392577996b24dfb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Shunting yard algorithm.md",
+                "file": "content/notes/Abstract Syntax Tree.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/Shunting yard algorithm.md",
+                "file": "content/notes/Abstract Syntax Tree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/Shunting yard algorithm.md",
+                "file": "content/notes/Abstract Syntax Tree.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/Shunting yard algorithm.md"
+                "file": "content/notes/Abstract Syntax Tree.md"
               }
             }
           }
@@ -157,11 +157,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "30333c21a525c316",
+  "active": "a392577996b24dfb",
   "lastOpenFiles": [
+    "public/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed.html",
+    "public/notes/cpp_pointers_functions.html",
+    "public/notes/cpp_pointersAndArrays.html",
+    "public/notes/cpp_nesting_cond_op.html",
+    "public/notes/Shunting-yard-algorithm.html",
+    "public/notes/Abstract-Syntax-Tree.html",
+    "content/projects/Bachelors.md",
+    "content/projects/Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.md",
+    "content/notes/Abstract Syntax Tree.md",
+    "content/notes/cpp_compound_types.md",
+    "public/static/notes/cpp_caution.png",
+    "quartz/static/notes/ast.png",
+    "public/static/notes/ast.png",
+    "content/notes/Shunting yard algorithm.md",
     "quartz/static/notes/reverse_polish.png",
     "public/static/notes/reverse_polish 1.png",
-    "content/notes/Shunting yard algorithm.md",
     "content/notes/cppbasics.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_extern.md",
@@ -171,20 +184,14 @@
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_nesting_cond_op.md",
     "content/notes/cpp_arraysvsvectors.md",
-    "content/notes/cpp_compound_types.md",
     "content/notes/cpp_auto_const_iterator.md",
     "public/static/notes/cpp_pointer2pointer.png",
     "public/static/notes/cpp_pointers_ref_keyconcepts.png",
     "public/notes/cpp_compound_types.html",
     "content/index.md",
     "content/projects.md",
-    "content/projects/Bachelors.md",
     "public/static/notes/cpp_arith_types.png",
     "public/static/notes/Pasted image 20240814135819.png",
-    "public/static/notes/cpp_caution.png",
-    "public/static/notes/Pasted image 20240814135553.png",
-    "public/static/notes/cpp_advice.png",
-    "public/static/notes/Pasted image 20240814135333.png",
     "quartz/static/notes",
     "public/static/notes",
     "content/notes",
@@ -192,19 +199,12 @@
     "content/projects/inertial-odom.md",
     "content/projects/Loop Closure.md",
     "content/projects/visual-odom.md",
-    "public/static/pictures",
-    "public/static/bachelors",
-    "public/static/contentIndex.json",
-    "public/static",
     "content/Readme.md",
     "content/projects/Gaussian distribution.md",
-    "quartz/static/pictures",
     "content/projects/Proportional-Derivative.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
     "content/projects/Cinematic Model.md",
-    "docs/advanced/making plugins.md",
-    "docs/advanced/architecture.md",
     "Untitled.canvas"
   ]
 }
