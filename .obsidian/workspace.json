@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Abstract Syntax Tree.md",
+                "file": "content/notes/numerical_methods.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/Abstract Syntax Tree.md",
+                "file": "content/notes/numerical_methods.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/Abstract Syntax Tree.md",
+                "file": "content/notes/numerical_methods.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/Abstract Syntax Tree.md"
+                "file": "content/notes/numerical_methods.md"
               }
             }
           }
@@ -159,6 +159,15 @@
   },
   "active": "a392577996b24dfb",
   "lastOpenFiles": [
+    "public/notes/numerical_methods.html",
+    "content/projects/Kalman Filter.md",
+    "content/notes/numerical_methods.md",
+    "content/notes/Abstract Syntax Tree.md",
+    "content/notes/cpp_auto_const_iterator.md",
+    "content/notes/cpp_pointers_functions.md",
+    "content/notes/cpp_extern.md",
+    "quartz/static/notes/elim.png",
+    "public/static/notes/elim.png",
     "public/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed.html",
     "public/notes/cpp_pointers_functions.html",
     "public/notes/cpp_pointersAndArrays.html",
@@ -167,7 +176,6 @@
     "public/notes/Abstract-Syntax-Tree.html",
     "content/projects/Bachelors.md",
     "content/projects/Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.md",
-    "content/notes/Abstract Syntax Tree.md",
     "content/notes/cpp_compound_types.md",
     "public/static/notes/cpp_caution.png",
     "quartz/static/notes/ast.png",
@@ -177,25 +185,18 @@
     "public/static/notes/reverse_polish 1.png",
     "content/notes/cppbasics.md",
     "content/notes/cpp_preprocessor.md",
-    "content/notes/cpp_extern.md",
     "content/notes/cpp_pointersAndArrays.md",
     "public/static/notes/reverse_polish.png",
-    "content/projects/Kalman Filter.md",
-    "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_nesting_cond_op.md",
     "content/notes/cpp_arraysvsvectors.md",
-    "content/notes/cpp_auto_const_iterator.md",
     "public/static/notes/cpp_pointer2pointer.png",
     "public/static/notes/cpp_pointers_ref_keyconcepts.png",
     "public/notes/cpp_compound_types.html",
     "content/index.md",
     "content/projects.md",
-    "public/static/notes/cpp_arith_types.png",
-    "public/static/notes/Pasted image 20240814135819.png",
     "quartz/static/notes",
     "public/static/notes",
     "content/notes",
-    "public/static/bachelors/combined_video.mp4",
     "content/projects/inertial-odom.md",
     "content/projects/Loop Closure.md",
     "content/projects/visual-odom.md",
@@ -204,7 +205,6 @@
     "content/projects/Proportional-Derivative.md",
     "docs/plugins/Assets.md",
     "docs/advanced/creating components.md",
-    "content/projects/Cinematic Model.md",
     "Untitled.canvas"
   ]
 }
