@@ -6,65 +6,65 @@
       <description>Last 10 notes on 🚀 Costin Chitic</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Numerical Elimination Methods</title>
-    <link>https://costineesti.github.io/about-me/notes/numerical_methods</link>
-    <guid>https://costineesti.github.io/about-me/notes/numerical_methods</guid>
-    <description>...</description>
-    <pubDate>Sun, 01 Sep 2024 08:25:57 GMT</pubDate>
+    <title>Static and dynamic libraries</title>
+    <link>https://costineesti.github.io/about-me/notes/static_dynamic_libraries</link>
+    <guid>https://costineesti.github.io/about-me/notes/static_dynamic_libraries</guid>
+    <description>I want to use matplotlib in C++ and I came across this documentation about static and dynamic libraries A library is a package of code that is meant to be reused by many programs ...</description>
+    <pubDate>Mon, 02 Sep 2024 20:37:10 GMT</pubDate>
   </item><item>
     <title>Visual Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/visual-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/visual-odom</guid>
     <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:53 GMT</pubDate>
-  </item><item>
-    <title>Gaussian Distribution</title>
-    <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
-    <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
-    <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
-  </item><item>
-    <title>Kalman Filter</title>
-    <link>https://costineesti.github.io/about-me/projects/Kalman-Filter</link>
-    <guid>https://costineesti.github.io/about-me/projects/Kalman-Filter</guid>
-    <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
-  </item><item>
-    <title>Loop Closure</title>
-    <link>https://costineesti.github.io/about-me/projects/Loop-Closure</link>
-    <guid>https://costineesti.github.io/about-me/projects/Loop-Closure</guid>
-    <description> .</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
-  </item><item>
-    <title>Proportional-Derivative Control</title>
-    <link>https://costineesti.github.io/about-me/projects/Proportional-Derivative</link>
-    <guid>https://costineesti.github.io/about-me/projects/Proportional-Derivative</guid>
-    <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
   </item><item>
     <title>Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed</title>
     <link>https://costineesti.github.io/about-me/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed</link>
     <guid>https://costineesti.github.io/about-me/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed</guid>
     <description></description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
+  </item><item>
+    <title>Proportional-Derivative Control</title>
+    <link>https://costineesti.github.io/about-me/projects/Proportional-Derivative</link>
+    <guid>https://costineesti.github.io/about-me/projects/Proportional-Derivative</guid>
+    <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
+  </item><item>
+    <title>Loop Closure</title>
+    <link>https://costineesti.github.io/about-me/projects/Loop-Closure</link>
+    <guid>https://costineesti.github.io/about-me/projects/Loop-Closure</guid>
+    <description> .</description>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
+  </item><item>
+    <title>Kalman Filter</title>
+    <link>https://costineesti.github.io/about-me/projects/Kalman-Filter</link>
+    <guid>https://costineesti.github.io/about-me/projects/Kalman-Filter</guid>
+    <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
   </item><item>
     <title>Inertial Odometry</title>
     <link>https://costineesti.github.io/about-me/projects/inertial-odom</link>
     <guid>https://costineesti.github.io/about-me/projects/inertial-odom</guid>
     <description>Inertial Odometry is great because it does not care of the environment variables. I used a BNO055 which is an “absolute orientation” sensor made by Bosch.</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
+  </item><item>
+    <title>Gaussian Distribution</title>
+    <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
+    <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
+    <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
+  </item><item>
+    <title>My Bachelor&#039;s Degree Thesis</title>
+    <link>https://costineesti.github.io/about-me/projects/Bachelors</link>
+    <guid>https://costineesti.github.io/about-me/projects/Bachelors</guid>
+    <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
   </item><item>
     <title>Shunting Yard Algorithm</title>
     <link>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</link>
     <guid>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</guid>
     <description>brilliant.org/wiki/shunting-yard-algorithm/ — source I will apply this in order to parse a mathematical expression in C++. For example, f(x) = 6*x^4 + 3*x^2 - sin(x+1).</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
-  </item><item>
-    <title>C++ Pointers and Multidimensional Arrays</title>
-    <link>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</link>
-    <guid>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</guid>
-    <description>Alright, so I already went through arrays and vectors and I think I have a pretty good understanding of them but I still want to note down some ideas from matrices ...</description>
-    <pubDate>Sat, 31 Aug 2024 09:20:52 GMT</pubDate>
+    <pubDate>Sun, 01 Sep 2024 09:04:01 GMT</pubDate>
   </item>
     </channel>
   </rss>
