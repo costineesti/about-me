@@ -81,7 +81,7 @@ You can find me @:
 ### What I've worked on in the past
 
 * I've been an intern at Bosch for 2 years in a Model-Based team. I have successfully automated the regression test using [[Python]] and MATLAB and now I'm working with SIMULINK mathematical models (we're basically simulating cars).
-* I was a serious student in Uni (top 10) and I've really dedicated much time to learn the concepts that they were teaching me.
+* I was a serious student in Uni (amongst the top) and I've really dedicated much time to learn the concepts that they were teaching me.
 * My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a Kalman Filter in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
 
 ### What I'm currently working on
