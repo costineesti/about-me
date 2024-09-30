@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/LU Decomposition.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/LU Decomposition.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/LU Decomposition.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/LU Decomposition.md"
+                "file": "content/notes/principal_component_analysis.md"
               }
             }
           }
@@ -159,8 +159,8 @@
   },
   "active": "9276d456217e88f0",
   "lastOpenFiles": [
-    "content/notes/principal_component_analysis.md",
     "content/notes/LU Decomposition.md",
+    "content/notes/principal_component_analysis.md",
     "content/notes/static_dynamic_libraries.md",
     "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
