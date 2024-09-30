@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "701e3339771c32e8",
+        "id": "5e3df7192f8e3c4d",
         "type": "tabs",
         "children": [
           {
-            "id": "a392577996b24dfb",
+            "id": "9276d456217e88f0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/static_dynamic_libraries.md",
+                "file": "content/notes/LU Decomposition.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/static_dynamic_libraries.md",
+                "file": "content/notes/LU Decomposition.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/static_dynamic_libraries.md",
+                "file": "content/notes/LU Decomposition.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/static_dynamic_libraries.md"
+                "file": "content/notes/LU Decomposition.md"
               }
             }
           }
@@ -157,54 +157,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a392577996b24dfb",
+  "active": "9276d456217e88f0",
   "lastOpenFiles": [
-    "public/notes/static_dynamic_libraries.html",
-    "content/notes/numerical_methods.md",
+    "content/notes/principal_component_analysis.md",
+    "content/notes/LU Decomposition.md",
     "content/notes/static_dynamic_libraries.md",
-    "public/notes/numerical_methods.html",
-    "content/projects/Kalman Filter.md",
-    "content/notes/Abstract Syntax Tree.md",
-    "content/notes/cpp_auto_const_iterator.md",
-    "content/notes/cpp_pointers_functions.md",
-    "content/notes/cpp_extern.md",
-    "quartz/static/notes/elim.png",
-    "public/static/notes/elim.png",
-    "public/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed.html",
-    "public/notes/cpp_pointers_functions.html",
-    "public/notes/cpp_pointersAndArrays.html",
-    "public/notes/cpp_nesting_cond_op.html",
-    "public/notes/Shunting-yard-algorithm.html",
-    "public/notes/Abstract-Syntax-Tree.html",
-    "content/projects/Bachelors.md",
-    "content/projects/Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.md",
-    "content/notes/cpp_compound_types.md",
-    "public/static/notes/cpp_caution.png",
-    "quartz/static/notes/ast.png",
-    "public/static/notes/ast.png",
-    "content/notes/Shunting yard algorithm.md",
-    "quartz/static/notes/reverse_polish.png",
-    "public/static/notes/reverse_polish 1.png",
-    "content/notes/cppbasics.md",
-    "content/notes/cpp_preprocessor.md",
-    "content/notes/cpp_pointersAndArrays.md",
-    "public/static/notes/reverse_polish.png",
-    "content/notes/cpp_nesting_cond_op.md",
-    "content/notes/cpp_arraysvsvectors.md",
-    "public/static/notes/cpp_pointer2pointer.png",
-    "public/static/notes/cpp_pointers_ref_keyconcepts.png",
-    "public/notes/cpp_compound_types.html",
-    "content/index.md",
-    "content/projects.md",
-    "quartz/static/notes",
-    "public/static/notes",
-    "content/projects/inertial-odom.md",
-    "content/projects/Loop Closure.md",
     "content/projects/visual-odom.md",
-    "content/Readme.md",
-    "content/projects/Gaussian distribution.md",
     "content/projects/Proportional-Derivative.md",
-    "docs/plugins/Assets.md",
+    "content/projects/Kalman Filter.md",
+    "content/projects/inertial-odom.md",
+    "content/projects/Gaussian distribution.md",
+    "content/projects/Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.md",
+    "content/projects/stochastic mathematics.md",
+    "content/projects/Loop Closure.md",
+    "content/notes/cpp_preprocessor.md",
+    "content/notes/numerical_methods.md",
+    "content/notes/Shunting yard algorithm.md",
+    "content/notes/cppbasics.md",
+    "content/notes/Gaussian.md",
+    "content/notes/Abstract Syntax Tree.md",
+    "content/notes/cpp_pointersAndArrays.md",
+    "public/postscript.js",
+    "public/index.css",
+    "public/prescript.js",
+    "public/projects/Gaussian-distribution.html",
+    "public/projects/Bachelors.html",
+    "public/projects",
+    "public/projects/visual-odom.html",
+    "public/projects/inertial-odom.html",
+    "public/projects/index.html",
+    "public/projects/Visual-Inertial-Odometry-based-on-lane-detection-of-an-autonomous-vehicle-with-constant-speed.html",
+    "public/static/notes/reverse_polish.png",
+    "public/static/notes/elim.png",
+    "public/static/notes/cpp_pointers_ref_keyconcepts.png",
+    "public/static/notes/cpp_pointer2pointer.png",
+    "public/static/notes/cpp_machine_level_repr.png",
+    "public/static/notes/cpp_caution.png",
+    "public/static/notes/ast.png",
+    "public/static/notes/cpp_arith_types.png",
+    "public/static/notes/cpp_advice.png",
+    "public/static/pictures/profil.jpg",
+    "node_modules/patch-package/node_modules/slash/readme.md",
+    "node_modules/patch-package/node_modules/rimraf/README.md",
+    "node_modules/patch-package/node_modules/glob/README.md",
+    "node_modules/fs-extra/node_modules/universalify/README.md",
+    "node_modules/jsonfile/node_modules/universalify/README.md",
+    "node_modules/klaw-sync/README.md",
+    "node_modules/@yarnpkg/lockfile/README.md",
+    "node_modules/isarray/README.md",
     "Untitled.canvas"
   ]
 }
