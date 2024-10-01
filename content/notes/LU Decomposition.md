@@ -6,12 +6,13 @@ tags:
 ---
  
 We can write any square matrix $M$ as the product of two simpler matrices. We will write
-$$ M = LU $$
+$$
+M = LU
+$$
 , where:
 
 * L is lower triangular i.e. all entries above the main diagonal are zero,
 * U is the upper triangular, i.e. all entries below the main diagonal are zero.
-
 $$
 L = \begin{pmatrix}
 l_1^1 & 0     & 0     & \cdots \\
