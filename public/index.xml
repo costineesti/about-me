@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>🚀 Costin Chitic</title>
+      <link>https://costineesti.github.io/about-me/</link>
+      <description>Last 10 notes on 🚀 Costin Chitic</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Principal Component Analysis</title>
+    <link>https://costineesti.github.io/about-me/notes/principal_component_analysis</link>
+    <guid>https://costineesti.github.io/about-me/notes/principal_component_analysis</guid>
+    <description>Sources: 1, 2 Principal Component Analysis (PCA) is used to reduce the dimensionality of a data set by finding a new set of variables, smaller than the original set of variables, while ...</description>
+    <pubDate>Tue, 01 Oct 2024 20:51:08 GMT</pubDate>
+  </item><item>
+    <title>LU Decomposition</title>
+    <link>https://costineesti.github.io/about-me/notes/LU-Decomposition</link>
+    <guid>https://costineesti.github.io/about-me/notes/LU-Decomposition</guid>
+    <description>We can write any square matrix M as the product of two simpler matrices. We will write M = LU , where: L is lower triangular i.e. all entries above the main diagonal are zero, U is the upper triangular, i.e.</description>
+    <pubDate>Tue, 01 Oct 2024 19:35:27 GMT</pubDate>
+  </item><item>
+    <title>Visual Odometry</title>
+    <link>https://costineesti.github.io/about-me/projects/visual-odom</link>
+    <guid>https://costineesti.github.io/about-me/projects/visual-odom</guid>
+    <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>C++ Nesting Conditional Operations</title>
+    <link>https://costineesti.github.io/about-me/notes/cpp_nesting_cond_op</link>
+    <guid>https://costineesti.github.io/about-me/notes/cpp_nesting_cond_op</guid>
+    <description>I swear I used to get so confused about these stupid things. Just creating a page here in case I ever need to use them. string finalgrade = (grade &lt; 60) ? &quot;fail&quot; : &quot;pass&quot;; finalgrade = (grade &gt; 90) ? &quot;high pass&quot; : (grade&lt;60) ? &quot;fail&quot; : &quot;pass&quot;; Nested conditionals quickly become unreadable.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>C++ Pointers and Multidimensional Arrays</title>
+    <link>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</link>
+    <guid>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</guid>
+    <description>Alright, so I already went through arrays and vectors and I think I have a pretty good understanding of them but I still want to note down some ideas from matrices ...</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>C++ Pointers as function parameters</title>
+    <link>https://costineesti.github.io/about-me/notes/cpp_pointers_functions</link>
+    <guid>https://costineesti.github.io/about-me/notes/cpp_pointers_functions</guid>
+    <description>Passing arguments by pointers It’s actually getting easier understanding these concepts. void reset(int *ip) { *ip = 0; // changes the value of the object to which ip points ip = 0; // changes only the local copy of ip; the argument is unchanged } After a call to reset, the object to which the argument points will be 0, but the pointer argument itself is unchanged: int i = 42; reset(&amp;i); // changes i but not the address of i.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>C++ Preprocessor</title>
+    <link>https://costineesti.github.io/about-me/notes/cpp_preprocessor</link>
+    <guid>https://costineesti.github.io/about-me/notes/cpp_preprocessor</guid>
+    <description> Whenever a header is updated, the source files that use that header must be recompiled to get the new or changed declarations. The most common technique for making it safe to include a header multiple times relies on the preprocessor.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>C++ Basics</title>
+    <link>https://costineesti.github.io/about-me/notes/cppbasics</link>
+    <guid>https://costineesti.github.io/about-me/notes/cppbasics</guid>
+    <description>One of my short-term goals is learning C++ as well as possible. I used it in my Bachelors and I want to actually understand this programming language. For this, I am using as reference the C++ Primer.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>Numerical Elimination Methods</title>
+    <link>https://costineesti.github.io/about-me/notes/numerical_methods</link>
+    <guid>https://costineesti.github.io/about-me/notes/numerical_methods</guid>
+    <description>The information regarding these algorithms can be found in my professor’s teachings from the faculty. It was one of my favourite subjects to actually see how mathematics is applied in optimizations.</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item><item>
+    <title>Static and dynamic libraries</title>
+    <link>https://costineesti.github.io/about-me/notes/static_dynamic_libraries</link>
+    <guid>https://costineesti.github.io/about-me/notes/static_dynamic_libraries</guid>
+    <description>I want to use matplotlib in C++ and I came across this documentation about static and dynamic libraries A library is a package of code that is meant to be reused by many programs ...</description>
+    <pubDate>Mon, 30 Sep 2024 18:10:18 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
