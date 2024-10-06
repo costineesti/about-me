@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/principal_component_analysis.md",
+                "file": "content/notes/mlapp_regression.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/principal_component_analysis.md",
+                "file": "content/notes/mlapp_regression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/principal_component_analysis.md",
+                "file": "content/notes/mlapp_regression.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/principal_component_analysis.md"
+                "file": "content/notes/mlapp_regression.md"
               }
             }
           }
@@ -159,24 +159,36 @@
   },
   "active": "9276d456217e88f0",
   "lastOpenFiles": [
-    "content/notes/LU Decomposition.md",
+    "content/notes/cpp_arraysvsvectors.md",
+    "content/notes/cpp_auto_const_iterator.md",
+    "content/notes/cpp_compound_types.md",
+    "content/notes/cpp_extern.md",
+    "content/notes/cpp_pointersAndArrays.md",
+    "content/notes/cpp_preprocessor.md",
+    "content/notes/cppbasics.md",
+    "content/notes/mlapp_regression.md",
+    "content/notes/numerical_methods.md",
+    "content/notes/Shunting yard algorithm.md",
     "content/notes/principal_component_analysis.md",
-    "content/projects/Gaussian distribution.md",
     "content/notes/static_dynamic_libraries.md",
+    "content/notes/LU Decomposition.md",
     "content/projects/visual-odom.md",
+    "content/notes/[[Gaussian.md",
+    "content/notes/cpp_pointers_functions.md",
+    "content/projects/Bachelors.md",
+    "content/projects/Gaussian distribution.md",
+    "content/index.md",
     "content/projects/Proportional-Derivative.md",
     "content/projects/Kalman Filter.md",
     "content/projects/inertial-odom.md",
+    "public/static/notes/cpp_arith_types.png",
+    "content/notes/cpp_nesting_cond_op.md",
+    "public/static/notes/cpp_machine_level_repr.png",
+    "public/static/notes/mlapp_regression.png",
+    "public/static/notes/Screenshot 2024-10-06 at 12.42.54.png",
     "content/projects/Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.md",
     "content/projects/stochastic mathematics.md",
     "content/projects/Loop Closure.md",
-    "content/notes/cpp_preprocessor.md",
-    "content/notes/numerical_methods.md",
-    "content/notes/Shunting yard algorithm.md",
-    "content/notes/cppbasics.md",
-    "content/notes/Gaussian.md",
-    "content/notes/Abstract Syntax Tree.md",
-    "content/notes/cpp_pointersAndArrays.md",
     "public/postscript.js",
     "public/index.css",
     "public/prescript.js",
@@ -191,20 +203,8 @@
     "public/static/notes/elim.png",
     "public/static/notes/cpp_pointers_ref_keyconcepts.png",
     "public/static/notes/cpp_pointer2pointer.png",
-    "public/static/notes/cpp_machine_level_repr.png",
     "public/static/notes/cpp_caution.png",
     "public/static/notes/ast.png",
-    "public/static/notes/cpp_arith_types.png",
-    "public/static/notes/cpp_advice.png",
-    "public/static/pictures/profil.jpg",
-    "node_modules/patch-package/node_modules/slash/readme.md",
-    "node_modules/patch-package/node_modules/rimraf/README.md",
-    "node_modules/patch-package/node_modules/glob/README.md",
-    "node_modules/fs-extra/node_modules/universalify/README.md",
-    "node_modules/jsonfile/node_modules/universalify/README.md",
-    "node_modules/klaw-sync/README.md",
-    "node_modules/@yarnpkg/lockfile/README.md",
-    "node_modules/isarray/README.md",
     "Untitled.canvas"
   ]
 }
