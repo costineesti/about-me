@@ -39,6 +39,8 @@ In the simplest case, we assume that $\mu$ is a linear function of $\mathbf{x}$,
 
 >[!tip] For example, suppose the input is 1 dimensional. We can represent the expected response as follows:
 >
->$$ \mu(x) = w_0 + w_1 x = \mathbf{w}^T \mathbf{x} $$
+>$$ 
+>\mu(x) = w_0 + w_1 x = \mathbf{w}^T \mathbf{x} 
+>$$
 >
 >,where $w_0$ is the intercept or **bias** term, $w_1$ is the **slope**, and where we have defined the vector $\mathbf{x} = (1,x)$.
