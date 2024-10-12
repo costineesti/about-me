@@ -32,7 +32,7 @@ Here,
 
 To find the [[covariance]] we can use the formula:
 $$
-cov(x1,x2) = \frac{\sum_{i=1}^{n}{(x1_i-\bar{x1})(x2_i-\bar{x2})}}{n-1}
+cov(x1,x2) = \frac{\sum_{i=1}^{n}{(Z-\mu)(Z-\mu)}^T}{n-1}
 $$
 3) Compute the Eigenvalues($\lambda$) and Eigenvectors($X$) of covariance matrix to identify principal components
 $$
