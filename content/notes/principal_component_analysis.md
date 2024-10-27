@@ -47,3 +47,4 @@ $$
 AX = \lambda X
 $$
 Further down the line, I will return with some C++ or Python implementation of the PCA.
+As promised, the [code](https://github.com/costineesti/ML101/blob/main/Principal%20Component%20Analysis/PCA.py)

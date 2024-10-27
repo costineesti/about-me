@@ -24,9 +24,9 @@ Although the guy on youtube is terribly annoying, he has some pretty good explan
 </div>
 
 * The functions with <span style="color:blue">**BLUE** </span> are called `Sigmoid Activation Functions` which transform any input into an output between [0, 1], $f(x) = \frac{e^x}{e^x + 1}$.
-* The functions with <span style="color:red">**RED** </span> are called `Tanh Activations Functions` which transform any input into an output between [-1, 1], $f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$.
+* The functions with <span style="color:orange">**ORANGE** </span> are called `Tanh Activations Functions` which transform any input into an output between [-1, 1], $f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$.
 * The <span style="color:green">**GREEN line** </span> is called the `CELL STATE` and represent the **Long-Term Memory**. It is modified by a multiplication and an addition without any weights. That allows the memories to not explode or vanish.
-* The <span style="color:pink">**PINK line** </span> represents the `Short-Term Memories` and have weights attached to them.
+* The <span style="color:purple">**PURPLE line** </span> represents the `Short-Term Memories` and have weights attached to them.
 * The weight right before the functions are called `Bias`
 
 Again, this guy has some really, really good visuals to explain all this.

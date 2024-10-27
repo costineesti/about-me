@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/LSTM.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/LSTM.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/LSTM.md",
+                "file": "content/notes/principal_component_analysis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/LSTM.md"
+                "file": "content/notes/principal_component_analysis.md"
               }
             }
           }
@@ -159,10 +159,10 @@
   },
   "active": "552a18cf82c4b850",
   "lastOpenFiles": [
+    "content/notes/LSTM.md",
     "quartz/static/notes/LSTM_example.png",
     "quartz/static/notes/Screenshot 2024-10-27 at 15.03.23.png",
     "content/projects/Kalman Filter.md",
-    "content/notes/LSTM.md",
     "quartz/static/notes/LSTM_Architecture.png",
     "quartz/static/notes/Screenshot 2024-10-27 at 14.44.14.png",
     "content/notes/Shunting yard algorithm.md",
@@ -179,7 +179,6 @@
     "public/static/pictures/profil.jpg",
     "public/static/pictures/beligool.jpg",
     "public/static/pictures/beligol.jpg",
-    "public/static/notes/cpp_pointers_ref_keyconcepts.png",
     "content/notes/static_dynamic_libraries.md",
     "content/notes/numerical_methods.md",
     "content/notes/cpp_preprocessor.md",
