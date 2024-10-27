@@ -20,7 +20,7 @@ This algorithm uses 2 paths in order to predict the future state of some input (
 Although the guy on youtube is terribly annoying, he has some pretty good explanations and figures. So I will explain based on those figures.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/LSTM_architecture.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/LSTM_Architecture.png" style="max-width: 100%; height: auto;">
 </div>
 
 * The functions with <span style="color:blue">**BLUE** </span> are called `Sigmoid Activation Functions` which transform any input into an output between [0, 1], $f(x) = \frac{e^x}{e^x + 1}$.
