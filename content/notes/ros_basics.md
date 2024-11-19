@@ -46,7 +46,7 @@ If you want to develop such nodes, ROS works on a subscriber/publisher basis. Ev
 ></div>
 >
 >* `rosmsg show` 
->* 
+>
 ><div class="container" style="display: flex; justify-content: center; align-items: center;">
 ><img src="../static/notes/rosmsg_show.png" style="max-width: 100%; height: auto;">
 ></div>
