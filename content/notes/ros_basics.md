@@ -40,13 +40,16 @@ If you want to develop such nodes, ROS works on a subscriber/publisher basis. Ev
 >* `rosnode list` shows all active nodes
 >* `rosnode kill node_name` kills any active node
 >* `rqt_graph` opens up a GUI that shows the relationships between active nodes.
->* rostopic info /node_name gives details about the type, publishers and subscribers.
+>* `rostopic info /node_name` gives details about the type, publishers and subscribers.
 ><div class="container" style="display: flex; justify-content: center; align-items: center;">
 ><img src="../static/notes/rostopic_info.png" style="max-width: 100%; height: auto;">
 ></div>
+>
 >* `rosmsg show` 
+>* 
 ><div class="container" style="display: flex; justify-content: center; align-items: center;">
 ><img src="../static/notes/rosmsg_show.png" style="max-width: 100%; height: auto;">
 ></div>
+>
 >* `rostopic echo` gives real-time data of a topic
 
