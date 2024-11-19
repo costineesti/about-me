@@ -22,7 +22,9 @@ If you want to develop such nodes, ROS works on a subscriber/publisher basis. Ev
 >`catkin_create_pkg package_name rospy[or roscpp] ros_packages`
 >
 >for example: `catkin_create_pkg my_robot_controller rospy turtlesim` which will return:
->![[Pasted image 20241119211833.png]]
+><div class="container" style="display: flex; justify-content: center; align-items: center;">
+><img src="../static/notes/bashrc.png" style="max-width: 100%; height: auto;">
+></div>
 >
 >If we want to add other packages later, we can simply add them in package.xml.
 
