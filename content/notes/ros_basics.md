@@ -5,7 +5,9 @@ tags:
   - projects
   - ros
 ---
- 
+
+Source: [this legend](https://youtube.com/playlist?list=PLLSegLrePWgIbIrA4iehUQ-impvIXdd9Q&si=qVlQpJCC2g5OxWvZ)
+
 In order to learn ROS, you need to know in advance how to program in `C++` or `Python`. Also, you need to be comfortable using the Linux shell.
 
 In order to run ROS nodes, you need to type `roscore` into one of the terminals. Prior to that, you should make sure that you sourced these two directories in ~/.bashrc in order to make sure you can use your code with ROS functionalities:
@@ -14,7 +16,7 @@ In order to run ROS nodes, you need to type `roscore` into one of the terminals.
     <img src="../static/notes/bashrc.png" style="max-width: 100%; height: auto;">
 </div>
 
-If you want to develop such nodes, ROS works on a subscriber/publisher basis. Everything takes place in the `catkin_ws` directory.
+If you want to develop such nodes, ROS works on a subscriber/publisher basis [[ros_architecture]]. Everything takes place in the `catkin_ws` directory.
 
 ### catkin_ws directory
 
