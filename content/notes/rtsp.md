@@ -20,9 +20,9 @@ number rows changes depending on the range. The intensity of each pixel
 represents the return strength of the acoustic signal at that point. This is the case of the sonar I'm using during my contribution to [[SeaClear]]. The matrix has one column for each beam, and one row for each sample. The number rows changes depending on the range. The intensity of each pixel represents the return strength of the acoustic signal at that point.
 
 >[!question] The RTSP-stream can be quickly sanity checked using a viewer which supports
-RTSP, such as vlc. With the sonar mounted in a small tank, and after setting
-the stream type to RTSP in the web-UI, the video stream from VLC looks like
-this when connected to rtsp://192.168.2.42:8554/raw
+>RTSP, such as vlc. With the sonar mounted in a small tank, and after setting
+>the stream type to RTSP in the web-UI, the video stream from VLC looks like
+>this when connected to rtsp://192.168.2.42:8554/raw
 
 ```
 Python RTSP example
