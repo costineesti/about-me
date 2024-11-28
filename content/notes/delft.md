@@ -51,3 +51,6 @@ tags:
 
 ### Scholarships
 [**Scholarships**](https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships)
+
+### Housing
+[Housing](https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/nederland-tu-delft/support-for-international-employees/before-you-arrive/housing)
