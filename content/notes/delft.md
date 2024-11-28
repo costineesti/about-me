@@ -6,7 +6,7 @@ tags:
  
 ### Requirements Delft TU MsC - Data Engineering and Artificial Intelligence
 
-[Link to everything!](**https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma**](https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma)
+[Link to everything!](https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma)
 
 - ❌**A Cambridge Assessment English**. Only the following certificates are accepted:
 	- C1 Advanced (Certificate of Advanced English) with an overall score of **185**
