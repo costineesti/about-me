@@ -57,3 +57,6 @@ tags:
 
 ### Contact center - TU Delft
 contactcentre-esa@tudelft.nl
+
+### Curriculum
+![[Pasted image 20241128181601.png]]
