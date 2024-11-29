@@ -13,6 +13,7 @@ tags:
 	- C2 Proficiency (Certificate of Proficiency in English) with an overall score of **185**
 	- The English language certificate may be uploaded by 1 July (23:59 CEST), provided that all other required application documents are uploaded by the 1 April deadline.
 	- You will receive an admission decision within 12 weeks following receipt of your complete application.
+	- Certificates that are older than two years on the day you have uploaded the document and completed your application are not accepted.
 
 - ✅**A 4 year Diplomă de Inginer** or a minimum 3 year Diplomă de Licenţă with a final cumulative grade point average (CGPA) of 8.0/10 or better. 
 
