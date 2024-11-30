@@ -60,4 +60,7 @@ tags:
 contactcentre-esa@tudelft.nl
 
 ### Curriculum
-![[Pasted image 20241128181601.png]]
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/curriculum_delft.png" style="max-width: 100%; height: auto;">
+</div>
