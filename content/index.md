@@ -88,8 +88,7 @@ You can find me @:
 
 >[!hint] ...
 > - Improving this site by uploading my knowledge and making sure I fill it with every note I have,
-> - thinking of buying a web camera and implementing visual SLAM on it in order to give orientation of a human for indoor applications,
-> - Learning C,
+> - Getting into Delft on Data Engineering and ML Masters,
 > - Improving my C++ experience,
 > - Learning ML,
 > - Learning AI.
