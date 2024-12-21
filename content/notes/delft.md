@@ -8,7 +8,7 @@ tags:
 
 [Link to everything!](https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma)
 
-- ❌**A Cambridge Assessment English or IELTS**. Only the following certificates are accepted:
+- ✅**A Cambridge Assessment English or IELTS**. Only the following certificates are accepted:
 	- C1 Advanced (Certificate of Advanced English) with an overall score of **185**
 	- C2 Proficiency (Certificate of Proficiency in English) with an overall score of **185**
 	- An IELTS (academic version) with an overall Band score of at least 7.0 and a minimum of 6.5 for each section (IELTS One Skill Retake will be accepted. Please check in advance if this test is available at your test centre). The IELTS Online (Academic) test and the IELTS Indicator test cannot be accepted.
