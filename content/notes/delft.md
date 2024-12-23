@@ -20,11 +20,11 @@ tags:
 
 - ✅**Diploma** 
 
-- ❌**Motivation Letter** - A clear and relevant essay in English (1,000 – 1,500 words) addressing the following:
-	- Your motivation for choosing this MSc programme
-	- Why you are interested in TU Delft and what you expect to find here.
+- ✅**Motivation Letter** - A clear and relevant essay in English (1,000 – 1,500 words) addressing the following:
+	- Your motivation for choosing this MSc programme,
+	- Why you are interested in TU Delft and what you expect to find here,
 	- If this MSc programme has specialisation(s), which specialisation interests you the most and why?
-	- Describe your hypothetical thesis project: what kind of project would you prefer? What would you want to explore? Please limit your answer to three possible topics.
+	- Describe your hypothetical thesis project: what kind of project would you prefer? What would you want to explore? Please limit your answer to three possible topics,
 	- Summarize in a maximum of 250 words your BSc thesis work or final assignment/project. Please include information about the workload.
 
 - ✅**Curriculum Vitae**
