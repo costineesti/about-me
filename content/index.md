@@ -86,9 +86,8 @@ You can find me @:
 
 ### What I'm currently working on
 
->[!hint] ...
+>[!hint] Most of my time goes into...
 > - Improving this site by uploading my knowledge and making sure I fill it with every note I have,
-> - Getting into Delft on Data Engineering and ML Masters,
-> - Improving my C++ experience,
+> - Getting into Delft, Tilburg or Twente Universities, focusing on AI/ML and Data Science MSc's,
 > - Learning ML,
 > - Learning AI.
