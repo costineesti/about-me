@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "35fcb2eb15b53cee",
+        "id": "e8a28adf948f7b96",
         "type": "tabs",
         "children": [
           {
-            "id": "552a18cf82c4b850",
+            "id": "936fc014d79b4b21",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -175,8 +175,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "552a18cf82c4b850",
+  "active": "936fc014d79b4b21",
   "lastOpenFiles": [
+    "content/notes/rtsp.md",
+    "quartz/static/notes/rostopic_info.png",
+    "content/index.md",
+    "content/projects/Kalman Filter.md",
     "content/notes/delft.md",
     "content/notes/LSTM.md",
     "Pasted image 20241128181601.png",
@@ -185,7 +189,6 @@
     "content/notes/cpp_pointersAndArrays.md",
     "content/notes/cpp_arraysvsvectors.md",
     "quartz/static/notes/rosmsg_show.png",
-    "content/notes/rtsp.md",
     "content/notes/principal_component_analysis.md",
     "content/notes/static_dynamic_libraries.md",
     "content/notes/Shunting yard algorithm.md",
@@ -197,13 +200,11 @@
     "quartz/static/notes/Screenshot 2024-11-19 at 22.24.03.png",
     "quartz/static/notes/Screenshot 2024-11-19 at 21.46.57.png",
     "quartz/static/notes/Screenshot 2024-11-19 at 21.44.54.png",
-    "quartz/static/notes/rostopic_info.png",
     "quartz/static/notes/Screenshot 2024-11-19 at 21.43.16.png",
     "quartz/static/notes/cpp_arith_types.png",
     "quartz/static/notes/catkin_create.png",
     "content/notes/numerical_methods.md",
     "content/projects/inertial-odom.md",
-    "content/projects/Kalman Filter.md",
     "content/notes/mlapp_regression.md",
     "content/notes/cppbasics.md",
     "content/notes/cpp_compound_types.md",
@@ -212,7 +213,6 @@
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_extern.md",
-    "content/notes/Abstract Syntax Tree.md",
     "content/notes",
     "content/projects",
     "content",

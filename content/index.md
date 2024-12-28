@@ -69,6 +69,8 @@ title: Hello Hello, I'm Costin 😎
 
 I will upload my personal <a href="/projects/">projects</a> and <a href="/notes/">notes</a> through the years using **Obsidian**.
 
+### Socials
+
 You can find me @:
 * [LinkedIn](https://www.linkedin.com/in/costin-chitic-1169a6235/)
 * [Instagram](https://www.instagram.com/costin_chitic/)
@@ -80,9 +82,9 @@ You can find me @:
 
 ### What I've worked on in the past
 
-* I've been an intern at Bosch for 2 years in a Model-Based team. I have successfully automated the regression test using [[Python]] and MATLAB and now I'm working with SIMULINK mathematical models (we're basically simulating cars).
+* I've been an intern at Bosch for 2 years in a Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
 * I was a serious student in Uni (amongst the top) and I've really dedicated much time to learn the concepts that they were teaching me.
-* My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a Kalman Filter in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
+* My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
 
 ### What I'm currently working on
 
