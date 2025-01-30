@@ -90,6 +90,6 @@ You can find me @:
 
 >[!hint] Most of my time goes into...
 > - Improving this site by uploading my knowledge and making sure I fill it with every note I have,
-> - Getting into Delft, Tilburg or Twente Universities, focusing on AI/ML and Data Science MSc's,
+> - focusing on AI/ML and Data Science MSc's,
 > - Learning ML,
 > - Learning AI.
