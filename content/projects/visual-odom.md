@@ -3,6 +3,8 @@ title: Visual Odometry
 draft: false
 tags:
   - projects
+  - perception
+  - robotics
 ---
 
 Visual Odometry was my main contribution to my [[Bachelors|bachelor's degree]]. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry. It's goal is to give the yaw-rate with respect to a starting point.

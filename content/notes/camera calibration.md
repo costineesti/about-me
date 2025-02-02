@@ -3,6 +3,9 @@ title: Camera Calibration
 draft: false
 tags:
   - notes
+  - robotics
+  - perception
+  - ros
 ---
  
 Source: [ofc he's indian (:](https://youtu.be/MrKYawVvHzE?si=9rApZNVidjKgmf-9)

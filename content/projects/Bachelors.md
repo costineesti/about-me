@@ -3,6 +3,8 @@ title: My Bachelor's Degree Thesis
 draft: false
 tags:
   - projects
+  - robotics
+  - perception
 ---
  In 2024 I finished my Bachelor's studies at Technical University of Cluj-Napoca. My diploma project is intitulated [[Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed]].
 

@@ -3,6 +3,7 @@ title: Principal Component Analysis
 draft: false
 tags:
   - notes
+  - ML
 ---
 
 Sources: [1](https://www.geeksforgeeks.org/principal-component-analysis-pca/), [2](https://youtu.be/FD4DeN81ODY?si=8Y1l_sGXPK-Oh6p7)

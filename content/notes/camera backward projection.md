@@ -4,6 +4,8 @@ draft: false
 tags:
   - notes
   - SeaClear
+  - robotics
+  - perception
 ---
 
 Backward camera projection maps points from a **2D image plane** (captured by a camera) back into the **3D world space**
