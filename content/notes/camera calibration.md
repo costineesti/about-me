@@ -28,4 +28,4 @@ I have an Arducam B0497 (USB3 8.3MP) which I want to calibrate using a 7x9 check
 </div>
 
 * Fourth, I go and modify video_device at `sudo nano /opt/ros/noetic/share/usb_cam/launch/usb_cam-test.launch` with `/dev/video6`.
-* Fifth, I open 2 new terminals and I call `roslaunch usb_cam usb_cam-test.launch` and `rosrun camera_calibration cameracalibrator.py --size 7x9 --square 0.02 image:=/usb_cam/image_raw camera:=/usb_cam` to run the camera_calibrator ROS package.
+* Fifth, I open 2 new terminals and I call `roslaunch usb_cam usb_cam-test.launch` and `rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02 image:=/usb_cam/image_raw camera:=/usb_cam` to run the camera_calibrator ROS package.

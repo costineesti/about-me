@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/camera calibration.md",
+                "file": "content/notes/camera calibration and 3d recontruction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "camera calibration"
+              "title": "camera calibration and 3d recontruction"
             }
           }
         ]
@@ -87,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 591.5
   },
   "right": {
     "id": "1be38b2436e3a0ca",
@@ -177,13 +177,22 @@
   },
   "active": "936fc014d79b4b21",
   "lastOpenFiles": [
+    "content/notes/camera calibration.md",
+    "content/notes/camera calibration and 3d recontruction.md",
+    "content/notes/pinhole camera model.md",
+    "content/projects/visual-odom.md",
+    "content/index.md",
+    "content/notes/camera backward projection.md",
+    "quartz/static/notes/pinhole_model.png",
+    "content/notes/cpp_auto_const_iterator.md",
+    "content/notes/LU Decomposition.md",
+    "content/notes/Abstract Syntax Tree.md",
+    "content/notes/mlapp_regression.md",
+    "content/notes/delft.md",
     "content/notes/ros_basics.md",
     "content/notes/rtsp.md",
     "content/notes/Shunting yard algorithm.md",
     "content/notes/static_dynamic_libraries.md",
-    "content/notes/Abstract Syntax Tree.md",
-    "content/notes/camera calibration.md",
-    "content/notes/camera backward projection.md",
     "content/notes/cpp_extern.md",
     "content/notes/cpp_nesting_cond_op.md",
     "content/notes/cpp_pointers_functions.md",
@@ -195,25 +204,16 @@
     "content/notes/cpp_compound_types.md",
     "quartz/static/notes/ls_video.png",
     "content/notes/ros_architecture.md",
-    "content/notes/LU Decomposition.md",
     "content/notes/LSTM.md",
-    "content/notes/mlapp_regression.md",
     "content/notes/numerical_methods.md",
     "content/notes/principal_component_analysis.md",
-    "content/notes/cpp_auto_const_iterator.md",
-    "content/notes/cpp_arraysvsvectors.md",
     "quartz/static/notes/pinhole_cbp.png",
     "quartz/static/notes/pinhole_bcp.png",
     "quartz/static/notes/Screenshot 2025-01-19 at 20.27.34.png",
-    "content/notes/delft.md",
-    "content/index.md",
     "quartz/static/notes/rostopic_info.png",
-    "content/projects/Kalman Filter.md",
     "Pasted image 20241128181601.png",
     "Untitled.canvas",
     "quartz/static/notes/rosmsg_show.png",
-    "content/projects/Bachelors.md",
-    "quartz/static/notes/ros_architecture.png",
     "content/notes",
     "content/projects",
     "content",
