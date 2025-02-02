@@ -5,7 +5,9 @@ tags:
   - notes
 ---
  
-We can write any square matrix $M$ as the product of two simpler matrices. We will write
+ 
+A square matrix $M$ admits an $LU$ decomposition if all its leading principal minors are nonzero. Otherwise, a permutation matrix P may be needed, leading to $PA = LU$
+We will write:
 $$
 M = LU
 $$
