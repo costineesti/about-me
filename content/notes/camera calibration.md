@@ -9,7 +9,7 @@ tags:
   - SeaClear
 ---
  
-Source: [ofc he's indian (:](https://youtu.be/MrKYawVvHzE?si=9rApZNVidjKgmf-9)
+Source: [really comprehensive](https://youtu.be/MrKYawVvHzE?si=9rApZNVidjKgmf-9)
 
 I have an Arducam B0497 (USB3 8.3MP) which I want to calibrate using a 7x9 checkerboard that I downloaded at www.calib.io. The size is 7x9 with a Checker Size of 20mm. Because the algorithm counts the interior vertex, the size parameter needs to be passed as 8x6.
 
