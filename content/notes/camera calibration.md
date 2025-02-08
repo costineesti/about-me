@@ -35,4 +35,4 @@ I have an Arducam B0497 (USB3 8.3MP) which I want to calibrate using a 7x9 check
 * Fifth, I open 2 new terminals and I call `roslaunch usb_cam usb_cam-test.launch` and `rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02 image:=/usb_cam/image_raw camera:=/usb_cam` to run the camera_calibrator ROS package.
 
 >[!hint] Files of interest
-Camera settings such as port and resolution are found at `~/opt/ros/noetic/share/usb_cam/launch/usb_cam-test.launch` and the final matrices returned by the cameracalibrator.py script can be accessed at `~/.ros/camera_info/head_camera.yaml`
+>Camera settings such as port and resolution are found at `~/opt/ros/noetic/share/usb_cam/launch/usb_cam-test.launch` and the final matrices returned by the cameracalibrator.py script can be accessed at `~/.ros/camera_info/head_camera.yaml`
