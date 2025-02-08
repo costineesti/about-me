@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/LU Decomposition.md",
+                "file": "content/notes/camera calibration.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LU Decomposition"
+              "title": "camera calibration"
             }
           }
         ]
@@ -178,6 +178,7 @@
   },
   "active": "936fc014d79b4b21",
   "lastOpenFiles": [
+    "content/notes/LU Decomposition.md",
     "content/notes/camera calibration.md",
     "content/notes/camera backward projection.md",
     "content/notes/camera calibration and 3d recontruction.md",
@@ -197,7 +198,6 @@
     "content/notes/pinhole camera model.md",
     "content/index.md",
     "quartz/static/notes/pinhole_model.png",
-    "content/notes/LU Decomposition.md",
     "content/notes/Abstract Syntax Tree.md",
     "content/notes/delft.md",
     "content/notes/Shunting yard algorithm.md",
