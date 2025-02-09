@@ -16,7 +16,7 @@ From ChatGPT: **UVCH / uvch264** is a term used to describe enhanced support for
 UVC cameras (USB video class) are USB-powered devices that incorporate standard video streaming functionality and connect seamlessly with host machines (makes sense because of the USB which would mean no additional drivers). In my case, it's the latest version -- 1.5
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/usv_blockdiag.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/uvc_blockdiag.png" style="max-width: 100%; height: auto;">
 </div>
 
 
