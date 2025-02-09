@@ -45,3 +45,5 @@ $$
 For a CCD camera, the intrinsic matrix has the above general form, where $\alpha_x$ and $\alpha_y$ represent the focal distance 𝑓 expressed in pixel dimensions along the two axes and the $(𝑥_P , 𝑦_P)$ pair represent the image plane coordinates of the principal point, also expressed in pixel dimensions.
 
 Due to the projective transformation, given a point in the image, we cannot determine the one point that has produced it, but only a ray on which the original point is found. This is also apparent in First Figure as any point on ray $d$ would have produced the same projected point in the image plane. Thus, in order to find the coordinates of a point $M_w$ more information is needed. For example, if it were known that the original point is found on a certain plane, the intersection between the line on which the point is found and said plane will yield the original point.
+
+I have a code that detects and ArUco marker and draws the axis coordinates on the image through `rosrun rqt_image_view rqt_image_view /colordetection`. Also, by using the presented algorithm, I can detect it's real-life coordinates.
