@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/rodrigues.md",
+                "file": "content/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "rodrigues"
+              "title": "index"
             }
           }
         ]
@@ -178,8 +178,8 @@
   },
   "active": "936fc014d79b4b21",
   "lastOpenFiles": [
-    "content/notes/system monotonic clock.md",
     "content/notes/rodrigues.md",
+    "content/notes/system monotonic clock.md",
     "content/notes/UVC Video Stream.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_pointersAndArrays.md",

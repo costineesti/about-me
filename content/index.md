@@ -90,6 +90,7 @@ You can find me @:
 
 >[!hint] Most of my time goes into...
 > - Improving this site by uploading my knowledge and making sure I fill it with every note I have,
+> - SeaClear - an EU funded project which should remove marine litter. I am in charge of calibrating a new camera and achieving Visual Mapping based on it.
 > - focusing on AI/ML and Data Science MSc's,
 > - Learning ML,
 > - Learning AI.
