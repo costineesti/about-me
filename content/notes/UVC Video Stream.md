@@ -19,5 +19,5 @@ UVC cameras (USB video class) are USB-powered devices that incorporate standard 
     <img src="../static/notes/uvc_blockdiag.png" style="max-width: 100%; height: auto;">
 </div>
 
-
+Need to check this for my ArduCam: https://docs.arducam.com/USB-Industrial-Camera/USB3.0-Camera-Shield-Plus/The-Guide-to-Hardware-Timestamp/#31-geting-the-current-timestamp-using-c
 
