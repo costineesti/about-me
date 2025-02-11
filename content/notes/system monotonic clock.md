@@ -19,6 +19,7 @@ From ChatGPT: This suggests that the camera uses a **monotonic clock (CLOCK_MONO
 * This means I need to compute the time offset between these two clocks for accurate sync and add it to camera's clock.
 
 >[!warning] MUST DO: Check on a dual-boot laptop with native ubuntu if the timestamps still start from 0 when starting the camera.
+>Yes it does, the system boots so the clock does as well. Only ROS has a reference to unix time.
 
 ### Solution
 
