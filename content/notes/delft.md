@@ -34,7 +34,7 @@ tags:
 	- A photocopy of the page(s) of your valid passport that give your name, date of birth, place of birth and the passport expiration date or a photocopy of your valid European ID card (both sides). 
 	- To be able to enrol your passport/ID card must be valid until at least the start of the academic year (1st of September).
 
-- ❌**Reference Letters**
+- ✅Reference Letters**
 	- Two reference letters in either English or Dutch. These letters must be:
 		- from either a previous professor or assistant professor. If you have work experience, one of these letters may be from your employer.
 		- preferably written on the official letterhead /have the official stamp of the university or company.
