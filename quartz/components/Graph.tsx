@@ -29,7 +29,7 @@ const defaultOptions: GraphOptions = {
   localGraph: {
     drag: true,
     zoom: true,
-    depth: -1,
+    depth: document.body.dataset.slug === "index" ? -1 : 1, // Show full graph only on index
     scale: 1.1,
     repelForce: 0.5,
     centerForce: 0.3,
@@ -38,12 +38,12 @@ const defaultOptions: GraphOptions = {
     opacityScale: 1,
     showTags: true,
     removeTags: [],
-    focusOnHover: false,
+    focusOnHover: document.body.dataset.slug === "index" ? true : false, // Enable hover focus only on index
   },
   globalGraph: {
     drag: true,
     zoom: true,
-    depth: -1,
+    depth: -1, // Always show everything in the global graph
     scale: 0.9,
     repelForce: 0.5,
     centerForce: 0.3,
