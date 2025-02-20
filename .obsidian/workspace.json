@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7bc19c5ceddf15f6",
+        "id": "4804e83b4dca86d2",
         "type": "tabs",
         "children": [
           {
-            "id": "5a723978180fe588",
+            "id": "e1f47a65b1fbbbf0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -176,9 +176,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5a723978180fe588",
+  "active": "e1f47a65b1fbbbf0",
   "lastOpenFiles": [
+    "content/projects/visual-odom.md",
+    "content/projects/Proportional-Derivative.md",
+    "content/projects/Kalman Filter.md",
+    "content/projects/Analysis and Prediction of Stock Market.md",
+    "content/notes/principal_component_analysis.md",
     "content/projects/Gaussian distribution.md",
+    "quartz/static/notes/barchart.png",
+    "content/projects/Bachelors.md",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/camera backward projection.md",
     "content/notes/camera calibration.md",
@@ -186,7 +193,6 @@
     "content/notes/rodrigues.md",
     "content/notes/LSTM.md",
     "content/notes/cppbasics.md",
-    "content/projects/Analysis and Prediction of Stock Market.md",
     "quartz/static/notes/STAS.png",
     "quartz/static/notes/PCA.png",
     "quartz/static/notes/backprop.png",
@@ -196,11 +202,9 @@
     "quartz/static/notes/lr_loss.png",
     "quartz/static/notes/predict.png",
     "quartz/static/notes/resp_lr.png",
-    "quartz/static/notes/train.png",
     "content/projects/Linear Regression.md",
     "content/notes/ros_architecture.md",
     "content/notes/rtsp.md",
-    "content/projects/Bachelors.md",
     "content/notes/delft.md",
     "content/index.md",
     "content/notes/system monotonic clock.md",
@@ -210,10 +214,6 @@
     "content/notes/LU Decomposition.md",
     "content/notes/mlapp_regression.md",
     "content/notes/numerical_methods.md",
-    "content/notes/pinhole camera model.md",
-    "content/notes/principal_component_analysis.md",
-    "content/notes/ros_basics.md",
-    "content/notes/Shunting yard algorithm.md",
     "Untitled.canvas",
     "content/notes",
     "content/projects",

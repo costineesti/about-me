@@ -14,11 +14,11 @@ This project includes:
 
 - Loading and fetching stock prices from a `.txt` file into a database using **MySQL**.
 
-- Division of the stock into specific quarters and viewing their trend through **[[mlapp_regression]]** (rising or falling).
+- Division of the stock into specific quarters and viewing their trend through **[[mlapp_regression|Linear Regression]]** (rising or falling).
 
-- Implementation of **[[principal_component_analysis]]** from scratch for full comprehension of the subject.
+- Implementation of **[[principal_component_analysis|Principal Component Analysis]]** from scratch for full comprehension of the subject.
 
-- Applying an advanced Machine Learning algorithm to predict future stock prices -- **[[LSTM]]**.
+- Applying an advanced Machine Learning algorithm to predict future stock prices -- **[[LSTM|Long Short-Term Memory]]**.
 
 
 ## Data Set
@@ -39,9 +39,8 @@ INSERT INTO stocks (ticker, date, open_price, high_price, low_price, close_price
 
 For the methods to work, the data had to be normalized (for some reason, standardization would introduce nonlinearities). The date was converted into numerical input and subtracted with the minimum value.
 
-
 $$
-x_{normalized} = \frac{x - x_{min}}{x_{max} - x_{min}}
+x_{normalized} = \frac{x - x_{min}}{x_{max} - x_{min}}
 $$
 
 
@@ -60,7 +59,7 @@ Where:
 For standardization:
 
 $$
-Z = \frac{X - \mu}{\sigma}
+Z = \frac{X - \mu}{\sigma}
 $$
 
 Where:
@@ -131,7 +130,7 @@ $$
 - Compute gradients and update weights:
 
 $$
-w = w - learning_rate \cdot gradients
+w = w - learning\_rate \cdot gradients
 $$
 
 1. **Output:**
@@ -177,7 +176,7 @@ $$
 3. **Compute Covariance Matrix:**
 
 $$
-cov(x_1, x_2) = rac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
+cov(x_1, x_2) = \frac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
 $$
 
 4. **Compute Eigenvalues and Eigenvectors:**
@@ -203,7 +202,7 @@ LSTM is a sequential NN that excels in capturing long-term dependencies and is i
 
   
 
-![LSTM](../static/notes/LSTM_architecture.png)
+![LSTM](../static/notes/LSTM_Architecture.png)
 
   
 
