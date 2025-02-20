@@ -135,13 +135,15 @@ $$
 
   
 
-Comparison of my implementation with `sklearn`:
+To confirm both methods, I compared them with the STAS Linear Regression implementation from `sklearn`:
 
   
 
 ![Evaluation](../static/notes/resp_lr.png)
 
-  
+
+			    Error of my custom implementation: 0.633773484916956
+			    Error of STAS implementation: 0.6337734849169716
 
 Loss function evolution over 700 iterations:
 
@@ -149,6 +151,9 @@ Loss function evolution over 700 iterations:
 
 ![Loss Evolution](../static/notes/lr_loss.png)
 
+![LINREG2](../static/notes/linreg2.png)
+
+![STAS](../static/notes/STAS.png)
   
 
 ## Principal Component Analysis (PCA)
@@ -188,7 +193,7 @@ $$
 $$
 
 Solving this equation provides the eigenvalues λ , which are then used to compute the
-eigenvectors. I computed them through [[QR Defactorization]] using the Householder
+eigenvectors. I computed them through [[QR Decomposition]] using the Householder
 Method from scratch
 
 
