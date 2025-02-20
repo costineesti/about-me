@@ -40,7 +40,7 @@ INSERT INTO stocks (ticker, date, open_price, high_price, low_price, close_price
 For the methods to work, the data had to be normalized (for some reason, standardization would introduce nonlinearities). The date was converted into numerical input and subtracted with the minimum value.
 
 $$
-x_{normalized} = \frac{x - x_{min}}{x_{max} - x_{min}}
+x_{normalized} = \frac{x - x_{min}}{x_{max} - x_{min}}
 $$
 
 
@@ -124,7 +124,7 @@ $$
 - Compute cost function (MSE):
 
 $$
-J = rac{1}{2m} \sum (predictions - y)^2
+J = \frac{1}{2m} \sum (predictions - y)^2
 $$
 
 - Compute gradients and update weights:
@@ -176,7 +176,7 @@ $$
 3. **Compute Covariance Matrix:**
 
 $$
-cov(x_1, x_2) = \frac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
+cov(x_1, x_2) = \frac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
 $$
 
 4. **Compute Eigenvalues and Eigenvectors:**
