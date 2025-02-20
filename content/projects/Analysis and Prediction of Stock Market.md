@@ -40,42 +40,38 @@ INSERT INTO stocks (ticker, date, open_price, high_price, low_price, close_price
 For the methods to work, the data had to be normalized (for some reason, standardization would introduce nonlinearities). The date was converted into numerical input and subtracted with the minimum value.
 
 
+$$
+x_{normalized} = \frac{x - x_{min}}{x_{max} - x_{min}}
+$$
 
-```math
-
-x_{normalized} = rac{x - x_{min}}{x_{max} - x_{min}}
-
-```
 
 Where:
 
-- \(x\): the original value of the variable,
+- $x$: the original value of the variable,
 
-- \(x_{min}\): the minimum value in the dataset for the variable,
+- $x_{min}$: the minimum value in the dataset for the variable,
 
-- \(x_{max}\): the maximum value in the dataset for the variable,
+- $x_{max}$: the maximum value in the dataset for the variable,
 
-- \(x_{normalized}\): the normalized value, scaled between 0 and 1.
+- $x_{normalized}$: the normalized value, scaled between 0 and 1.
 
   
 
 For standardization:
 
-```math
-
-Z = rac{X - \mu}{\sigma}
-
-```
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
 
 Where:
 
-- \(X\) is the original value,
+- $X$ is the original value,
 
-- \(\mu\) is the mean of the data,
+- $\mu$ is the mean of the data,
 
-- \(\sigma\) is the standard deviation of the data,
+- $\sigma$ is the standard deviation of the data,
 
-- \(Z\) is the standardized value.
+- $Z$ is the standardized value.
 
   
 
@@ -90,25 +86,23 @@ When there is only one independent feature, it is known as **Simple Linear Regre
 
 Linear regression asserts that the response is a linear function of the inputs:
 
-```math
-
+$$
 y(x) = w^T x + \epsilon = \sum_{j=1}^{D} w_j x_j + \epsilon
-
-```
+$$
 
 Where:
 
-- \(w^T x\) represents the inner or scalar product between the input vector \(x\) and the model's weight vector \(w\),
+- $w^T x$ represents the inner or scalar product between the input vector $x$ and the model's weight vector $w$,
 
-- \(\epsilon\) is the residual error between our linear predictions and the true response,
+- $\epsilon$ is the residual error between our linear predictions and the true response,
 
-- \(y\) is the output or target variable (often the `close_price` column).
+- $y$ is the output or target variable (often the `close_price` column).
 
   
 
 ### Linear Regression through Gradient Descent
 
-The algorithm optimizes the model’s weights \(w\) to minimize the **Mean Squared Error (MSE)** between the predicted values and the actual target values.
+The algorithm optimizes the model’s weights $w$ to minimize the **Mean Squared Error (MSE)** between the predicted values and the actual target values.
 
   
 
@@ -116,7 +110,7 @@ The key steps of the method are:
 
 1. **Initialization:**
 
-- The number of coefficients \(w\) is determined based on the number of features in \(X\).
+- The number of coefficients $w$ is determined based on the number of features in $X$.
 
 - The coefficients are initialized to zero.
 
@@ -124,27 +118,21 @@ The key steps of the method are:
 
 - Predict target values using current weights:
 
-```math
-
+$$
 predictions = X \cdot w
-
-```
+$$
 
 - Compute cost function (MSE):
 
-```math
-
+$$
 J = rac{1}{2m} \sum (predictions - y)^2
-
-```
+$$
 
 - Compute gradients and update weights:
 
-```math
-
+$$
 w = w - learning_rate \cdot gradients
-
-```
+$$
 
 1. **Output:**
 
@@ -176,11 +164,9 @@ PCA is a statistical technique used to reduce the dimensionality of a dataset wh
 
 **Optimization problem:**
 
-```math
-
+$$
 \max \sum_i (x_i^T u)^2
-
-```
+$$
 
   
 
@@ -190,21 +176,16 @@ PCA is a statistical technique used to reduce the dimensionality of a dataset wh
 
 3. **Compute Covariance Matrix:**
 
-```math
-
+$$
 cov(x_1, x_2) = rac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
-
-```
+$$
 
 4. **Compute Eigenvalues and Eigenvectors:**
 
-```math
-
+$$
 \det(A - \lambda I) = 0
+$$
 
-```
-
-  
 
 93.47% of information was retained after removing Volume.
 
@@ -212,53 +193,43 @@ cov(x_1, x_2) = rac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
 
 ![PCA Bar Chart](../static/notes/barchart.png)
 
-  
+![PCA Graph](../static/notes/PCA.png)
 
 ## Long Short-Term Memory (LSTM)
 
 LSTM is a sequential NN that excels in capturing long-term dependencies and is ideal for sequence prediction tasks.
 
-  
-
 ### LSTM Architecture
 
   
 
-![LSTM](../static/notes/lstm_architecture.png)
+![LSTM](../static/notes/LSTM_architecture.png)
 
   
 
 - **Forget Gate:**
 
-```math
-
+$$
 F_t = \sigma(W_f Z_t + b_f)
-
-```
+$$
 
 - **Candidate Gate:**
 
-```math
-
+$$
 C_t = anh(W_c Z_t + b_c)
-
-```
+$$
 
 - **Input Gate:**
 
-```math
-
+$$
 I_t = \sigma(W_i Z_t + b_i)
-
-```
+$$
 
 - **Output Gate:**
 
-```math
-
+$$
 O_t = \sigma(W_o Z_t + b_o)
-
-```
+$$
 
   
 
