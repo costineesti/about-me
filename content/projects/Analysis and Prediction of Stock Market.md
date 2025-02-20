@@ -11,16 +11,15 @@ Code: [ML101](https://github.com/costineesti/ML101)
 
 I am very passionate about stock movement, being a beginner investor myself, and my motivation was to make a Machine Learning application that could **analyze** current stock prices and **predict** their future.
 
-This project includes:
-
-- Loading and fetching stock prices from a `.txt` file into a database using **MySQL**.
-
-- Division of the stock into specific quarters and viewing their trend through **[[mlapp_regression|Linear Regression]]** (rising or falling).
-
-- Implementation of **[[principal_component_analysis|Principal Component Analysis]]** from scratch for full comprehension of the subject.
-
-- Applying an advanced Machine Learning algorithm to predict future stock prices -- **[[LSTM|Long Short-Term Memory]]**.
-
+>[!NOTE] This project includes:
+>
+>- Loading and fetching stock prices from a `.txt` file into a database using **MySQL**.
+>
+>- Division of the stock into specific quarters and viewing their trend through **[[mlapp_regression|Linear Regression]]** (rising or falling).
+>
+>- Implementation of **[[principal_component_analysis|Principal Component Analysis]]** from scratch for full comprehension of the subject.
+>
+>- Applying an advanced Machine Learning algorithm to predict future stock prices -- **[[LSTM|Long Short-Term Memory]]**.
 
 ## Data Set
 
@@ -78,10 +77,6 @@ Where:
 ## Linear Regression
 
 When there is only one independent feature, it is known as **Simple Linear Regression**, and when there are more than one feature, it is known as **Multiple Linear Regression**.
-
-
-![Linear Regression](../static/notes/mlapp_regression.png)
-
   
 
 Linear regression asserts that the response is a linear function of the inputs:
@@ -178,15 +173,15 @@ $$
 
 **Steps to Perform PCA:**
 
-4. **Standardization** - Ensures mean 0 and variance 1.
+1. **Standardization** - Ensures mean 0 and variance 1.
 
-5. **Compute Covariance Matrix:** The covariance matrix captures the linear relationship between the variables. It can be computed using the formula:
+2. **Compute Covariance Matrix:** The covariance matrix captures the linear relationship between the variables. It can be computed using the formula:
 
 $$
 cov(x_1, x_2) = \frac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
 $$
 
-6. **Compute Eigenvalues and Eigenvectors:** 
+3. **Compute Eigenvalues and Eigenvectors:** 
 
 $$
 \det(A - \lambda I) = 0
@@ -211,13 +206,8 @@ critical information – about 93.47%
 
 It is a sequential NN (type of RNN) that allows information to persist over long periods of time. It is a good solution to RNN which would either explode or vanish in the Gradient Descent phase. What I mean by that is that a weight to any power, be it either 0.5 or 2 would either get super close to 0 or to $\infty$. It excels in capturing long-term dependencies (like remembering the chapter 1 from a book) and is ideal for sequence predictions tasks.
 
-### LSTM Architecture
+### LSTM Forward Propagation Through Gates
 
-  
-
-![LSTM](../static/notes/LSTM_Architecture.png)
-
-  
 
 - **Forget Gate:**
 
@@ -244,7 +234,6 @@ O_t = \sigma(W_o Z_t + b_o)
 $$
 
   
-
 ### Back Propagation
 
 To learn and compute better weights and biases, the neural network does that through back propagation. It basically computes the partial derivatives (gradients) of the output from each gate to it's inputs. That way, it multiplies the results through the learning rate $\eta$ and updates the new set of parameters for the next prediction.
