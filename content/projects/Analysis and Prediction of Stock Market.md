@@ -3,6 +3,7 @@ title: Analysis and Prediction of Stock Market
 draft: false
 tags:
   - ML
+  - projects
 ---
 
 Code: [ML101](https://github.com/costineesti/ML101)
@@ -133,7 +134,7 @@ $$
 w = w - learning\_rate \cdot gradients
 $$
 
-1. **Output:**
+3. **Output:**
 
 - Return the final predictions and the loss history.
 
@@ -157,11 +158,17 @@ Loss function evolution over 700 iterations:
 
 ## Principal Component Analysis (PCA)
 
-PCA is a statistical technique used to reduce the dimensionality of a dataset while preserving most of the information.
+PCA can be framed as an optimization problem, where the goal is to maximize the
+amount of information captured by the projected data. For example, when projecting a
+data point x onto a unit vector u, the resulting projection x′ has the magnitude:
 
-  
+$$
+x' = (x^T u) u
+$$
 
-**Optimization problem:**
+If $u^T u$ = 1 and $(x_i^Tu)^2$ represents the amount of information stored about the point $x_i$, the
+optimization problem to solve is:
+
 
 $$
 \max \sum_i (x_i^T u)^2
@@ -171,22 +178,28 @@ $$
 
 **Steps to Perform PCA:**
 
-2. **Standardization** - Ensures mean 0 and variance 1.
+4. **Standardization** - Ensures mean 0 and variance 1.
 
-3. **Compute Covariance Matrix:**
+5. **Compute Covariance Matrix:** The covariance matrix captures the linear relationship between the variables. It can be computed using the formula:
 
 $$
 cov(x_1, x_2) = \frac{\sum (Z_i - \mu)(Z_i - \mu)^T}{n-1}
 $$
 
-4. **Compute Eigenvalues and Eigenvectors:**
+6. **Compute Eigenvalues and Eigenvectors:** 
 
 $$
 \det(A - \lambda I) = 0
 $$
 
+Solving this equation provides the eigenvalues λ , which are then used to compute the
+eigenvectors. I computed them through [[QR Defactorization]] using the Householder
+Method from scratch
 
-93.47% of information was retained after removing Volume.
+
+By following these steps, PCA identifies the directions (principal components) that
+maximize the variance in the data, thereby reducing its dimensionality while preserving
+critical information – about 93.47%
 
   
 
@@ -196,7 +209,7 @@ $$
 
 ## Long Short-Term Memory (LSTM)
 
-LSTM is a sequential NN that excels in capturing long-term dependencies and is ideal for sequence prediction tasks.
+It is a sequential NN (type of RNN) that allows information to persist over long periods of time. It is a good solution to RNN which would either explode or vanish in the Gradient Descent phase. What I mean by that is that a weight to any power, be it either 0.5 or 2 would either get super close to 0 or to $\infty$. It excels in capturing long-term dependencies (like remembering the chapter 1 from a book) and is ideal for sequence predictions tasks.
 
 ### LSTM Architecture
 
@@ -234,7 +247,7 @@ $$
 
 ### Back Propagation
 
-Neural networks compute gradients and update weights using backpropagation.
+To learn and compute better weights and biases, the neural network does that through back propagation. It basically computes the partial derivatives (gradients) of the output from each gate to it's inputs. That way, it multiplies the results through the learning rate $\eta$ and updates the new set of parameters for the next prediction.
 
   
 
@@ -242,7 +255,7 @@ Neural networks compute gradients and update weights using backpropagation.
 
   
 
-**Testing and Training:**
+**Testing and Training:** To test and train the network, I split the data in a $75\%$ training set and a $25\%$ validation set.
 
   
 
@@ -250,7 +263,7 @@ Neural networks compute gradients and update weights using backpropagation.
 
   
 
-**Predicting Future Prices:**
+**Predicting Future Prices:** I would also try and predict the future prices for a set number of days.
 
   
 
