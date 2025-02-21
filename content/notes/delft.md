@@ -1,10 +1,10 @@
 ---
-title: Delft
+title: European Master's
 draft: false
 tags:
 ---
  
-### Requirements Delft TU MsC - Data Engineering and Artificial Intelligence
+### Requirements Delft TU/ TU/e Twente MsC - Data Engineering and Artificial Intelligence
 
 [Link to everything!](https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma)
 
@@ -40,7 +40,7 @@ tags:
 		- preferably written on the official letterhead /have the official stamp of the university or company.
 		- signed by the referee and include your complete name.
 
-- ❌**GRE**
+- ❌**GRE** ( only at Delft )
 	- Applicants applying for the following MSc programmes are required to take the GRE revised General Test, either taken at the Test centre or by Home Edition, and upload their results in TU Delft’s application portal.
 	- When registering for the test:
 		- Indicate TU Delft’s institutional code, 3823.

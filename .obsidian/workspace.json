@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/projects/Analysis and Prediction of Stock Market.md",
+                "file": "content/notes/delft.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Analysis and Prediction of Stock Market"
+              "title": "delft"
             }
           }
         ],
@@ -193,10 +193,10 @@
   },
   "active": "063046a39b74f4c0",
   "lastOpenFiles": [
+    "content/projects/Analysis and Prediction of Stock Market.md",
     "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
     "content/projects/Kalman Filter.md",
-    "content/projects/Analysis and Prediction of Stock Market.md",
     "content/notes/principal_component_analysis.md",
     "content/projects/Gaussian distribution.md",
     "quartz/static/notes/barchart.png",
