@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/delft.md",
+                "file": "content/notes/UVC Video Stream.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "delft"
+              "title": "UVC Video Stream"
             }
           }
         ],
@@ -193,6 +193,13 @@
   },
   "active": "063046a39b74f4c0",
   "lastOpenFiles": [
+    "Stream.md",
+    "Video",
+    "content/notes/UVC",
+    "content/notes/quartz.layout.ts",
+    "content/notes/Stream.md",
+    "content/notes/Video",
+    "content/notes/delft.md",
     "content/projects/Analysis and Prediction of Stock Market.md",
     "content/projects/visual-odom.md",
     "content/projects/Proportional-Derivative.md",
@@ -220,25 +227,18 @@
     "content/projects/Linear Regression.md",
     "content/notes/ros_architecture.md",
     "content/notes/rtsp.md",
-    "content/notes/delft.md",
     "content/index.md",
     "content/notes/system monotonic clock.md",
     "content/notes/UVC Video Stream.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_pointersAndArrays.md",
     "content/notes/LU Decomposition.md",
-    "content/notes/mlapp_regression.md",
-    "content/notes/numerical_methods.md",
     "Untitled.canvas",
     "content/notes",
     "content/projects",
     "content",
     "public/postscript.js",
     "public/index.css",
-    "public/prescript.js",
-    "public/projects/Gaussian-distribution.html",
-    "public/projects/Bachelors.html",
-    "public/projects",
-    "public/projects/visual-odom.html"
+    "public/prescript.js"
   ]
 }

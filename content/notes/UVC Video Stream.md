@@ -21,3 +21,9 @@ UVC cameras (USB video class) are USB-powered devices that incorporate standard 
 
 Need to check this for my ArduCam: https://docs.arducam.com/USB-Industrial-Camera/USB3.0-Camera-Shield-Plus/The-Guide-to-Hardware-Timestamp/#31-geting-the-current-timestamp-using-c
 
+https://github.com/raspberrypi/picamera2/issues/703
+
+https://forums.raspberrypi.com/viewtopic.php?t=169081#p1086515
+
+Picamera2 may only work on raspberry pi, but libcamera should be just fine on Linux. I also read that libcamera would be a continuation of v4l2.
+
