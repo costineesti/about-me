@@ -38,17 +38,17 @@ UVC cameras (USB video class) are USB-powered devices that incorporate standard 
 Apparently, it works through 4 buffers which ensures they exist and are properly mapped. It also allows continuous metadata streaming without data loss (in the image above, there is no jump in sequences.)
 
 >[!question] What would happen if it only used 1 buffer?
->**Higher risk of missing timestamps** if a buffer isn’t dequeued fast enough.
->**Less efficient metadata streaming**, since the camera waits for a free buffer.
->**More CPU overhead**, as you must dequeue/requeue a buffer as fast as possible.
+>* **Higher risk of missing timestamps** if a buffer isn’t dequeued fast enough.
+>* **Less efficient metadata streaming**, since the camera waits for a free buffer.
+>*  **More CPU overhead**, as you must dequeue/requeue a buffer as fast as possible.
 
 ### Converting to wall time
 
 The stream is operated by my operating system and as it is an USB Camera, it follows the internal clock of the host machine (in my case -- Ubuntu on my VM). 
 
 >[!NOTE] Must Consider
->The metadata timestamp is **monotonic** (starts from boot and is unaffected by system time adjustments).
->System time is **wall-clock** time(UTC-based). 
+>* The metadata timestamp is **monotonic** (starts from boot and is unaffected by system time adjustments).
+>* System time is **wall-clock** time(UTC-based). 
 
 ![difference_in_timestamps](../static/notes/comparison_timestamps.png)
 
