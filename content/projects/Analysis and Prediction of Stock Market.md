@@ -200,7 +200,6 @@ Method from scratch
 By following these steps, PCA identifies the directions (principal components) that
 maximize the variance in the data, thereby reducing its dimensionality while preserving
 critical information – about 93.47%
-
   
 
 ![PCA Bar Chart](../static/notes/barchart.png)
