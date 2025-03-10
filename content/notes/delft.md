@@ -16,9 +16,7 @@ tags:
 	- You will receive an admission decision within 12 weeks following receipt of your complete application.
 	- Certificates that are older than two years on the day you have uploaded the document and completed your application are not accepted.
 
-- ✅**A 4 year Diplomă de Inginer** or a minimum 3 year Diplomă de Licenţă with a final cumulative grade point average (CGPA) of 8.0/10 or better. 
-
-- ✅**Diploma** 
+- ✅**A 4 year Diplomă de Inginer** or a minimum 3 year Diplomă de Licenţă with a final cumulative grade point average (CGPA) of 8.0/10 or better.
 
 - ✅**Motivation Letter** - A clear and relevant essay in English (1,000 – 1,500 words) addressing the following:
 	- Your motivation for choosing this MSc programme,
@@ -34,7 +32,7 @@ tags:
 	- A photocopy of the page(s) of your valid passport that give your name, date of birth, place of birth and the passport expiration date or a photocopy of your valid European ID card (both sides). 
 	- To be able to enrol your passport/ID card must be valid until at least the start of the academic year (1st of September).
 
-- ✅Reference Letters**
+- ✅**Reference Letters**
 	- Two reference letters in either English or Dutch. These letters must be:
 		- from either a previous professor or assistant professor. If you have work experience, one of these letters may be from your employer.
 		- preferably written on the official letterhead /have the official stamp of the university or company.
