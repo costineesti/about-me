@@ -64,6 +64,7 @@ I will point the camera at my monitor and record the [unix timestamp](https://ww
 
 >[!CAUTION] Conversation between me and my prof
 >Me: I wonder why there is a constant delay of ~100[ms]
+>
 >Prof: idk, because the Universe is never precise?
 >
 >He's such a diva
