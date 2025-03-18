@@ -42,7 +42,7 @@ const defaultOptions: GraphOptions = {
   },
   globalGraph: {
     drag: true,
-    zoom: true,
+    zoom: false,
     depth: -1, // Always show everything in the global graph
     scale: 0.9,
     repelForce: 0.5,
@@ -64,7 +64,7 @@ export default ((opts?: GraphOptions) => {
       <div class={classNames(displayClass, "graph")}>
         <h3>{i18n(cfg.locale).components.graph.title}</h3>
         <div class="graph-outer">
-          <div id="graph-container" data-cfg={JSON.stringify(localGraph)}></div>
+          <div id="graph-container" data-cfg={JSON.stringify(globalGraph)}></div>
           <svg
             version="1.1"
             id="global-graph-icon"
