@@ -57,3 +57,13 @@ As mentioned in [[system monotonic clock]], I need to compute a `Offset = CLOCK_
 ### How do I test all this?
 
 I will point the camera at my monitor and record the [unix timestamp](https://www.unixtimestamp.com). I will include the video in a rosbag with the timestamps assigned to each frame and see if there is significant drift.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/test_timestamp.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!CAUTION] Conversation between me and my prof
+>Me: I wonder why there is a constant delay of ~100[ms]
+>Prof: idk, because the Universe is never precise?
+>
+>He's such a diva
