@@ -4,7 +4,8 @@ draft: false
 tags:
   - "#SeaClear"
 ---
- 
+Everything I do inside this project is out of passion and constant drive to learn from professionals.
+
  We are building the first robots to clean the litter from the ocean floor. It is an EU funded project and I'm contributing through Technical University of Cluj-Napoca.
  
 >[!NOTE] MISSION

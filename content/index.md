@@ -81,17 +81,17 @@ You can find me @:
 
 >[!NOTE] Some emphasis on my projects
 >
->These notes are primarily written with the goal of creating a vault where I can always find my most important [[projects]]. Therefore, they are filled with **MY** information and if you find something that's off; please contact me and I will change it right away.
+>These notes are primarily written with the goal of creating a vault where I can always find my most important <a href="/projects/">projects</a> and <a href="/notes/">notes</a> . Therefore, they are filled with **MY** dumb humour. If you find a link that doesn't work, it's probably just for looks. Please contact me if you ever want to pass on a message :)
 
 ### What I've worked on in the past
 
 * I've been a Software Engineer at Bosch for the past 3 years in the Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
 * My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
-* [[Analysis and Prediction of Stock Market]] where I improved my knowledge of ML and AI, having implemented all the algorithms from scratch ([[principal_component_analysis|PCA]], [[LSTM]], Gradient Descent, [[QR Decomposition]])
+* [[Analysis and Prediction of Stock Market]] where I improved my knowledge of ML and AI, having implemented all the algorithms from scratch ([[principal_component_analysis|PCA]], [[LSTM]], Gradient Descent, [[QR Decomposition]]).
 
 ### What I'm currently working on
 
 >[!hint] Most of my time goes into...
-> - [[SeaClear]] - an EU funded project which should remove marine litter. I calibrated a camera and extracted it's raw timestamps to integrate with other sensors. Now I'm working on deducing displacement (**VSLAM**)
+> - [[seaclear|SeaClear]] - an EU funded project which should remove marine litter. My solutions are mostly needed in weeks or months. Now I'm working on deducing displacement (**VSLAM**). All in my free time and out of passion and drive to learn.
 > - Implementing ML from scratch,
 > - Implementing AI from scratch.

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f34e1d7a14a990b9",
+        "id": "d94c023dfd770953",
         "type": "tabs",
         "children": [
           {
-            "id": "20944a4e4f1e85b9",
+            "id": "b5e2b5b09af6b465",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -176,11 +176,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "20944a4e4f1e85b9",
+  "active": "b5e2b5b09af6b465",
   "lastOpenFiles": [
     "content/index.md",
-    "content/PCA.md",
+    "projects.md",
+    "content/projects.md",
     "content/seaclear.md",
+    "content/PCA.md",
     "content/notes/rodrigues.md",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/camera backward projection.md",
@@ -204,8 +206,6 @@
     "content/notes/quartz.layout.ts",
     "content/notes/principal_component_analysis.md",
     "content/notes/pinhole camera model.md",
-    "content/notes/numerical_methods.md",
-    "content/notes/mlapp_regression.md",
     "content/notes/Video",
     "content/notes/UVC",
     "content/projects",
