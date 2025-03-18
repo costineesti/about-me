@@ -8,7 +8,7 @@ tags:
  
 Sources: [1](https://www.youtube.com/watch?v=-TUTqVOGSa8&list=PLbMVogVj5nJSyt80VRXYC-YrAvQuUb6dh&index=15) [2](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula) [3](https://stevengong.co/notes/Axis-Angle-Representation)
 
-I stumbled upon this when checking my [[camera calibration]]. I could see that depending on the angle of the camera upon the X axis, a stationary ArUco mark would fluctuate a lot on it's Z-axis position. This is related to [[camera backward projection]]. 
+I stumbled upon this when checking my [[camera calibration]]. I could see that depending on the angle of the camera upon the X axis, a stationary ArUco mark would fluctuate a lot on it's Z-axis position. This is related to [[camera backward projection]], [[seaclear|SeaClear]]. 
 
 The issue was fixed through Rodrigues' Rotation Formula in opencv:
 

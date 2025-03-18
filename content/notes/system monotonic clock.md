@@ -5,7 +5,7 @@ tags:
   - SeaClear
 ---
  
-My brain works so well during the night it's frightening. Related to [[UVC Video Stream]].
+My brain works so well during the night it's frightening. Related to [[UVC Video Stream]], [[seaclear|SeaClear]].
 
 >[!NOTE] Context:
 >I was calling `v4l2-ctl --device=/dev/video5 --stream-mmap --stream-count=0 --verbose` in Ubuntu to see my ArduCam's timestamps and I saw ts: ~30000. I tried to restart the camera and see if the timestamps would reset from 0 and it was not the case. That's when it struck me that it must be Ubuntu's internal clock since I run from a VM. I restarted Ubuntu and the timestamps also reset and started counting from 0.

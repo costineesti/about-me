@@ -9,8 +9,8 @@ title: Hello Hello, I'm Costin 😎
     <ul>
       <li><a href="/projects/Control Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li>
       <li>Python and C++</li>
-      <li>Robotics (Improving daily through my contribution in <a href="SeaClear">SeaClear</a>)</li>
-      <li>Automation, Mathematical Modelling, Optimizations</li>
+      <li>Robotics, Automation
+      <li>Mathematical Modelling, Optimizations</li>
       <li>Perception Algorithms</li>
     </ul>
   </div>
@@ -85,13 +85,13 @@ You can find me @:
 
 ### What I've worked on in the past
 
-* I've been an Software Engineer at Bosch for the past 3 years in the Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
-* I was a serious student in Uni (amongst the top) and I've really dedicated much time to learn the concepts that they were teaching me.
+* I've been a Software Engineer at Bosch for the past 3 years in the Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
 * My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
+* [[Analysis and Prediction of Stock Market]] where I improved my knowledge of ML and AI, having implemented all the algorithms from scratch ([[principal_component_analysis|PCA]], [[LSTM]], Gradient Descent, [[QR Decomposition]])
 
 ### What I'm currently working on
 
 >[!hint] Most of my time goes into...
-> - SeaClear - an EU funded project which should remove marine litter. I calibrated a camera and extracted it's raw timestamps to integrate with other sensors. Now I'm working on deducing displacement (**VSLAM**)
+> - [[SeaClear]] - an EU funded project which should remove marine litter. I calibrated a camera and extracted it's raw timestamps to integrate with other sensors. Now I'm working on deducing displacement (**VSLAM**)
 > - Implementing ML from scratch,
 > - Implementing AI from scratch.

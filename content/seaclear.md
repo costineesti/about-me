@@ -12,7 +12,7 @@ tags:
 >No solution exists that exploits autonomous robots for underwater litter collection. The SeaClear project will develop the first.
 
 >[!question] My contribution
->I joined in October 2024 and since then, I contributed in these topics:
+>I joined in October 2024 and so far, I contributed in these topics:
 >* [[system monotonic clock]]
 >* [[UVC Video Stream]]
 >* [[camera backward projection]]
