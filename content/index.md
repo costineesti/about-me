@@ -4,11 +4,14 @@ title: Hello Hello, I'm Costin 😎
 <div class="profile-section">
   <img src="static/pictures/beligool.jpg" alt="Profile Picture" class="profile-image">
   <div class="profile-text">
-    <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly and I want to dive deep into Machine Learning and AI this year.</p>
+    <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly by implementing things from scratch where I can but also shipping fast when needed.</p>
     <p>My expertise currently lies in:</p>
     <ul>
       <li><a href="/projects/Control Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li>
-      <li>I'm somewhat of an intermediate when it comes to <a href="/projects/robotics">robotics</a> (definitely working to improve).</li>
+      <li>Python and C++</li>
+      <li>Robotics (Improving daily through my contribution in <a href="SeaClear">SeaClear</a>)</li>
+      <li>Automation, Mathematical Modelling, Optimizations</li>
+      <li>Perception Algorithms</li>
     </ul>
   </div>
 </div>
@@ -82,15 +85,13 @@ You can find me @:
 
 ### What I've worked on in the past
 
-* I've been an intern at Bosch for 2 years in a Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
+* I've been an Software Engineer at Bosch for the past 3 years in the Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
 * I was a serious student in Uni (amongst the top) and I've really dedicated much time to learn the concepts that they were teaching me.
 * My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
 
 ### What I'm currently working on
 
 >[!hint] Most of my time goes into...
-> - Improving this site by uploading my knowledge and making sure I fill it with every note I have,
-> - SeaClear - an EU funded project which should remove marine litter. I am in charge of calibrating a new camera and achieving Visual Mapping based on it.
-> - focusing on AI/ML and Data Science MSc's,
-> - Learning ML,
-> - Learning AI.
+> - SeaClear - an EU funded project which should remove marine litter. I calibrated a camera and extracted it's raw timestamps to integrate with other sensors. Now I'm working on deducing displacement (**VSLAM**)
+> - Implementing ML from scratch,
+> - Implementing AI from scratch.
