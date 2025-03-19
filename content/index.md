@@ -4,7 +4,7 @@ title: Hello Hello, I'm Costin 😎
 <div class="profile-section">
   <img src="static/pictures/beligool.jpg" alt="Profile Picture" class="profile-image">
   <div class="profile-text">
-    <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly by implementing things from scratch where I can but also shipping fast when needed.</p>
+    <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly by implementing things from scratch as I can thoroughly understand the process.</p>
     <p>My expertise currently lies in:</p>
     <ul>
       <li><a href="/projects/Control Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li>
