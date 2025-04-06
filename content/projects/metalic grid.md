@@ -27,14 +27,14 @@ First I had to detect the grid. For the picture above, the boys lend me a GoPro 
 
 After applying the ROI, I had to emphasize the vertical and horizontal lines of the grid before applying a detection algorithm. To do that, I:
 
-	1) transformed the original frame into a gray image (`BGR2GRAY`)
-	2) applied a `Gaussian Blur` to remove the background noise
-	3) detected the edges of the frame through `Canny`
-	4) Apply Dilation and Erosion -- Morphological operations apply a structuring element to an input image and generate an output image. They help in:
-		* Removing noise,
-		* Isolation of individual elements and joining disparate elements in an image,
-		* Finding of intensity bumps or holes in an image.
-		For that, I used a kernel of $3 \times 3$
+1) transformed the original frame into a gray image (`BGR2GRAY`)
+2) applied a `Gaussian Blur` to remove the background noise
+3) detected the edges of the frame through `Canny`
+4) Apply Dilation and Erosion -- Morphological operations apply a structuring element to an input image and generate an output image. They help in:
+	* Removing noise,
+	* Isolation of individual elements and joining disparate elements in an image,
+	* Finding of intensity bumps or holes in an image.
+	For that, I used a kernel of $3 \times 3$
 
 ```python
 gray = cv2.cvtColor(roi_frame, cv2.COLOR_BGR2GRAY)
@@ -82,29 +82,28 @@ For simplicity of understanding, I decided to index the inner squares.
 ```python
 horizontal_lines, vertical_lines = sort_lsd_lines(filtered_lines)
 horizontal_lines_sorted = sorted(horizontal_lines, 
-								 key=lambda l: (l[0][1] + l[0][3]) / 2)
+key=lambda l: (l[0][1] + l[0][3]) / 2)
 vertical_lines_sorted = sorted(vertical_lines, 
-							   key=lambda l: (l[0][0] + l[0][2]) / 2)
-							   
+key=lambda l: (l[0][0] + l[0][2]) / 2)
+ 
 coord_frame_x, coord_frame_y = get_intersection_point(
-								horizontal_lines_sorted[-1], 
-								vertical_lines_sorted[-1])
+horizontal_lines_sorted[-1], 
+vertical_lines_sorted[-1])
 horizontal_y = simplify_lines(horizontal_lines, 
-							  axis='horizontal', 
-							  threshold=10)
+axis='horizontal', 
+threshold=10)
 vertical_x = simplify_lines(vertical_lines, 
-							axis='vertical', 
-							threshold=10)
-
+axis='vertical', 
+threshold=10)
+ 
 postprocessing_image = np.copy(roi_frame)
-squares_nbr = index_squares(postprocessing_image,
-							horizontal_y, 
-							vertical_x)
+squares_nbr = index_squares(postprocessing_image, 
+horizontal_y, 
+vertical_x)
 draw_coordinate_frame(postprocessing_image, 
-					  coord_frame_x, 
-					  coord_frame_y)
+coord_frame_x, 
+coord_frame_y)
 drawn = lsd.drawSegments(postprocessing_image, np.array(filtered_lines))
-
 cv2.imwrite('lsd.jpg', drawn)
 ```
 
