@@ -178,8 +178,9 @@
   },
   "active": "e9a66cc6ff141b15",
   "lastOpenFiles": [
-    "content/projects/visual-odom.md",
+    "content/notes/Line Segment Detector.md",
     "content/projects/metalic grid.md",
+    "content/projects/visual-odom.md",
     "content/projects/inertial-odom.md",
     "content/projects/Proportional-Derivative.md",
     "content/projects/Loop Closure.md",
@@ -204,7 +205,6 @@
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_pointersAndArrays.md",
     "content/notes/cpp_nesting_cond_op.md",
-    "content/notes/cpp_extern.md",
     "content/notes/Video",
     "content/projects",
     "content/notes",

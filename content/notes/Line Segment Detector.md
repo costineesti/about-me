@@ -1,5 +1,5 @@
 ---
-title: Untitled
+title: Line Segment Detector
 draft: false
 tags:
   - "#SeaClear"

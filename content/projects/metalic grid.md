@@ -82,26 +82,26 @@ For simplicity of understanding, I decided to index the inner squares.
 ```python
 horizontal_lines, vertical_lines = sort_lsd_lines(filtered_lines)
 horizontal_lines_sorted = sorted(horizontal_lines, 
-					key=lambda l: (l[0][1] + l[0][3]) / 2)
+				key=lambda l: (l[0][1] + l[0][3]) / 2)
 vertical_lines_sorted = sorted(vertical_lines, 
-					key=lambda l: (l[0][0] + l[0][2]) / 2)
+				key=lambda l: (l[0][0] + l[0][2]) / 2)
  
 coord_frame_x, coord_frame_y = get_intersection_point(
 						horizontal_lines_sorted[-1], 
 						vertical_lines_sorted[-1])
 horizontal_y = simplify_lines(horizontal_lines, 
-						axis='horizontal', 
-						threshold=10)
+				axis='horizontal', 
+				threshold=10)
 vertical_x = simplify_lines(vertical_lines, 
-		axis='vertical', 
-		threshold=10)
+			axis='vertical', 
+			threshold=10)
  
 postprocessing_image = np.copy(roi_frame)
 squares_nbr = index_squares(postprocessing_image, 
 				horizontal_y, 
 				vertical_x)
-draw_coordinate_frame(postprocessing_image,
-			coord_frame_x,
+draw_coordinate_frame(postprocessing_image, 
+			coord_frame_x, 
 			coord_frame_y)
 
 drawn = lsd.drawSegments(postprocessing_image, np.array(filtered_lines))
