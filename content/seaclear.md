@@ -14,12 +14,13 @@ Everything I do inside this project is out of passion and constant drive to lear
 
 >[!question] My contribution
 >I joined in October 2024 and so far, I contributed in these topics:
->* [[system monotonic clock]]
+>* [[metalic grid|Computer Vision for detecting a Metallic Grid and a set reference]]
+>* [[system monotonic clock|System Monotonic Clock]]
 >* [[UVC Video Stream]]
->* [[camera backward projection]]
->* [[camera calibration]]
->* [[camera calibration and 3d recontruction]]
->* [[rodrigues]]
+>* [[camera backward projection|Camera Backward Projection]]
+>* [[camera calibration|Camera Calibration]]
+>* [[camera calibration and 3d recontruction|Camera Calibration and 3D Reconstruction]]
+>* [[rodrigues|Rodrigues' Rotation and Translation Angles]]
 
 >[!hint] Currently working on...
 > Determining the displacement relative to a reference point chosen on a metalic grid. I will fit a template on the grid and compute the distance to the reference.

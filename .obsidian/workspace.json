@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "50bb56ba52a4a085",
+        "id": "9373fed493fe2e29",
         "type": "tabs",
         "children": [
           {
-            "id": "e9a66cc6ff141b15",
+            "id": "465ecf3ac0ba49c5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/projects/metalic grid.md",
+                "file": "content/seaclear.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "metalic grid"
+              "title": "seaclear"
             }
           }
         ]
@@ -176,10 +176,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e9a66cc6ff141b15",
+  "active": "465ecf3ac0ba49c5",
   "lastOpenFiles": [
-    "content/notes/Line Segment Detector.md",
     "content/projects/metalic grid.md",
+    "content/seaclear.md",
+    "content/notes/Line Segment Detector.md",
     "content/projects/visual-odom.md",
     "content/projects/inertial-odom.md",
     "content/projects/Proportional-Derivative.md",
@@ -204,7 +205,6 @@
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_pointersAndArrays.md",
-    "content/notes/cpp_nesting_cond_op.md",
     "content/notes/Video",
     "content/projects",
     "content/notes",
