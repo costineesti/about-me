@@ -3,6 +3,7 @@ title: Real-Time Streaming Protocol
 draft: false
 tags:
   - notes
+  - SeaClear
 ---
  
 RTSP, the Real-Time Streaming Protocol, is a widley used and well supported
