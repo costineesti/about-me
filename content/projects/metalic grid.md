@@ -113,3 +113,4 @@ cv2.imwrite('lsd.jpg', drawn)
 </div>
 
 >[!question] Is it a good solution? We'll see what my professor has to say about it.
+>Little changes here and there. Very engineer-like solutions (as in click on the reference and you know it's fixed). Love these moments where you have to leave all the hard stuff and just get it done and make it work.
