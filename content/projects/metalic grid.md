@@ -5,10 +5,13 @@ tags:
   - "#SeaClear"
 ---
  
-Code: [GitHub](https://github.com/costineesti/SeaClear/blob/main/grid_detection.py)
+Code: [GitHub](https://github.com/costineesti/SeaClear/blob/main/scripts/grid_detection.py)
 Related to: [[seaclear|SeaClear]], [[Line Segment Detector]]
 
-## Context
+# Final mission
+
+Real-time ground truth validation of 3D pose estimation.
+# Context
 
 I had to clean up a pool using a mop and constantly throwing out the accumulated water with a bucket that I stole from the cleaning ladies. Not cool.
 
@@ -20,7 +23,7 @@ After it was cleaned, we had to install a metalic grid on it's bottom that will 
 
 First I had to detect the grid. For the picture above, the boys lend me a GoPro that I attached to an overhead support and shot 1 min worth of full HD video. Should definitely try out the algorithms with 4k.
 
-## Preprocessing the data
+# Preprocessing the data
 
 >[!NOTE] To make things easier, I applied a region of interest (found empirically) that only has the grid to worry about.
 >I had to keep it in mind when plotting the lines on the original video because I always had to add up the minimal x and y values.
@@ -47,7 +50,9 @@ edges = cv2.erode(edges, kernel, iterations=2)
 cv2.imwrite('canny.jpg', edges)
 ```
 
-## Postprocessing the data
+# Postprocessing the data
+
+### Hough Transform
 
 >[!hint] I tried to make it work with Probabilistic Hough transform, but it would not be consistent in the output results, no matter how good the preprocessing was
 
@@ -55,62 +60,49 @@ cv2.imwrite('canny.jpg', edges)
     <img src="../static/notes/houghLines.png" style="max-width: 100%; height: auto;">
 </div>
 
+### Line Segment Detector
+
 So I tried a technique many people recommended - and that's [Line Segment Detector](https://www.ipol.im/pub/art/2012/gjmr-lsd/?utm_source=doi). It is aimed at detecting locally straight contours on images called `line segments`. Contours are zones of the image where the gray level is changing fast enough from dark to light or the opposite. I dedicated a whole page to this subject - [[Line Segment Detector]].
 
-I filtered the background noise and actual dirt from the pool with constraining that a segment should at least have a minimal length of 30.
+I filtered the background noise and actual dirt from the pool with constraining that a segment should at least have a minimal length of 40px.
 
 ```python
 lsd = cv2.createLineSegmentDetector(0)
-lsd_lines = lsd.detect(edges)[0]  # Use blurred image
-# FILTER NOISE
-min_length = 30  # adjust based on resolution
-filtered_lines = []
-
-for line in lsd_lines:
-	x1, y1, x2, y2 = line[0]
-	length = np.hypot(x2 - x1, y2 - y1)
-	if length > min_length:
-		filtered_lines.append(line)
+# Use cv2.ximgproc.createFastLineDetector() for OpenCV newer than 4.1.0!
+lsd_lines = lsd.detect(edges)[0]
+horizontal_lines, vertical_lines = self.computeGridLines(lsd_lines)
 ```
 
-Next, I had to sort the LSD lines in `horizontal` and `vertical` and draw a coordinates frame using the last lines in those lists.
-
-For simplicity of understanding, I decided to index the inner squares.
-
->[!idea] It's a shame I could not make use of the chessboard calibration method since the squares were not black and white. It would have been perfect for this type of application.
+After sorting the LSD lines into `horizontal` and `vertical`, I get the width and height of a square on the metalic grid to compute the virtual grid.
 
 ```python
-horizontal_lines, vertical_lines = sort_lsd_lines(filtered_lines)
-horizontal_lines_sorted = sorted(horizontal_lines, 
-				key=lambda l: (l[0][1] + l[0][3]) / 2)
-vertical_lines_sorted = sorted(vertical_lines, 
-				key=lambda l: (l[0][0] + l[0][2]) / 2)
- 
-coord_frame_x, coord_frame_y = get_intersection_point(
-						horizontal_lines_sorted[-1], 
-						vertical_lines_sorted[-1])
-horizontal_y = simplify_lines(horizontal_lines, 
-				axis='horizontal', 
-				threshold=10)
-vertical_x = simplify_lines(vertical_lines, 
-			axis='vertical', 
-			threshold=10)
- 
-postprocessing_image = np.copy(roi_frame)
-squares_nbr = index_squares(postprocessing_image, 
-				horizontal_y, 
-				vertical_x)
-draw_coordinate_frame(postprocessing_image, 
-			coord_frame_x, 
-			coord_frame_y)
+self.generalWidth, self.generalHeight = self.getGridSquareParameters(horizontal_lines, vertical_lines)
 
-drawn = lsd.drawSegments(postprocessing_image, np.array(filtered_lines))
-cv2.imwrite('lsd.jpg', drawn)
+def getGridSquareParameters(self, horizontal, vertical, iterations=10):
+"""
+Iterate through ROI to get the most accurate (width,height)[px] possible.
+"""
+width_list, height_list = [], []
+for _ in range(iterations):
+_, width = self.simplify_lines(horizontal, 'horizontal')
+_, height = self.simplify_lines(vertical, 'vertical')
+width_list.append(width)
+height_list.append(height)
+
+return np.mean(width_list), np.mean(height_list)
 ```
+
+>[!CAUTION] To draw the rectangulars, OpenCV takes arguments as ==integers==. So the final result could be off in the visual, but in calculus we use the ==float== values!
+>I used linear algebra to overlay the virtual grid on the actual image.
+
+# Steps
+
+I promise it makes sense!
+1) I click on a reference on the metalic grid,
+2) The algorithm overlays a virtual grid on top of it which will be used further to compute the displacement of the ROV from the reference point (ground truth),
+3) I can rotate the grid through keys Left Arrow or Right Arrow to fit as best as possible,
+4) Stream relative position to the chosen reference point.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/lsd_canny.png" style="max-width: 100%; height: auto;">
 </div>
-
->[!question] Is it a good solution? We'll see what my professor has to say about it.
->Little changes here and there. Very engineer-like solutions (as in click on the reference and you know it's fixed). Love these moments where you have to leave all the hard stuff and just get it done and make it work.

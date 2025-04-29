@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/UVC Video Stream.md",
+                "file": "content/projects/metalic grid.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UVC Video Stream"
+              "title": "metalic grid"
             }
           }
         ]
@@ -178,16 +178,16 @@
   },
   "active": "465ecf3ac0ba49c5",
   "lastOpenFiles": [
+    "content/notes/Line Segment Detector.md",
+    "content/projects/metalic grid.md",
+    "content/notes/UVC Video Stream.md",
     "content/notes/static_dynamic_libraries.md",
     "content/notes/system monotonic clock.md",
-    "content/notes/UVC Video Stream.md",
     "content/notes/Shunting yard algorithm.md",
     "content/notes/rtsp.md",
-    "content/projects/metalic grid.md",
     "content/notes/Edge Computing.md",
     "content/notes/cpp_preprocessor.md",
     "content/seaclear.md",
-    "content/notes/Line Segment Detector.md",
     "content/projects/visual-odom.md",
     "content/projects/inertial-odom.md",
     "content/projects/Proportional-Derivative.md",
