@@ -59,7 +59,7 @@ As mentioned in [[system monotonic clock]], I need to compute a `Offset = CLOCK_
 I will point the camera at my monitor and record the [unix timestamp](https://www.unixtimestamp.com). I will include the video in a rosbag with the timestamps assigned to each frame and see if there is significant drift.
 
 >[!NOTE] HOW TO
->* Before capturing raw frames from the camera, I transpose the data to ==rosrun image_transport republish raw in:=/usb_camera/image_raw compressed out:=/camera/image_compressed==. This way, I compress high resolution stream and can record more and save space on my laptop.
+>* Before capturing raw frames from the camera, I transpose the data to ==rosrun image_transport republish raw in:=/usb_camera/image_raw compressed out:=/camera/image_compressed== -- this way, I compress high resolution stream and can record more and save space on my laptop.
 >* ==rosrun rov_tf_tree camera_sync_recorder.py== -- Start the streaming
 >```python
 >self.bag.write('/camera/image_compressed', msg, rospy.Time.from_sec(camera_wall_time))
