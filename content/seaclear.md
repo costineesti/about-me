@@ -4,7 +4,7 @@ draft: false
 tags:
   - "#SeaClear"
 ---
-Everything I do inside this project is out of passion and constant drive to learn from professionals.
+Everything I do inside this project is out of passion and constant drive to learn from professionals. I have also been awarded with a scholarship.
 
  We are building the first robots to clean the litter from the ocean floor. It is an EU funded project and I'm contributing through Technical University of Cluj-Napoca.
  

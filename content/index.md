@@ -86,7 +86,8 @@ You can find me @:
 ### What I'm currently working on
 
 >[!hint] Most of my time goes into...
-> - [[seaclear|SeaClear]] - an EU funded project which should remove marine litter. My solutions are mostly needed in weeks or months. Now I'm working on deducing displacement (**VSLAM**). All in my free time and out of passion and drive to learn.
+> - [[seaclear|SeaClear]] -- I'm currently working on autonomous and real-time ground truth validation of 3D pose estimation.
+> - Implementing SORT from scratch in C++ with ROS
 > - Implementing ML from scratch,
 > - Implementing AI from scratch.
 
