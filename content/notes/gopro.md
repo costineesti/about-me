@@ -15,6 +15,10 @@ Update Firmware tutorial: https://github.com/gopro/labs/tree/master/docs/install
 >link: https://gopro.github.io/labs/control/overlays/
 >Here I can overlay HH:MM:SSaa on the real-time footage.
 
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/gopro.png" style="max-width: 100%; height: auto;">
+</div>
+
 >[!CAUTION] UTC Date And Time
 >link: https://gopro.github.io/gpmf-parser/
 >PRO: There is a field in the metadata that could give the time format in ms.
