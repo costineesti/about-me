@@ -26,3 +26,5 @@ Update Firmware tutorial: https://github.com/gopro/labs/tree/master/docs/install
 >Look into **[gopro-telemetry](https://gopro.github.io/OpenGoPro/python_sdk/index.html#summary) (Python)** or **[gpmf-parser](https://gopro.github.io/gpmf-parser/) (C library)**.
 >
 >**CON:** Only in postprocessing can I access this data.
+
+**UPDATE**: I can only extract through gpmf-parser in offline, no online solution. Theoretically, I only need the .mp4 which has the metadata included.

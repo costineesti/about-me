@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/gopro.md",
+                "file": "content/notes/hadoop.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gopro"
+              "title": "hadoop"
             }
           }
         ]
@@ -178,8 +178,14 @@
   },
   "active": "465ecf3ac0ba49c5",
   "lastOpenFiles": [
-    "content/seaclear.md",
     "content/notes/gopro.md",
+    "content/notes/hadoop.md",
+    "quartz/static/notes/start_hadoop.png",
+    "quartz/static/notes/Screenshot 2025-05-09 at 18.26.48.png",
+    "quartz/static/bachelors/hadoop_start.png",
+    "quartz/static/bachelors/Screenshot 2025-05-09 at 18.26.58.png",
+    "quartz/static/bachelors/start_hadoop.png",
+    "content/seaclear.md",
     "content/notes/Line Segment Detector.md",
     "content/notes/Edge Computing.md",
     "content/projects/metalic grid.md",
@@ -203,8 +209,6 @@
     "content/notes/pinhole camera model.md",
     "content/notes/numerical_methods.md",
     "content/notes/mlapp_regression.md",
-    "content/notes/cppbasics.md",
-    "content/notes/cpp_preprocessor.md",
     "content/projects",
     "content/notes",
     "content",
@@ -219,11 +223,6 @@
     "quartz/static/notes/original_grid.png",
     "quartz/static/notes/comparison_timestamps.png",
     "quartz/static/notes/metadata.png",
-    "quartz/static/notes/barchart.png",
-    "quartz/static/notes/STAS.png",
-    "quartz/static/notes/PCA.png",
-    "quartz/static/notes/backprop.png",
-    "quartz/static/notes/idealstm.png",
     "Untitled.canvas"
   ]
 }

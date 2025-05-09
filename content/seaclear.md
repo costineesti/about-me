@@ -26,5 +26,6 @@ Everything I do inside this project is out of passion and constant drive to lear
 
 >[!hint] Currently working on...
 > Determining the displacement relative to a reference point chosen on a metalic grid. I will fit a template on the grid and compute the distance to the reference.
+> 
 > Implementing [[SORT]](Simple Online and Real-Time Tracking) for tracking 2 ROVs under the water.
 
