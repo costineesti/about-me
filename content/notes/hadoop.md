@@ -410,7 +410,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming*.jar \
 ```
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/hadoop_1png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/hadoop_1.png" style="max-width: 100%; height: auto;">
 </div>
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
