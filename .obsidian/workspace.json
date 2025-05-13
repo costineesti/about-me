@@ -178,8 +178,9 @@
   },
   "active": "0b415b79b4adef07",
   "lastOpenFiles": [
-    "content/projects/Bachelors.md",
+    "content/notes/delft.md",
     "content/seaclear.md",
+    "content/projects/Bachelors.md",
     "quartz/static/notes/rov_seaclear_play.gif",
     "quartz/static/notes/rov_seaclear_play.mp4",
     "quartz/static/notes/IMG_9021.mp4",
@@ -206,7 +207,6 @@
     "content/notes/pinhole camera model.md",
     "content/notes/numerical_methods.md",
     "content/notes/mlapp_regression.md",
-    "content/notes/delft.md",
     "content/notes/cppbasics.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/cpp_pointers_functions.md",

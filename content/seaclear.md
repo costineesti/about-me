@@ -8,7 +8,9 @@ Everything I do inside this project is out of passion and constant drive to lear
 
  We are building the first robots to clean the litter from the ocean floor. It is an EU funded project and I'm contributing through Technical University of Cluj-Napoca.
 
-![Your Video](../static/notes/rov_seaclear_play.gif)
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/rov_seaclear_play.gif" height="300">
+</div>
  
 >[!NOTE] MISSION
 >Today's oceans contain 26-66 million tons of waste, with approximately 94% located on the seafloor. So far, collection efforts have focused mostly on surface waste. The few efforts to gather underwater waste involve human divers who are put in potential danger. 
