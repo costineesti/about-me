@@ -391,6 +391,51 @@ reducer2.py
 • Takes the previously created mapping and creates a list of month/CO_value for every month on a station
 • Computes the annual average from each monthly average
 • Filter the months over the annual averages and outputs the Station, Month, Monthly Average and Annual Average
+"""
+#!/usr/bin/env python3
+import sys
+
+current_station = None
+monthly_data = []
+sum_val = 0.0
+count = 0
+
+print("StationID_StationName\tMonth\tAverage CO Concentration\tAnnual Average CO Concentration")
+
+def emit_filtered():
+    if count == 0:
+        return
+    annual_avg = sum_val / count
+    for data in monthly_data:
+        month_year, co_val = data
+        if co_val >= annual_avg:
+            print(f"{current_station}\t{month_year}\t{co_val:.2f}\t{annual_avg:.2f}")
+
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    try:
+        key, value = line.split("\t")
+        month_year, co_val = value.rsplit("_", 1)
+        co_val = float(co_val)
+
+        if key == current_station:
+            monthly_data.append((month_year, co_val))
+            sum_val += co_val
+            count += 1
+        else:
+            if current_station:
+                emit_filtered()
+            current_station = key
+            monthly_data = [(month_year, co_val)]
+            sum_val = co_val
+            count = 1
+    except:
+        continue
+
+if current_station:
+    emit_filtered()
 ```
 
 ```
