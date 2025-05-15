@@ -1,5 +1,5 @@
 ---
-title: "Hadoop: MapReduce in Python"
+title: "Apache Hadoop: MapReduce in Python"
 draft: false
 tags:
 ---
