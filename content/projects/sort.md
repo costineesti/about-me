@@ -6,7 +6,7 @@ tags:
   - perception
 ---
 
-Sources: [this paper](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.researchgate.net/publication/307516256_Simple_online_and_realtime_tracking&ved=2ahUKEwjByvyP96WNAxUORfEDHTKkGqIQFnoECD4QAQ&usg=AOvVaw0-SPKfv0v9_k_cz0wvJ8K4), 
+Sources: [this paper](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.researchgate.net/publication/307516256_Simple_online_and_realtime_tracking&ved=2ahUKEwjByvyP96WNAxUORfEDHTKkGqIQFnoECD4QAQ&usg=AOvVaw0-SPKfv0v9_k_cz0wvJ8K4) with [code attached](https://github.com/abewley/sort)
 
 # Mission: Multiple Object Tracking (MOT)
 
@@ -17,5 +17,5 @@ They argue that incorporating complexity in the form of object re-identification
 >[!note] Mentioned methods
 >Convolutional Neural Network (CNN) based detector, 
 >
->Kalman Filter [14] and Hungarian method[15] are employed to handle the motion prediction and data association components of the tracking problem respectively.
+>Kalman Filter and Hungarian method are employed to handle the motion prediction and data association components of the tracking problem respectively.
 
