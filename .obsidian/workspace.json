@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/projects/sort.md",
+                "file": "content/notes/Deep Learning Fundamentals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sort"
+              "title": "Deep Learning Fundamentals"
             }
           }
         ]
@@ -178,8 +178,10 @@
   },
   "active": "f2ade58066dd929f",
   "lastOpenFiles": [
-    "content/projects/visual-odom.md",
+    "Pasted image 20250527143901.png",
     "content/projects/sort.md",
+    "content/notes/Deep Learning Fundamentals.md",
+    "content/projects/visual-odom.md",
     "content/projects/metalic grid.md",
     "content/projects/inertial-odom.md",
     "content/projects/Proportional-Derivative.md",
@@ -203,8 +205,6 @@
     "content/notes/gopro.md",
     "content/notes/delft.md",
     "content/notes/cppbasics.md",
-    "content/notes/cpp_preprocessor.md",
-    "content/notes/cpp_pointers_functions.md",
     "content/projects",
     "content/notes",
     "content",
