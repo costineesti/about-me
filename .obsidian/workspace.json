@@ -178,10 +178,12 @@
   },
   "active": "f2ade58066dd929f",
   "lastOpenFiles": [
-    "Pasted image 20250527143901.png",
-    "content/projects/sort.md",
+    "quartz/static/notes/overfitting.png",
+    "content/notes/hadoop.md",
     "content/notes/Deep Learning Fundamentals.md",
+    "quartz/static/notes/activation_functions.png",
     "content/projects/visual-odom.md",
+    "content/projects/sort.md",
     "content/projects/metalic grid.md",
     "content/projects/inertial-odom.md",
     "content/projects/Proportional-Derivative.md",
@@ -201,13 +203,13 @@
     "content/notes/pinhole camera model.md",
     "content/notes/numerical_methods.md",
     "content/notes/mlapp_regression.md",
-    "content/notes/hadoop.md",
     "content/notes/gopro.md",
     "content/notes/delft.md",
     "content/notes/cppbasics.md",
     "content/projects",
     "content/notes",
     "content",
+    "Pasted image 20250527143901.png",
     "quartz/static/notes/rov_seaclear_play.gif",
     "quartz/static/notes/rov_seaclear_play.mp4",
     "quartz/static/notes/IMG_9021.mp4",
@@ -222,8 +224,6 @@
     "node_modules/tsx/dist/register-hc1YoAqe.mjs",
     "node_modules/tsx/dist/register-CuoYSLaL.mjs",
     "node_modules/tsx/dist/package-B719QM9h.mjs",
-    "quartz/static/notes/lsd_canny.png",
-    "quartz/static/notes/houghLines.png",
     "Untitled.canvas"
   ]
 }
