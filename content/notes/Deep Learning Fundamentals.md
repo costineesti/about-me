@@ -120,3 +120,34 @@ In order to teach our model to be more robust when looking at new data, we're go
 
 The increase in size gives the model more images to learn from while training. The increase in variance helps the model ignore unimportant features and select only the features that are truly important in classification, allowing it to generalize better.
 
+# Transfer Learning
+
+source: https://blogs.nvidia.com/blog/what-is-transfer-learning/
+
+This deep learning technique enables developers to harness a neural network used for one task and apply it to another domain. Take image recognition. Let’s say that you want to identify horses, but there aren’t any publicly available algorithms that do an adequate job. With transfer learning, you begin with an existing convolutional neural network commonly used for image recognition of other animals, and you tweak it to train with horses.
+
+Here’s how it works: First, you delete what’s known as the “loss output” layer, which is the final layer used to make predictions, and replace it with a new loss output layer for horse prediction. This loss output layer is a fine-tuning node for determining how training penalizes deviations from the labeled data and the predicted output.
+
+Next, you would take your smaller dataset for horses and train it on the entire 50-layer neural network or the last few layers or just the loss layer alone. By applying these transfer learning techniques, your output on the new CNN will be horse identification.
+
+# Cross-Entropy Loss
+
+source: https://gombru.github.io/2018/05/23/cross_entropy_loss/
+
+# Natural Language Processing (NLP)
+
+Language is naturally composed of sequence data, in the form of characters in words, and words in sentences. Other examples of sequence data include stock prices and weather data over time. Videos, while containing still images, are also sequences. Elements in the data have a relationship with what comes before and what comes after, and this fact requires a different approach.
+
+### BERT
+
+BERT, which stands for **B**idirectional **E**ncoder **R**epresentations from **T**ransformers, was a ground-breaking model introduced in 2018 by Google.
+
+BERT is simultaneously trained on two goals:
+
+- Predict a missing word from a sequence of words
+- Predict a new sentence after a sequence of sentences
+
+# Attention Transformer
+
+[paper link](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
+
