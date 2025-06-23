@@ -55,6 +55,10 @@ From the official documentation, it appears that
 
 >[!CAUTION] TO GET THESE FIELDS, ALWAYS GET THE VIDEOS DIRECTLY FROM THE SD-CARD OR CONNECT THE GOPRO THROUGH USB-C CABLE.
 >Metadata is lost if videos are sent through conventional platforms such as WhatsApp or AirDrop. Lost a lot of fucking time figuring out that one :)
+>
+>Also, put GoPro in MTP mode so you can see it's files.
+
+
 
 To get them in code and actually view them, I added `extract_utc.c`(add link later) inside `gpmf-parser/demo`
 
