@@ -87,9 +87,7 @@ You can find me @:
 
 >[!hint] Most of my time goes into...
 > - [[seaclear|SeaClear]] -- I'm currently working on autonomous and real-time ground truth validation of 3D pose estimation.
-> - Implementing SORT from scratch in C++ with ROS
-> - Implementing ML from scratch,
-> - Implementing AI from scratch.
+> - Training an NN to detect the ROV in every possible angle using RoboFlow.
 
 ### What I've worked on in the past
 

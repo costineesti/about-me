@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/gopro.md",
+                "file": "content/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gopro"
+              "title": "index"
             }
           }
         ]
@@ -178,8 +178,8 @@
   },
   "active": "f2ade58066dd929f",
   "lastOpenFiles": [
-    "content/notes/UVC Video Stream.md",
     "content/notes/gopro.md",
+    "content/notes/UVC Video Stream.md",
     "content/notes/Deep Learning Fundamentals.md",
     "quartz/static/notes/overfitting.png",
     "content/notes/hadoop.md",
