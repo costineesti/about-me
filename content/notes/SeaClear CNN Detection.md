@@ -18,7 +18,7 @@ In [[UVC Video Stream]] and [[gopro|GoPro Video Stream]], I show the steps I wen
 
 >[!NOTE] To achieve that, I needed to create a dataset big enough to include all the possible representations of the ROV underwater 
 >So I used these 2 separate datasets: [1](https://app.roboflow.com/seacleardetection/bluerov-detection-0krxw/1), [2](https://app.roboflow.com/seacleardetection/bluerov2-fryk6-3mt6y/generate/preprocessing) to create [the DATASET](https://app.roboflow.com/seacleardetection/seaclear-rov/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true). Of course, combined with what I had. I watched too much Star Wars. Basically, I extracted every 10th frame from each POV and created my own dataset. Combined with these prior 2, I made one big enough for the whole application.
->.
+>
 >Roboflow is extraordinary in the sense that it already prepares and augments the data. For example, I set resizing images to 640x640 as preprocessing and blur, lightning, horizontal flips, etc. for augmentation. From ~4k images I got ~10k in the end with their workflow.
 >
 >Also, I want to mention that I used 3 different perspectives of my own. Failed experiments count for something in the end.
@@ -58,7 +58,7 @@ I trained for:
 >
 >YOLO will load all training images and labels into RAM at the start if `cache` is set on True. It speeds up training by avoiding repeated disk I/O.
 >
->Set device on `cuda` at the beginning of the script otherwise it will run on CPU. You don't want that. GPU is less powerful but with more cores, which enable paralel computing.
+>Set device on `cuda` at the beginning of the script otherwise it will run on CPU. You don't want that. GPU is less powerful but with more cores, which enable parallel computing.
 >
 >The model will process `batch_size` images at a time before updating weights. Lower if you run out of memory.
 
