@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/SeaClear CNN Detection.md",
+                "file": "content/seaclear.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SeaClear CNN Detection"
+              "title": "seaclear"
             }
           }
         ]
@@ -178,6 +178,7 @@
   },
   "active": "f2ade58066dd929f",
   "lastOpenFiles": [
+    "content/notes/SeaClear CNN Detection.md",
     "content/notes/ros_basics.md",
     "content/notes/gopro.md",
     "content/notes/LU Decomposition.md",
@@ -189,7 +190,6 @@
     "content/notes/principal_component_analysis.md",
     "content/notes/ros_architecture.md",
     "content/notes/rodrigues.md",
-    "content/notes/SeaClear CNN Detection.md",
     "quartz/static/notes/roboflow_stats.png",
     "quartz/static/notes/ROV_POVs.png",
     "content/notes/system monotonic clock.md",

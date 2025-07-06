@@ -27,6 +27,7 @@ Everything I do inside this project is out of passion and constant drive to lear
 >* [[camera calibration and 3d recontruction|Camera Calibration and 3D Reconstruction]]
 >* [[rodrigues|Rodrigues' Rotation and Translation Angles]]
 >* [[gopro|Extracting GoPro footage in ROS]]
+>* [[SeaClear CNN Detection|CNN Architecture for detecting the BlueROV]]
 
 >[!hint] Currently working on...
 > Determining the displacement relative to a reference point chosen on a metalic grid. I will fit a template on the grid and compute the distance to the reference.
