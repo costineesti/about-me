@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/seaclear.md",
+                "file": "content/notes/SeaClear CNN Detection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "seaclear"
+              "title": "SeaClear CNN Detection"
             }
           }
         ]
@@ -178,6 +178,7 @@
   },
   "active": "f2ade58066dd929f",
   "lastOpenFiles": [
+    "content/seaclear.md",
     "content/notes/SeaClear CNN Detection.md",
     "content/notes/ros_basics.md",
     "content/notes/gopro.md",
@@ -208,7 +209,6 @@
     "content/projects/Loop Closure.md",
     "content/projects/Kalman Filter.md",
     "content/projects/Gaussian distribution.md",
-    "content/projects/Bachelors.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

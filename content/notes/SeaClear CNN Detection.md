@@ -29,7 +29,7 @@ The result:
     <img src="../static/notes/cnn_result.png" style="max-width: 100%; height: auto;">
 </div>
 
-This is what trained on Roboflow in one night. This might have been overkill with the parameters as it converged after ~13 epochs.
+This is what trained on Roboflow in one night. This might have been overkill with the parameters as it converged after ~40 epochs.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/roboflow_stats.png" style="max-width: 100%; height: auto;">
