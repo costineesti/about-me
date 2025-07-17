@@ -86,7 +86,9 @@ $$
 
 where  
 
-$$ \mathbf{t} = -\mathbf{R} \tilde{\mathbf{C}} $$
+$$ 
+\mathbf{t} = -\mathbf{R} \tilde{\mathbf{C}} 
+$$
 
 $\tilde{\mathbf{C}}$ represents the coordinates of the camera centre in the world coordinate frame (see figure above). Thus, to map a world point $X$ to image points $x$, we use $x = PX$. $R$ and $T$ come from [aruco.py](https://github.com/costineesti/SeaClear/blob/main/scripts/aruco.py) in my case.
 
@@ -94,7 +96,7 @@ Let $M=KR$
 
 ### Finding the camera center
 
-The camera center $C$ is the point for which $PC=0$. Numerically this right null-vector may be obtained from the SVD(Singular Value Decomposition) of $P$.
+The camera center $C$ is the point for which $PC=0$. Numerically this right null-vector may be obtained from the SVD([[Singular Value Decomposition]]) of $P$.
 
 The camera centre is the 1-dimensional right null-space **C** of **P**, i.e. $PC = 0$.
 
