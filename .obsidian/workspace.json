@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d5b62407c15612f1",
+        "id": "259580bc67b9a7dc",
         "type": "tabs",
         "children": [
           {
-            "id": "f2ade58066dd929f",
+            "id": "70761a9d4ee2ee0d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/SeaClear CNN Detection.md",
+                "file": "content/notes/Multiple View Geometry in Computer Vision.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SeaClear CNN Detection"
+              "title": "Multiple View Geometry in Computer Vision"
             }
           }
         ]
@@ -176,17 +176,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f2ade58066dd929f",
+  "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
-    "content/seaclear.md",
+    "content/notes/Singular Value Decomposition.md",
+    "content/notes/Multiple View Geometry in Computer Vision.md",
+    "content/notes/LSTM.md",
+    "content/notes/hadoop.md",
+    "content/notes/Edge Computing.md",
+    "quartz/static/notes/rotation_translation.png",
+    "content/notes/camera backward projection.md",
+    "content/notes/camera calibration.md",
+    "content/notes/camera calibration and 3d recontruction.md",
+    "content/notes/pinhole camera model.md",
+    "content/notes/LU Decomposition.md",
+    "content/notes/Line Segment Detector.md",
+    "content/notes/mlapp_regression.md",
     "content/notes/SeaClear CNN Detection.md",
+    "content/seaclear.md",
     "content/notes/ros_basics.md",
     "content/notes/gopro.md",
-    "content/notes/LU Decomposition.md",
-    "content/notes/LSTM.md",
-    "content/notes/Line Segment Detector.md",
-    "content/notes/pinhole camera model.md",
-    "content/notes/mlapp_regression.md",
     "content/notes/numerical_methods.md",
     "content/notes/principal_component_analysis.md",
     "content/notes/ros_architecture.md",
@@ -199,16 +207,9 @@
     "content/index.md",
     "content/notes/Deep Learning Fundamentals.md",
     "quartz/static/notes/overfitting.png",
-    "content/notes/hadoop.md",
     "quartz/static/notes/activation_functions.png",
     "content/projects/visual-odom.md",
     "content/projects/sort.md",
-    "content/projects/metalic grid.md",
-    "content/projects/inertial-odom.md",
-    "content/projects/Proportional-Derivative.md",
-    "content/projects/Loop Closure.md",
-    "content/projects/Kalman Filter.md",
-    "content/projects/Gaussian distribution.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
@@ -219,7 +220,6 @@
     "quartz/static/notes/IMG_9021.mp4",
     "quartz/static/notes/stmp.png",
     "quartz/static/notes/gpsu.png",
-    "quartz/static/notes/start_hadoop.png",
     "node_modules/tsx/dist/require-BLYAcZms.mjs",
     "node_modules/tsx/dist/register-hc1YoAqe.mjs",
     "node_modules/tsx/dist/register-CuoYSLaL.mjs",
