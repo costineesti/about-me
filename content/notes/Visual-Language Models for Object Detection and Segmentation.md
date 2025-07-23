@@ -1,5 +1,5 @@
 ---
-title: Untitled
+title: Visual-Language Models for Object Detection and Segmentation
 draft: false
 tags:
   - deep_learning
@@ -7,9 +7,9 @@ tags:
   - ML
 ---
  
-Source: [this review paper](https://arxiv.org/pdf/2504.09480), [MobileSAM paper](https://arxiv.org/pdf/2306.14289), and [OpenCV documentation](https://opencv.org/blog/vision-language-models/)
+Source: [this review paper on segmentation and object detection methods](https://arxiv.org/pdf/2504.09480), [MobileSAM paper](https://arxiv.org/pdf/2306.14289), [TinyCLIP paper](https://arxiv.org/pdf/2309.12314) and [OpenCV documentation](https://opencv.org/blog/vision-language-models/)
 
-From Gemini: Visual Language Models (`VLMs`) are advanced multimodal AI systems that combine large language models (`LLMs`) with vision encoders to understand and generate insights from both visual data (like images and videos) and textual information.
+Visual Language Models (`VLMs`) are advanced multimodal AI systems that combine large language models (`LLMs`) with vision encoders to understand and generate insights from both visual data (like images and videos) and textual information.
 
 >[!NOTE] I also like this explanation from the OpenCV documentation
 >Vision Language Models (VLMs) are AI systems that seamlessly combine image understanding with natural language processing. Unlike earlier models that handled vision and text separately, VLMs connect what they see with the words that describe it, allowing machines to “see” and “read” at the same time.
@@ -83,7 +83,7 @@ CLIP-like language-image models commonly consist of two branches: an image encod
 The average running time is ~22 seconds. I am running everything inside a VM running Ubuntu so every time the device falls back to cpu.
 
 ```python
-# The best combination of VLM wasL
+# The best combination of VLM was
 # TinyCLIP with 61M visual params and 32M text params
 # MobileSAM in the following configuration
 mask_gen = SamAutomaticMaskGenerator(
