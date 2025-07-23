@@ -16,7 +16,7 @@ Given a square matrix $A$, the SVD is a factorization of $A$ as $A = UDV^T$, whe
 
 I did something of the sort in my [[Analysis and Prediction of Stock Market]] project where I implemented the QR Decomposition from scratch, using the Householder method.
 
-The SVD also exists for non-square matrices \( A \). Of most interest is the case where \( A \) has more rows than columns. Specifically, let \( A \) be an \( m \times n \) matrix with \( m \geq n \). In this case, \( A \) may be factored as:
+The SVD also exists for non-square matrices $A$. Of most interest is the case where $A$ has more rows than columns. Specifically, let $A$ be an $m \times n$ matrix with $m \geq n$. In this case, $A$ may be factored as:
 
 $$
 A = U D V^T
