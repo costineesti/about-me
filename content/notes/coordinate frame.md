@@ -11,7 +11,7 @@ tags:
 When thinking about the 3-axis coordinate frame; I always use this representation
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/coord_frame.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/coord_frame.png" style="max-width: 50%; height: auto;">
 </div>
 
 >[!NOTE] In Robot (Canonical) Frames we have
@@ -21,7 +21,7 @@ When thinking about the 3-axis coordinate frame; I always use this representatio
 But apparently this is only for Robotics applications.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/optical_frame.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/camera_frame.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!NOTE] In Optical Frames we have
