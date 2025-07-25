@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
+                "file": "content/notes/coordinate frame.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Visual-Language Models for Object Detection and Segmentation"
+              "title": "coordinate frame"
             }
           }
         ]
@@ -178,6 +178,11 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
+    "quartz/static/notes/camera_frame.png",
+    "content/notes/ros_architecture.md",
+    "content/notes/coordinate frame.md",
+    "quartz/static/notes/coord_frame.png",
+    "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
     "quartz/static/notes/controller.png",
     "quartz/static/notes/pen.png",
     "quartz/static/notes/scissors.png",
@@ -186,8 +191,6 @@
     "quartz/static/notes/mobilesam_params.png",
     "quartz/static/notes/mobilesam.png",
     "content/notes/UVC Video Stream.md",
-    "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
-    "content/notes/ros_architecture.md",
     "content/notes/rodrigues.md",
     "content/notes/cpp_preprocessor.md",
     "quartz/static/notes/VLMs.png",
@@ -210,10 +213,7 @@
     "content/notes/gopro.md",
     "content/notes/numerical_methods.md",
     "content/notes/principal_component_analysis.md",
-    "quartz/static/notes/roboflow_stats.png",
-    "quartz/static/notes/ROV_POVs.png",
     "content/notes/system monotonic clock.md",
-    "content/index.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
