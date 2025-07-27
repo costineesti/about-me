@@ -1,5 +1,6 @@
 ---
 title: Regression in Machine Learning
+date: 2024-10-06
 draft: false
 tags:
   - notes

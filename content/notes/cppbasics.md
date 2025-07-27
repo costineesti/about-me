@@ -1,5 +1,6 @@
 ---
 title: C++ Basics
+date: 2024-04-15
 draft: false
 tags:
   - "#notes"

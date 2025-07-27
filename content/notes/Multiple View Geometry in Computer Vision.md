@@ -1,5 +1,6 @@
 ---
 title: Multiple View Geometry in Computer Vision
+date: 2025-07-17
 draft: false
 tags:
   - research

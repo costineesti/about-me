@@ -1,5 +1,6 @@
 ---
 title: Loop Closure
+date: 2024-08-11
 draft: false
 tags:
   - projects

@@ -1,5 +1,6 @@
 ---
 title: Visual-Language Models for Object Detection and Segmentation
+date: 2025-07-27
 draft: false
 tags:
   - deep_learning

@@ -1,5 +1,6 @@
 ---
 title: Singular Value Decomposition
+date: 2025-07-23
 draft: false
 tags:
   - research

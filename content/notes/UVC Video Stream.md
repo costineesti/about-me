@@ -1,5 +1,6 @@
 ---
 title: UVC Cameras
+date: 2025-04-29
 draft: false
 tags:
   - SeaClear

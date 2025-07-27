@@ -1,5 +1,6 @@
 ---
 title: Gaussian Distribution
+date: 2024-08-11
 draft: false
 tags:
   - projects

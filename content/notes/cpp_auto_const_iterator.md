@@ -1,5 +1,6 @@
 ---
 title: C++ const, auto and iterators
+date: 2024-08-17
 draft: false
 tags:
   - notes

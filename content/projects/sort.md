@@ -1,5 +1,6 @@
 ---
 title: Simple Online and Real-Time Tracking
+date: 2025-05-17
 draft: false
 tags:
   - SeaClear

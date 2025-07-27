@@ -1,5 +1,6 @@
 ---
 title: Pointers and References - Compound Types
+date: 2024-08-16
 draft: false
 tags:
   - notes

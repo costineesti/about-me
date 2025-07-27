@@ -1,5 +1,6 @@
 ---
 title: Numerical Elimination Methods
+date: 2024-09-01
 draft: false
 tags:
   - notes

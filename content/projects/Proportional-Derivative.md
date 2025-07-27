@@ -1,5 +1,6 @@
 ---
 title: Proportional-Derivative Control
+date: 2024-08-11
 draft: false
 tags:
   - projects

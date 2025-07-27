@@ -1,5 +1,6 @@
 ---
 title: Principal Component Analysis
+date: 2025-02-02
 draft: false
 tags:
   - notes

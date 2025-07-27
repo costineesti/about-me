@@ -1,5 +1,6 @@
 ---
 title: Shunting Yard Algorithm
+date: 2024-08-26
 draft: false
 tags:
 ---

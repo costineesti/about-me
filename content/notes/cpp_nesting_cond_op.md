@@ -1,5 +1,6 @@
 ---
 title: C++ Nesting Conditional Operations
+date: 2024-08-20
 draft: false
 tags:
   - notes

@@ -1,5 +1,6 @@
 ---
 title: Abstract Syntax Tree
+date: 2024-08-31
 draft: false
 tags:
   - "#notes"

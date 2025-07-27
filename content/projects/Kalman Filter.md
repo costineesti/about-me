@@ -1,5 +1,6 @@
 ---
 title: Kalman Filter
+date: 2024-08-11
 draft: false
 tags:
   - projects

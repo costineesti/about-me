@@ -1,5 +1,6 @@
 ---
 title: ROS Basics
+date: 2024-11-19
 draft: false
 tags:
   - projects

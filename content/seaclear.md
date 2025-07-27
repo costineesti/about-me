@@ -1,5 +1,6 @@
 ---
 title: SeaClear
+date: 2025-07-06
 draft: false
 tags:
   - "#SeaClear"

@@ -1,5 +1,6 @@
 ---
 title: Hello Hello, I'm Costin 😎
+date: 2025-07-02
 ---
 <div class="profile-section">
   <img src="static/pictures/beligool.jpg" alt="Profile Picture" class="profile-image">

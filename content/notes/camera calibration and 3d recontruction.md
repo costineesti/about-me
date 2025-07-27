@@ -1,5 +1,6 @@
 ---
 title: Camera Calibration and 3D Reconstruction
+date: 2025-02-02
 draft: false
 tags:
   - robotics

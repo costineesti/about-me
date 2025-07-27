@@ -30,6 +30,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes(
       { limit: 5,
         showTags: false,
+        filter: (f) => {
+          // Only show files that have a frontmatter date or are very recent
+          const hasDate = !!f.frontmatter?.date
+          const isRecent = f.dates?.modified && 
+            (Date.now() - f.dates.modified.getTime()) < (7 * 24 * 60 * 60 * 1000) // 7 days
+          return hasDate || !!isRecent
+        }
        }
     )),
   ],

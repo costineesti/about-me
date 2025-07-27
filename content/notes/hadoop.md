@@ -1,5 +1,6 @@
 ---
 title: "Apache Hadoop: MapReduce in Python"
+date: 2025-05-15
 draft: false
 tags:
 ---

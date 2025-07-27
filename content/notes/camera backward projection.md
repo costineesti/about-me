@@ -1,5 +1,6 @@
 ---
 title: Camera Backward Projection
+date: 2025-02-09
 draft: false
 tags:
   - notes

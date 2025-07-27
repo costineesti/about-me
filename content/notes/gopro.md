@@ -1,5 +1,6 @@
 ---
 title: GoPro Livestream
+date: 2025-06-23
 draft: false
 tags:
   - SeaClear

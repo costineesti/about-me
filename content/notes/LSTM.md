@@ -1,5 +1,6 @@
 ---
 title: Long Short-Term Memory
+date: 2024-10-27
 draft: false
 tags:
   - "#notes"

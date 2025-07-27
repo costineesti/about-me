@@ -1,5 +1,6 @@
 ---
 title: Deep Learning Fundamentals
+date: 2025-05-28
 draft: false
 tags:
   - deep_learning

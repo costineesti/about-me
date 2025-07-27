@@ -1,5 +1,6 @@
 ---
 title: Line Segment Detector
+date: 2025-04-07
 draft: false
 tags:
   - "#SeaClear"

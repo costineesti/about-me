@@ -1,5 +1,6 @@
 ---
 title: Analysis and Prediction of Stock Market
+date: 2025-03-01
 draft: false
 tags:
   - ML

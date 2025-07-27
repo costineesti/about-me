@@ -1,5 +1,6 @@
 ---
 title: C++ Pointers and Multidimensional Arrays
+date: 2024-08-18
 draft: false
 tags:
   - notes

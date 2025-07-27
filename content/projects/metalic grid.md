@@ -1,5 +1,6 @@
 ---
 title: Computer Vision for detecting a Metallic Grid and a set reference
+date: 2025-04-29
 draft: false
 tags:
   - "#SeaClear"

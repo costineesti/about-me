@@ -1,5 +1,6 @@
 ---
 title: Static and dynamic libraries
+date: 2024-09-02
 draft: false
 tags:
   - "#notes"

@@ -1,5 +1,6 @@
 ---
 title: C++ Pointers as function parameters
+date: 2024-08-25
 draft: false
 tags:
   - notes

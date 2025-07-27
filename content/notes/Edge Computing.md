@@ -1,5 +1,6 @@
 ---
 title: Edge Computing
+date: 2025-04-10
 draft: false
 tags:
   - robotics

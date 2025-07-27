@@ -1,5 +1,6 @@
 ---
 title: C++ Arrays vs Vectors
+date: 2024-08-18
 draft: false
 tags:
   - notes

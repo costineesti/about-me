@@ -1,5 +1,6 @@
 ---
 title: SeaClear BlueROV Detection
+date: 2025-07-10
 draft: false
 tags:
   - SeaClear

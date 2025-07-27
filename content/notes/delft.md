@@ -1,5 +1,6 @@
 ---
 title: European Master's
+date: 2025-03-10
 draft: false
 tags:
 ---
