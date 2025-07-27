@@ -30,12 +30,27 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes(
       { limit: 5,
         showTags: false,
-        filter: (f) => {
-          // Only show files that have a frontmatter date or are very recent
-          const hasDate = !!f.frontmatter?.date
-          const isRecent = f.dates?.modified && 
-            (Date.now() - f.dates.modified.getTime()) < (7 * 24 * 60 * 60 * 1000) // 7 days
-          return hasDate || !!isRecent
+        sort: (f1, f2) => {
+          // Sort by frontmatter date first, then by modified date
+          const getValidDate = (file: any): Date => {
+            if (file.frontmatter?.date) {
+              const frontmatterDate = new Date(file.frontmatter.date)
+              if (!isNaN(frontmatterDate.getTime())) {
+                return frontmatterDate
+              }
+            }
+            if (file.dates?.modified) {
+              const modifiedDate = file.dates.modified instanceof Date ? file.dates.modified : new Date(file.dates.modified)
+              if (!isNaN(modifiedDate.getTime())) {
+                return modifiedDate
+              }
+            }
+            return new Date(0) // Fallback to epoch
+          }
+          
+          const date1 = getValidDate(f1)
+          const date2 = getValidDate(f2)
+          return date2.getTime() - date1.getTime() // Most recent first
         }
        }
     )),
