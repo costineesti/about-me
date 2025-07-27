@@ -47,6 +47,27 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     focusOnHover,
   } = JSON.parse(graph.dataset["cfg"]!)
 
+  // Adaugat de mine
+  console.log("Current slug:", slug, "FullSlug:", fullSlug, "Container:", container) // Debug log
+  
+  // Check if we're on the main/index page - be more permissive with the check
+  const isIndexPage = slug === "" || 
+                     slug === "index" || 
+                     fullSlug === "" || 
+                     fullSlug === "index" || 
+                     fullSlug.endsWith("/index") ||
+                     window.location.pathname === "/" ||
+                     window.location.pathname === "/index" ||
+                     window.location.pathname === "/index.html"
+                     
+  console.log("Is index page:", isIndexPage, "Window pathname:", window.location.pathname) // Debug log
+  
+  if (container === "graph-container") {
+    depth = isIndexPage ? -1 : 1
+    scale = isIndexPage ? 0.9 : scale // Use smaller scale on index to see everything
+    console.log("Final depth:", depth, "scale:", scale) // Debug log
+  }
+
   const data: Map<SimpleSlug, ContentDetails> = new Map(
     Object.entries<ContentDetails>(await fetchData).map(([k, v]) => [
       simplifySlug(k as FullSlug),

@@ -29,7 +29,7 @@ const defaultOptions: GraphOptions = {
   localGraph: {
     drag: true,
     zoom: true,
-    depth: 1, // Show full graph only on index
+    depth: 1, // Show only direct connections for individual pages
     scale: 1.1,
     repelForce: 0.5,
     centerForce: 0.3,
@@ -64,7 +64,7 @@ export default ((opts?: GraphOptions) => {
       <div class={classNames(displayClass, "graph")}>
         <h3>{i18n(cfg.locale).components.graph.title}</h3>
         <div class="graph-outer">
-          <div id="graph-container" data-cfg={JSON.stringify(globalGraph)}></div>
+          <div id="graph-container" data-cfg={JSON.stringify(localGraph)}></div>
           <svg
             version="1.1"
             id="global-graph-icon"

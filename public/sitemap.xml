@@ -1,70 +1,151 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://costineesti.github.io/about-me/</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.488Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/Abstract-Syntax-Tree</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.535Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Deep-Learning-Fundamentals</loc>
+    <lastmod>2025-07-27T21:21:58.676Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Edge-Computing</loc>
+    <lastmod>2025-07-27T21:21:58.702Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/LSTM</loc>
+    <lastmod>2025-07-27T21:21:58.709Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/LU-Decomposition</loc>
-    <lastmod>2024-10-01T19:35:27.694Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.718Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Line-Segment-Detector</loc>
+    <lastmod>2025-07-27T21:21:58.731Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Multiple-View-Geometry-in-Computer-Vision</loc>
+    <lastmod>2025-07-27T21:21:58.736Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/SeaClear-CNN-Detection</loc>
+    <lastmod>2025-07-27T21:21:58.757Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/Shunting-yard-algorithm</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.765Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Singular-Value-Decomposition</loc>
+    <lastmod>2025-07-27T21:21:58.789Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/UVC-Video-Stream</loc>
+    <lastmod>2025-07-27T21:21:58.801Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/Visual-Language-Models-for-Object-Detection-and-Segmentation</loc>
+    <lastmod>2025-07-27T21:21:58.813Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/camera-backward-projection</loc>
+    <lastmod>2025-07-27T21:21:58.824Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/camera-calibration-and-3d-recontruction</loc>
+    <lastmod>2025-07-27T21:21:58.832Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/camera-calibration</loc>
+    <lastmod>2025-07-27T21:21:58.849Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/coordinate-frame</loc>
+    <lastmod>2025-07-27T21:21:58.852Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_arraysvsvectors</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.855Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_auto_const_iterator</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.897Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_compound_types</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.962Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_extern</loc>
-    <lastmod>2024-09-30T18:10:18.838Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.981Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_nesting_cond_op</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.984Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_pointersAndArrays</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:58.994Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_pointers_functions</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.013Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cpp_preprocessor</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.049Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/cppbasics</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.061Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/delft</loc>
+    <lastmod>2025-07-27T21:21:59.066Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/gopro</loc>
+    <lastmod>2025-07-27T21:21:59.074Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/hadoop</loc>
+    <lastmod>2025-07-27T21:21:59.081Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/mlapp_regression</loc>
+    <lastmod>2025-07-27T21:21:59.126Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/numerical_methods</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.146Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/pinhole-camera-model</loc>
+    <lastmod>2025-07-27T21:21:59.155Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/principal_component_analysis</loc>
-    <lastmod>2024-10-01T20:51:08.637Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.159Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/rodrigues</loc>
+    <lastmod>2025-07-27T21:21:59.164Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/ros_architecture</loc>
+    <lastmod>2025-07-27T21:21:59.167Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/ros_basics</loc>
+    <lastmod>2025-07-27T21:21:59.169Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/rtsp</loc>
+    <lastmod>2025-07-27T21:21:59.173Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/notes/static_dynamic_libraries</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.177Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/notes/system-monotonic-clock</loc>
+    <lastmod>2025-07-27T21:21:59.182Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/projects/Analysis-and-Prediction-of-Stock-Market</loc>
+    <lastmod>2025-07-27T21:21:59.191Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Bachelors</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.227Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Gaussian-distribution</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.249Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Kalman-Filter</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.256Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Loop-Closure</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.270Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/Proportional-Derivative</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.271Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/inertial-odom</loc>
-    <lastmod>2024-09-30T18:10:18.839Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.273Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/projects/metalic-grid</loc>
+    <lastmod>2025-07-27T21:21:59.278Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/projects/sort</loc>
+    <lastmod>2025-07-27T21:21:59.289Z</lastmod>
   </url><url>
     <loc>https://costineesti.github.io/about-me/projects/visual-odom</loc>
-    <lastmod>2024-09-30T18:10:18.841Z</lastmod>
+    <lastmod>2025-07-27T21:21:59.292Z</lastmod>
+  </url><url>
+    <loc>https://costineesti.github.io/about-me/seaclear</loc>
+    <lastmod>2025-07-27T21:21:59.301Z</lastmod>
   </url></urlset>
