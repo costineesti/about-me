@@ -62,7 +62,6 @@ Their research states that ==MobileSAM is faster than FastSAM and performs on pa
 >
 >I will create a submodule in my GitHub repository linking to this one. It's both easy to update and a clean solution.
 
-
 ### TinyCLIP for Visual-Language Matching
 
 [This paper](https://arxiv.org/pdf/2309.12314) suggests that it can reduce the size of the pre-trained `CLIP ViT-B/32` by 50%, while maintaining comparable zero-shot performance. The idea is very similar to MobileSAM, as weight inheritance transmits the pre-trained weights from the teacher models to their student counterparts to improve distillation efficiency.
