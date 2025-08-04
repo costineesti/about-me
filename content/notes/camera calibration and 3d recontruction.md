@@ -88,5 +88,7 @@ The distortion vector contains $(k_1, k_2, p_1, p_2)$, where $k_1$ and $k_2$ are
 >[!tip] Distortion coefficients are also intrinsic parameters
 >If a camera has been calibrated for images of $320 \times 240$, the same distortion coefficients can be used for $640 \times 480$ images from the same camera while $f_x, f_y, c_x$ and $c_y$ need to be scaled appropriately.
 
->[!NOTE] I did something similar to this in my [[visual-odom]] implementation without the need to explicit the camera intrinsic parameters and I would deduce matrix $\mathbf{A} =  \begin{bmatrix} \mathbf{R} | \mathbf{t} \end{bmatrix}$ based on affine transformations.
+>[!success] I did something similar to this in my [[visual-odom]] implementation without the need to explicit the camera intrinsic parameters and I would deduce matrix $\mathbf{A} =  \begin{bmatrix} \mathbf{R} | \mathbf{t} \end{bmatrix}$ based on affine transformations.
+
+>[!abstract] > _In GoPro_ **_Linear_** _mode the camera applies an internal de-warping, so the output stream is already close to a pinhole model. We therefore_ **_calibrate Linear mode directly_** _to get_ K _and treat residual distortion as_ **_negligible_**_—i.e., we set the distortion coefficients to zero.
 
