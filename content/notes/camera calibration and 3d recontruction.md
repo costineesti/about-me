@@ -1,6 +1,6 @@
 ---
 title: Camera Calibration and 3D Reconstruction
-date: 2025-02-02
+date: 2025-08-04
 draft: false
 tags:
   - robotics
@@ -90,5 +90,5 @@ The distortion vector contains $(k_1, k_2, p_1, p_2)$, where $k_1$ and $k_2$ are
 
 >[!success] I did something similar to this in my [[visual-odom]] implementation without the need to explicit the camera intrinsic parameters and I would deduce matrix $\mathbf{A} =  \begin{bmatrix} \mathbf{R} | \mathbf{t} \end{bmatrix}$ based on affine transformations.
 
->[!abstract] > _In GoPro_ **_Linear_** _mode the camera applies an internal de-warping, so the output stream is already close to a pinhole model. We therefore_ **_calibrate Linear mode directly_** _to get_ K _and treat residual distortion as_ **_negligible_**_—i.e., we set the distortion coefficients to zero.
+>[!abstract] In GoPro Linear mode the camera applies an internal de-warping, so the output stream is already close to a pinhole model. We therefore calibrate Linear mode directly to get K and treat residual distortion as negligible — i.e., we set the distortion coefficients to zero.
 
