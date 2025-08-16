@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/camera calibration and 3d recontruction.md",
+                "file": "content/notes/MiDaS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "camera calibration and 3d recontruction"
+              "title": "MiDaS"
             }
           }
         ]
@@ -178,6 +178,14 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
+    "content/notes/hadoop.md",
+    "content/notes/MiDaS.md",
+    "quartz/static/notes/midas.png",
+    "content/notes/cpp_arraysvsvectors.md",
+    "content/notes/cpp_pointersAndArrays.md",
+    "content/notes/cppbasics.md",
+    "content/notes/delft.md",
+    "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/gopro.md",
     "content/notes/barcode detection and decoding.md",
     "content/notes/rodrigues.md",
@@ -197,14 +205,7 @@
     "content/projects/Kalman Filter.md",
     "content/projects/Gaussian distribution.md",
     "content/projects/Bachelors.md",
-    "content/projects/Analysis and Prediction of Stock Market.md",
-    "content/notes/static_dynamic_libraries.md",
-    "content/notes/rtsp.md",
-    "content/notes/ros_basics.md",
-    "content/notes/ros_architecture.md",
     "content/notes/quartz.layout.ts",
-    "content/notes/principal_component_analysis.md",
-    "content/notes/pinhole camera model.md",
     "content/projects",
     "content/notes",
     "content",
@@ -219,7 +220,6 @@
     "public/static/notes/stream.png",
     "public/static/notes/stmp.png",
     "public/static/notes/start_hadoop.png",
-    "public/static/notes/screwdriver.png",
     "public/static/bachelors/combined_video.mp4",
     "public/static/pictures",
     "public/static/notes",
