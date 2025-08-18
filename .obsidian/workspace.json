@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/MiDaS.md",
+                "file": "content/notes/ONNX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MiDaS"
+              "title": "ONNX"
             }
           }
         ]
@@ -178,8 +178,9 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
-    "content/notes/hadoop.md",
     "content/notes/MiDaS.md",
+    "content/notes/ONNX.md",
+    "content/notes/hadoop.md",
     "quartz/static/notes/midas.png",
     "content/notes/cpp_arraysvsvectors.md",
     "content/notes/cpp_pointersAndArrays.md",
@@ -204,7 +205,6 @@
     "content/projects/Loop Closure.md",
     "content/projects/Kalman Filter.md",
     "content/projects/Gaussian distribution.md",
-    "content/projects/Bachelors.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
