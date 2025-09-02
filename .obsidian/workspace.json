@@ -166,6 +166,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -178,6 +179,8 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
+    "quartz/static/notes/linearvscircularlifecycle.png",
+    "quartz/static/notes/Screenshot 2025-09-03 at 00.20.38.png",
     "quartz/static/notes/vmodel_mapping.png",
     "quartz/static/notes/Screenshot 2025-09-03 at 00.41.39.png",
     "quartz/static/notes/vmodel_geert.png",
@@ -189,14 +192,12 @@
     "content/notes/UVC Video Stream.md",
     "content/notes/systems engineering 1.md",
     "content/notes/static_dynamic_libraries.md",
-    "quartz/static/notes/linearvscircularlifecycle.png",
     "Pasted image 20250903002025.png",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/system monotonic clock.md",
     "content/notes/MiDaS.md",
     "content/notes/ONNX.md",
     "content/notes/hadoop.md",
-    "quartz/static/notes/midas.png",
     "content/notes/cpp_arraysvsvectors.md",
     "content/notes/cpp_pointersAndArrays.md",
     "content/notes/cppbasics.md",
