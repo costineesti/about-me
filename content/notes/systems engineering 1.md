@@ -36,7 +36,7 @@ For example, a question that could be asked during this course is:
 >5. **Retirement** - Recycling??
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/linearvscircularlifecycle.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/linearvscircularlifecyclee.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!question] Questions we should ask about the system
