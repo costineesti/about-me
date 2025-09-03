@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/systems engineering 1.md",
+                "file": "content/notes/NLP 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "systems engineering 1"
+              "title": "NLP 2"
             }
           }
         ]
@@ -179,6 +179,12 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
+    "quartz/static/notes/derivation.png",
+    "quartz/static/notes/morphological.png",
+    "content/notes/numerical_methods.md",
+    "content/notes/NLP 2.md",
+    "quartz/static/notes/finnishvsenglish.png",
+    "content/notes/systems engineering 1.md",
     "quartz/static/notes/linearvscircularlifecycle.png",
     "quartz/static/notes/Screenshot 2025-09-03 at 00.20.38.png",
     "quartz/static/notes/vmodel_mapping.png",
@@ -187,12 +193,8 @@
     "quartz/static/notes/Screenshot 2025-09-03 at 00.38.34.png",
     "quartz/static/notes/vmodel.png",
     "quartz/static/notes/Screenshot 2025-09-03 at 00.37.44.png",
-    "quartz/static/notes/leftshift.png",
-    "quartz/static/notes/acqphase.png",
     "content/notes/UVC Video Stream.md",
-    "content/notes/systems engineering 1.md",
     "content/notes/static_dynamic_libraries.md",
-    "Pasted image 20250903002025.png",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/system monotonic clock.md",
     "content/notes/MiDaS.md",
@@ -213,8 +215,6 @@
     "content/projects/visual-odom.md",
     "content/projects/sort.md",
     "content/projects/metalic grid.md",
-    "content/projects/inertial-odom.md",
-    "content/projects/Proportional-Derivative.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
