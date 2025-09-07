@@ -94,10 +94,10 @@ German example: Finanzdienstleistungsunternehmen
 
 # Summary
 
-• `Inflection`: word stem + affixes, <u>same</u> lemma: ==walk, walks, …==
-• `Derivation`: word stem + affixes, <u>different</u> lemma: ==walk, walker, …==
-• `Compounding`: combining multiple words: ==homework, sidewalk, … ==
+*  `Inflection`: word stem + affixes, <u>same</u> lemma: ==walk, walks, …==
+*  `Derivation`: word stem + affixes, <u>different</u> lemma: ==walk, walker, …==
+*  `Compounding`: combining multiple words: ==homework, sidewalk, … ==
 
 Also:
 
-• `Cliticisation`: contraction; word plus clitic (shortened word): ==we’re, don’t, …==
+*  `Cliticisation`: contraction; word plus clitic (shortened word): ==we’re, don’t, …==
