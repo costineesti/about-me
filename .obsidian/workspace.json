@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/NLP 3.md",
+                "file": "content/notes/systems engineering 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NLP 3"
+              "title": "systems engineering 1"
             }
           }
         ]
@@ -179,6 +179,10 @@
   },
   "active": "70761a9d4ee2ee0d",
   "lastOpenFiles": [
+    "quartz/static/notes/generic_life_cycle.png",
+    "quartz/static/notes/Screenshot 2025-09-08 at 12.02.01.png",
+    "content/notes/delft.md",
+    "content/notes/NLP 3.md",
     "content/notes/principal_component_analysis.md",
     "content/notes/ONNX.md",
     "content/notes/NLP 2.md",
@@ -187,7 +191,6 @@
     "content/notes/systems engineering 1.md",
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_preprocessor.md",
-    "content/notes/NLP 3.md",
     "quartz/static/notes/google.png",
     "quartz/static/notes/derivation.png",
     "quartz/static/notes/morphological.png",
@@ -198,7 +201,6 @@
     "quartz/static/notes/vmodel_mapping.png",
     "quartz/static/notes/Screenshot 2025-09-03 at 00.41.39.png",
     "quartz/static/notes/vmodel_geert.png",
-    "quartz/static/notes/Screenshot 2025-09-03 at 00.38.34.png",
     "content/notes/static_dynamic_libraries.md",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/system monotonic clock.md",
@@ -207,14 +209,12 @@
     "content/notes/cpp_arraysvsvectors.md",
     "content/notes/cpp_pointersAndArrays.md",
     "content/notes/cppbasics.md",
-    "content/notes/delft.md",
     "content/notes/gopro.md",
     "content/notes/barcode detection and decoding.md",
     "content/notes/rodrigues.md",
     "content/notes/Shunting yard algorithm.md",
     "content/notes/Singular Value Decomposition.md",
     "content/notes/mlapp_regression.md",
-    "content/notes/Edge Computing.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
