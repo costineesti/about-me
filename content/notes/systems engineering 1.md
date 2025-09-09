@@ -1,5 +1,5 @@
 ---
-title: Systems Engineering
+title: Acquisition Phase in Systems Engineering
 draft: false
 tags:
 date: 2025-09-08
@@ -7,8 +7,6 @@ date: 2025-09-08
 # Course Intro
 
 Systems Engineering is a compulsory course I have to pursue in my Robotics Master's at Twente. It's taught by dr. ir. Geert Folkertsma. I really like it because I feel it goes in depth into how anyone who wants to be in a management position (who calls the shots) should think.
-
-Reference material: Applied Systems Engineering book - ISBN 978-1-921138-13-3
 
 >[!quote] Systems Engineering is....
 >
