@@ -2,17 +2,29 @@
 title: Systems Engineering
 draft: false
 tags:
-date: 2025-09-09
+date: 2025-09-11
 ---
  
 I'm taking this class during Q1 in my first year of Master's in Robotics at Twente.
 
-Reference material: Applied Systems Engineering book - ISBN 978-1-921138-13-3
-
 So far, I have these topics covered:
 
-[[Systems Engineering|Acquisition Phase in Systems Engineering]]
+[[systems engineering 2|Acquisition Phase in Systems Engineering]]
 [[systems engineering 2|Conceptual Design]]
+[[systems engineering sde 2|Systems Engineering Process]]
+
+Reference material:
+* Falconbridge and Ryan, **Applied Systems Engineering (ASE)** book - ISBN 978-1-921138-13-3
+* Bonnema, Veenvliet and Broenink, **System Design Engineering(SDE)** book - ISBN: 978-1-498751-26-1
+
+>[!abstract] Systems Engineering
+>How is the process of bringing large and complex systems into being organized? 
+>
+>By investigating the problem and dividing it into smaller pieces, the work is made more manageable. The importance of identifying the interfaces between the pieces and how to put the pieces together is treated.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/SUD.png" style="max-width: 100%; height: auto;">
+</div>
 
 # List of abbreviations
 
