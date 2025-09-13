@@ -116,7 +116,7 @@ $$
 > * Use external information from a sentiment dictionary
 > * $P(\text{pos\_lexicon} \mid +)\, P(\text{neg\_lexicon} \mid +)$ from the sentiment dictionary
 
->[!question] If “horrible” and “awesome” are not in training, P(horrible) == P(awesome) == ?
+>[!question] If “horrible” and “awesome” are not in training, P(horrible) \== P(awesome) ?
 >* Use external information from a sentiment dictionary
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
