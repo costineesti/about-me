@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/systems engineering sde 2.md",
+                "file": "content/notes/NLP 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "systems engineering sde 2"
+              "title": "NLP 5"
             }
           }
         ]
@@ -179,22 +179,24 @@
   },
   "active": "f33868ae467506fc",
   "lastOpenFiles": [
-    "content/notes/Systems Engineering.md",
+    "content/notes/NLP 4.md",
+    "content/notes/NLP 5.md",
     "content/notes/systems engineering sde 2.md",
-    "quartz/static/notes/veemodel.png",
-    "quartz/static/notes/sysengintegration.png",
-    "quartz/static/notes/subsysproc.png",
-    "quartz/static/notes/subsandifx.png",
-    "quartz/static/notes/sysreq.png",
-    "content/notes/systems engineering 1.md",
-    "quartz/static/notes/syslevel.png",
-    "content/notes/systems engineering 2.md",
-    "quartz/static/notes/sysengproc.png",
-    "quartz/static/notes/toplevel.png",
-    "quartz/static/notes/mullerpyramid.png",
-    "quartz/static/notes/Screenshot 2025-09-11 at 10.06.36.png",
-    "content/notes/NLP 3.md",
+    "content/notes/Systems Engineering.md",
     "content/notes/NLP 2.md",
+    "content/notes/NLP 3.md",
+    "quartz/static/notes/sentimentdict.png",
+    "quartz/static/notes/Screenshot 2025-09-13 at 20.54.00.png",
+    "quartz/static/notes/multiclassexample.png",
+    "quartz/static/notes/multiclass.png",
+    "quartz/static/notes/binaryclass.png",
+    "quartz/static/notes/supervised.png",
+    "quartz/static/notes/Screenshot 2025-09-13 at 16.52.33.png",
+    "quartz/static/notes/corpussplit.png",
+    "quartz/static/notes/k1.png",
+    "quartz/static/notes/Screenshot 2025-09-13 at 16.35.06.png",
+    "content/notes/systems engineering 1.md",
+    "content/notes/systems engineering 2.md",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/index.md",
     "content/seaclear.md",
@@ -213,7 +215,6 @@
     "content/notes/cpp_pointers_functions.md",
     "content/notes/cpp_preprocessor.md",
     "content/notes/numerical_methods.md",
-    "content/notes/static_dynamic_libraries.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
