@@ -2,7 +2,7 @@
 title: Conceptual Design
 draft: false
 tags:
-date: 2025-09-09
+date: 2025-09-17
 ---
  
 This is the second lecture of my [[Systems Engineering]] course. This information is coming from the third chapter of the ASE book.
@@ -14,7 +14,7 @@ I already talked about Conceptual Design in [[systems engineering 1|Acquisition 
 >[!abstract] Conceptual Design
 >Conceptual Design is the first Acquisition-phase activity. It expands brief business needs into a system-level **logical design** and produces the **initial Functional Baseline (FBL)**—the anchor for all downstream design. Errors here propagate and get costlier later.
 
-It sits in the **problem domain** and is primarily the **customer’s** job (heavily involving the business side).
+It sits in the **problem domain** and is primarily the **customer’s** job (heavily involving the business side). It is imperative that it adequately represents the business and stakeholder needs and requirements.
 
 We have 5 iterative processes:
 
@@ -27,6 +27,8 @@ We have 5 iterative processes:
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/5steps.png" style="max-width: 100%; height: auto;">
 </div>
+
+# Business Needs and Requirements (BNR)
 
 Before any work can commence on developing the system, the **basic BNR** must be articulated clearly and completely by business management… Figure 3-2 summarizes the activities and steps involved with definition of BNR resulting in the development of the **PLCD** and the **BRS**.
 
@@ -60,19 +62,21 @@ Constraints are requirements that are imposed on the system by circumstance, for
 
 # Elicit Business Needs (mission, scenarios, validation, life-cycle)
 
-* Every project should begin with a concise statement of the mission elaborated by statements of the upper-level goals and objectives.
+* Every project should begin with a concise statement of the mission elaborated by statements of the upper-level goals and objectives. The mission statement should be quite short (stated in a single sentence). Avoid using conjunctions (except, of course), physical terms(must not imply any particular physical solution e.g. *'mechanical'* rather than *'robotic arms'*). It should include an *'in order to* clause: it ties the system mission statement and also rely on iteration.
+
+* The mission is then expanded into goals and objectives. Mission->goals(7-ish) ->objectives (top-down)
 
 * It is not possible to develop all possible scenarios from all possible perspectives for all possible stakeholders… consideration must be given to the manner in which a suitable (minimal) set of scenarios is to be developed and all of the system requirements must be covered and all relevant actors must be described.
 
 * A possible way to define, or at least support, operational scenarios is via **functional flow block diagrams (FFBD)** -- structuring the scenarios into a series of logical flows and serve both as descriptions of system use as well as provide excellent communications tools.
 
-* Specific operational scenarios are then described to depict the full range of circumstances under which the system is required to operate… There must be at least one scenario that represents the perspective of each major stakeholder.
+* Specific operational scenarios are then described to depict the full range of circumstances under which the system is required to operate… There must be at least one scenario that represents the perspective of each major stakeholder. The development of operational scenarios is assisted by the presence of standard operating procedures (SOP) which describe the organization's operational procedures and processes.
 
 # Measures & validation criteria (hierarchy)
 
-- **Critical issue (CI).** A CI is a measure of an aspect of the system that is of primary importance to business management and must be met before the system is allowed to proceed… **commonly phrased as questions** that must be answered in the affirmative.
-- **Critical operational issue (COI).** A COI is a measure of an issue that must be examined to determine whether a system meets its mission… **selected subsets of CIs**… commonly phrased as questions that must be answered in the affirmative.
-- **Measure of effectiveness (MOE)** -- the degree to which an operational objective is met under specified conditions… address effectiveness… and how well it integrates into the organization and operational environment.
+- **Critical issue (CI)** that relate to the measurement of system goals. A CI is a measure of an aspect of the system that is of primary importance to business management and must be met before the system is allowed to proceed… **commonly phrased as questions** that must be answered in the affirmative.
+- **Critical operational issue (COI)** that relate to the measurement of objectives. A COI is a measure of an issue that must be examined to determine whether a system meets its mission… **selected subsets of CIs**… commonly phrased as questions that must be answered in the affirmative.
+- **Measure of effectiveness (MOE)** that relate to the next level of objectives -- the degree to which an operational objective is met under specified conditions… address effectiveness… and how well it integrates into the organization and operational environment.
 - **Measure of performance (MOP)** -- one of a subset of measures that combine to form an MOE.
 - **Verification statement** -- It is good practice to ensure that, every time a requirement is articulated, a corresponding verification statement is made.
 - **Technical performance measure (TPM)** …selected MOPs and verification statements… used to assess conformance throughout the development process.
@@ -116,7 +120,7 @@ Definition of the **system boundary** (Figure 3.2) is essential early in the Acq
 
 Each of these interfaces becomes the source of external interface requirements for the system.
 
-**External interfaces** are between the system of interest and each of the other existing or future external systems (Figure 3.2) to which it is interconnected. The interfaces describe the inputs and the outputs of the system—the interfaces to its external environment. The specification, development, test, and management of these external interfaces will place considerable requirements on the system. While the external systems are not directly related to the project, the success of the fielded system is often dictated by its ability to interface to those systems in its external environment.
+**External interfaces** are between the system of interest and each of the other existing or future external systems to which it is interconnected. The interfaces describe the inputs and the outputs of the system—the interfaces to its external environment. The specification, development, test, and management of these external interfaces will place considerable requirements on the system. While the external systems are not directly related to the project, the success of the fielded system is often dictated by its ability to interface to those systems in its external environment.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fig37.png" style="max-width: 100%; height: auto;">
