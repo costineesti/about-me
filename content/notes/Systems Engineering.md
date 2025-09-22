@@ -7,11 +7,13 @@ date: 2025-09-11
  
 I'm taking this class during Q1 in my first year of Master's in Robotics at Twente.
 
-So far, I have these topics covered:
+>[!summary] So far, I have these topics covered:
+>* [[systems engineering 2|Acquisition Phase in Systems Engineering]]
+>* [[systems engineering 2|Conceptual Design]]
+>* [[systems engineering sde 2|Systems Engineering Process]]
+>* [[systems engineering 3|Concepts, Needs and Requirements]]
+>* [[systems engineering 4|Preliminary Design]]
 
-[[systems engineering 2|Acquisition Phase in Systems Engineering]]
-[[systems engineering 2|Conceptual Design]]
-[[systems engineering sde 2|Systems Engineering Process]]
 
 Reference material:
 * Falconbridge and Ryan, **Applied Systems Engineering (ASE)** book - ISBN 978-1-921138-13-3

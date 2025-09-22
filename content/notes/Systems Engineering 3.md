@@ -109,7 +109,7 @@ Requirements must be:
 
 Other than that, they must be concise, clear and correct. 
 
-### EARS for clarity
+### EARS (Easy Approach to Requirement Syntax) for clarity
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/ears.png" style="max-width: 100%; height: auto;">
