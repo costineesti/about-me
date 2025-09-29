@@ -107,4 +107,75 @@ To ensure that the teams developing the CIs have their needs met, and to facilit
 
 ICWGs must meet regularly to generate the initial ICD and should then meet periodically to address any ongoing issues.
 
+### Interface Definition using the $N^2$ Diagram
+
+>[!Summary] The $N^2$ diagram represents a matrix with system functions (or physical elements) running down the diagonal and the remainder of the cells in the matrix represents the interfaces.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/N2_diag.png" style="max-width: 100%; height: auto;">
+</div>
+
+# Subsystem-Level Synthesis and Evaluation
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/subsyslevel.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Investigate Design Alternatives
+
+There are 3 broad design options available including off-the-shelf (OTS), modified OTS, and development items. It depends on:
+
+* availability and stability of the current technology,
+* size of the market,
+* supportability and cost,
+* any contractual directives.
+
+#### Off-the-shelf (OTS)
+
+**Advantages**:
+
+* likely to be readily available with limited or no delay,
+* reduced technical risk,
+* cheaper,
+* validated.
+
+**Disadvantages**:
+
+* compatibility (size, weight, functionalities),
+* outdated (technology far from the current norm),
+* evidence of robustness,
+* warranty,
+* limited documentation,
+
+#### Modified OTS
+
+Should take into account that:
+
+* Support and warranty could be voided if the OTS item is modified,
+* Modifications could be much harder and costlier than anticipated in the beginning.
+
+#### Developmental Items
+
+If suitable OTS equipment is not available, the designer may opt to design and develop the item from the ground up to meet the specific requirements and characteristics detailed in the relevant Devlopment Specifications.
+
+**Advantages**:
+
+* match the desired criteria,
+* all aspects will be understood.
+
+**Disadvantages**:
+
+* much effort,
+* risk of not achieving the final goal,
+* maintenance and support issues.
+
+#### Use of Architectures
+
+The problem domain is gradually coalesced into the BRS $\rightarrow$ StRS $\rightarrow$ SyRS which describes the logical architecture of the system. This logical architecture in the FBL is then allocated to a physical architecture in the form of the configuration items as they are described in the ABL.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/useofarch.png" style="max-width: 100%; height: auto;">
+</div>
+
+#### Technical Maturity
 
