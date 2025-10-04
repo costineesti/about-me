@@ -4,7 +4,8 @@ draft: false
 tags:
 date: 2025-09-29
 ---
- 
+
+Based on Chapter 3 of the SDE book.
 # Dynamic Thinking
 
 The systems designed by system designers and systems engineers are not monolithic invariant systems. They interact with the environment and are often highly dynamic. Looking at the system from a dynamic perspective is thus essential:

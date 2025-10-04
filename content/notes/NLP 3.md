@@ -1,354 +1,133 @@
 ---
-title: N-grams Language Model and Text Classification
+title: Sentiment Analysis and Naive Bayes
 draft: false
 tags:
 date: 2025-09-13
 ---
- 
-This is a lecture from my Natural Language Processing Course at Twente. 
 
-# Language Modelling
+Sentiment analysis is the automatic detection of the attitude towards an object.
 
->[!NOTE] Language Modelling
->* is the task of predicting what words come next
->	* p(in | Please turn your homework) > p(the | Please turn your homework)
+The best examples are **movie reviews** (is it negative or positive)?
+
+>[!quote] It's actually quite surprising that it took such a long time for Hollywood to assassinate, pardon me, remake this very interesting story based on the 1971 Stanford prison experiment. The problem with this remake is that, as in most things Hollywood, it's all about big name actors and big fights and nice camera angles.
+
+# Naive Bayes
+
+**Input**:
+
+* A document _d_ (of which we want to know the class/sentiment)
+* A set of classes $C= {c_1, c_2, … c_j}$ -- in our case $C = {+, -}$
+* A training set of _m_ hand-labeled documents $(d_1, c_1), (d_2, c_2), … , (d_m, c_m)$
+
+**Output**:
+
+* a learned classifier $y:d \rightarrow c$
+
+>[!abstract] So it works like this:
+>* What we want to know: $P(+ \mid d) > P(- \mid d)$
+>* Bayes' Rule: $P(x \mid y) = \frac{P(y \mid x) \, P(x)}{P(y)}$
+>* $\rightarrow$ $P(+ \mid d) = \frac{P(d \mid +)\, P(+)}{P(d)}$
+>* What we want to know: $P(d \mid +)\, P(+) > P(d \mid -)\, P(-)$
 >
->* It also computes the probability of a sequence of words
->	* p(Please turn your homework in) > p(in Please homework turn your)
+>where:
+>* $P(d \mid +) =$ likelihood of the document
+>* $P(+) =$ Prior probability of the + class
+>* $P(f_1, f_2, f_3, \cdots, f_n \mid +) =$ Likelihood of the document, represented as set of features (words and their positions).
+
+# Bag-of-word model
+
+The idea behind the ‘bag-of-word’ is that word order does not matter for text classification. This is obviously not true in all cases… but it is a useful simplification, and the results are often “good enough” in practice. However, there are still too many parameters. To further simplify the problem, we assume that features are **mutually** **independent** (e.g. reading ‘great’ in a review does not aﬀect the likelihood of reading ‘fantastic’ later on in the same review).
+
+# Naive Bayes training
+
+$$
+P(f_1, f_2, f_3, \cdots, f_n \mid +)P(+)
+$$
+
+### How can we find $P(f_i \mid +)$ and $P(+)$
+
+$$ 
+P(+) = \frac{N_+}{N_{doc}}
+$$
+
+$$
+P(f_i \mid +) = \frac{C(w_i, +)}{\sum\limits_{w \in V} C(w, +)}
+$$
+
+How many times does $w_i$ appear, out of all words that appear in positive documents? **This is a Language Model*
+
+**What we want to know:** $P(+) \prod P(f_i \mid +) > P(-) \prod P(f_i \mid -)$  
+
+Is “a good movie” positive or negative?
+
+* $P(+) \, P(a \mid +) \, P(good \mid +) \, P(movie \mid +) = 0.041$
+* $P(-) \, P(a \mid -) \, P(good \mid -) \, P(movie \mid -) = 0.034$
+
+>[!question] What happens we need to estimate $P(f_i \mid +)$ for a word we have never seen before in the training set (e.g. the title of a new movie)?
 >
+>We can solve this by “boosting” all counts, e.g. with Laplace smoothing. We redefine Count as “Count + 1”
+>
+>$$
+>P(f_i \mid +) = \frac{C(w_i, +) + 1}{\sum\limits_{w \in V} C(w, +) + |V|}
+>$$
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/google.png" style="max-width: 100%; height: auto;">
-</div>
+### Practical Issues of Naive Bayes
 
-# Probabilities (very briefly)
+Irony, and especially sarcasm, can be challenging (for every sentiment analysis algorithm, not just NB):
 
-Measure how likely an event is to occur or how likely a proposition is true. Probabilities of all possible alternatives add up to one
+* “Battlefield Earth saves its scariest moment for the end: a virtual guarantee that there will be a sequel.”
+* “Valentine's Day is being marketed as a Date Movie. I think it's more of a First-Date Movie. If your date likes it, do not date that person again. And if you like it, there may not be a second date.”
 
-* Conditional probability: $p(a|b)$ -- the probability of $a$ given $b$
-* Joint probability: $p(a,b)$ -- the probability of $a$ and $b$
-	* if a,b are independent, then:
-		* $p(a|b) = a$
-		* $p(a,b) = p(a)p(b)$
+---
 
-### Chain rule of probability
-
-$p(a,b) = p(a)p(b|a)$
-
-# N-grams
-
-please turn your homework ___
-
-A **n-gram** is a chunk of n consecutive words.
-
-* unigrams: “please”, “turn”, “your”, “homework”
-
-* bigrams: “please turn”, “turn your”, “your homework”
-
-* trigrams: “please turn your”, “turn your homework”
-
-* 4-grams: “please turn your homework”
-
-### Joint probability of words in a sentence
-
-$$
-p(w_1,w_2,w_3) \approx p(w_1| \langle s \rangle)p(w_2|w_1)p(w_3|w_2)
-$$
-or
-
-$$
-p(w_1,w_2,w_3) \approx p(w_1| \langle s \rangle, \langle s \rangle)p(w_2 \langle s \rangle,w_1)p(w_3|w_1,w_2)
-$$
-
-In general, we can approximate
-$$
-p(w_i \mid w_{1:i-1}) \approx p(w_i \mid w_{i-n+1:i-1})
-$$
-
-so that the probabilty of a sequence
-
-$$
-p(w_{1:n}) \approx \prod_{i=1}^{n} p(w_i \mid w_{i-n+1:i-1})
-$$
-
-### Maximum Likelihood Estimation
-
-$$
-p(w_i \mid w_{i-n+1:i-1}) = \frac{C(w_{i-n+1:i-1}, w_i)}{C(w_{i-n+1:i-1})}
-$$
-
-### Example
-
-Given the following corpus of 3 sentences using the Maximum Likelihood Estimation
-
-⟨s⟩ I am Sam ⟨/s⟩
-
-⟨s⟩ Sam I am ⟨/s⟩
-
-⟨s⟩ I do not like green eggs and ham ⟨/s⟩
+$P()$ of a **chain of observations** quickly becomes a tiny number: $P(+) \prod P(f_i \mid +)$
 
 $$
 
 \begin{aligned}
-
-p(\text{I} \mid \langle s \rangle) &= \frac{2}{3} = \textcolor{red}{0.67} \quad & p(\text{Sam} \mid \langle s \rangle) &= \frac{1}{3} = \textcolor{red}{0.33} \\\\
-
-p(\text{am} \mid \text{I}) &= \frac{2}{3} = \textcolor{red}{0.67} \quad & p(\text{do} \mid \text{I}) &= \frac{1}{3} = \textcolor{red}{0.33} \\\\
-
-p(\text{Sam} \mid \text{am}) &= \frac{1}{2} = \textcolor{red}{0.5} \quad & p(\langle /s \rangle \mid \text{Sam}) &= \frac{1}{2} = \textcolor{red}{0.5}
-
+P(+) &= 0.38 \quad & P(a \mid +) &= 0.12 \quad & P(very \mid +) &= 0.02 \\\\
+P(movie \mid +) &= 0.10 \quad & P(good \mid +) &= 0.08 \quad & P(not \mid +) &= 0.02
 \end{aligned}
 
 $$
 
-And the probability of the sentence *I am Sam*:
+$P($not a very good movie$) = 0.00000021888$
+
+Most computer languages cannot represent tiny numbers accurately. In Python:
 
 $$
-p(\langle s \rangle\ \text{I am Sam}\ \langle /s \rangle) =\ ?
-$$
+1/10 == 0.10000000000000001 \rightarrow True
+$$ 
+***Solution***: move everything to log space, where the logarithm of a product is the sum of the individual logarithms: Now we are only **adding** numbers, so they become easier to represent.
 
 $$
-\begin{aligned}
-
-p(\langle s \rangle\ \text{I am Sam}\ \langle /s \rangle)
-
-&= \textcolor{red}{p(\text{I} \mid \langle s \rangle)\ p(\text{am} \mid \text{I})\ p(\text{Sam} \mid \text{am})\ p(\langle /s \rangle \mid \text{Sam})} \\\\
-
-&= \textcolor{red}{0.67 \times 0.67 \times 0.5 \times 0.5} \\\\
-
-&= \textcolor{red}{0.11}
-
-\end{aligned}
-$$
-### Breaking down why the examples give these values
-
-In the first case, we compute the probability of starting a sentence with the word "I". In this case 2 out of 3 sentences start with it, therefore 0.67. Same for the second example.
-
-In the second case, what is the probability of the word am following immediately after I? In 2 out of 3 cases we see this happenning, therefore 0.67 again. Same for the second example.
-
-In the last 2 cases we only took the first 2 sentences into consideration. In the last example we are computing the probability of a sentence to finish with the word "Sam", therefore 0.5.
-
-# Perplexity
-
-What do those numbers in the example mean? How do we quantify? Where is the noise coming from?
-
-The **perplexity** of a language model on a test set is the inverse probability of the test set, normalized by the number of words.
-
-For set $W = w_1, \ldots, w_N$ : 
-
-$$
-PP(W) = p(w_1, \ldots, w_N)^{-\frac{1}{N}}
+\log\left(P(+) \prod P(f_i \mid +)\right) = \log P(+) + \sum \log P(f_i \mid +)
 $$
 
-$$
-= \sqrt[N]{\frac{1}{\prod_{i=1}^{N} p(w_i \mid w_{i-n+1}^{i-1})}}
-$$
+---
 
-* It decreases as model improves. REMEMBER to include sentence end-markers in the total count of word tokens $N$.
-* It is only comparable for models with the same vocabulary.
+>[!question] Ignoring word order means ignoring negation (“Contrarily to my expectations, it was **not bad** at all”). How can we fix this?
+>* Can be mitigated with preprocessing, by adding a prefix to words after negation, until punctuation (e.g. “NOT_”).
+>* The pre-processed text becomes “it was not **NOT_bad** **NOT_at** **NOT_all**”.
+>* We expect that $P(NOT\_bad \mid +) > P(bad \mid +)$
 
-# Out of Vocabulary Words
+>[!question] What if we have **too little data** to train our classifier eﬀectively?
+> * Estimate word similarity (next week’s lecture) between unknown word and words we know about. Then assign the same weight as most n similar known words.
+> * Use external information from a sentiment dictionary
+> * $P(\text{pos\_lexicon} \mid +)\, P(\text{neg\_lexicon} \mid +)$ from the sentiment dictionary
 
-What about unknown words in the test set?
-
-### Smoothing
-
-if $p(w_{n-1},w_n) = 0$ at test $\rightarrow$ infinite perplexity on whole set. Zero probabilities make evaluation impossible.
-
-Smoothing suggests:
-
-* Slightly increase the probability of unseen instances
-* Requires reducing the probability of seen instances
-* Multiple approaches
-
-### Laplace Smoothing
-
-* Rough adjustment to MLE
-* "add-one" smoothing
-
-$$
-
-p(w_i) = \frac{c_i}{N}
-
-$$
-
-$c_i = C(w_i)$, for brevity. How often $w_i$ occurs in the training data.
-
-$N$ = number of words in the dataset.
+>[!question] If “horrible” and “awesome” are not in training, P(horrible) \== P(awesome) ?
+>* Use external information from a sentiment dictionary
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/smoothing_1.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/sentimentdict.png" style="max-width: 100%; height: auto;">
 </div>
 
+# Why use Naive Bayes?
 
-$$
-p(w_i) = \frac{c_i + 1}{N + V}
-$$
+* It is very fast to train, and **very** fast to classify
+* Low storage requirement: you only need to store 2 numbers per word in your corpus
+* Works well with limited amount of features
+* Robust to stop words and irrelevant features
+* It is easy to interpret why a certain review/post/mail/etc. has been classified the way it is (by checking the contribution of each feature).
 
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/smoothing_2.png" style="max-width: 100%; height: auto;">
-</div>
-
-* Define “adjusted counts” $c^*$ to keep denominator N (divide by N: probability)
-
-$$
-c^* = (c + 1) \cdot \frac{N}{N + V}
-$$
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/smoothing_3.png" style="max-width: 100%; height: auto;">
-</div>
-
-* Define "relative discount":
-
-$$
-d_c = \frac{c^*}{c}
-$$
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/smoothing_4.png" style="max-width: 100%; height: auto;">
-</div>
-
-* "add-k smoothing":
-
-$$
-p(w_i) = \frac{c_i + k}{N + kV}
-$$
-
-k = 0
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/k0.png" style="max-width: 100%; height: auto;">
-</div>
-
-k = 0.1
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/k01.png" style="max-width: 100%; height: auto;">
-</div>
-
-k = 1
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/k1.png" style="max-width: 100%; height: auto;">
-</div>
-
-
-# Backoff and Interpolation
-
-As n increases, the number of possible n-grams increases exponentially. So the question is: can we use lower-order n-grams to estimate higher-order n-grams?
-
-### Interpolation
-
-* Mix the probability estimates from all the n-gram estimators (high to low until unigrams)
-* Weighted average of different order n-gram probabilities:
-
-$$
-
-\hat{p}(w_n \mid w_{n-2}, w_{n-1}) =
-
-\lambda_1 p(w_n \mid w_{n-2}, w_{n-1}) +
-
-\lambda_2 p(w_n \mid w_{n-1}) +
-
-\lambda_3 p(w_n)
-
-$$
-
-with $\sum \lambda_i = 1$.
-
-*  n-gram-specific λ learnt on a held-out corpus.
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/corpussplit.png" style="max-width: 100%; height: auto;">
-</div>
-
-### Stupid Backoff
-
-* Recursively “back off” to a lower-order n-gram if we have zero evidence for a higher-order n-gram
-
-**Problem**: for huge corpora (the web), it is hard to:
-
-1. Store probabilities
-2. Compute correct back-off weights
-
-**Solution**: don’t compute probabilities and use a fixed weight
-
-$$
-S(w_i \mid w_{i-k+1:i-1}) =
-\begin{cases}
-\frac{C(w_{i-k+1:i})}{C(w_{i-k+2:i-1})} & \text{if } C(w_{i-k+1:i}) > 0 \\\\
-\lambda S(w_i \mid w_{i-k+2:i-1}) & \text{otherwise}
-\end{cases}
-$$
-
-# Text Classification
-
-* **Binary**
-	* Spam filter: spam or not spam
-* **Multi-class**
-	* Language identification: English, Thai, Italian, Chinese, Nepali,
-	* Sentiment analysis: positive, negative or neutral
-* **Multi-label**
-	* Subject indexing
-	* **Extreme Multi-label Text Classification** (XMTC) when there are thousands, or ten of thousands of candidate classes
-
-### Classification Methods
-
-Basically I would always choose supervised machine learning (Naive Bayes, Logistic Regression, Random Forest, etc.)
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/supervised.png" style="max-width: 100%; height: auto;">
-</div>
-
-Normally a classifier expects a numerical input so what are the features? How do we identify features from text?
-
-Types of textual features:
-
-* Words: normalisation
-* Characteristics of Words: captialisation (US vs us)
-* Part-Of-Speech: nouns, verbs, etc
-* Grammatical structure, sentence parsing
-* Grouping similar words: {happy, merry}, numbers, dates
-* n-grams: “ing,” “re”
-
-### Binary Classification
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/binaryclass.png" style="max-width: 100%; height: auto;">
-</div>
-
-F1 measure:
-
-$$
-F_1 = \frac{2PR}{P + R}
-$$
-
-### Multi-class Classification
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/multiclass.png" style="max-width: 100%; height: auto;">
-</div>
-
-Confusion matrix for a three-class categorization task, showing for each pair of classes (c1,c2), how many documents from c1 were (in)correctly assigned to c2.
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/multiclassexample.png" style="max-width: 100%; height: auto;">
-</div>
-
-precision $= \frac{tp}{tp+fp}$
-
-* macro average precision $= \frac{.42+.52+.86}{3} = .60$
-* micro average precision $= \frac{8+60+200}{(8+11)+(60+55)+(200+33)} = .73$
-
-Always check whether your classes are balanced!
-
-# Practical issues
-
-Let's say I want to build a text classifier for real, but what should I do? Depending on the training data:
-
-* no training data $\rightarrow$ manually written rules
-* very little data $\rightarrow$ Naive Bayes
-* reasonable amount of data $\rightarrow$ any clever classifier
-* huge amount of data $\rightarrow$ high accuracy at high cost, simple method or deep NN

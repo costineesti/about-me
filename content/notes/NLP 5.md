@@ -1,173 +1,200 @@
 ---
-title: Hidden Markov Models for PoS tagging and NER
+title: Vector Semantics and Embeddings
 draft: false
 tags:
-date: 2025-09-14
+date: 2025-10-04
 ---
  
-# Parts of Speech
+This is Lecture 5 from my [[NLP|Natural Language Processing]] course.
 
-Parts of speech are a way to divide words into categories: verbs are actions (“running”, “eating”, “thinking”, …), nouns are stuff (things, people, abstract concepts such as “eternity”), adjectives are qualities (“good”, “tall”, “white”, “loyal”), etc.
+# Transitioning to Word Meaning
 
-So the question is: How can the computer automatically annotate the PoS tags for a sentence?
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/posexample.png" style="max-width: 100%; height: auto;">
-</div>
-
-# Markov Chains
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/markovchains.png" style="max-width: 100%; height: auto;">
-</div>
-
-* Probability of starting from rain: 0.4
-* Probability of starting from snow: 0.3
-* Probability of starting from sunny: 0.3
-
->[!question] Probability of the sequence *rain snow sunny rain rain?*
->$0.4 \cdot 0.1 \cdot 0.4 \cdot 0.3 \cdot 0.45 = 0,00216$
-
-### Background
-
-**Markov Assumption**: $P(q_i = a \mid q_1 \ldots q_{i-1}) = P(q_i = a \mid q_{i-1})$
-
-$P(\text{rain} \mid \text{snow sunshine rain snow snow}) = P(\text{rain} \mid \text{snow})$
-
-This expresses that the probability of the the next state is dependent only on the previous state, not on the entire history.
-
-Let:
-
-* $Q = q_1,q_2,q_3 ... q_n$ be a set of $N$ states
-* $A = a_{11},a_{12} ... a_{n1} ... a_{nn}$ be a transition probability matrix with each $a_{ij}$ representing the probability of moving from state $i$ to state $j$. $\sum_{j=1}^{n}{a_{ij}} = 1$
-* $\pi = \pi_1, \pi_2, ... \pi_n$ be an initial probability distribution over states. $\pi_i$ is the probability that the Markov Chain will start from state $i$. Also, $\sum_{i=1}^{n}{\pi_{i}} = 1$
-
->[!question] What if we are in a room with no windows and we cannot look at the weather outside, but we can feel the temperature?
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/markovprob.png" style="max-width: 100%; height: auto;">
-</div>
-
-### Hidden Markov Models
-
-$$
-\text{tag}_1^n = \arg\max_{\text{tag}_1^n} \, P(\text{word}_1^n \mid \text{tag}_1^n) \, P(\text{tag}_1^n)
-$$
-
-This expression finds the most likely tag sequence $\text{tag}_1^n$ given a word sequence $\text{word}_1^n$.
-
-P of a tag is **only** dependent on previous tag: $P(\text{tag}_1^n) \approx \prod P(\text{tag}_i \mid \text{tag}_{i-1})$
-
-P of seeing a word is **only** dependent its PoS tag, not on previous words or PoS tags: $P(\text{word}_1^n \mid \text{tag}_1^n) \approx \prod P(\text{word}_i \mid \text{tag}_i)$
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/hiddenmarkovmodel.png" style="max-width: 100%; height: auto;">
-</div>
-
-- $C(\text{NN}, \text{dog})$ means “the number of times the word _dog_ was tagged as _NN_ (noun)” in the corpus.
-- $C(\text{DT}, \text{NN})$ means “the number of times the tag _NN_ follows the tag _DT_ (determiner)” in the corpus.
-- $C(\text{NN})$ means “the total number of times the tag _NN_ appears” in the corpus.
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/examplehiddenmarkovmodel.png" style="max-width: 100%; height: auto;">
-</div>
-
-For the first, we take the initial probability of $DT = 0.5$ and $P(\text{tomorrow} \mid \text{DT})=0.1$. For the second, we see on the graph that $P(NN \mid DT)=0.8$ and $P(is \mid NN)=0$ and so on.
-
-# Viterbi Algorithm
-
-The Viterbi algorithm is a dynamic programming algorithm for finding the most likely sequence of hidden states in a Hidden Markov Model (HMM). 
-
-| Tag | Obs1 *(tomorrow)*       | Obs2 *(is)*              | Obs3 *(another)*          | Obs4 *(day)*                |
-| --- | ----------------------- | ------------------------ | ------------------------- | --------------------------- |
-| NN  | $\textcolor{red}{0.16}$ | 0.0048                   | 0.00384                   | $\textcolor{red}{0.000245}$ |
-| VB  | 0                       | $\textcolor{red}{0.096}$ | 0.0015                    | 0.000037                    |
-| DT  | 0.05                    | 0.0016                   | $\textcolor{red}{0.0082}$ | 0.000101                    |
-
-To compute the first column:
-
-* $P(NN \mid \text{initial probs}) \cdot P(\text{tomorrow} \mid NN) = 0.4 \cdot 0.4 = 0.16$
-* $P(VB \mid \text{initial probs}) \cdot P(\text{tomorrow} \mid VB) = 0.1 \cdot 0 = 0$
-* $P(DT \mid \text{initial probs}) \cdot P(\text{tomorrow} \mid DT) = 0.5 \cdot 0.1 = 0.05$
-
->[!abstract] To compute the following columns:
+>[!NOTE] So far:
+>* n-grams $\rightarrow$ predict next word from sequence of tokens
+>* Naive Bayes $\rightarrow$ classify using word counts/probabilities
+>* POS/NER $\rightarrow$ assign symbolic categories to words
 >
->* **We don’t assume the previous tag**.
->* We calculate the **probability of each possible path** from the previous column
->* We **pick the one with the highest score** → this is the Viterbi step
+>Limitations:
+>* Model knows dog $\neq$ cat, but not that they're similar
+>* No notion of synonymy, antonymy, or relatedness
+
+We want our models to understand that:
+* buy, sell, pay are related through events (**similarity**)
+* happy and sad are opposites (**relatedness**)
+* coffee and cup co-occur in real life (**connotation**)
+
+# Vector Semantics
+
+It's used to define meaning by linguistic distribution: look at its neighbouring words or grammatical environments
+
+>[!summary] Foundations
+>* Words are represented as points (vectors) in some multi-dimensional space
+>* Word vectors are generally called embeddings
+>* Semantically similar words are mapped to nearby points, that is “are embedded nearby each other"
+ >* A desirable property: proximity in the vector space $\rightarrow$  semantic similarity/relatedness
+
+### Words as Vectors
+
+#### Term-document matrix
+
+Each document is represented as a count vector (a column) and each word is also a vector (a row)! The dimensionality depends on context
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/viterbialg.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/termdoc1.png" style="max-width: 100%; height: auto;">
 </div>
-
-To compute the first value on the second column:
-
-| Previous Tag | $P(\text{prev tag} \mid column)$ | $P(\text{curr tag} \rightarrow NN)$ | $P(is \mid NN)$ | P("is"                        |
-| ------------ | -------------------------------- | ----------------------------------- | --------------- | ----------------------------- |
-| NN           | 0.16                             | 0.3                                 | 0.1             | 0.16 × 0.3 × 0.1 = **0.0048** |
-| VB           | 0                                | 0.4                                 | 0.1             | 0 × 0.4 × 0.1 = 0             |
-| DT           | 0.05                             | 0.8                                 | 0.1             | 0.05 × 0.8 × 0.1 = 0.004      |
-
-# How to decide if we're good at PoS tagging?
-
-We need a measure of performance.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/measureofperf.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/termdoc2.png" style="max-width: 100%; height: auto;">
 </div>
 
-Ideas:
+#### Term-term matrix
 
-* Use techniques to deal with words that did not appear in the training corpus
-* Use techniques that take into account the *next* words too
-* Improve the annotation
+In this case words are both rows and columns. Each cell records the number of times the row (target) word and the column (context) word co-occur in some context in some training corpus. The dimensionality is $|V| \times |V|$.
 
-# Named Entity Recognition (NER)
+# Cosine for measuring similarity
+
+>[!question] How do we calculate the similarity (or distance) between word vectors?
+> Cosine similarity measures the similarity in the direction or orientation of the vectors, ignoring differences in their magnitude or scale.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/NER.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/cosinesim1.png" style="max-width: 100%; height: auto;">
 </div>
-
-* NER is more useful than POS tagging in many tasks (sentiment analysis towards a company or person, question answering, information extraction, …)
-* However, it is a harder task than POS tagging, as in POS tagging, entities can be ambiguous:
-	* <span style="color:green">[PER Washington] </span> was born into slavery on the farm of James Burroughs.
-	* <span style="color:cyan">[ORG Washington] </span> went up 2 games to 1 in the four-game series.
-	* Blair arrived in <span style="color:red">[LOC Washington] </span> for what may well be his last state visit.
-	* In June, <span style="color:orange">[GPE Washington] </span> passed a primary seatbelt law.
-
-* In POS tagging, each words get one tag. In NER, we need to **find** and **segment** the entities
-
-### HMM for NER
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/HMMNER.png" style="max-width: 100%; height: auto;">
-</div>
-
-While HMM has been used for NER, it is not the most popular candidate; Conditional Random Fields and other models are better suited for the task.
-### When is NER useful?
-
-* classifying user intentions (e.g. when speaking to Siri/Alexa/Google Assistant: “add a meeting with <span style="color:green">Lorenzo</span> at <span style="color:cyan">15:45</span> at the <span style="color:red">Starbucks</span>”)
-* detecting mentions of a product/company online, before extracting opinions and doing sentiment analysis on them
-* and more ...
-
-# How to decide if we're good at NER
 
 $$
-\begin{aligned}
-\text{recall}    &= \frac{\text{correctly found entities}}{\text{all entities in text}}     = \frac{1}{3} = 33\% \\\\
-\text{precision} &= \frac{\text{correctly found entities}}{\text{all found entities}}        = \frac{1}{2} = 50\%
-\end{aligned}
+\textit{similarity}(\mathbf{v}, \mathbf{w}) = \cos(\theta) = \frac{\mathbf{v} \cdot \mathbf{w}}{\|\mathbf{v}\| \|\mathbf{w}\|} = \frac{\sum_{i}^{N} v_i w_i}{\sqrt{\sum_{i}^{N} v_i^2} \sqrt{\sum_{i}^{N} w_i^2}}
 $$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/NERexampl.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/cosinesim2.png" style="max-width: 100%; height: auto;">
 </div>
 
-We summarize these in one number, the F1 score, by taking their harmonic mean:
+# TF-IDF: Weighing terms in the vector
+
+Raw frequency alone is not a reliable measure of association between words, as it can be skewed and lacks discrimination power.
+
+We need to balance two important constraints:
+
+* Words that frequently co-occur within a given context are more significant than those that only appear a few times.
+* Co-occurrences with highly frequent words are less informative and should be down-weighted accordingly.
+
+>[!NOTE] TF-IDF weighting
+>* Term frequency $tf_{t,d}$
+>		$tf_{t,d} = count(t,d)$ or $tf_{t,d} = log_{10}(count(t,d) + 1)$
+>* Inverse document frequency $idf_t$
+>		$idf_t = log_{10}N$, where $N$ is the total number of documents, and $df_t$ is the number $df_t$ of documents the term $t$ occurs in.
+>* TF-IDF weight $w_{t,d} = tf_{t,d} \times idf_t$
+
+Long and sparse vectors do not model synonyms. Sparse vectors may not capture the similarity between words that have either as neighbours (e.g. *car* and *automobile*).
+
+Because of this reason, we define short and dense vectors.
+
+# Short and Dense Vectors
+## Latent Semantic Analysis (LSA)
+
+>[!summary] Global co-occurrence count-based method
+>* Based on statistics of how often some word co-occurs with its neighbour words in a large text corpus
+>* Dimensionality reduction methods (SVD or Random Projection)
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LSASVD.png" style="max-width: 100%; height: auto;">
+</div>
+
+We keep the truncated matrix T as the word embeddings
+
+Using the dense vectors for similarity computations:
+* Typically gives better results (filter out noise)
+* Faster
+
+## Word2Vec
+
+>[!summary] Local context predictive method
+>* Instead of counting, train a classifier on a binary prediction task: is word $w1$ likely to show up near $w2$?
+>* a simple task: binary classification instead of word prediction
+>* a simple architecture: logistic regression instead of multilayer neural network
+>* no need for human labels
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/word2vec.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Word2Vec: Skip-gram(context representation: better coverage of rare words) + Negative sampling(training method: more intuitive)
+
+>[!summary] The Skip-Gram classifier
+>* Train a probabilistic classifier that, given
+>	* a test target word t,
+>	* its context window of L words $c_{1:L}$,
+>
+>assigns a probability based on how similar this context window is to the target word
+>
+>* This classifier gives a reasonably high probability estimate to all words that occur in the context
+>	* Lower probabilities to noise words (negative examples)
+
+>[!summary] Intuition
+>1. Treat the target word and a neighbouring context word as positive examples.
+>2. Randomly sample other words in the lexicon to get negative samples.
+>3. Use logistic regression to train a classifier to distinguish those two cases.
+>4. Use the regression weights as the embeddings.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/word2vec2.png" style="max-width: 100%; height: auto;">
+</div>
+
+The goal is to train a classifier, such that, given a $(t,c)$ pair, assigns the probability:
+
+* $P(+ \mid t, c)$: the probability that c is a real context word of t
+* $P(- \mid t, c) = 1 - P(+ \mid t, c)$: the probability that c is not a real context word of t
+
+The probability for one context word
 
 $$
-F_1 = 2 \cdot \frac{\text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}} = 2 \cdot \frac{\frac{1}{2} \cdot \frac{1}{3}}{\frac{1}{2} + \frac{1}{3}} = 0.4 = 40\%
+P(+ \mid t, c) = \sigma(t \cdot c) = \frac{1}{1 + e^{-t \cdot c}}
 $$
 
-F1 score for state-of-the-art NER is ~94% on news (but only ~50% on social media)
+Assuming all L context words $c_{1:L}$ are independent
+
+$$
+P(+ \mid t, c_{1:L}) = \prod_{i=1}^{L} \sigma(t \cdot c_i)
+$$
+$$
+\log P(+ \mid t, c_{1:L}) = \sum_{i=1}^{L} \log \sigma(t \cdot c_i)
+$$
+
+The sigmoid function turns the dot products into probabilities.
+
+### Skip-gram Loss function
+
+Consider one positive example $(t,c)$ with its $k$ noise words, $n1,...,nk$, the learning objective is to minimise this loss function $L_{CE}$:
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/skipgram.png" style="max-width: 100%; height: auto;">
+</div>
+
+One step of gradient descent:
+
+1. Shift the embedding of the target word *apricot* towards that of the real context word *jam*
+2. Shift the embedding of the target word *apricot* away from that of the noise word *Tolstoy*
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/skipgram_graddesc.png" style="max-width: 100%; height: auto;">
+</div>
+
+As a result:
+
+* Words that share many contexts get close to each other
+* Contexts that share many words get close to each other
+* Represent each target word as a d dimensional vector $\rightarrow W_{|V| \times d}$
+* Represent each context word as a d dimensional vector $\rightarrow C_{|V| \times d}$
+
+# Bias in word embeddings
+
+Word embeddings can reflect gender, ethnicity, age, sexual orientation and other biases of the text used to train the model.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/wordembed.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!NOTE] Here comes the riddle
+>A man and his son get into a terrible car crash. The father dies, and the boy is badly injured. In the hospital, the surgeon looks at the patient and exclaims, “I cannot operate on this boy, he is my son!”
+
+The idea from the riddle above is that our brains would usually associate *surgeon* with a *men* profession. The surgeon in this case is the mother.
 
