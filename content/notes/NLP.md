@@ -2,7 +2,7 @@
 title: Natural Language Processing
 draft: false
 tags:
-date: 2025-10-04
+date: 2025-10-13
 ---
 
 I'm taking this course as part of my Q1 curriculum at Twente.
@@ -15,6 +15,7 @@ I'm taking this course as part of my Q1 curriculum at Twente.
 >* [[NLP 5|Vector Semantics and Embeddings]]
 >* [[NLP 6|Contextual Word Embeddings and Transformers]]
 >* [[NLP 9|Constituency Grammars]]
+>* [[NLP 10|Constituency Parsing]]
 
 Reference material:
 

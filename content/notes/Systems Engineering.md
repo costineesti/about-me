@@ -2,7 +2,7 @@
 title: Systems Engineering
 draft: false
 tags:
-date: 2025-09-11
+date: 2025-10-13
 ---
  
 I'm taking this class during Q1 in my first year of Master's in Robotics at Twente.
@@ -14,6 +14,8 @@ I'm taking this class during Q1 in my first year of Master's in Robotics at Twen
 >* [[systems engineering 3|Concepts, Needs and Requirements]]
 >* [[systems engineering 4|Preliminary Design]]
 >* [[systems engineering sde 3|System Thinking Tracks]]
+>* [[systems engineering 5|Risk management, FMEA & RMF]]
+>* [[systems engineering 6|Detailed Design and Development]]
 
 
 Reference material:
