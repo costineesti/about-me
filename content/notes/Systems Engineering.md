@@ -16,7 +16,7 @@ I'm taking this class during Q1 in my first year of Master's in Robotics at Twen
 >* [[systems engineering sde 3|System Thinking Tracks]]
 >* [[systems engineering 5|Risk management, FMEA & RMF]]
 >* [[systems engineering 6|Detailed Design and Development]]
-
+>* [[systems engineering 7|Production, Use & Retirement]]
 
 Reference material:
 * Falconbridge and Ryan, **Applied Systems Engineering (ASE)** book - ISBN 978-1-921138-13-3

@@ -98,11 +98,13 @@ CDR is the final design review resulting in the official acceptance of the desig
 ### Qualification
 
 **Design Qualification**: Checked once to verify the design
+
 **Quality Conformance**: verified for every product
 
 ### Acceptance
 
 **FAT -- Factory Acceptance Test**: when leaving the (production) factory
+
 **SAT -- Site Acceptance Test**: when installed at the customer
 
 ### TAS / TAR
