@@ -11,7 +11,7 @@ I'm taking this class during Q1 in my first year of Master's in Robotics at Twen
 >* [[systems engineering 1|Acquisition Phase in Systems Engineering]]
 >* [[systems engineering 2|Conceptual Design]]
 >* [[systems engineering sde 2|Systems Engineering Process]]
->* [[systems engineering 3|Requirements Engineering Framework]]
+>* [[Systems Engineering 3|Requirements Engineering Framework]]
 >* [[systems engineering 4|Preliminary Design]]
 >* [[systems engineering sde 3|System Thinking Tracks]]
 >* [[systems engineering 5|Risk management, FMEA & RMF]]
