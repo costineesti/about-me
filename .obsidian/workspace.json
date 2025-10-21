@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Systems Engineering.md",
+                "file": "content/twente.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Systems Engineering"
+              "title": "twente"
             }
           }
         ]
@@ -192,8 +192,14 @@
   },
   "active": "db466c72ef72e956",
   "lastOpenFiles": [
-    "content/notes/systems engineering 1.md",
+    "content/seaclear.md",
+    "content/twente.md",
+    "quartz/static/notes/curriculum_twente.png",
+    "quartz/static/notes/Screenshot 2025-10-22 at 00.07.23.png",
+    "content/index.md",
+    "Stream.md",
     "content/notes/Systems Engineering.md",
+    "content/notes/systems engineering 1.md",
     "content/notes/systems engineering 3.md",
     "content/notes/Multiple View Geometry in Computer Vision.md",
     "content/notes/NLP 2.md",
@@ -215,19 +221,12 @@
     "content/notes/systems engineering 6.md",
     "quartz/static/notes/production_syseng.png",
     "quartz/static/notes/verif_cost.png",
-    "quartz/static/notes/integration-vmodel.png",
     "content/notes/systems engineering 5.md",
-    "quartz/static/notes/process.png",
     "content/notes/NLP.md",
     "content/notes/NLP 10.md",
     "content/notes/NLP 9.md",
-    "content/index.md",
     "content/notes/NLP 1.md",
     "content/notes/NLP 3.md",
-    "content/notes/SYSENG DIAGRAMS.md",
-    "content/notes/system monotonic clock.md",
-    "content/notes/static_dynamic_libraries.md",
-    "content/notes/rtsp.md",
     "content/notes/quartz.layout.ts",
     "content/notes",
     "content/projects",

@@ -8,10 +8,10 @@ date: 2025-07-02
     <p>I'm a Software Engineer who graduated from Technical University of Cluj-Napoca (2020-2024). I enjoy challenging myself constantly by implementing things from scratch as I can thoroughly understand the process.</p>
     <p>My expertise currently lies in:</p>
     <ul>
-      <li><a href="/projects/Control Engineering">Control Engineering</a> (MATLAB/SIMULINK),</li>
-      <li>Python and C++</li>
-      <li>Robotics, Automation
-      <li>Mathematical Modelling, Optimizations</li>
+      <li>Control Engineering (MATLAB/SIMULINK),</li>
+      <li>Python and C++,</li>
+      <li>Robotics, Automation,</li>
+      <li>Mathematical Modelling, Optimizations,</li>
       <li>Perception Algorithms</li>
     </ul>
   </div>
@@ -73,25 +73,23 @@ date: 2025-07-02
 
 I will upload my personal <a href="/projects/">projects</a> and <a href="/notes/">notes</a> through the years using **Obsidian**.
 
+### What I'm currently working on
+
+>[!summary] Most of my time goes into...
+> - [[seaclear|SeaClear]] -- I'm currently working on autonomous and real-time ground truth validation of 3D pose estimation.
+> - [[twente|University of Twente]] -- I'm currently undertaking a 2-year Master's in Robotics. I aim to specialize in Computer Vision as a whole with focus on perception algorithms combined with AI and ML.
+> - Technical University of Cluj-Napoca -- I'm in the last year of a 2-year Master's in Cyber Physical Systems. My thesis will be based on my work inside SeaClear since I am part of it through TUCN (benefitting from a scholarship).
+
+### What I've worked on in the past
+
+>[!summary] A lot of my time went into...
+> * I've been a Software Engineer at Bosch for 3 years in the Model-Based team. I have successfully automated the regression test using **Python** and **MATLAB** and I also worked with **SIMULINK** mathematical models (basically simulating cars).
+> * My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an RC Car.
+> * [[Analysis and Prediction of Stock Market]] where I improved my knowledge of ML and AI, having implemented all the algorithms from scratch ([[principal_component_analysis|PCA]], [[LSTM]], Gradient Descent, QR Decomposition).
+
 ### Socials
 
 You can find me @:
 * [LinkedIn](https://www.linkedin.com/in/costin-chitic-1169a6235/)
 * [Instagram](https://www.instagram.com/costin_chitic/)
 * [Github](https://github.com/costineesti)
-
->[!NOTE] Some emphasis on my projects
->
->These notes are primarily written with the goal of creating a vault where I can always find my most important <a href="/projects/">projects</a> and <a href="/notes/">notes</a> . Therefore, they are filled with **MY** dumb humour. If you find a link that doesn't work, it's probably just for looks. Please contact me if you ever want to pass on a message :)
-
-### What I'm currently working on
-
->[!hint] Most of my time goes into...
-> - [[seaclear|SeaClear]] -- I'm currently working on autonomous and real-time ground truth validation of 3D pose estimation.
-> - Training an NN to detect the ROV in every possible angle using RoboFlow.
-
-### What I've worked on in the past
-
-* I've been a Software Engineer at Bosch for the past 3 years in the Model-Based team. I have successfully automated the regression test using [[Python]] and [[MATLAB]] and now I'm working with [[SIMULINK]] mathematical models (we're basically simulating cars).
-* My [[Bachelors|bachelors]] degree is my biggest project yet; having implemented a [[Kalman Filter]] in order to achieve sensor fusion between a camera and a IMU in order to get the odometry from an autonomous car.
-* [[Analysis and Prediction of Stock Market]] where I improved my knowledge of ML and AI, having implemented all the algorithms from scratch ([[principal_component_analysis|PCA]], [[LSTM]], Gradient Descent, [[QR Decomposition]]).
