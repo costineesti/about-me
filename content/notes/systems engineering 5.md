@@ -20,7 +20,7 @@ P = Probability, C = Consequences
 >* Technical
 >* Cost
 >* Planning
->* PRogramme(external)
+>* Programme(external)
 
 >[!NOTE] Other risks
 >
@@ -57,7 +57,7 @@ It's not an exact science.
 >3. **Take**: Fuck it, we commit
 >4. **Delegate**: the formula stays the same, but it's not you who's serving the consequences. You buy insurance. If the bike is stolen, the insurance company pays you back
 
-# Bust Test
+# Bus Test
 
 Let's say there is a team member who is crucial to the mission and only they know how to solve a problem. That's not how you want things to be. You want that person to share knowledge and avoid going into a crisis whenever they are not available. It prevents that person from taking other projects and developing outside their current area of activity, which might not be ideal for them.
 
