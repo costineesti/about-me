@@ -183,15 +183,18 @@ Example of Project Management for the MsC thesis
 </div>
 
 Gantt chart: if one task gets longer it shift everything
+
 	We can set milestones
+	
 		And some tasks depend on the milestones
+		
 	Helps with traceability
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/Gantt.png" style="max-width: 100%; height: auto;">
 </div>
 
-Parkinson's Law: the work always expands to the time assigned (people will extend it to the time provided.
+Parkinson's Law: the work always expands to the time assigned (people will extend it to the time provided).
 
 PERT: We are X% sure it's going to get done in 3 weeks
 
