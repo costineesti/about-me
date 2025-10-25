@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/IPCV exam.md",
+                "file": "content/notes/IPCV.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IPCV exam"
+              "title": "IPCV"
             }
           }
         ]
@@ -192,19 +192,21 @@
   },
   "active": "db466c72ef72e956",
   "lastOpenFiles": [
-    "quartz/static/notes/DFT_IP.png",
-    "quartz/static/notes/conv_theorem.png",
-    "quartz/static/notes/FUP.png",
-    "quartz/static/notes/FFT_decomp.png",
-    "quartz/static/notes/FFT.png",
-    "quartz/static/notes/fourier_theory.png",
-    "quartz/static/notes/template_match.png",
-    "quartz/static/notes/MedianFilt.png",
-    "quartz/static/notes/sigmasize.png",
-    "quartz/static/notes/ksize.png",
-    "quartz/static/notes/kernels.png",
+    "quartz/static/notes/line_detect.png",
+    "quartz/static/notes/NCC.png",
+    "content/notes/barcode detection and decoding.md",
+    "content/notes/IPCV.md",
+    "quartz/static/notes/SSD.png",
+    "quartz/static/notes/templ_match1.png",
+    "quartz/static/notes/templ_match.png",
+    "content/twente.md",
+    "quartz/static/notes/summary_cam2.png",
+    "quartz/static/notes/distortions.png",
+    "quartz/static/notes/tang_dist.png",
+    "quartz/static/notes/summary_cam.png",
+    "quartz/static/notes/intr2.png",
+    "quartz/static/notes/intr1.png",
     "content/notes/LSTM.md",
-    "content/notes/IPCV exam.md",
     "content/notes/systems engineering 8.md",
     "content/notes/Systems Engineering.md",
     "content/notes/systems engineering 7.md",
@@ -214,7 +216,6 @@
     "content/notes/systems engineering 3.md",
     "content/notes/systems engineering 4.md",
     "content/notes/systems engineering 5.md",
-    "content/twente.md",
     "content/seaclear.md",
     "content/index.md",
     "Stream.md",
@@ -227,7 +228,6 @@
     "content/notes/systems engineering sde 3.md",
     "content/notes/systems engineering sde 2.md",
     "content/notes/NLP.md",
-    "content/notes/NLP 10.md",
     "content/notes/quartz.layout.ts",
     "content/notes",
     "content/projects",

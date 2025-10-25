@@ -27,3 +27,4 @@ To expand my network, reach, view, ambition, I decided to enroll into a 2-year M
 >
 >* [[NLP|Natural Language Processing]]
 >* [[Systems Engineering]]
+>* [[IPCV|Image Processing and Computer Vision]]
