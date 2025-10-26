@@ -802,7 +802,7 @@ The template is an iconic archetype of the object that we are looking for.
 
 ### Matching Criterion: SSD (Sum of squared differences)
 
-* **type of distortion**: unknown shifted position (𝑝𝑝, 𝑞𝑞)
+* **type of distortion**: unknown shifted position (𝑝, 𝑞)
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/SSD.png" style="max-width: 100%; height: auto;">
@@ -810,7 +810,7 @@ The template is an iconic archetype of the object that we are looking for.
 
 ### NCC (Normalized Cross Correlation)
 
-* **type of distortion**: unknown amplitude: 𝐴𝐴
+* **type of distortion**: unknown amplitude: 𝐴
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/NCC.png" style="max-width: 100%; height: auto;">
@@ -830,7 +830,7 @@ The template is an iconic archetype of the object that we are looking for.
 	* apply **locally** template matching
 
 * Solution: 2nd directional derivative in direction β (eigenvalues of Hessian matrix)
-	* 𝛽𝛽 corresponds to the dominant eigenvector 𝐯𝐯 of the Hessian matrix
+	* β corresponds to the dominant eigenvector 𝐯 of the Hessian matrix
 	* The maximized $f_{ββ}(x, y)$ equals the eigenvalue of the Hessian matrix
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
@@ -984,7 +984,7 @@ $LoG(x,y,\sigma) = \Delta gauss(x,y,\sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\
     <img src="../static/notes/dog.png" style="max-width: 100%; height: auto;">
 </div>
 
-Representations for matched keypoints are done through
+* Representations for matched keypoints are done through:
 	* adjacency matrix
 	* bipartite graphs
 	* table of edges
@@ -1015,7 +1015,7 @@ Representations for matched keypoints are done through
     <img src="../static/notes/triangulation.png" style="max-width: 100%; height: auto;">
 </div>
 
-Key relations:
+* Key relations:
 	* Triangulation (base line, two rays)
 	* Correspondence: representation of 3D point: $X^1 = R_2^1 X^2 + t_2^1$
 
