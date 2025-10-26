@@ -375,7 +375,7 @@ So, in short:
 * By changing the zoom-in/out ratio, we can see the different levels of information from the image.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/einstein_marylin.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/einstein_marilyn.png" style="max-width: 100%; height: auto;">
 </div>
 
 ## Scale Space Theory: Convolution with Gaussian
@@ -439,7 +439,7 @@ So, in short:
 #### First Derivatives
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/1st_detivatives.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/1st_derivatives.png" style="max-width: 100%; height: auto;">
 </div>
 
 * Gradient Magnitude: $\sqrt{f_x^2 + f_y^2}$
@@ -450,13 +450,13 @@ So, in short:
 #### Second Derivatives
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/2nd_detivatives.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/2nd_derivatives.png" style="max-width: 100%; height: auto;">
 </div>
 
 ### Laplacian
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/laplacian.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/laplacian_l5.png" style="max-width: 100%; height: auto;">
 </div>
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
