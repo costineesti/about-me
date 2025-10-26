@@ -357,7 +357,7 @@ So, in short:
     <img src="../static/notes/opening1.png" style="max-width: 100%; height: auto;">
 </div>
 
-# Hit or Miss
+## Hit or Miss
 
 * Find location of one shape among a set of shapes ”template matching”
 * Shape recognition
@@ -839,4 +839,264 @@ The template is an iconic archetype of the object that we are looking for.
 
 # Lecture 9: Detection and tracking of interest points
 
-TBD
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/features_l9.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!NOTE] Applications
+>* motion analysis
+>* range imaging
+>* object detection and parameter estimation
+>* point cloud
+
+## Harris Corner Detection
+
+### Harris' first improvement
+
+* Make the function less noise−sensitive by averaging over a neighborhood
+* New term with average window
+* $E(p,q)$ defines and ellipsoid. Its contour lines are ellipses in the $(p,q)$ plane
+* The shape of the ellipsoid is determined by $\lambda_1$ and $\lambda_2$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/harris1.png" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/harris2.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Harris' second improvement
+
+* A point is an interest point iff $E(p,q)$ is fast increasing for any combination of $p,q$. That is, the ellipsoid must be peaked.
+* Therefore, both $\lambda_1$ and $\lambda_2$ must be large.
+
+>[!NOTE] Harris criterion for an interest point
+> $\lambda_1 \lambda_2 - 0.04(\lambda_1+\lambda_2)^2 > threshold$
+
+>[!NOTE] Shi−Tomasi ciriterion for an interest point (1994)
+>$min(\lambda_1, \lambda_2) > threshold$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/harris3.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Harris' third improvement
+
+* Use a Gaussian weight function (less noise-sensitive): $w(n,m) = \exp(-\frac{n^2+m^2}{2 \sigma^2})$
+
+## Lucas-Kanade: Point Tracking
+
+>[!summary] Tracking
+>* Given two or more images of a scene, find the points in the second and next images that corresponds to the set of interest points in the first image
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LK1.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!NOTE] Optical Flow $\neq$ Motion Field
+>* Optical flow = appearance model
+>* Motion field = physical world
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LK2.png" style="max-width: 100%; height: auto;">
+</div>
+
+For the example above, think about how the lines go up as the result of the rotating pole inside.
+
+### Optical Flow
+
+* Constant brightness assumption: if the intensity of a pixel stays the same over a duration $t$, then it's derivative is 0 and thus stationary (?)
+* $v(\mathbf{x},t)$ is the apparent 2D motion (= optical flow) of the image at position $\mathbf{x}$ and time $t$.
+* $\mathbf{x} = (x,y)$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LK3.png" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LK4.png" style="max-width: 100%; height: auto;">
+</div>
+
+* Minimization of $E(v,t)$:
+	* equating partial derivatives to zero
+	* solving for $v(t)$
+	* The two eigenvalues of M must be large
+
+#### Discrete time
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/LK5.png" style="max-width: 100%; height: auto;">
+</div>
+
+* We minimize SSD with respect to d: $\frac{dSSD(d)}{dd} = 0$
+
+# Lecture 10: Key point detection and matching
+
+## SIFT (Scale Invariant Feature Transform)
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/sift1.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!summary] Keypoints in SIFT
+>* set of point features defined in an image
+>* each key point is attributed with:
+>	* the local orientation
+>	* the scale
+>	* a descriptor (used to identify the local neighbourhood)
+>* useful properties:
+>	* invariant to image translation, rotation and scaling
+>	* invariant to contrast and brightness
+>	* partially invariant to the 3D camera viewpoint
+>	* distinctive
+>	* stable
+>	* noise insensitive
+
+* zooming the image by a factor $a$: 
+	* does **not change the location** of a keypoint
+	* changes the scale of a keypoint by a factor $1/a$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/sift2.png" style="max-width: 100%; height: auto;">
+</div>
+
+## Laplacian of a Guassian (Inverted Sombrero)
+
+$LoG(x,y,\sigma) = \Delta gauss(x,y,\sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\sigma^6} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\right)$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/log.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Detection of candidate keypoints
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/log2.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Efficient implementation of the LoG
+
+* approximation of LoG by differences of Gauss (DoG): $LoG(x,y,\sigma) = \triangle gauss(x,y,\sigma)$
+* cascade of Gaussians
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/dog.png" style="max-width: 100%; height: auto;">
+</div>
+
+Representations for matched keypoints are done through
+	* adjacency matrix
+	* bipartite graphs
+	* table of edges
+	* table of pointers
+	* distance table
+
+>[!NOTE] Applications
+>* image stitching
+>* stereo rectification
+>* landmark detection and matching for visual SLAM
+>* object recognition
+
+# Lecture 11: 3D Vision. Binocular Vision
+
+* Dense stereo
+	* reconstruction of 3D surface models of objects
+
+* Sparse stereo
+	* 3D information on a small number of points:
+		* finding the 3D positions of the points from multiple images
+		* finding the 3D pose of a camera relative to the points
+		* finding the pose of the camera relative to another camera
+		* visual SLAM: finding both the poses of cameras and the 3D positions of points
+
+## Triangulation
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/triangulation.png" style="max-width: 100%; height: auto;">
+</div>
+
+Key relations:
+	* Triangulation (base line, two rays)
+	* Correspondence: representation of 3D point: $X^1 = R_2^1 X^2 + t_2^1$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/triangulation2.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Epipolar Geometry
+
+* How to find corresponding pixels?
+* How to reconstruct the 3D position of object?
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/epipolar.png" style="max-width: 100%; height: auto;">
+</div>
+
+* Epipolar constraint expressed with **Essential Matrix**: $X_2^T E X_1 = 0$
+* E is the Essential Matrix: $E = R_1^2[t_2^1]_x$
+
+* Epipolar constraint in pixel coordinates: **fundamental matrix**
+	* $^1\underline{\mathbf{p}} = K_1 X^1$
+	* $^2\underline{\mathbf{p}} = K_2 X^2$
+		* Substitution in  $X_2^T E X_1=0$ yields: $^2\underline{\mathbf{p}}^{\top} \mathbf{K}_2^{-\top} \mathbf{E} \mathbf{K}_1^{-1}{}^1\underline{\mathbf{p}} = 0$
+	* define $F = \mathbf{K}_2^{-\top} \mathbf{E} \mathbf{K}_1^{-1}$ then:
+		* Epipolar constraint in pixel coordinates:
+			* $^2\underline{\mathbf{p}}^{\top} F ^1\underline{\mathbf{p}} = 0$
+			* $F$ is the fundamental matrix
+
+## Rectification
+
+* geometrical transformation of the images such that the epipoles are moved to infinity in the row-direction.
+* simplifies the correspondence problem to a simple 1-D search along rows.
+* needs calibration matrices **K1** and **K2**, and fundamental matrix **F**
+
+>[!NOTE] Rectification Steps
+>1. determine the rotation axis and rotation angle between camera 1 and camera 2
+>2. rotate camera 1 around this axis over half of the angle in counterclockwise direction
+>3. rotate camera 2 around this axis over half of the angle in the other direction
+>4. determine the direction between x-axis of the cameras with respect to the baseline vector
+>5. using this direction, rotate the cameras such that their x-axis are aligned with the baseline vector
+>6. Equalize the calibration matrices of both cameras $K1 == K2$
+
+## Disparity: difference of the seen pixels in two images
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/disparity.png" style="max-width: 100%; height: auto;">
+</div>
+
+* Here we can see disparity and depth are inverse proportional
+* Disparity is proportional to Baseline
+
+# Lecture 12: 1D signals and Depth Maps
+
+1D Signals are very often seen in reality
+
+* Earthquake
+* Audio
+* Temperature
+* Bioelectrical Signal
+* ...
+
+## Monocular Depth Estimation
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/depthmaps.png" style="max-width: 100%; height: auto;">
+</div>
+
+* Key Challenge: Scale Ambiguity
+	* With only one image, absolute meters are unknown $\rightarrow$ models often predict relative depth that needs a later scale/shift alignment.
+
+### How does the human eye judge near vs. far?
+
+* Occlusion: if one object blocks another, it’s closer.
+* Relative / known size: the same object looks smaller when farther; familiar objects act as rulers.
+* Linear perspective: parallel lines converge toward a vanishing point.
+* Texture & contrast gradients: textures get denser and lower-contrast with distance (aerial haze).
+* Lighting & shadows: shadow position/shape reveals spatial layout.
+* Depth of field: in-focus plane is sharp; foreground/background blur more.
+* Motion parallax: when you move, nearer objects shift faster across your view.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/yolo.png" style="max-width: 100%; height: auto;">
+</div>
+
