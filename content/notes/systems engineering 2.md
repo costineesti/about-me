@@ -2,7 +2,7 @@
 title: Conceptual Design
 draft: false
 tags:
-date: 2025-09-17
+date: 2025-10-28
 ---
  
 This is the second lecture of my [[Systems Engineering]] course. This information is coming from the third chapter of the ASE book.
@@ -13,6 +13,17 @@ I already talked about Conceptual Design in [[systems engineering 1|Acquisition 
 
 >[!abstract] Conceptual Design
 >Conceptual Design is the first Acquisition-phase activity. It expands brief business needs into a system-level **logical design** and produces the **initial Functional Baseline (FBL)**—the anchor for all downstream design. Errors here propagate and get costlier later.
+>
+>In other words: producing a set of clearly defined requirements at the system level, and in logical terms
+
+>[!summary] Activities
+>* Discover stakeholder needs
+>* Scope the system
+>* Describe system operation
+>* Specify system functions
+>* Capture functionality in requirements
+>* ...
+>* Fully defined system
 
 It sits in the **problem domain** and is primarily the **customer’s** job (heavily involving the business side). It is imperative that it adequately represents the business and stakeholder needs and requirements.
 
@@ -42,7 +53,9 @@ At the strategic level of the organization, business management begin the defini
 >[!abstract] Stakeholders
 >* The first step in developing the BNR… requires the identification of the major stakeholders for all aspects of the new system. These stakeholders are the individuals and groups from the organisation’s operational level that business management identifies as those who will be responsible for writing and agreeing to the BNR.
 >
->* a stakeholder could be defined as some individual (or some group or organisation) who has a right to influence the outcome of the system, rather than someone who is simply affected by the system.
+>* A stakeholder could be defined as some individual (or some group or organisation) who has a right to influence the outcome of the system, rather than someone who is simply affected by the system.
+>
+>* The major stakeholder's needs are to be the Key Drivers of the system.
 
 This first act of stakeholder identification is therefore crucial—business management must decide which of the potentially very large number of actors… are to be considered as stakeholders (those that are to have the right to define the system) for the system of interest.
 
@@ -101,26 +114,29 @@ Example of a context diagram for the operational view of a domestic security ala
     <img src="../static/notes/fig35.png" style="max-width: 100%; height: auto;">
 </div>
 
-**The Intruder** has a physical interface that is very similar to the Resident (both are humans that may enter the House and then the Alarm boundary by a number of means) so it can be concluded that the Alarm must be able to distinguish between the two in some manner. 
+* Use cases are descriptions in a narrative and often visual style to illustrate how the system will operate and how users will interact with it.
+* System context diagram: scoping, interfaces, constraints
 
-In addition to the physical interface, the diagram also shows a number of influences that the Intruder may have on the Alarm and House systems-the solid lines show the influences of most interest in this design (disabling Alarm sensors or power, disconnecting House power, disconnecting the phone line); and those that the threat analysis considered less likely for a domestic burglary (disabling the suburban power grid, logging across the phone line to mimic the Alarm, hacking into the monitoring system, paying an accomplice inside the Monitoring Agent to disable or ignore the Alarm, or destroying the Monitoring Agent).
-
-**Monitoring Agent**. Note that there is an expectation in this design that there is a Monitoring Agent (one does not necessarily have to exist in an Alarm system) and that the mandated interface is via the **Public Subscriber Telephone Network (PSTN)** (rather than a more-modern version of alarm where a cellular data service might be incorporated). In this case the context diagram is assuming the presence of an element (the monitoring agent) and the use of a technology (the PSTN-both assumptions are clearly obvious on the diagram, which makes the
-context diagram a very useful communications device.
-
-**Police**. The context diagram illustrates that the Police do not have any specific role to play in this system-that is, for example, they are not expected to respond when the Alarm is triggered, but would respond to any incident as a function of their normal policing duties.
-
-**Neighbours**. Again, neighbours are shown to have no particular role in the Alarm system but are affected by it (perhaps by the noise it may make) and may influence the Resident (perhaps to complain about the noise).
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fig36.png" style="max-width: 100%; height: auto;">
 </div>
+
+>[!NOTE] Other types of diagrams that help in identifying operational functions
+>* FFBD
+>* Black-Box Diagram (a functional and abstract view)
 
 Definition of the **system boundary** (Figure 3.2) is essential early in the Acquisition Phase so that it is clear which elements are included in the system and which are outside. The boundary of a system is normally straightforward to describe in physical terms (such as a fence line, or external building walls), but it is often necessary to describe the boundary in conceptual or logical terms as well.
 
 Each of these interfaces becomes the source of external interface requirements for the system.
 
 **External interfaces** are between the system of interest and each of the other existing or future external systems to which it is interconnected. The interfaces describe the inputs and the outputs of the system—the interfaces to its external environment. The specification, development, test, and management of these external interfaces will place considerable requirements on the system. While the external systems are not directly related to the project, the success of the fielded system is often dictated by its ability to interface to those systems in its external environment.
+
+>[!question] What is the use of specifying interfaces?
+>* what
+>* how
+>* when
+>* which specific interfaces put constraints on the S.U.D. or on the environment.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fig37.png" style="max-width: 100%; height: auto;">
@@ -155,4 +171,68 @@ Each requirement in the StRS must be accompanied by a validation statement -- th
 
 **Finally, the SNR are endorsed**. Endorsement of the StRS is not to be taken lightly. the StRS is the basis of further development of the requirements and it forms the centrepiece of the FBL of the system and assists in bounding the scope of the project from which cost and schedule estimates can be developed.
 
+# Define System Requirements (Steps of the SyRS)
 
+* It starts with the endorsed SNR and then derives them into system requirements.
+* It is important to concentrate on what is required rather than how to do it.
+* I covered more on [[Systems Engineering 3|Requirements Engineering Framework]]
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/SyRS.png" style="max-width: 100%; height: auto;">
+</div>
+
+* Here it's more of "what the plane's cruise speed should be", rather than going into details about the engine, airframes, flight controls, etc. The contractor will worry about how.
+* They must take into account all the major stakeholder's needs.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/SyRS_1.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!summary] The next steps include
+>
+>* Establish Requirements Framework (RBS captures mostly everything). RBS forms the structure of the SyRS.
+>* Perform Requirements Analysis and Allocation -- the bridge from stakeholder requirements in the StRS to the system requirements in the SyRS.
+>* Define Functional/Non-functional Requirements. (Non-functional requirements are always constraints. A special type of constraint is an interface requirement.)
+>* Define Verification Requirements -- every time a requirement is articulated, a corresponding verification statement is made.
+>* Assign Rationale -- why each requirement is necessary + logic behind performance levels assigned to the requirement.
+
+# Draft System Requirements Specification (SyRS)
+
+* When approved, it becomes the centerpiece of the FBL.
+
+# Define Technical Performance Measures (TPM)
+
+* Key indicators of system performance -- a sort of "health check".
+* They are also the passing criteria of the CDR (Critical Design Review) in the Detailed Design Phase.
+* Example:
+	* All-up weight may be considered a TPM since it is a key indicator of likely performance (Aircraft System)
+
+# Conduct System Requirements Review
+
+* End-of-phase review confirming the system-level solution, approving V&V plans and SEMP, and baselining the initial FBL
+* The aim is to monitor and approve progressively the system-level requirements that are developed on the way to the initial FBL.
+* May also review other info such as manufacturing plans, design schedules, personnel requirements plans.
+* Complex projects may require multiple SRRs in the Conceptual Design.
+* Will review the margins and category (priority) of each requirement to ensure that each is being afforded appropriate weighting
+* Once designers are satisfied that the set of requirements is sufficiently complete at the system level, the last review is the System Design Review (SDR)
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/SyRS_2.png" style="max-width: 100%; height: auto;">
+</div>
+
+# Conduct System Design Review
+
+* **Goal**: Agreement on system functionality (FBL) and product development.
+	* Convinced that stakeholder needs (BNR, SNR) will be met,
+	* SRR
+	* System concepts
+	* V&V plans
+	* SEMP and PMP
+	* Cost estimates
+	* Risk
+
+* The SyRS is finalized after SDR.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/SDR.png" style="max-width: 100%; height: auto;">
+</div>

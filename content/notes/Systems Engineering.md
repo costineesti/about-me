@@ -2,7 +2,7 @@
 title: Systems Engineering
 draft: false
 tags:
-date: 2025-10-13
+date: 2025-10-28
 ---
  
 I'm taking this class during Q1 in my first year of Master's in Robotics at Twente.
@@ -32,6 +32,9 @@ Reference material:
     <img src="../static/notes/SUD.png" style="max-width: 100%; height: auto;">
 </div>
 
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/vmodel_1.png" style="max-width: 100%; height: auto;">
+</div>
 # List of abbreviations
 
 - **BNR — Business Needs & Requirements:** The business’ fundamental needs and constraints that kick off Conceptual Design and lead into the PLCD and BRS. 
