@@ -35,6 +35,7 @@ Reference material:
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/vmodel_1.png" style="max-width: 100%; height: auto;">
 </div>
+
 # List of abbreviations
 
 - **BNR — Business Needs & Requirements:** The business’ fundamental needs and constraints that kick off Conceptual Design and lead into the PLCD and BRS. 
