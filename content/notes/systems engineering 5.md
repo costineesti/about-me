@@ -2,7 +2,7 @@
 title: Risk management, FMEA & RMF
 draft: false
 tags:
-date: 2025-10-06
+date: 2025-10-29
 ---
  
 We continuously identify, treat and monitor risks throughout the V-Model.
@@ -20,7 +20,7 @@ P = Probability, C = Consequences
 >* Technical
 >* Cost
 >* Planning
->* Programme(external)
+>* Programme (external)
 
 >[!NOTE] Other risks
 >
@@ -65,7 +65,7 @@ Let's say there is a team member who is crucial to the mission and only they kno
 
 In the Project Planning process, a risk management plan (RMP) is tailored to satisfy the policies, procedures, standards, and regulations related to and affecting the management of risks for the project.
 
-# Formulating Risks
+### Formulating Risks
 
 For each, we should always formulate clearly and concisely:
 * the cause,
@@ -77,7 +77,30 @@ And choose one mitigation:
 * contain,
 * delegate.
 
+For example, let's identify 3 risks for a robot digger on construction sites. And for each formulate *the cause, the effect and the likelihood*. Also choose one mitigation and describe how to lower the risk
+
+1. one technical development risk;
+2. one technical product risk;
+3. one product safety risk.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/RMP.png" style="max-width: 100%; height: auto;">
+</div>
+
 # FMEA (Failure Mode and Effects Analysis)
+
+>[!summary] Failure Modes
+>* something breaks
+>* human error
+>* part under-performs
+>* adverse environmental conditions
+>* wear & tear
+
+>[!summary] Effects Analysis
+>* device completely malfunctions
+>* performance specs not achieved
+>* ...
+>* <u>requirements fail</u>
 
 1. Identify failure modes
 2. predict / estimate effects
@@ -91,9 +114,9 @@ $$
 
 S = severity (consequences)
 
-O = occurence (probability)
+O = occurrence (probability)
 
-D = detect
+D = detection
 
 ### Unlikely-but-severe (black swan)
 
@@ -168,4 +191,23 @@ The product has to comply with **Standards** (ISO, IEC, EU, etc.). Usually the Q
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/soe.png" style="max-width: 100%; height: auto;">
 </div>
+
+# Risk Management Analysis
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/RMA.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] What is the result of risk management for the product design?
+>* Additional features or requirements may have to be added as mitigation for identified risks.
+
+>[!question] What is the difference between RMA and FMEA?
+>* Safety (RMA)
+>* Robustness (FMEA)
+>* Technical failures may lead to unsafe situations. (link between them)
+
+>[!NOTE] The difference between Exposure, Probability and Avoidance.
+>* How often does the risky situation occur = E
+>* how large is the chance of the accident actually happening = P
+>* can the accident be prevented somehow? = A
 

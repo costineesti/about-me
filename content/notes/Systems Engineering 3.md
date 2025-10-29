@@ -64,7 +64,7 @@ The transformation of needs into requirements occurs at each level.
 >the services and functions that the system should provide, the things it should do, or some action it should take.
 
 >[!NOTE] Non-Functional Requirements
->the qualities, properties, or attributes that the system must posses.
+>the qualities, interfaces, constraints, properties, or attributes(size, weight power) that the system must posses.
 
 >[!NOTE] Constraints
 >any restrictions or bounds under which the system should operate, or on the way in which the system is to be developed.

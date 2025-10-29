@@ -2,7 +2,7 @@
 title: Preliminary Desgin
 draft: false
 tags:
-date: 2025-09-22
+date: 2025-10-29
 ---
  
 Lecture related to my [[Systems Engineering]] course.
@@ -177,5 +177,55 @@ The problem domain is gradually coalesced into the BRS $\rightarrow$ StRS $\righ
     <img src="../static/notes/useofarch.png" style="max-width: 100%; height: auto;">
 </div>
 
-#### Technical Maturity
+# Types of architectures
 
+* **Functional**
+	* Functional Breakdown Structure (FBS)
+	* Requirements Breakdown Structure (RBS)
+	* FFBD
+* **Logical**
+	* Logical subsystems
+	* Groups functions
+	* Modules for similar or strongly related functions
+* **Physical**
+	* Subsystems that are physically separate
+	* Configuration items (CIs) that are sourced
+	* Hardware assemblies
+* Internal / External
+* System / Human
+* MBSE
+	* Interface is exposed by ports
+	* Ports connected to other ports
+	* A port can be of type
+		* Flow (for physical or data flow)
+		* Service (software or human services using messages)
+
+>[!question] How did we uncover the external interfaces?
+>* Black-Box diagram
+>* Context diagram
+
+>[!question] In how many places can we find internal interfaces?
+>* In the internal architectures (e.g. $N^2$ diagram)
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/typesofinterfaces.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] Which architectures are agnostic to implementation?
+>* Functional + logical
+
+>[!question] What are the three types of system architectures, and what is the relation between them?
+>* Functional, grouped into Logical blocks, divided over Physical subsystems.
+
+# Preliminary Design Review
+
+* **Goal**: Ensure technical adequacy of the proposed solution to meet FBL.
+
+>[!summary] PDR consists of making sure that:
+>* Design is appropriate
+>* TPMs have enough margin
+>* Subsystem design complete:
+>	* Development Specifications (subsystems, CIs)
+>	* Interface Control Documents (IDD) complete
+>* Traceability is in order (FBL $\rightarrow$ ABL)
+>* ABL formally established
