@@ -5,7 +5,7 @@ tags:
 date: 2025-10-21
 ---
 
-To expand my network, reach, view, ambition, I decided to enroll into a 2-year Master's in Robotics at the University of Twente, Enschede, NL. 
+> To expand my network, reach, view, ambition, I decided to enroll into a 2-year Master's in Robotics at the University of Twente, Enschede, NL. 
 
 >[!question] Why Robotics?
 >* Robotics because it is highly inter-disciplinary and highly challenging.
@@ -24,7 +24,13 @@ To expand my network, reach, view, ambition, I decided to enroll into a 2-year M
 </div>
 
 >[!summary] Courses I covered on this website
->
->* [[NLP|Natural Language Processing]]
->* [[Systems Engineering]]
->* [[IPCV|Image Processing and Computer Vision]]
+>* **Q1**
+>	* [[NLP|Natural Language Processing]]
+>	* [[Systems Engineering]]
+>	* [[IPCV|Image Processing and Computer Vision]]
+>* **Q2**
+>	* GenAI Models and Robotic Applications
+>	* Robot Perception, Cognition and Navigation
+>	* Speech Processing
+
+
