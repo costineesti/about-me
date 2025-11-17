@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN.md",
+                "file": "content/notes/genai2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN"
+              "title": "genai2"
             }
           }
         ]
@@ -192,8 +192,18 @@
   },
   "active": "db466c72ef72e956",
   "lastOpenFiles": [
-    "content/notes/RPCN 1.md",
+    "quartz/static/notes/autoencoders_1.png",
+    "quartz/static/notes/autoencoder.png",
+    "content/notes/gopro.md",
+    "content/notes/genai2.md",
+    "quartz/static/notes/decoder.png",
+    "content/index.md",
+    "content/seaclear.md",
+    "content/notes/Edge Computing.md",
+    "content/notes/delft.md",
+    "quartz/static/notes/encoder.png",
     "content/notes/RPCN.md",
+    "content/notes/RPCN 1.md",
     "quartz/static/notes/accerr.png",
     "quartz/static/notes/angrateerr.png",
     "quartz/static/notes/whitenoise.png",
@@ -201,14 +211,9 @@
     "quartz/static/notes/nonorth.png",
     "quartz/static/notes/quanterror.png",
     "quartz/static/notes/deadzone.png",
-    "quartz/static/notes/signassym.png",
-    "quartz/static/notes/nonlinearity.png",
-    "quartz/static/notes/scalefactor.png",
     "content/notes/rotational frames.md",
     "content/notes/coordinate frame.md",
     "content/notes/RPCN 2.md",
-    "content/notes/genai2.md",
-    "content/notes/gopro.md",
     "content/twente.md",
     "content/notes/system monotonic clock.md",
     "content/notes/ONNX.md",
@@ -223,10 +228,6 @@
     "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
     "content/notes/UVC Video Stream.md",
     "content/notes/systems engineering sde 3.md",
-    "content/notes/systems engineering sde 2.md",
-    "content/notes/systems engineering 7.md",
-    "content/notes/systems engineering 3.md",
-    "content/notes/systems engineering 2.md",
     "content/notes/quartz.layout.ts",
     "content/notes",
     "content/projects",

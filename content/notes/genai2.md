@@ -1,5 +1,5 @@
 ---
-title: Generative AI Lecture 2
+title: Autoencoders
 draft: false
 tags:
 ---
@@ -7,33 +7,60 @@ tags:
 Have to complete these and make them readable. These are just some notes from the lecture
 # Encoder
 
-* From high dimensions to low dimensions
-* A function that encodes an input sample into a lower-dimensional code
-	* Fully-connected
-	* Convolutional
-	* Sparse
-	* ...
+<div class="encoder-section">
+  <img src="../static/notes/encoder.png" style="width: 200px; margin-bottom: 10px;">
+  <div class="encoder-text">
+    <ul>
+      <li>From high dimensions to low dimensions</li>
+      <li>A function that encodes an input sample into a lower-dimensional code</li>
+	      <ul>
+	      <li>Fully-connected</li>
+	      <li>Convolutional</li>
+	      <li>Sparse</li>
+	      </ul>
+    </ul>
+  </div>
+</div>
 
 # Decoder
 
-* From low dimensional space to higher dimensional space
-	* Fully-connected
-	* Convolutional
-	* Sparse
-	* ...
-
-* Convolutional decoders perform transposed convolutions or upsampling and convolutions to reverse the downsampling of the decoder.
-
+<div class="encoder-section">
+  <img src="../static/notes/decoder.png" style="width: 200px; margin-bottom: 10px;">
+  <div class="encoder-text">
+    <ul>
+      <li>From low dimensional space to higher dimensional space</li>
+      <li>A function that encodes an input sample into a higher-dimensional code</li>
+	      <ul>
+	      <li>Fully-connected</li>
+	      <li>Convolutional</li>
+	      <li>Sparse</li>
+	      </ul>
+		<li>Convolutional decoders perform transposed convolutions or upsampling and convolutions to reverse the downsampling of the decoder.</li>
+    </ul>
+  </div>
+</div>
+****
 # Autoencoder
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/autoencoder.png" style="max-width: 100%; height: auto;">
+</div>
 
 * f(x) is the encoding function
 * g(h) is the decoding function
 * h is the latent space. Here we can use it to learn more about the information (extraction and probably compression or even manipulating this data)
 * the learning process is described as minimizing a loss function $L(x, g(f(h)))$
 
->[!question] What is the AUTOENCODER?
->* A neural network with the task of copying the input to the output (difference between x and g(f(h)) is 0)
->* Trained to minimize the dissimilarity between the original input sample(s) and the reconstructed output
+<div class="encoder-section">
+  <img src="../static/notes/autoencoders_1.png" style="width: 200px; margin-bottom: 10px;">
+  <div class="encoder-text">
+    <ul>
+      <li>A neural network with the task of copying the input to the output (difference between x and g(f(h)) is 0)</li>
+      <li>Trained to minimize the dissimilarity between the original input sample(s) and the reconstructed output</li>
+	  <li>Convolutional decoders perform transposed convolutions or upsampling and convolutions to reverse the downsampling of the decoder.</li>
+    </ul>
+  </div>
+</div>
 
 it's a way to learn features in an unsupervised way.
 
