@@ -21,48 +21,6 @@ Have to complete these and make them readable. These are just some notes from th
     </ul>
   </div>
 </div>
-<style>
-  .encoder-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .encoder-text {
-    max-width: 600px;
-  }
-
-  @media (min-width: 768px) {
-    .encoder-section {
-      flex-direction: row;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .encoder-text {
-      text-align: left;
-    }
-
-    ul {
-      padding-left: 40px; /* Maintain indentation for desktop */
-    }
-  }
-
-  @media (max-width: 767px) {
-    .encoder-text {
-      padding: 0 15px; /* Add padding on mobile for better spacing */
-      text-align: left; /* Align text to the left on mobile */
-    }
-
-    ul {
-      padding-left: 20px; /* Reduce padding for better mobile view */
-    }
-
-    li {
-      margin-bottom: 10px; /* Add space between list items for clarity */
-    }
-  }
-</style>
 
 # Decoder
 
@@ -81,7 +39,7 @@ Have to complete these and make them readable. These are just some notes from th
     </ul>
   </div>
 </div>
-****
+
 # Autoencoder
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
@@ -165,3 +123,47 @@ One condition for cGANs in computer vision: ALLIGNMENT (or PAIRED) (the objects 
 
 * Cycle GANs perform **unpaired image-to-image translation**. Given two unpaired image sets *X* and *Y*, learn a mapping function between the two domains that transforms images from *X* into images from *Y* (and vice versa).
 * Based on the concept of cycle consistency
+
+
+<style>
+  .encoder-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .encoder-text {
+    max-width: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .encoder-section {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .encoder-text {
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 40px; /* Maintain indentation for desktop */
+    }
+  }
+
+  @media (max-width: 767px) {
+    .encoder-text {
+      padding: 0 15px; /* Add padding on mobile for better spacing */
+      text-align: left; /* Align text to the left on mobile */
+    }
+
+    ul {
+      padding-left: 20px; /* Reduce padding for better mobile view */
+    }
+
+    li {
+      margin-bottom: 10px; /* Add space between list items for clarity */
+    }
+  }
+</style>
