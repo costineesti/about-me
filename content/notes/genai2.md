@@ -8,7 +8,7 @@ Have to complete these and make them readable. These are just some notes from th
 # Encoder
 
 <div class="encoder-section">
-  <img src="../static/notes/encoder.png" style="width: 200px; margin-bottom: 10px;">
+  <img src="../static/notes/encoder.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>From high dimensions to low dimensions</li>
@@ -21,6 +21,48 @@ Have to complete these and make them readable. These are just some notes from th
     </ul>
   </div>
 </div>
+<style>
+  .encoder-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .encoder-text {
+    max-width: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .encoder-section {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .encoder-text {
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 40px; /* Maintain indentation for desktop */
+    }
+  }
+
+  @media (max-width: 767px) {
+    .encoder-text {
+      padding: 0 15px; /* Add padding on mobile for better spacing */
+      text-align: left; /* Align text to the left on mobile */
+    }
+
+    ul {
+      padding-left: 20px; /* Reduce padding for better mobile view */
+    }
+
+    li {
+      margin-bottom: 10px; /* Add space between list items for clarity */
+    }
+  }
+</style>
 
 # Decoder
 
