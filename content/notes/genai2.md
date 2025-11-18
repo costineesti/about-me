@@ -5,7 +5,7 @@ tags:
 date: 2025-11-18
 ---
 
-Lecture 2 from my GenAI course.
+Lecture 2 from my [[genai|GenAI Models and Robotic Applications]] course.
 
 # Encoder
 
@@ -42,7 +42,7 @@ Lecture 2 from my GenAI course.
   </div>
 </div>
 
-# Autoencoder
+# Autoencoder (AE)
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/autoencoder.png" style="max-width: 100%; height: auto;">
@@ -117,7 +117,7 @@ it's a way to learn features in an unsupervised way.
     <img src="../static/notes/dae_ex.png" style="max-width: 100%; height: auto;">
 </div>
 
-# Variational AutoEncoders
+# Variational AutoEncoders (VAE)
 
 * Based on variational inference theory
 * Enforces the learning of a **regularized latent space** (with a probabilistic twist)
@@ -210,7 +210,7 @@ $$
 * **G minimizes**: Makes $D(G(z)) \rightarrow 1$, fooling the discriminator
 * **D maximizes**: Correctly identifying real ($\log D(x) \rightarrow 0$) and fake ($\log (1-D(G(z))) \rightarrow 0$)
 
-### Conditional GANS
+### Conditional GANS (cGANS)
 
 >[!summary] Conditional GANs
 > * Learning a generator G to reconstruct meaningful samples only from noise **z** can cause **mode collapse**(G generates few samples only, D is in a local minimum). Mode collapse means that the training of the network is stuck. 
