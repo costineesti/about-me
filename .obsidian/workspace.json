@@ -11,14 +11,10 @@
             "id": "085c528a5f03975f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/RPCN 3.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "RPCN 3"
+              "title": "New tab"
             }
           }
         ]
