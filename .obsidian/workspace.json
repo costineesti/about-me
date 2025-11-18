@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/genai2.md",
+                "file": "content/notes/RPCN 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "genai2"
+              "title": "RPCN 3"
             }
           }
         ]
@@ -192,9 +192,18 @@
   },
   "active": "db466c72ef72e956",
   "lastOpenFiles": [
-    "content/notes/genai.md",
+    "quartz/static/notes/earth_2.png",
+    "quartz/static/notes/earth_1.png",
+    "content/notes/RPCN 1.md",
+    "content/notes/RPCN 3.md",
+    "quartz/static/notes/earth_ref.png",
     "content/notes/genai2.md",
+    "quartz/static/notes/geographical_system.png",
+    "content/notes/coordinate frame.md",
     "content/notes/RPCN.md",
+    "content/notes/RPCN 2.md",
+    "content/notes/genai.md",
+    "content/twente.md",
     "quartz/static/notes/cycle_GANs.png",
     "quartz/static/notes/cGANs.png",
     "quartz/static/notes/GANs.png",
@@ -202,10 +211,6 @@
     "quartz/static/notes/vaevsae_digits.png",
     "quartz/static/notes/vaevsae.png",
     "quartz/static/notes/VAE_ex.png",
-    "quartz/static/notes/VAE.png",
-    "quartz/static/notes/dae_ex.png",
-    "quartz/static/notes/dae.png",
-    "content/twente.md",
     "content/seaclear.md",
     "content/index.md",
     "content/notes/NLP 10.md",
@@ -218,16 +223,11 @@
     "content/notes/MiDaS.md",
     "content/notes/camera calibration.md",
     "content/notes/Abstract Syntax Tree.md",
-    "content/notes/RPCN 2.md",
     "content/notes/barcode detection and decoding.md",
     "content/notes/NLP 4.md",
     "content/notes/Deep Learning Fundamentals.md",
     "content/notes/gopro.md",
     "content/notes/NLP 5.md",
-    "content/notes/Shunting yard algorithm.md",
-    "content/notes/cpp_preprocessor.md",
-    "content/notes/delft.md",
-    "content/notes/cpp_compound_types.md",
     "content/notes/quartz.layout.ts",
     "content/notes",
     "content/projects",

@@ -29,8 +29,6 @@ date: 2025-10-21
 >	* [[Systems Engineering]]
 >	* [[IPCV|Image Processing and Computer Vision]]
 >* **Q2**
->	* GenAI Models and Robotic Applications
->	* Robot Perception, Cognition and Navigation
+>	* [[genai|GenAI Models and Robotic Applications]]
+>	* [[RPCN|Robot Perception, Cognition and Navigation]]
 >	* Speech Processing
-
-

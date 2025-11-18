@@ -15,3 +15,4 @@ These are really applications of Generative AI.
 
 >[!summary] Topics covered so far
 >* [[genai2|Autoencoders(AE) & Generative Adversarial Networks(GANs)]]
+
