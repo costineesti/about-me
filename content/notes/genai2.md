@@ -2,7 +2,7 @@
 title: Autoencoders
 draft: false
 tags:
-date: 2025-11-17
+date: 2025-11-18
 ---
 
 Lecture 2 from my GenAI course.
@@ -73,7 +73,7 @@ it's a way to learn features in an unsupervised way.
 ### Visualizing the latent space of an AE
 
 <div class="encoder-section">
-  <img src="../static/notes/autoencoders_1.png" style="width: 200px; margin-bottom: 10px;">
+  <img src="../static/notes/latent_space.png" style="width: 200px; margin-bottom: 10px;">
   <div class="encoder-text">
     <ul>
       <li>An AE maps the input samples to points into the latent space, building large mutually independent clusters (no relations between the 'neighbor' clusters)</li>
@@ -131,9 +131,11 @@ The mean and standard deviation are now in high dimensional space (variance is t
 * $D_{KL}$ is a measure of difference between distributions.
 * Aim is to **reconstruct** the input accurately and **enforcing a known distribution to the latent space**
 
-$$\mathcal{L}_{ELBO}(x,f,g) = E[\log p_g(x|z)] - D_{KL}(q_f(z|x)||p(z))$$
+$$
+\mathcal{L}_{ELBO}(x,f,g) = E[\log p_g(x|z)] - D_{KL}(q_f(z|x)||p(z))
+$$
 
-Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a ==reparametrization trick==: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$, instead of $z ~ N(\mu_{f(x)}, \sigma^2_{f(x)})$
+Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a ==reparametrization trick==: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$, instead of $z \approx N(\mu_{f(x)}, \sigma^2_{f(x)})$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/VAE.png" style="max-width: 100%; height: auto;">
@@ -197,7 +199,12 @@ Some examples include prompts like "make blonde" or "add glasses" which add or s
 
 ### Adversarial Training 
 
-$$\mathcal{L}_{GAN}(D,G) = \mathbb{E}_x[\log D(x)] + \mathbb{E}_z[\log(1 - D(G(z)))]$$ $$G^* = \arg\min_G \max_D \mathcal{L}(D,G)$$
+$$
+\mathcal{L}_{GAN}(D,G) = \mathbb{E}_x[\log D(x)] + \mathbb{E}_z[\log(1 - D(G(z)))]
+$$
+$$
+G^* = \arg\min_G \max_D \mathcal{L}(D,G)
+$$
 
 * The two networks compete in a $minimax$ game:
 * **G minimizes**: Makes $D(G(z)) \rightarrow 1$, fooling the discriminator
