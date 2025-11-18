@@ -5,7 +5,8 @@ tags:
 date: 2025-11-17
 ---
 
-Have to complete these and make them readable. These are just some notes from the lecture
+Lecture 2 from my GenAI course.
+
 # Encoder
 
 <div class="encoder-section">
@@ -132,7 +133,7 @@ The mean and standard deviation are now in high dimensional space (variance is t
 
 $$\mathcal{L}_{ELBO}(x,f,g) = E[\log p_g(x|z)] - D_{KL}(q_f(z|x)||p(z))$$
 
-Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a reparametrization trick: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$
+Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a ==reparametrization trick==: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$, instead of $z ~ N(\mu_{f(x)}, \sigma^2_{f(x)})$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/VAE.png" style="max-width: 100%; height: auto;">
@@ -142,32 +143,94 @@ Sampling does not flow back (Backpropagation through randomness is not possible)
     <img src="../static/notes/VAE_ex.png" style="max-width: 100%; height: auto;">
 </div>
 
+### VAE vs AE: latent space
+
+* In the **AE latent space**, the clusters are not correlated in any way. It's just a visualization.
+* In the **VAE latent space**, the clusters are correlated through the prior. The KL divergence term pushes all encodings toward $N(0,1)$, which:
+	* centers all clusters around the origin
+	* Keeps variance controlled
+	* Forces the network to use the latent space efficiently
+	* Creates **semantic relationships** -- similar digits tend to be closer because they share similar distributions that get pulled toward the same region of the prior. For example, digits ==4== and ==9== will always sit close to each other when semantic relationships matters.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/vaevsae.png" style="max-width: 100%; height: auto;">
+</div>
+
 ### Generation with VAE
 
-* sampling a latent variable and let the decoder generate (reconstruct) an image.
-* Adding is simply bit by bit
-* Some other methods are available (see the slides)
+* The latent space is encoded as a (Gaussian) distribution.
+* Sampling a latent variable ($z$ from $N(\mu, \sigma)$) and let the decoder generate (reconstruct) an image. VAE produces recognizable digits while AE generates blurry/unclear outputs when sampling randomly.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/vaevsae_digits.png" style="max-width: 100%; height: auto;">
+</div>
+
+#### Latent Space Arithmetic
+
+* **Interpolation**: Encode two samples (e.g. digit '2' and '4'), compute $z_1$ and $z_2$, then interpolate: $z = z_1 + \alpha \cdot \triangle$ where $\triangle = z_2 - z_1$ and $\alpha \in [0,1]$.
+* This results in smooth morphing between digits (2 $\rightarrow$ 4) for VAE. In the AE case, we have abrupt jumps with artifacts -- the irregular latent space means intermediate points don't decode meaningfully.
+
+#### Attribute Manipulation
+
+1. Compute mean latent vectors for each attribute cluster
+2. Calculate attribute direction vectors in latent space
+3. Add/subtract these vectors to/from an encoded image
+
+Some examples include prompts like "make blonde" or "add glasses" which add or substract the respective vector.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/vae_attribmanip.png" style="max-width: 100%; height: auto;">
+</div>
 
 # Generative Adversarial Networks (GANS)
 
-* GANs are generative models based on game theory
-* A generator network G generates fake samples
-* A discriminator network D discriminates between real samples and fake generated samples.
+<div class="encoder-section">
+  <img src="../static/notes/GANs.png" style="width: 200px; margin-bottom: 10px;">
+  <div class="encoder-text">
+    <ul>
+      <li>GANs are generative models based on game theory,</li>
+      <li>A generator network G generates fake samples,</li>
+      <li>A discriminator network D discriminates between real samples and fake generated samples.</li>
+    </ul>
+  </div>
+</div>
 
-Adversarial Loss function (Cross entropy of fake images and the adversarial part where it's basically 1 - the Generator that provides input to the Discriminator).
+### Adversarial Training 
+
+$$\mathcal{L}_{GAN}(D,G) = \mathbb{E}_x[\log D(x)] + \mathbb{E}_z[\log(1 - D(G(z)))]$$ $$G^* = \arg\min_G \max_D \mathcal{L}(D,G)$$
+
+* The two networks compete in a $minimax$ game:
+* **G minimizes**: Makes $D(G(z)) \rightarrow 1$, fooling the discriminator
+* **D maximizes**: Correctly identifying real ($\log D(x) \rightarrow 0$) and fake ($\log (1-D(G(z))) \rightarrow 0$)
 
 ### Conditional GANS
 
-Mode collapse means that the training of the network is stuck. The solution implies generating samples conditioned by c (e.g. label, text, etc.) 
+>[!summary] Conditional GANs
+> * Learning a generator G to reconstruct meaningful samples only from noise **z** can cause **mode collapse**(G generates few samples only, D is in a local minimum). Mode collapse means that the training of the network is stuck. 
+> * The **solution** implies conditioning: Both G and D receive an additional input **c** (condition) such as a class label, text description, or another image. This guides generation toward specific outputs. 
 
 The loss function stays the same but we take *c* into consideration.
 
-One condition for cGANs in computer vision: ALLIGNMENT (or PAIRED) (the objects are always in the same place).
+* Generator: $G(z,c)$ -- takes noise $z$ and condition $c$
+* Discriminator: $D(x,c)$ -- evaluates if $x$ is real given condition $c$.
+
+$$\mathcal{L}_{cGAN}(D,G) = \mathbb{E}_{c,x}[\log D(c,x)] + \mathbb{E}_{c,z}[\log(1 - D(c,G(z)))]$$
+
+One condition for cGANs in computer vision: ALLIGNMENT (or PAIRED) (the objects are always in the same place). cGANs excel at paired image translation tasks.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/cGANs.png" style="max-width: 100%; height: auto;">
+</div>
 
 ### Cycle GANS
 
-* Cycle GANs perform **unpaired image-to-image translation**. Given two unpaired image sets *X* and *Y*, learn a mapping function between the two domains that transforms images from *X* into images from *Y* (and vice versa).
-* Based on the concept of cycle consistency
+* Cycle GANs perform **unpaired image-to-image translation**: given two unpaired image sets (domains) *X* and *Y*, learn a mapping function between the two domains that transforms images from *X* into images from *Y* (and vice versa).
+* Based on the concept of cycle consistency.
+* Paired training samples are difficult to obtain (and scarce).
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/cycle_GANs.png" style="max-width: 100%; height: auto;">
+</div>
 
 
 <style>
