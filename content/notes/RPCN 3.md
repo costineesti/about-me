@@ -38,7 +38,7 @@ This is Lecture 3 from my [[RPCN|Robotic Perception, Cognition and Navigation]] 
     <img src="../static/notes/earth_ref.png" style="max-width: 100%; height: auto;">
 </div>
 
-<div class="image-row"> <img src="../static/notes/earth_1.png" style="width: 200px;"> <img src="../static/notes/earth_2.png" style="width: 200px;"> </div>
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/earth_1.png" alt="Earth 1" width="350" height="300"> </div> <div> <img src="../static/notes/earth_2.png" alt="Earth 2" width="350" height="300"> </div> </div>
 
 
 
@@ -51,12 +51,6 @@ This is Lecture 3 from my [[RPCN|Robotic Perception, Cognition and Navigation]] 
   }
   .encoder-text {
     max-width: 600px;
-  }
-  .image-row { 
-	display: flex; 
-	gap: 20px; 
-	flex-wrap: wrap; 
-	justify-content: center; 
   }
 
   @media (min-width: 768px) {

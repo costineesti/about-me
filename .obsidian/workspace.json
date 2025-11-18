@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cbd5ba8b19d4c26f",
+        "id": "fe07f031be1806f6",
         "type": "tabs",
         "children": [
           {
-            "id": "8d8f906849d47e4a",
+            "id": "085c528a5f03975f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -190,12 +190,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8d8f906849d47e4a",
+  "active": "085c528a5f03975f",
   "lastOpenFiles": [
+    "content/projects/visual-odom.md",
+    "content/notes/RPCN 3.md",
+    "content/projects/sort.md",
+    "content/projects/metalic grid.md",
+    "content/projects/inertial-odom.md",
+    "content/projects/Proportional-Derivative.md",
+    "content/projects/Loop Closure.md",
+    "content/projects/Kalman Filter.md",
+    "content/projects/Gaussian distribution.md",
+    "content/projects/Bachelors.md",
+    "content/projects/Analysis and Prediction of Stock Market.md",
     "content/notes/systems engineering sde 3.md",
     "content/notes/systems engineering sde 2.md",
-    "content/notes/systems engineering 8.md",
     "content/notes/systems engineering 9.md",
+    "content/notes/systems engineering 8.md",
     "content/notes/systems engineering 7.md",
     "content/notes/systems engineering 6.md",
     "content/notes/systems engineering 5.md",
@@ -207,18 +218,7 @@
     "content/notes/static_dynamic_libraries.md",
     "content/notes/rtsp.md",
     "content/notes/rotational frames.md",
-    "content/notes/ros_basics.md",
-    "content/notes/ros_architecture.md",
-    "content/notes/rodrigues.md",
     "content/notes/quartz.layout.ts",
-    "content/notes/principal_component_analysis.md",
-    "content/notes/pinhole camera model.md",
-    "content/notes/numerical_methods.md",
-    "content/notes/mlapp_regression.md",
-    "content/notes/hadoop.md",
-    "content/notes/gopro.md",
-    "content/notes/genai2.md",
-    "content/notes/genai.md",
     "content/projects",
     "content/notes",
     "content",
