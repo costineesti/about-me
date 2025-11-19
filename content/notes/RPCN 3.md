@@ -10,7 +10,7 @@ This is Lecture 3 from my [[RPCN|Robotic Perception, Cognition and Navigation]] 
 # Geographic Coordinate System ($\phi, \lambda, h$)
 
 <div class="encoder-section">
-  <img src="../static/notes/geographical_system.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/geographical_system.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li><b>Geographic Latitude (φ)</b></li>
@@ -48,7 +48,7 @@ This is Lecture 3 from my [[RPCN|Robotic Perception, Cognition and Navigation]] 
 * Origin (0,0,0) is at the center of the Earth (goecentric)
 
 <div class="encoder-section">
-  <img src="../static/notes/geocentric_system.png" style="width: 200px; height: 300px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/geocentric_system.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li><b>Earth-centered, Earth-fixed (ECEF)</b></li>
@@ -109,7 +109,7 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
 ## EARTH-CENTERED EARTH-FIXED FRAME (ECEF)
 
 <div class="encoder-section">
-  <img src="../static/notes/geocentric_system.png" style="width: 200px; height: 300px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/geocentric_system.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>The origin (X=0, Y=0, Z=0) is at the center of mass of the Earth => a geocentric coordinate system</li>
@@ -127,7 +127,7 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
 ## LOCAL-LEVEL (NAVIGATION) FRAME, NEU
 
 <div class="encoder-section">
-  <img src="../static/notes/NEU.png" style="width: 200px; height: 300px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/NEU.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>The origin coincides with the center of the sensor frame.</li>
@@ -145,7 +145,7 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
 ## BODY FRAME
 
 <div class="encoder-section">
-  <img src="../static/notes/bodyframe.png" style="width: 200px; height: 300px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/bodyframe.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>The origin usually coincides with the center of mass of the vehicle.</li>
