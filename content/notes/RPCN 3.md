@@ -160,10 +160,136 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
 >* Transformations from one frame into another are rotations for
 >	* Acceleration
 >	* Angular Velocity
+>* The subscript of the rotation matrix is the original frame and the superscript is the destination frame: $v^i = R_e^i v^e$.
+>* Rotations are linear transformations.
 
 
 # Rotation Matrices
 
+* Attitude, velocity, acceleration and angular velocity are all vectors in 3D space: $v^a \in R^3$.
+
+> Frame indices: i (inertial), e (ECEF), l (local), b (body).
+
+## The rule of the right hand
+
+<div class="encoder-section">
+  <img src="../static/notes/coord_frame.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <div class="encoder-text">
+    <ul>
+      <li>For a right-handed coordinate system with axes x, y, z, we have the following cross product rules:</li>
+	      <ul>
+		      <li>Y x Z = X</li>
+		      <li>X x Y = Z</li>
+		      <li>Z x X = Y</li>
+	      </ul>
+    </ul>
+  </div>
+</div>
+
+## Rotation from one system to another
+
+### 1. ECEF to Inertial (Time-Dependent)
+
+* Earth rotation rate vector: $\omega^i_{ie} = [0, 0, \omega_e]^T$.
+* This transformation is time-dependent because ECEF rotates with Earth while the inertial frame stays fixed relative to stars.
+* Rotation matrix (time-dependent)
+
+$$\mathbf{R}^i_e = \begin{bmatrix} \cos \omega_e t & \sin \omega_e t & 0 \\ -\sin \omega_e t & \cos \omega_e t & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+
+## 2. Local to ECEF
+
+$$\mathbf{R}^e_l = \mathbf{R}_3(-\lambda - 90)\mathbf{R}_1(\phi - 90)$$
+
+$$\mathbf{R}^e_l = \begin{bmatrix} -\sin \lambda & -\sin \phi \cos \lambda & \cos \lambda \cos \lambda \\ \cos \lambda & -\sin \phi \sin \lambda & \cos \lambda \sin \lambda \\ 0 & \cos \phi & \sin \phi \end{bmatrix}$$
+
+## 3. Body to Local
+
+$$\mathbf{R}^l_b = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \cos \alpha & -\sin \alpha \\ 0 & \sin \alpha & \cos \alpha \end{bmatrix} \begin{bmatrix} \cos \beta & 0 & \sin \beta \\ 0 & 1 & 0 \\ -\sin \beta & 0 & \cos \beta \end{bmatrix} \begin{bmatrix} \cos \gamma & -\sin \gamma & 0 \\ \sin \gamma & \cos \gamma & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+
+# Derivative of the Rotation Matrix
+
+* Let's consider the position vector $r^i = R_b^i r^b$.
+* If we want to get the velocity, we do $\dot r^i = \dot R^i_b r^b + R^i_b \dot r^b$.
+
+>[!question] Why do we need the derivative of the rotation matrix?
+>* To transform **velocities** from one frame to another
+>* To transform **accelerations** from one frame to another
+>* To transform **angular velocities** from one frame to another
+>* So basically, the derivatives (not position or attitude, those use the basic [[rotational frames|Rotation Matrix]]).
+
+The **key challenge** is to determine the time derivative of the rotation matrix $\dot R^i_b$. In [[rot derivative|Rotation Matrix Time Derivative]] I covered the mathematics behind finding the following solution:
+
+$$\dot r^i = R_b^i (\Omega_{ib}^b r^b + \dot r^b), \Omega_{ib}^b = S(\omega) = \begin{pmatrix} 0 & -\omega_z & \omega_y \\ \omega_z & 0 & -\omega_x \\ -\omega_y & \omega_x & 0 \end{pmatrix}$$
+
+Also, the second derivative (the acceleration) will be:
+
+$$
+\ddot r^i = R_b^i(\ddot r^b + 2 \Omega_{ib}^b \dot r^b + \dot \Omega_{ib}^br^b + \Omega_{ib}^b\Omega_{ib}^br^b)
+$$
+
+> The last 3 terms are the **Coriolis force**, the **Euler force** and **Centrifugal force** respectively.
+
+## FICTITIOUS FORCES
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/fict_forces.png" style="max-width: 100%; height: auto;">
+</div>
+
+These deserve their own dedicated page. Will make one!
+
+# GIMBAL LOCK
+
+Covered in [[gimbal lock|Gimbal Lock]]. Basically, we lose one degree of freedom when two axes align in parallel.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/gimbal.png" style="max-width: 100%; height: auto;">
+</div>
+
+The solution is using [[quaternions|Quaternions]]
+
+# QUATERNIONS
+
+Covered in [[quaternions|Quaternions]]. It's a 4D way of representing rotations and orientations.
+
+# Homogenous Coordinates
+
+Without homogenous coordinates, if we have 3 points
+
+$$
+p_B = R_1p_A + t_1
+$$
+
+$$
+p_C = R_2p_B + t_2
+$$
+
+$$
+p_D = R_3p_C + t_3
+$$
+
+then $p_D = R_3(R_2(R_1p_A + t_1) + t_2) + t_3$
+
+> Rotation and scaling can be represented by a matrix, but translation cannot.
+> 
+> Translation requires vector addition. $p^w = R_b^wp^b + t_b^w$
+> 
+> Homogenous coordinates overcome this limitation by adding an extra coordinate (from (x,y,z) to (x,y,z,1) in 3D). This enables all transformations, including translation, to be represented as matrix multiplications.
+
+Therefore, if now we have the same 3 points but represented as
+
+$$
+p_B = H_1p_A
+$$
+
+$$
+p_C = H_2p_B
+$$
+
+$$
+p_D = H_3p_C
+$$
+
+then $p_D = H_3H_2H_1p_A$
 
 
 <style>
