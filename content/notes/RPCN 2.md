@@ -2,8 +2,11 @@
 title: Lecture 2
 draft: false
 tags:
+date: 2025-11-18
 ---
- 
+
+TODO
+
 The Cognition part of the exam will come from the papers mentioned by the professor in Lecture 2!
 
 Design ontology in a given environment: the assignment!
