@@ -13,7 +13,7 @@ I'm taking this course as part of my Q1 curriculum at Twente.
 >* [[NLP 3|Sentiment Analysis and Naive Bayes]]
 >* [[NLP 4|Hidden Markov Models for PoS tagging and NER]]
 >* [[NLP 5|Vector Semantics and Embeddings]]
->* [[genai3|Transformers]]
+>* [[transformers|Transformers]]
 >* [[NLP 6|Contextual Word Embeddings and Transformers]]
 >* [[NLP 9|Constituency Grammars]]
 >* [[NLP 10|Constituency Parsing]]

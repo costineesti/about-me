@@ -1,248 +1,155 @@
 ---
-title: Transformers
+title: Normalizing Flows
 draft: false
 tags:
-date: 2025-11-22
+date: 2025-11-23
 ---
 
-Resources: UTwente slides + [Attention is all you need](https://arxiv.org/abs/1706.03762). Also, I genuinely suggest watching this [video](https://www.youtube.com/watch?v=bCz4OMemCcA) which explains very well the mathematics and architecture of the Transformers.
+Resources: [1](https://hongruizheng.com/2020/03/13/normalizing-flow.html), [2](https://lilianweng.github.io/posts/2018-10-13-flow-models/), [3](https://stevengong.co/notes/Normalizing-Flow)
 
-# Transformers
+Topic that I encountered in my [[genai|GenAI Models and Robotic Applications]] course at [[twente|Twente]].
 
-The main motivation for the transformer architecture was to improve the ability of neural networks to handle sequential data. Transformers can process data in parallel.
+>[!summary] Basic Concept
+>Normalizing flow exploit the rule for change of variables. Normalizing flow begin with an initial distribution, and apply a sequence of K invertible transforms to formulate a new distribution.
 
-Dimensions:
+Learns complex joint densities by decomposing the joint density into a product of one-dimensional conditional densities, where each $(x_i)$ depends on only the previous $(i-1)$ values (so just like in Markov):
 
-```python
-B: batch size
-L: sequence length
-H: number of heads
-C: channels(also called d_model, n_embed)
-V: number of models
-```
+$$
+p_{model}(x)=\prod_i p\left(x_i | x_{1: i-1}\right)
+$$
 
-Input embedding (B, L, C).
-
-<div class="encoder-section">
-  <img src="../static/notes/transformer.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
-  <div class="encoder-text">
-    <ul>
-      <li>A parallel encoder on the left</li>
-      <li>An autoregressive decoder on the right</li>
-      <li>We can see that the output of the encoder is input for the decoder</li>
-    </ul>
-  </div>
-</div>
-
-I already covered what encoders and decoders are in [[genai2|Autoencoders]].
-
-## What is an input embedding?
+>[!summary] Quick summary of the difference between GAN, VAE, and flow-based generative models
+> 1. **Generative adversarial networks**: GAN provides a smart solution to model the data generation, an unsupervised learning problem, as a supervised one. The discriminator model learns to distinguish the real data from the fake samples that are produced by the generator model. Two models are trained as they are playing a minimax game.
+> 2. **Variational autoencoders**: VAE inexplicitly optimizes the log-likelihood of the data by maximizing the evidence lower bound (ELBO).
+> 3. **Flow-based generative models**: A flow-based generative model is constructed by a sequence of invertible transformations. Unlike other two, the model explicitly learns the data distribution and therefore the loss function is simply the negative log-likelihood.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/input_embed.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/normflow.png" style="max-width: 100%; height: auto;">
 </div>
 
-What's important to understand is that: 
+# What is Normalizing Flow?
 
-* the original sentence is derived into tokens (can be multiple tokens)
-* then the tokens are mapped to some unique IDs that represent their position in the vocabulary. This one doesn't change since the vocabulary is fixed.
-* embedding is the actual numerical representation of what the token means to the model (the meaning of the word). These values can change with fine tuning or training. They are supposed to change w.r.t the loss function.
+Normalizing flow learns an invertible transformation $f$ between data and latent variables: $x = f(z), z = f^{-1}(x)$
 
-## What is positional encoding?
+* $x$ is a data sample
+* $z$ is a latent variable sampled from a simple distribution
 
-* We want the word to carry some information about its position in the sentence.
-* We want the model to map words that are close to each other as "close" and those that are distant as "distant".
-* We want the positional encoding to represent a pattern that can be learned by the model.
+We can write in terms of probability density function (see [[changeofvar|Change-of-Variable Formula]] theorem in probability): $x=f(z) \text{, } p_x(x') = p_z(z) \left| \det \left( \frac{\partial f^{-1}}{\partial x} \right) \right|$ or $p_x(x') = p_z(z') \left| det[J_f] \right|$
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/pos_encoding.png" style="max-width: 100%; height: auto;">
-</div>
+Intuitively, we can also write $p_z(z) = p_x(x') \frac{1}{\left| det[J_f] \right|}$
 
-Having the original sentence, we first convert to embeddings using the previous layer, to which we add the *Position Embedding Vector* of size *d_model* which is only computed once, and not learned! This vector represents the position of the word inside of the sentence. The output should represent the *encoder input* of size *d_model*.
-
->[!question] okok but hoooow do you get the positional embedding vector?
->* Sinusoidal Embedding Intuition
-
-### Sinusoidal Embedding Intuition
-
-In the paper we can see the following 2 formulas which are sine and cosine functions of different frequencies:
-
-$$
-PE_{(pos, 2i)} = \sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}})
-$$
-
-$$
-PE_{(pos, 2i+1)} = \cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}})
-$$
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/pos_encod_sin.png" style="max-width: 100%; height: auto;">
-</div>
-
-## Multi-Head Attention
-
-### Self-Attention
-
-Self-Attention allows the model to relate words to each other. It is a special case of attention where the query($Q$), key($K$), and value($V$) all come from the same source. It allows each element of a sequence to consider (or “attend to”) all other elements in the same sequence.
-
-$$
-Attention(Q,K,V) = softmax \begin{pmatrix} \frac{QK^T}{\sqrt{d_k}} \end{pmatrix}V
-$$
-
- * Let's consider the sentence with sequence length $seq=6$ and $d_{model}=d_k=512$.
- * The matrices $Q,K,V$ are the same matrix representing input of 6 words represented by a vector of size 512. 
- * The softmax function ensures the values on each row sum up to 1. The values on each column represent how strong the words are correlated to one another.
- * By multiplying the softmax results with matrix V of size (6,512), we get a result that is of the same size as the input. This way, we not only get the position and meaning of the word, but also the relationship with ALL the other words.
-
-<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/attn1.png" alt="Attn1" width="350" height="300"> </div> <div> <img src="../static/notes/attn2.png" alt="Attn2" width="350" height="300"> </div> </div>
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/attn.png" style="max-width: 100%; height: auto;">
-</div>
-
-### Multi-Head Attention
-
-So I covered what Self-Attention is. Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this.
-
-$$
-MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^0
-$$
-$$
-head_i = Attention(QW^0_i, KW^0_i, VW^0_i)
-$$
-
-Where the projections are parameter matrices
-
-$$
-W_i^Q \in R^{d_{model} \times d_k}, W_i^K \in R^{d_{model} \times d_k}, W_i^V \in R^{d_{model} \times d_v}, W^0 \in R^{hd_{v} \times d_{model}}
-$$
-
-* In the original paper, they employ h = 8 parallel attention layers, or heads. For each of these we use $d_k = d_v = d_{model}/h = 64$. Due to the reduced dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality.
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/multihead_attn.png" style="max-width: 100%; height: auto;">
-</div>
-
->[!summary] A summary on MultiHead Attention as to how I understand it
->* So in my words, we get the input and split it into 3 copies of it (Q,K,V). Each of this copy is multiplied with their respective *parameter* matrices $W^Q, W^K, W^V$. The result (Q', K', V') is 3 matrices with the same size as the input which we further split into smaller matrices of size ($seq$, $d_k = d_{model}/h$). Every head will see the full sentence, but a smaller part of the embedding of each word. Then we calculate the attention of these smaller matrices ($Q_1, K_1, V_1$) using the formula from Self-Attention resulting into the $head_i$ matrices of the same size as before. And in the end we apply the MultiHead formula where we concatenate them and get the matrix $H(seq, h \times d_v = d_{model})$ which we further multiply with $W^0(h \times d_v, d_{model})$ and get the final MultiHead Attention Matrix (MH-A). 
-
-We do this because we want each head to look at a different aspect of the same word. We know that, depending on the context, one word could be a noun, a verb, adverb, etc. So each head might learn how to relate that word as a noun, verb, adverb, etc. 
-
->[!question] Steven covered this pretty nicely: don't the heads just end up doing the same things?
+>[!summary] Explaining the Jacobian
+> $J_f$ is the Jacobian of the model from **z to x**.
 >
->Intuitively, it could happen. But here’s why it usually doesn’t:
+> Since $\mathbf{x} = f(\mathbf{z})$, we have:
 >
->* Each head has its own $W^Q, W^K, W^V$​ matrices, all initialized differently.
->* During training, if two heads start doing the same thing, they don’t both get rewarded equally -- gradients nudge them to specialize and reduce redundancy.
->* Why? Because doing the same thing doesn’t reduce the loss as effectively as learning different complementary patterns.
+>$$
+>J_f = \frac{\partial f}{\partial \mathbf{z}} = \frac{\partial \mathbf{x}}{\partial \mathbf{z}}
+>$$
 >
->This way, each head learns to watch different aspects of the same word.
-
-### QKV
-
-**Attention Mechanism**
-
-<div class="encoder-section">
-  <img src="../static/notes/QKV.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
-  <div class="encoder-text">
-    <ul>
-      <li><b>Query(Q)</b>: "What am I looking for?"</li>
-      <li><b>Key(K)</b>: "What do I have?"</li>
-      <li><b>Value(V)</b>: "What you get for choosing me?"</li>
-    </ul>
-  </div>
-</div>
-
-$$
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \text{ In matrix form}
-$$
-
-$$
-\begin{bmatrix}
-\text{softmax}\left(\frac{\langle \mathbf{q}_1, \mathbf{k}_1 \rangle}{\sqrt{d}}\right) \mathbf{v}_1^T + \cdots + \text{softmax}\left(\frac{\langle \mathbf{q}_1, \mathbf{k}_n \rangle}{\sqrt{d}}\right) \mathbf{v}_n^T \\
-\vdots \\
-\text{softmax}\left(\frac{\langle \mathbf{q}_m, \mathbf{k}_1 \rangle}{\sqrt{d}}\right) \mathbf{v}_1^T + \cdots + \text{softmax}\left(\frac{\langle \mathbf{q}_m, \mathbf{k}_n \rangle}{\sqrt{d}}\right) \mathbf{v}_n^T
-\end{bmatrix} \in \mathbb{R}^{seq \times d_{model}}
-$$
-
-## Layer Normalization
-
-Layer Normalization applies normalization across features instead of across batches in the case of Batch Normalization
-
-<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/layernorm1.png" alt="LayerNorm1" width="350" height="300"> </div> <div> <img src="../static/notes/layernorm2.png" alt="LayerNorm2" width="350" height="300"> </div> </div>
+>It describes how the transformation $f$ maps from the latent space (z) to the data space (x).
+>
+> Conversely, $J_{f^{-1}} = \frac{\partial f^{-1}}{\partial \mathbf{x}} = \frac{\partial \mathbf{z}}{\partial \mathbf{x}}$ maps from x to z.
+>
+> $$
+>\det[J_{f^{-1}}] = \frac{1}{\det[J_f]}
+> $$
 
 
-* For example, if we take 3 items (could be the embedded inputs or features), we calculate the mean($\mu_i$) and the variance ($\sigma_i^2$) independently from each other and we replace each value with another value that is given by this expression $\hat{x}_j = \frac{x_j - \mu_j}{\sqrt{\sigma_j^2 + \epsilon}}$
-* So basically, we are normalizing so that all values are in the range of $[0,1]$. 
-* This was not in the lecture, but normally, we would also introduce two new parameters usually called **gamma**(multiplicative) and **beta**(additive) that introduce some fluctuations in the data, because maybe having all values between 0 and 1 may be too restrictive for the network. The network will learn to tune these two parameters to introduce fluctuations when necessary.
-
-## Decoder
-
-<div class="encoder-section">
-  <img src="../static/notes/cross_MHA.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
-  <div class="encoder-text">
-    <ul>
-      <li>On the decoder side of the transformer, we get the input from the encoder as (K,V) but the Query comes from the <b>Masked Multi-Head Attention</b> layer in the decoder. This is called cross multi-head attention.</li>
-      <li>The Masked Multi-Head Attention layer is the self-attention of the input sentence of the decoder.</li>
-    </ul>
-  </div>
-</div>
-
-### Masked Multi-Head Attention
-
->[!summary] Summary of MMHA
->Our goal is to make the model causal: it means the output at a certain position can only depend on the words from the previous position. The model **must not** be able to see future words.
-
-$$
-\text{MaskedAttention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\right) V
-$$
-
-We just add the causal mask $M = \begin{bmatrix} 0 & -\infty & -\infty & -\infty \\ 0 & 0 & -\infty & -\infty \\ 0 & 0 & 0 & -\infty \\ 0 & 0 & 0 & 0\end{bmatrix}$
+>[!NOTE] You can't just have $z$
+>The function $f$ in normalizing flows is perfectly invertible. In normalizing flows, we care about density estimation, not reconstruction. The loss is based on the log-likelihood of data $x$ under the model (more below).
+>
+>* That would basically be an [[genai2|Autoencoder]].
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/MMHA.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/normflow2.png" style="max-width: 100%; height: auto;">
 </div>
 
-In the MultiHead Attention process, we apply this process before we apply the softmax function. 
+* In **training**, data flows from $x \rightarrow z$ where $z = f^{-1}(x)$. We minimize the loss over $f^{-1}$ by computing the **Log Likelihood** using the [[changeofvar|Change-of-Variable Formula]]: $\log p_x(x) = \log p_z(z) + \log \left| \det \left( \frac{\partial f^{-1}}{\partial x} \right) \right|$
+* In **sampling/generation**, data flows from $z \rightarrow x$, sample $z \sim p(z)$ from the base distribution, and apply the forward flow: $x = f(z)$. 
 
-## Inference and Training of a Transformer Model
-
-\<SOS\> and \<EOS\> are two special tokens of the vocabulary that tell the model what the start and end of a sentence is.
-
-* Let's say we want to translate the English sentence "I love you very much" to the Italian "Ti amo molto". 
-* We can see that in the architecture of the transformer, the input of the decoder says (shifted right). That's because we add the \<SOS\> token at the start.
-* We have to feed two sentences of the same length to the transformer. How to do this? **We add padding words to reach the desired length**.
-* We expect the output to be "Ti amo molto \<EOS\>". This is called the "label" or the "target". 
-* Then we compute the Cross-Entropy Loss and back-propagate through all the weights.
-* **It all happens in one time step!**
+A normalizing flow transforms a simple distribution into a complex one by applying a sequence of invertible transformation functions. Flowing through a chain of transformations, we repeatedly substitute the variable for the new one according to the change of variables theorem and eventually obtain a probability distribution of the final target variable.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/transf_training.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/normflow1.png" style="max-width: 100%; height: auto;">
 </div>
 
->[!quote] Inference is **the phase where a trained transformer processes new inputs and generates outputs, such as translating text or completing sentences**. Unlike training, where the model sees the entire sequence at once, during inference, the transformer generates output step-by-step, especially in tasks like text generation.
+We apply a chain of invertible transformations (**map the target distribution sequentially**):
 
-The main difference here is that we predict each token step-by-step. It doesn't all happen in one time step as in the training process.
+$$
+\mathbf{x} = f_K \circ f_{K-1} \circ ... \circ f_1(z) \text{, thus } \mathbf{z} = f^{-1} \circ ... \circ f_K^{-1}(\mathbf{x})
+$$
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/inference.png" style="max-width: 100%; height: auto;">
-</div>
+As defined in the figure above, we have
 
-At the next time steps we don't need to compute the encoder output again. We take the output from the previous time step "Ti", we append it to the input of the decoder \<SOS\> and we repeat.
+$$
+z_i \sim p_i(z_i) 
+$$
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/inference2.png" style="max-width: 100%; height: auto;">
-</div>
+$$
+z_i = f_i(z_{i-1}), \text{ thus } z_{i-1} = f_i^{-1}(z_i)
+$$
 
-We stop when we see the \<EOS\> token. 
+What does f look like? They’re generally Affine Transforms
 
->[!question] Why do we need more time steps?
->* We selected, at every step, the word with the maximum softmax value. This strategy is called **greedy** and usually does not perform very well.
->* A better strategy is to select at each step the top *B* words and evaluate all the possible next words for each of them and at each step, keeping the top *B* most probable sequences. This is the **Beam Search** strategy and generally performs better.
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/layer1.png" alt="layer 1" width="350" height="300"> </div> <div> <img src="../static/notes/layer2.png" alt="layer 2" width="350" height="300"> </div> </div>
 
-## Linear Layer
+**Flow Path (Forward Pass):**
 
-The linear layer maps the output of the decoder from $(seq, d_{model})$ back to (seq, vocab_size). 
+$$
+z[1:d] = x[1:d]
+$$
+
+$$
+z[d+1:D] = x[d+1:D] \odot \exp(s_{\theta}(x[1:d])) + t_{\theta}(x[1:d])
+$$
+
+**Generative Path (Inverse Pass):**
+
+$$
+x[1:d] = z[1:d]
+$$
+
+$$
+x[d+1:D] = (z[d+1:D] - t_{\theta}(z[1:d])) \odot \exp(-s_{\theta}(z[1:d]))
+$$
+
+* $s_{\theta}$ and $t_{\theta}$ are neural networks (often small CNNs or MLPs)
+* Same parameters are reused in both directions.
+
+# How weight updates work in flow-based models
+
+Training is done via **maximum likelihood estimation (MLE)** using the change-of-variables formula.
+
+### Change of Variables
+
+Given $\mathbf{x} = f(z)$ and $\mathbf{z} \sim \mathcal{N}(0, I)$ (just a unit Gaussian):
+
+$$
+\log p_X(\mathbf{x}) = \log p_Z(f^{-1}(\mathbf{x})) + \log \left| \det \left( \frac{\partial f^{-1}}{\partial \mathbf{x}} \right) \right|
+$$
+
+We know that $\mathbf{z} = f^{-1}(\mathbf{x})$ and so we can write in the end:
+
+$$
+\log p_Z(\mathbf{z}) = \log p_X(f(\mathbf{z})) + \log \left| \det[J_{f^{-1}}] \right|
+$$
+
+### Training Steps
+
+1. **Inverse Pass**: Given data $\mathbf{x}$, compute $\mathbf{z} = f^{-1}(\mathbf{x})$
+2. **Compute log-likelihood loss:
+
+$$
+\mathcal{L} = -\log p_Z(\mathbf{z}) + \log \left| \det \left( \frac{\partial f}{\partial \mathbf{z}} \right) \right|
+$$
+
+3. **Backpropagate** through:
+	* the inverse transformations $f^{-1}$
+	* the neural nets $s_{\theta}$ and $t_{\theta}$
+	* the log-determinant term
+4. **Gradient Descent**:
+	* Use Adam/SGD to update parameters $\theta$ in $s_{\theta}$ and $t_{\theta}$
 
 
 <style>
