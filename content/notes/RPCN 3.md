@@ -2,7 +2,7 @@
 title: Coordinate Systems
 draft: false
 tags:
-date: 2025-11-18
+date: 2025-11-25
 ---
  
 This is Lecture 3 from my [[RPCN|Robotic Perception, Cognition and Navigation]] course. Also related to [[coordinate frame|Coordinate Frame]].
@@ -186,7 +186,7 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
   </div>
 </div>
 
-## Rotation from one system to another
+## Rotation from one system to another: DIRECT
 
 ### 1. ECEF to Inertial (Time-Dependent)
 
@@ -196,15 +196,52 @@ This frame is "inertial" because the x-axis remains fixed relative to distant st
 
 $$\mathbf{R}^i_e = \begin{bmatrix} \cos \omega_e t & \sin \omega_e t & 0 \\ -\sin \omega_e t & \cos \omega_e t & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 
-## 2. Local to ECEF
+### 2. Local to ECEF
 
 $$\mathbf{R}^e_l = \mathbf{R}_3(-\lambda - 90)\mathbf{R}_1(\phi - 90)$$
 
 $$\mathbf{R}^e_l = \begin{bmatrix} -\sin \lambda & -\sin \phi \cos \lambda & \cos \lambda \cos \lambda \\ \cos \lambda & -\sin \phi \sin \lambda & \cos \lambda \sin \lambda \\ 0 & \cos \phi & \sin \phi \end{bmatrix}$$
 
-## 3. Body to Local
+### 3. Body to Local
 
 $$\mathbf{R}^l_b = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \cos \alpha & -\sin \alpha \\ 0 & \sin \alpha & \cos \alpha \end{bmatrix} \begin{bmatrix} \cos \beta & 0 & \sin \beta \\ 0 & 1 & 0 \\ -\sin \beta & 0 & \cos \beta \end{bmatrix} \begin{bmatrix} \cos \gamma & -\sin \gamma & 0 \\ \sin \gamma & \cos \gamma & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+
+## Rotation from Body Frame to ECEF and Inertial Frames
+
+For these, the rotation matrices can be computed from those already defined as follows
+
+### 4. Body to ECEF and Inertial
+
+$$
+R_b^e = R_l^eR_b^l
+$$
+
+$$
+R_b^i = R_e^iR_b^e
+$$
+
+Their inverses are (since Rotation Matrices are orthogonal):
+
+$$
+R_e^b = (R_b^e)^{-1} = (R_b^e)^T
+$$
+
+$$
+R_i^b = (R_b^i)^{-1} = (R_b^i)^T
+$$
+
+So as a drawing because this is very complicated to remember..
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/coordframes.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!NOTE] The same idea applies to the gyroscope measurements!
+>$\omega_{ib}^b = \omega_{ie}^b + \omega_{el}^b + \omega_{lb}^b$
+>* $\omega_{ib}^b$ is the rotation rate of the body with respect to the i-frame
+>* $\omega_{lb}^b$ is the rotation rate of the body with respect to the local(navigation) frame
+>* $\omega_{el}^b$ is the rotation rate of the local frame with respect to the ECEF-frame
+>* $\omega_{ie}^b$ is is the rotation rate of the navigation frame with respect to the ECEF-frame
 
 # Derivative of the Rotation Matrix
 
@@ -236,6 +273,20 @@ $$
 </div>
 
 These deserve their own dedicated page. Will make one!
+
+# EARTH GRAVITY
+
+The gravity field vector is different from the gravitational field vector. Due to Earth's rotation, the gravity field vector is used more often and is defined as
+
+$$
+\mathbf{g} = \overline{\mathbf{g}} - \Omega_{ie}\Omega_{ie}r
+$$
+
+where $\overline{\mathbf{g}}$ is the gravitational vector and $\Omega_{ie}$ is the skew-symmetric representation of Earth's rotation vector $\omega_{ie}$ with respect to the inertial frame, and **r** is the geocentric position vector. The second term in the above equation denotes the centripetal acceleration due to the rotation of the Earth around its axis. Usually, the gravity vector is given in the l-frame.
+
+$$
+\mathbf{g}^l = [0,0,\mathbf{-g}]^T
+$$
 
 # GIMBAL LOCK
 

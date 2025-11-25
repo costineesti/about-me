@@ -2,7 +2,7 @@
 title: Rotation Matrix Time Derivative
 draft: false
 tags:
-date: 2025-11-19
+date: 2025-11-25
 ---
  
 In [[RPCN 3|Coordinate Systems]], I found the challenge of "how do we find the time derivative of the rotation matrix?". So because I didn't want to load that page with explanations, I am doing it here (the mathematical argument)
@@ -31,7 +31,7 @@ $$
 
 * We define the first part as S: $\begin{bmatrix} \frac{d}{d\theta}R_\mathbf{x}(\theta) \end{bmatrix} R_\mathbf{x}^T(\theta)$
 * And we know that S is a skew-symmetric matrix! ($S+S^T=0$) and ($-S = S^T$)
-* In 3 dimensions, the skew-symmetric matrix has a definite form. It's also an alternative way to express the cross product $a \times b = S(a) b$
+* In 3 dimensions, the skew-symmetric matrix has a definite form. It's also an alternative way to express the cross product $a \times b = S(a) b$. A skew-symmetric matrix $S$ is a square matrix whose *transpose equals its negative*, i,e. $S^T=−S$. Not to be confused with the Orthogonal Matrix, where the *transpose is equal to its inverse $S^T = S^{-1}$.
 
 $$
 S_{3D}(\mathbf{u}) = \begin{pmatrix} 0 & -u_z & u_y \\ u_z & 0 & -u_x \\ -u_y & u_x & 0 \end{pmatrix}, \mathbf{u} = [u_x, u_y, u_z]
