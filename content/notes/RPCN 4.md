@@ -2,12 +2,16 @@
 title: Mechanization
 draft: false
 tags:
-date: 2025-11-25
+date: 2025-11-26
 ---
 
 Lecture from the [[RPCN]] course. Motivation: How does a stabilizer work?
 
 **Mechanization** is the process of converting the output of an IMU into position, velocity and attitude information. The outputs include rotation rates about three body axes $\omega_{ib}^b$ measured by the gyroscopes triad and three specific forces $f^b$ along the body axes measured by the accelerometer triad, all of which are with respect to the inertial frame. Mechanization is a recursive process that starts with a specified set of initial values and iterates on the output.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/INS.png" style="max-width: 100%; height: auto;">
+</div>
 
 **Properties of angular velocities**:
 
@@ -29,6 +33,54 @@ I covered in [[RPCN 3|Coordinate Systems]] that $f^b = a^b-g^b$ is the specific 
 
 In the figure above we can see the mechanization of an INS(Inertial Navigation System) in the inertial frame. We want to integrate $p$, $v$, and $\theta$ from the IMU measured accelerations $a$ and angular velocities $\omega$.
 
+We know that
+
+$$
+f^i = a^i - \overline{\mathbf{g}}^i
+$$
+
+By letting $a^i = \ddot r^i$, this can be rewritten as:
+
+$$
+\ddot r^i = f^i + \overline{\mathbf{g}}^i
+$$
+
+And for ease of solution, the set of three second-order differential equations can be transformed to a set of first-order differential equations as follows:
+
+$$
+\dot r^i = \mathbf{v}^i
+$$
+
+$$
+\dot{\mathbf{v}}^i = f^i + \overline{\mathbf{g}}^i
+$$
+
+The measurements are usually made in the body frame, w.r.t. inertial frame. We can use the rotation matrix $R_b^i$ to extract
+
+$$
+f^i = R_b^i f^b
+$$
+
+Since the gravitational vector is usually expressed in either the e-frame or the l-frame, it can be transformed to the i-frame through a rotation matrix $R_e^i$ or $R_l^i$. We'll consider e-frame
+
+$$
+\overline{\mathbf{g}}^i = R_e^i \overline{\mathbf{g}}^e
+$$
+
+Substituting in the first-order differential equations, we get:
+
+$$
+\dot{\mathbf{v}}^i = R_b^if^b + R_e^i \overline{\mathbf{g}}^e
+$$
+
+As discussed in [[rot derivative|Rotation Matrix Time Derivative]], the rate of change of a transformation matrix is 
+
+$$
+\dot R_b^i = R_b^i \Omega_{ib}^b
+$$
+
+The mechanization equations for the i-frame can therefore be summarized as:
+
 $$
 \begin{bmatrix}
 \dot{r}^i \\
@@ -38,13 +90,7 @@ $$
 =
 \begin{bmatrix}
 v^i \\
-R_b^i a^b \\
-R_b^i \Omega_{ib}^b
-\end{bmatrix}
-=
-\begin{bmatrix}
-v^i \\
-R_b^i f^b + R_b^i g^b \\
+R_b^if^b + R_e^i \overline{\mathbf{g}}^e \\
 R_b^i \Omega_{ib}^b
 \end{bmatrix}
 $$
@@ -63,46 +109,6 @@ These all use the measurement from the IMU.
 >* Related to [[rot derivative|Rotation Matrix Time Derivative]]
 >* If $\omega$ is expressed in the **inertial/fixed frame**: $\dot R = \Omega \cdot R$
 >* If $\omega$ is expressed in the **rotating/body** frame: $\dot R = R \cdot \Omega$
-
-The rate of change of the rotation matrix $R_b^e$ can be given as
-
-$$
-\dot R_b^e = R_b^e \Omega_{eb}^b
-$$
-
-To extract $\Omega_{eb}^b$, we can do the following chain rule:
-
-$$
-\Omega_{ib}^b = \Omega_{ie}^b + \Omega_{eb}^b
-$$
-
-$$
-\Omega_{eb}^b = - \Omega_{ie}^b + \Omega_{ib}^b
-$$
-
-Substituting, we get:
-
-$$
-\dot R_b^e = R_b^e \begin{pmatrix} - \Omega_{ie}^b + \Omega_{ib}^b \end{pmatrix}
-$$
-
-So the e-frame mechanization equations can be summarized as:
-
-$$
-\begin{bmatrix}
-\dot{\mathbf{r}}^e \\
-\dot{\mathbf{v}}^e \\
-\dot{R}_b^e
-\end{bmatrix}
-=
-\begin{bmatrix}
-\mathbf{v}^e \\
-R_b^e \mathbf{f}^b - 2\Omega_{ie}^e \mathbf{v}^e + \mathbf{g}^e \\
-R_b^e (\Omega_{ie}^b + \Omega_{ib}^b)
-\end{bmatrix}
-$$
-
-The term $- 2\Omega_{ie}^e$ in the velocity derivative comes from the rotation of the Earth. 
 
 **Mathematical Proof (From the book)**:
 
@@ -152,9 +158,55 @@ $$
 
 q.e.d.
 
+The rate of change of the rotation matrix $R_b^e$ can be given as
+
+$$
+\dot R_b^e = R_b^e \Omega_{eb}^b
+$$
+
+To extract $\Omega_{eb}^b$, we can do the following chain rule:
+
+$$
+\Omega_{ib}^b = \Omega_{ie}^b + \Omega_{eb}^b
+$$
+
+$$
+\Omega_{eb}^b = - \Omega_{ie}^b + \Omega_{ib}^b
+$$
+
+Substituting, we get:
+
+$$
+\dot R_b^e = R_b^e \begin{pmatrix} - \Omega_{ie}^b + \Omega_{ib}^b \end{pmatrix}
+$$
+
+So the e-frame mechanization equations can be summarized as:
+
+$$
+\begin{bmatrix}
+\dot{\mathbf{r}}^e \\
+\dot{\mathbf{v}}^e \\
+\dot{R}_b^e
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{v}^e \\
+R_b^e \mathbf{f}^b - 2\Omega_{ie}^e \mathbf{v}^e + \mathbf{g}^e \\
+R_b^e (\Omega_{ie}^b + \Omega_{ib}^b)
+\end{bmatrix}
+$$
+
+The term $- 2\Omega_{ie}^e$ in the velocity derivative comes from the rotation of the Earth. 
+
 ---
 
 # INS Mechanization in Local-Level (Navigation) Frame
+
+In many applications the mechanization equations are desired in the local frame for the following reasons:
+
+* The navigation equations in the l-frame furnish a navigation solution that is intuitive to the user on or near the Earth’s surface.
+* Since the axes of the l-frame are aligned to the local east, north and up directions, the attitude angles (pitch, roll and azimuth) can be obtained directly at the output of the mechanization equations when solved in the local-level frame.
+* The computational errors in the navigation parameters on the horizontal (E-N) plane are bound by the Schuler effect
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/INS3.png" style="max-width: 100%; height: auto;">
@@ -374,37 +426,23 @@ $$
 </div>
 
 **Sliding Window Averaging**: 
-	1. Applies a moving average over recent measurements
-	2. Reduces short-term fluctuations while preserving trends
-	3. Velocity is calculated for example by using modified Euler formula $\mathbf{v}_{k+1}^l = \mathbf{v}_k^l + \frac{1}{2} (\Delta \mathbf{v}_k^l + \Delta \mathbf{v}_{k+1}^l)$
+
+1. Applies a moving average over recent measurements
+2. Reduces short-term fluctuations while preserving trends
+3. Velocity is calculated for example by using modified Euler formula $\mathbf{v}_{k+1}^l = \mathbf{v}_k^l + \frac{1}{2} (\Delta \mathbf{v}_k^l + \Delta \mathbf{v}_{k+1}^l)$
 
 **Kalman Filtering**:
-	1. Optimal estimation combining sensor data and system dynamics
-	2. Correct for drift and noise by incorporating external measurements like GPS
+
+1. Optimal estimation combining sensor data and system dynamics
+2. Correct for drift and noise by incorporating external measurements like GPS
 
 **Complementary Filtering**:
-	1. Combined high-freq data (gyroscopes) and low-freq data (accelerometers)
-	2. Simple and computationally efficient
-	3. Can be used e.g. for gyro bias estimation
+
+1. Combined high-freq data (gyroscopes) and low-freq data (accelerometers)
+2. Simple and computationally efficient
+3. Can be used e.g. for gyro bias estimation
 
 
-
-
-The accelerometer measures the specific force $f = a-g$.
-We know that $f \cdot g = \mid f \mid \mid g \mid \cos \theta$. g is $a_z$.
-
-$\frac{a_z}{\sqrt{a_x^2+a_y^2+a_z^2}} = \cos \theta$ (ideal i think?)
-
-From intertial to ECEF, we need to add $\omega_e$ on z axis since ECEF rotates with the earth and inertial is fixed.
-
-In the slides we compensate for h as well in inertial(i think?)
-
-# Mechanization (Atitude)
-
-* with gyroscope measurements.
-* the level of noise from this assignment's imu is so large that it's impossible to estimate the gyro scale.
-
-Try to use taylor expansion for rodrigues in the homework.
 
 <style>
   .encoder-section {
