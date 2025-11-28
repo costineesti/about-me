@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/genai4.md",
+                "file": "content/notes/genai3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "genai4"
+              "title": "genai3"
             }
           }
         ]
@@ -192,11 +192,11 @@
   },
   "active": "b166b2f866bdeae6",
   "lastOpenFiles": [
+    "content/notes/genai4.md",
     "quartz/static/notes/FM8.png",
     "quartz/static/notes/FM7.png",
     "content/notes/genai2.md",
     "content/notes/genai3.md",
-    "content/notes/genai4.md",
     "content/notes/VLM.md",
     "quartz/static/notes/FM6.png",
     "quartz/static/notes/FM5.png",
@@ -219,7 +219,6 @@
     "content/notes/cross product.md",
     "content/notes/rot derivative.md",
     "content/notes/RPCN 3.md",
-    "quartz/static/notes/INS2.png",
     "content/notes/RPCN 2.md",
     "content/notes/RPCN 1.md",
     "content/notes/RPCN.md",

@@ -39,7 +39,8 @@ x=f(z)
 $$
 
 $$
-p_x(x') = p_z(z) \left| \det \left( \frac{\partial z}{\partial x} \right) \right| = p_z(z) \left| \det \left( \frac{\partial f^{-1}(x)}{\partial x} \right) \right|$$
+p_x(x') = p_z(z) \left| \det \left( \frac{\partial z}{\partial x} \right) \right| = p_z(z) \left| \det \left( \frac{\partial f^{-1}(x)}{\partial x} \right) \right|
+$$
 
 If we define $J_f = \frac{\partial f^{-1}(x)}{\partial x}$, then we have:
 
