@@ -2,6 +2,7 @@
 title: Learning Transferable Visual Models From Natural Language Supervision (CLIP)
 draft: false
 tags:
+date: 2025-11-24
 ---
  
 Used it first in my [[Visual-Language Models for Object Detection and Segmentation]] project that I did for a startup (THEKER) and now I encountered it again in my [[genai|Generative AI in Robotic Applications]] course at [[twente|Twente]].
