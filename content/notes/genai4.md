@@ -2,7 +2,7 @@
 title: Flow Matching and Mean Flows
 draft: false
 tags:
-date: 2025-11-28
+date: 2025-11-30
 ---
  
 Lecture from the [[genai|GenAI Models and Robotic Applications]]. Related to [[genai3|Normalizing Flows]].
@@ -107,7 +107,7 @@ $$
 
 This reduces the complexity from $O(n^2)$ to $O(n)$.
 
-So now, considering the equations from before, we can express the **end location** as the **start** $+$ **the accumulated displacement** over $t={0,1}$:
+So now, considering the equations from before, we can express the **end location** as the **start** $+$ **the accumulated displacement** over $t=\{0,1\}$:
 
 $$
 \log{q(\mathbf{\phi_1(\mathbf{x}}))} = \log{p_{base}(\phi_0(\mathbf{z}))} + \int_0^1 \text{Tr} \left( \frac{\partial \mathbf{v}_t(\phi_t(\mathbf{x}))}{\partial \phi_t(\mathbf{x})} \right) dt
@@ -198,6 +198,12 @@ Reminder: velocity is the rate of change between random noise and the image from
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/FM9.png" style="max-width: 100%; height: auto;">
 </div>
+
+You use the conditional flows to define your loss function (**left**) during training, but what emerges from that training is a network that predicts the marginal flow(**right**).
+
+**Conditional flows** are the individual velocity fields for specific conditioning pairs $(\mathbf{x}, \epsilon)$. They are used to construct the training objective but aren't directly what the network predicts.
+
+**Marginal flows** are what you get when you average all those conditional flows together. This is the actual velocity field the network learns to predict.
 
 # Mean Flows
 

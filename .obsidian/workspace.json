@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN.md",
+                "file": "content/notes/genai4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN"
+              "title": "genai4"
             }
           }
         ]
@@ -192,13 +192,15 @@
   },
   "active": "b166b2f866bdeae6",
   "lastOpenFiles": [
-    "content/notes/RPCN 3.md",
-    "content/notes/RPCN 4.md",
-    "content/notes/RPCN.md",
-    "content/notes/rodrigues.md",
-    "content/notes/genai.md",
+    "content/notes/cppbasics.md",
+    "content/notes/gimbal lock.md",
     "content/notes/genai5.md",
     "content/notes/genai4.md",
+    "content/notes/RPCN.md",
+    "content/notes/RPCN 3.md",
+    "content/notes/RPCN 4.md",
+    "content/notes/rodrigues.md",
+    "content/notes/genai.md",
     "quartz/static/notes/FM9.png",
     "quartz/static/notes/MF2.png",
     "quartz/static/notes/MF1.png",
@@ -226,8 +228,6 @@
     "content/notes/RPCN 1.md",
     "content/notes/rotational frames.md",
     "content/notes/cpp_pointers_functions.md",
-    "content/notes/ViT.md",
-    "content/notes/zsl.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
