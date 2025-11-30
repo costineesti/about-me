@@ -10,6 +10,7 @@ This subject should really sit at the core of my Robotics Master's at the [[twen
 >[!summary] Topics covered so far
 >* [[RPCN 1|Perception Overview & Inertial Navigation]]
 >* [[RPCN 3|Coordinate Systems]]
+>* [[RPCN 4|Mechanization]]
 
 Reference material:
 

@@ -17,4 +17,8 @@ These are really applications of Generative AI.
 >* [[genai2|Autoencoders(AE) & Generative Adversarial Networks(GANs)]]
 >* [[transformers|Transformers]] and [[genai3|Normalizing Flows]]
 >* [[ViT|Vision Transformers (ViT)]], [[CLIP]], [[VLM]]
+>* [[genai4|Flow Matching and Mean Flows]]
+>* [[genai5|Diffusion Models]]
+
+
 

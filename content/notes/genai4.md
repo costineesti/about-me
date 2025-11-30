@@ -1,5 +1,5 @@
 ---
-title: Flow Matching
+title: Flow Matching and Mean Flows
 draft: false
 tags:
 date: 2025-11-28
@@ -195,18 +195,79 @@ $$
 
 Reminder: velocity is the rate of change between random noise and the image from the database. 
 
-# Diffusion
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/FM9.png" style="max-width: 100%; height: auto;">
+</div>
 
-We are filtering out the noise.
+# Mean Flows
 
-# Mean Flow
+Resource: [Mean Flows for One-step Generative Modeling](https://arxiv.org/pdf/2505.13447v1)
 
-e = noise
-x = actual data
+Code implementation: [this blog](https://rfangit.github.io/blog/2025/intro_mean_flow/)
+
+>[!quote] The core idea is to introduce a new ground-truth field representing the **average velocity** $\bar{v}$, whereas the velocity modeled in Flow Matching represents the **instantaneous velocity** $v$.
+>
+>Flow Matching essentially models the expectation over all possibilities, called the marginal velocity $v(\mathbf{z}_t, t) = \mathbb{E}_{\rho_t(v_t|\mathbf{z}_t)}[v_t]$ given a marginal velocity field $\frac{d}{dt} \mathbf{z}_t = v(\mathbf{z}_t, t)$
+
+Given the actual data $\mathbf{x} \sim p_{data}(\mathbf{x})$ and the noise $\epsilon \sim p_{prior}(\epsilon)$, a flow path can be constructed as $\mathbf{z}_t = t \mathbf{x} + (1-t)\epsilon$
+
+$$
+\bar{v}_t(\mathbf{z}_t, t, r) = \frac{1}{t-r} \int_r^t v(\mathbf{z}_\tau, \tau) d\tau
+$$
+
+By setting $r=0$ and $t=1$, we can instantly generate outputs from inputs (1-step only). So the "core idea" is we can generate with less steps, since the model already averages over $r,t$. If $r=t$, then it reduces to standard Flow Matching.
 
 The bigger the step, much farther away we are from the actual image. I want to not be constrained by where I am. I want to start at *r* and stop at *t*. I'll take the average velocity accumulated. $\tau = t-r$ is the new timestep. It works best for bigger steps.
 
-The loss function is as in FM, but they take the mean velocity. Understand the highlighted part from the paper (t=r). You mix the mean flow and the normal flow (In some steps you do one, in some you do the other).
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/MF1.png" style="max-width: 100%; height: auto;">
+</div>
+
+The ultimate aim will be to approximate the average velocity using a neural network $\bar{v}(\mathbf{z}_t, t, r, \theta)$. The approach is much more amenable to single or few-step generation, as it does not need to explicitly approximate a time integral at inference time, which was required when modeling instantaneous velocity.
+
+## Mean Flow Training
+
+**The Mean Flow Identity**:
+
+$$
+(t-r)\bar{v}(\mathbf{z}_t, r, t) = \int_r^t v(\mathbf{z}_t, \tau) d\tau
+$$
+
+$$
+\frac{d}{dt} (t-r)\bar{v}(\mathbf{z}_t, r, t) = \frac{d}{dt} \int_r^t v(\mathbf{z}_t, \tau) d\tau
+$$
+
+$$
+\frac{d}{dt} (t-r) \bar{v}(\mathbf{z}_t, r, t) = v(\mathbf{z}_t, t)
+$$
+
+$$
+(t-r) \frac{d}{dt} \bar{v}(\mathbf{z}_t, r, t) + \bar{v}(\mathbf{z}_t, r, t) = v(\mathbf{z}_t, t)
+$$
+
+And therefore we can finally express the average velocity as:
+
+$$
+\bar{v}(\mathbf{z}_t, r, t) = v(\mathbf{z}_t, t) - (t-r) \frac{d}{dt} \bar{v}(\mathbf{z}_t, r, t)
+$$
+
+**Training with Average Velocity**:
+
+We now introduce a model $\bar{v}(\mathbf{z}_t, r, t, \theta)$ to learn $\bar{v}(\mathbf{z}_t, r, t)$ (**denoted as** $\bar{v}_{tgt}$)
+
+And in the end, the loss function for Mean Flow models is represented as
+
+$$
+\mathcal{L}_{MF}(\theta) = \mathbb{E} \left|| \bar{v}(\mathbf{z}_t, r, t, \theta)-sg(\bar{v}_{tgt}) \right||_2^2
+$$
+
+From the paper: The term $\bar{v}_{tgt}$ uses the instantaneous velocity $v$ as the only ground-truth signal; no integral computation is needed. While the target should involve derivatives of $\bar{v}$ ($\partial \bar{v}$), they are replaced by their parametrized counterparts ($\partial \bar{v}_{\theta})$. In the loss function, a **stop-gradient** (sg) operation is applied on the target because it eliminates the need for "double backpropagation" through the Jacobian-vector product, thereby avoiding higher-order optimization.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/MF2.png" style="max-width: 100%; height: auto;">
+</div>
+
+The loss function is as in FM, but they take the mean velocity. Understand the highlighted part from the paper ($t=r$). You mix the mean flow and the normal flow (In some steps you do one, in some you do the other). I mentioned above that **if $r=t$, then it reduces to standard Flow Matching.**
 
 
 
