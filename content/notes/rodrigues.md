@@ -1,6 +1,6 @@
 ---
 title: Rodrigues' Rotation Formula
-date: 2025-04-18
+date: 2025-12-01
 draft: false
 tags:
   - SeaClear
@@ -23,5 +23,25 @@ return rvec_inv, tvec_inv.T
 
 So, I want to document this algorithm and see what exactly it does and why it fixed the issue. From what I understood, it succeeds in computing the camera pose [[camera backward projection]] and not the ArUco marker's pose. (I could definitely phrase that better)
 
->[!warning] TO DO!
+**Related To**: [[axis-angle|Axis-Angle Representation (Rotation Vector)]], [[RPCN 4|Mechanization]], [[lie algebra|Lie Algebra]]
 
+# Rotation Vector to Rotation Matrix
+
+>[!NOTE] Rodrigues' Formula
+>The conversion from rotation vector to rotation matrix is shown by Rodrigues' formula. The result of the conversion is the follo
+>
+>$$
+>R = \cos \theta I + (1- \cos\theta)nn^T + \sin \theta [n]_{\mathbf{x}}
+>$$
+>
+>where
+>
+>* R is the rotation matrix
+>* the rotation axis has unit length vector **n** and angle $\theta$
+>* \^ or $[]_{\mathbf{x}}$ is the skew-symmetric operator
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/rodrigues.png" style="max-width: 100%; height: auto;">
+</div>
+
+Since the rotation axis does not change after the rotation, we have **Rn $=$ n**. Therefore, the axis **n** is the eigenvector corresponding to the matrix **R's** eigenvalue 1. 

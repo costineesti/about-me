@@ -442,6 +442,95 @@ $$
 2. Simple and computationally efficient
 3. Can be used e.g. for gyro bias estimation
 
+>[!question] What if one directly uses the IMU measurements to integrate attitude? That is, by assuming that Earth's rotation is negligible with the following assumption:
+>
+>$$
+>\theta_{lb}^b = (\omega_{ib}^b - R_l^b (\omega_{ie}^l + \omega_{el}^l)) \Delta_t
+>$$
+>
+>$$
+>\theta_{lb}^b = \omega_{lb}^b \Delta_t \sim \omega_{ib}^b \Delta_t
+>$$
+>
+>**Answer**: There will be an accumulating drift on the angle! The magnitude of this drift follows from Earth's rotation. When integration time is less than 1s, the effect could be negligible but if integration is continued even with these small steps, the error accumulates with respect to time
+>
+>Per short: That exact amount we consider 0 ($R_l^b (\omega_{ie}^l + \omega_{el}^l)$) will be the error accumulating in our data.
+
+# Introduction to Rodrigues' Formula
+
+## Lie Algebra
+
+Covered in [[lie algebra|Lie Algebra]].
+
+As a general idea, we represent a spatial rotation SO(3) by an axis-angle pair. This way, we represent every rotation as a single operation instead of 3 in the case of Euler Angles.
+
+$$
+\theta = \phi u, ||u||=1, \phi \in R
+$$
+
+where **u** is the rotation axis and $\phi$ is the rotation magnitude.
+
+The associated element of the [[lie algebra]] $so(3)$ is the skew-symmetric matrix denoted as $[\theta]_{\mathbf{x}}$
+
+$$
+[\theta]_{\mathbf{x}} = \begin{pmatrix} 0 & -\theta_z & \theta_y \\ \theta_z & 0 & -\theta_x \\ -\theta_y & \theta_x & 0 \end{pmatrix}
+$$
+
+The exponential map provides the correspondence
+
+$$
+R = exp([\theta]_{\mathbf{x}}) \in SO(3)
+$$
+
+linking the axis-angle ([[lie algebra]]) representation with a rotation matrix
+
+## Closed form exponential of a skew-symmetric matrix
+
+For any matrix $A$, the exponential is defined by
+
+$$
+exp(A) = \frac{A^n}{n!} = I + A + \frac{A^2}{2!} + ...
+$$
+
+When $A = [\theta]_{\mathbf{x}} \in so(3)$, its powers satisfy
+
+* $[\theta]^3_{\mathbf{x}} = -||\theta||^2 [\theta]_{\mathbf{x}}$
+* $[\theta]^4_{\mathbf{x}} = -||\theta||^2 [\theta]^2_{\mathbf{x}}$
+
+Starting from
+
+$$
+exp([\theta]_{\mathbf{x}}) = \frac{[\theta]^n_{\mathbf{x}}}{n!} = I + [\theta]_{\mathbf{x}} + \frac{[\theta]^2_{\mathbf{x}}}{2!} + ...
+$$
+
+use
+
+* $[\theta]^3_{\mathbf{x}} = - \phi^2 [\theta]_{\mathbf{x}}$
+* $[\theta]^4_{\mathbf{x}} = - \phi^2 [\theta]^2_{\mathbf{x}}$
+* $\phi = ||\theta||$
+
+**Odd powers** are proportional to $[\theta]_\times$:
+
+$$
+[\theta]_\times - \frac{\phi^2}{3!}[\theta]_\times + \frac{\phi^4}{5!}[\theta]_\times - \cdots = \frac{\sin\phi}{\phi}[\theta]_\times
+$$
+
+**Even powers** are proportional to $[\theta]_\times^2$:
+
+$$
+\frac{[\theta]_\times^2}{2!} - \frac{\phi^2}{4!}[\theta]_\times^2 + \frac{\phi^4}{6!}[\theta]_\times^2 - \cdots = \frac{1-\cos\phi}{\phi^2}[\theta]_\times^2
+$$
+
+Using these identities, the series can be summed in closed form:
+
+$$
+\exp([\theta]_\times) = I + \frac{\sin\phi}{\phi}[\theta]_\times + \frac{1-\cos\phi}{\phi^2}[\theta]_\times^2, \quad \phi = ||\theta||
+$$
+
+This expression is known as [[rodrigues|Rodrigues' Rotation Formula]].
+
+
+
 
 
 <style>
