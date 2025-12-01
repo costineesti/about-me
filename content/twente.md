@@ -31,4 +31,4 @@ date: 2025-10-21
 >* **Q2**
 >	* [[genai|GenAI Models and Robotic Applications]]
 >	* [[RPCN|Robot Perception, Cognition and Navigation]]
->	* Speech Processing
+>	* [[speech processing|Speech Processing]]
