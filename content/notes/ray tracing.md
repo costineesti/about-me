@@ -16,7 +16,7 @@ I assumed
 * World Frame: Origin at ArUco marker, Z pointing up
 * Camera Frame: Origin at camera optical center
 
-I get some nasty errors, likely due to the distortion parameters, since I implemented this refraction with the water (AND I STILL DID NOT SOLVE IT, AAAAAAAAH)
+I get some nasty errors, likely due to the distortion parameters, since I implemented this refraction with the water. I could definitely see some improvements in the distances (especially around the edges of the FOV again).
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/pool_edge.png" style="max-width: 100%; height: auto;">
@@ -51,7 +51,9 @@ $$
 
 * The intrinsic matrix maps 3D camera points to pixels: 
 
-$$K = \begin{bmatrix} f_\mathbf{x} &  0 & c_\mathbf{x} \\ 0 & f_{\mathbf{y}} &  c_{\mathbf{y}} \\ 0 & 0 & 1 \end{bmatrix}$$
+$$
+K = \begin{bmatrix} f_\mathbf{x} &  0 & c_\mathbf{x} \\ 0 & f_{\mathbf{y}} &  c_{\mathbf{y}} \\ 0 & 0 & 1 \end{bmatrix}
+$$
 
 * $(\mathbf{x}_n, \mathbf{y_n})$ represents where a ray through that pixel intersects plane $\mathbf{z}=1$ in camera coordinates.
 * `d_air_W` is the direction vector of a ray in world coordinates, starting at the camera center (`o_W`) and going towards the pixel, before refraction
@@ -89,12 +91,12 @@ I0_W = o_W + s0 * d_air_W
 	* If `s0` $< 0$ => it's behind (invalid)
 * `I0_W` $= O_{W[2]} + s_0 \cdot d\_air\_W$ is the 3D intersection point of the incoming ray with the water surface plane (**z** $= 0$)
 
-`o_W` (camera)
+o_W (camera)
          \
-          \  `s0` = distance to water
+          \  s0 = distance to water
            \
-    ────────●──────────  **z** $= 0$ (water surface plane)
-		         `I0_W`
+    ────────●──────────  z = 0
+           I0_W
 
 ### Compute Refracted Direction Into Water
 
@@ -108,13 +110,13 @@ d_wtr = self.refract_dir(d_in, n_surface_up, air_n, water_n)
 * `d_wtr` is the refracted ray inside the water computed with Snell's Law
 
 AIR (n=1.0)
-         \  $\theta_1$ (incident angle)
+         \  θ₁ (incident angle)
           \
-    ───────●─────────  surface (Z=0) -- I0_W
+    ───────●─────────  surface
           /
-         / $\theta_2$ (refracted angle, smaller)
+         / θ₂ (refracted angle, smaller)
         /
-WATER (n=1.33)
+    WATER (n=1.33)
 
 ### Intersect refracted ray with plane z = depth (coming from IMU)
 
@@ -130,11 +132,11 @@ P_W = I0_W + s1 * d_wtr
 * `s1` $= \frac{\text{depth[IMU]} - I0\_W}{d\_wtr\_Z}$ tells me how far along the ray to travel to reach plane at depth level
 * `P_W` $= I0\_W + s_1 \cdot d\_wtr$ is the 3D world point on the ROV's depth plane that corresponds to the original pixel, AFTER refraction. **This is what I want to get**!! (==reference + direction * distance==)
 
-─────────●───────────  I0_W (z = 0)
- 				 \
-  	              \  d_wtr (z component of the refracted ray)
-   	               \
-   	               ● P_W   (z = depth)
+─────────●───────────  z = 0 (X0_W)
+              \
+               \  d_wtr (refracted ray)
+                \
+                 ● P_W   z = depth
 
 ### Convert back to Camera Frame
 
@@ -149,10 +151,10 @@ return p_C
 
 # Why refraction matters
 
-What camera "sees":        Actual position:
+What camera "sees" VERSUS **Actual position**:
 
       camera                    camera
-        \                         \
+         \                         \
           \                         \
     ──────●────  surface     ───────●────
            |                           \

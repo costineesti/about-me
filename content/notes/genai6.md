@@ -1,7 +1,8 @@
 ---
-title: Untitled
+title: Gen AI Lecture 6
 draft: false
 tags:
+date: 2025-12-02
 ---
  
 3D Conv = 2D + time

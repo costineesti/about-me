@@ -2,6 +2,7 @@
 title: SLAM
 draft: false
 tags:
+date: 2025-12-01
 ---
  
 Graph Representation (Pose Graph)

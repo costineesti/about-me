@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ray tracing.md",
+                "file": "content/notes/RPCN 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ray tracing"
+              "title": "RPCN 5"
             }
           },
           {
@@ -221,13 +221,13 @@
   },
   "active": "ba12474fdcef294a",
   "lastOpenFiles": [
-    "content/seaclear.md",
+    "content/notes/genai6.md",
     "content/notes/ray tracing.md",
+    "content/seaclear.md",
     "quartz/static/notes/pool_edge.png",
     "quartz/static/notes/pool_edge_plot.png",
     "content/notes/genai2.md",
     "content/notes/genai.md",
-    "content/notes/genai6.md",
     "content/notes/RPCN IMU pen and paper.md",
     "Pasted image 20251201193741.png",
     "content/notes/RPCN 4.md",
