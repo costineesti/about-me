@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN 5.md",
+                "file": "content/notes/ray tracing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN 5"
+              "title": "ray tracing"
             }
           },
           {
@@ -221,6 +221,7 @@
   },
   "active": "ba12474fdcef294a",
   "lastOpenFiles": [
+    "content/notes/RPCN 5.md",
     "content/notes/genai6.md",
     "content/notes/ray tracing.md",
     "content/seaclear.md",
@@ -242,7 +243,6 @@
     "quartz/static/notes/penandpaper2.png",
     "content/notes/RPCN 1.md",
     "quartz/static/notes/penandpaper1.png",
-    "content/notes/RPCN 5.md",
     "content/notes/rot derivative.md",
     "quartz/static/notes/rodrigues.png",
     "content/notes/lie algebra.md",

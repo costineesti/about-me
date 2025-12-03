@@ -91,12 +91,14 @@ I0_W = o_W + s0 * d_air_W
 	* If `s0` $< 0$ => it's behind (invalid)
 * `I0_W` $= O_{W[2]} + s_0 \cdot d\_air\_W$ is the 3D intersection point of the incoming ray with the water surface plane (**z** $= 0$)
 
-o_W (camera)
+```
+        o_W (camera)
          \
           \  s0 = distance to water
            \
     ────────●──────────  z = 0
            I0_W
+```
 
 ### Compute Refracted Direction Into Water
 
@@ -109,7 +111,8 @@ d_wtr = self.refract_dir(d_in, n_surface_up, air_n, water_n)
 * `d_in` is the unit direction vector of the ray in the air pointing towards `I0_W`
 * `d_wtr` is the refracted ray inside the water computed with Snell's Law
 
-AIR (n=1.0)
+```
+    AIR (n=1.0)
          \  θ₁ (incident angle)
           \
     ───────●─────────  surface
@@ -117,6 +120,7 @@ AIR (n=1.0)
          / θ₂ (refracted angle, smaller)
         /
     WATER (n=1.33)
+```
 
 ### Intersect refracted ray with plane z = depth (coming from IMU)
 
@@ -132,11 +136,13 @@ P_W = I0_W + s1 * d_wtr
 * `s1` $= \frac{\text{depth[IMU]} - I0\_W}{d\_wtr\_Z}$ tells me how far along the ray to travel to reach plane at depth level
 * `P_W` $= I0\_W + s_1 \cdot d\_wtr$ is the 3D world point on the ROV's depth plane that corresponds to the original pixel, AFTER refraction. **This is what I want to get**!! (==reference + direction * distance==)
 
-─────────●───────────  z = 0 (X0_W)
+```
+    ─────────●───────────  z = 0 (X0_W)
               \
                \  d_wtr (refracted ray)
                 \
                  ● P_W   z = depth
+```
 
 ### Convert back to Camera Frame
 
