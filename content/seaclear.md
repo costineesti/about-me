@@ -26,9 +26,9 @@ Everything I do inside this project is out of passion and constant drive to lear
 >* [[camera backward projection|Camera Backward Projection]]
 >* [[camera calibration|Camera Calibration]]
 >* [[camera calibration and 3d recontruction|Camera Calibration and 3D Reconstruction]]
->* [[rodrigues|Rodrigues' Rotation and Translation Angles]]
 >* [[gopro|Extracting GoPro footage in ROS]]
 >* [[SeaClear CNN Detection|CNN Architecture for detecting the BlueROV]]
+>* [[ray tracing|Ray Tracing Through Water]]
 
 >[!hint] Currently working on...
 >
