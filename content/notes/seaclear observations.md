@@ -81,7 +81,7 @@ Through those two planes, I account for the refraction with the water.
 It should be a LED, a marker, but the same in both POV's. Because otherwise, I will always detect two different points that have nothing to do with each other. I should track the same physical feature from both cameras. This way, **regardless of the viewing angle**, I know I am looking at the same point in the world from both views.
 
 ```
- GoPro sees:           USB camera sees:
+GoPro sees:           USB camera sees:
     
     ┌─────┐               ┌─────┐
     │  ●  │ top           │     │ side
@@ -90,7 +90,7 @@ It should be a LED, a marker, but the same in both POV's. Because otherwise, I w
     
     ↓                     ↓
     
- Point A               Point B
+Point A               Point B
 (top center)          (side center)
 ```
 
