@@ -78,6 +78,22 @@ Through those two planes, I account for the refraction with the water.
     <img src="../static/notes/ROV_feature.png" style="max-width: 100%; height: auto;">
 </div>
 
+It should be a LED, a marker, but the same in both POV's. Because otherwise, I will always detect two different points that have nothing to do with each other. I should track the same physical feature from both cameras. This way, **regardless of the viewing angle**, I know I am looking at the same point in the world from both views.
+
+```
+ GoPro sees:           USB camera sees:
+    
+    ┌─────┐               ┌─────┐
+    │  ●  │ top           │     │ side
+    └─────┘               │  ●  │
+                          └─────┘
+    
+    ↓                     ↓
+    
+ Point A               Point B
+(top center)          (side center)
+```
+
 ### Why I would usually get wrong measurements from the ArUco marker when I would position it in the corner of the UsbCamera FOV
 
 Since I did have shaded corners (vignette) and the AruCo Marker was relatively small, the corners could have been detected wrongfully and so introduce noise in the Rotation Matrix which would then introduce noise in the distances I would get.
