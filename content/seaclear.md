@@ -29,6 +29,7 @@ Everything I do inside this project is out of passion and constant drive to lear
 >* [[gopro|Extracting GoPro footage in ROS]]
 >* [[SeaClear CNN Detection|CNN Architecture for detecting the BlueROV]]
 >* [[ray tracing|Ray Tracing Through Water]]
+>* [[seaclear observations|Multi Camera Pose Estimation]]
 
 >[!hint] Currently working on...
 >
