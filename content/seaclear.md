@@ -35,5 +35,6 @@ Everything I do inside this project is out of passion and constant drive to lear
 >
 > Real-time comparison of multi-camera 3D pose estimation(code is done, waiting to validate with a good enough experiment).
 
-
-
+TODO: 
+* Kalman Filter (Robot localization din ROS - package -- EKF)
+* Segmentare pe baza tank-ului galben
