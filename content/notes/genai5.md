@@ -65,15 +65,7 @@ So basically, **Forward Diffusion** is a Markov Chain.
 >
 >Apparently, this is to ensure that the total variance remains 1. This shows that using $\sqrt{1-\beta_t}$ ensures that $x_t$ remains unit gaussian. The fact that $x_{t-1}$ and $\epsilon$ are independent, allows the variances to sum.
 >
->$$
-\begin{align*}
-\operatorname{Var}(\mathbf{x}_t) &= \operatorname{Var}(\sqrt{1 - \beta_t} \mathbf{x}_{t-1} + \sqrt{\beta_t} \boldsymbol{\epsilon}) \\
-&= \operatorname{Var}(\sqrt{1 - \beta_t} \mathbf{x}_{t-1}) + \operatorname{Var}(\sqrt{\beta_t} \boldsymbol{\epsilon}) \\
-&= (1 - \beta_t) \operatorname{Var}(\mathbf{x}_{t-1}) + \beta_t \operatorname{Var}(\boldsymbol{\epsilon}) \\
-&= (1 - \beta_t) \mathbf{I} + \beta_t \mathbf{I} \\
-&= \mathbf{I}
-\end{align*}
-$$
+$$\begin{align} \text{Var}(x_t) &= \text{Var}(\sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t}\epsilon) \\ &= \text{Var}(\sqrt{1-\beta_t}x_{t-1}) + \text{Var}(\sqrt{\beta_t}\epsilon) \\ &= (1-\beta_t)\text{Var}(x_{t-1}) + \beta_t\text{Var}(\epsilon) \\ &= (1-\beta_t)I + \beta_t I \\ &= I \end{align}$$
 
 >[!summary] Variance Schedule
 >

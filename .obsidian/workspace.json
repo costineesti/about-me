@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN 4.md",
+                "file": "content/notes/genai5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN 4"
+              "title": "genai5"
             }
           }
         ]
@@ -192,6 +192,7 @@
   },
   "active": "3ef1349c695dfa9e",
   "lastOpenFiles": [
+    "content/notes/RPCN 4.md",
     "content/notes/RPCN 5.md",
     "content/notes/genai5.md",
     "quartz/static/notes/diffusion_5.png",
@@ -217,7 +218,6 @@
     "content/notes/genai2.md",
     "content/notes/genai.md",
     "content/notes/RPCN IMU pen and paper.md",
-    "content/notes/RPCN 4.md",
     "content/notes/RPCN.md",
     "content/notes/axis-angle.md",
     "content/notes/quaternions.md",
