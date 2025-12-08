@@ -2,7 +2,7 @@
 title: Diffusion Models
 draft: false
 tags:
-date: 2025-12-05
+date: 2025-12-08
 ---
  
 Add noise gradually and learn to reverse the process
@@ -150,5 +150,83 @@ We use U-Net (page incoming)
 >The image kinda says it all.
 >
 ><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/diffusion_5.png" style="max-width: 100%; height: auto;"> </div>
+>
+>**Diffusion**:
+>* Stochastic models: given a noise sample, it generates diverse samples (many trajectories),
+>* Gradually destroys a data point over time by progressively adding Gaussian Noise,
+>* Trains by estimating the added noise at step t (to be removed to obtain the sample at t-1),
+>* Needs many step for generation.
+>
+>**Flow**:
+>* Deterministic model: given a noise sample, it generates a specific sample(single trajectory),
+>* The forward process is a linear interpolation of the data point and noise sample,
+>* Trains by minimizing the difference between an estimated and ground truth (Euler) velocity,
+>* Generates in many less steps than DMs.
 
+# Conditional Diffusion
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/diffusion_6.png" style="max-width: 100%; height: auto;">
+</div>
+
+The reverse process becomes
+
+$$
+p_{\theta}(x_0 \mid c) = p(x_T) \prod_{t=1}^T p_{\theta}(x_{t-1} \mid x_t,c)
+$$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/diffusion_7.png" style="max-width: 100%; height: auto;">
+</div>
+
+## Classifier Guidance and Classifier-Free Guidance
+
+Sources: [Ho and Salimans, 2021 -- Classifier Free](https://arxiv.org/pdf/2207.12598), [Song et al., 2021 -- Classifier Guidance](https://arxiv.org/pdf/2011.13456), [Diffusion models beat gans on image synthesis](https://arxiv.org/pdf/2105.05233), [meta guide, page 33](https://arxiv.org/pdf/2412.06264)
+
+>[!danger] Make sure you cover this part
+
+$$
+\mathcal{L}_{DM} = E_{x_0, \epsilon \sim \mathcal{N}(0,I), t} \left[ \left\| \epsilon - \left( \hat{\epsilon}_\theta(x_t, t) - \gamma \nabla_{x_t} \log p(y|x_t) \right) \right\|_2^2 \right]
+$$
+
+# Latent Diffusion Model (LDM)
+
+You go through decoder, do diffusion in latent space, and then decode that.
+
+* The idea is that diffusion is a very expensive process, but encoding / decoding is much faster
+
+The paper covering this is **High-Resolution Image Synthesis with Latent Diffusion Models**.
+
+>[!quote] Being likelihood-based models, they do not exhibit mode-collapse and training instabilities as GANs and, by heavily exploiting parameter sharing, they can model highly complex distributions of natural images without involving billions of parameters as in AR models
+>
+>To stage training:
+>
+>1. Train an autoencoder to encode images in latent space
+>2. Train diffusion to predict in latent space
+>
+>Be predicting in latent space, we can reduce the computational load.
+
+So what I should remember is that:
+
+* The diffusion and denoising are done on a compressed (lower-dimensional) version of the samples
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/diffusion_8.png" style="max-width: 100%; height: auto;">
+</div>
+
+I love when professors do charity work:
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/diffusion_9.png" style="max-width: 100%; height: auto;">
+</div>
+
+Some applications where we want to use diffusion models:
+
+* text-to-image generation
+* image editing and composition
+* visual illusions
+* novel view synthesis
+* policy generation in robotics
+* video generation
+* ...
 
