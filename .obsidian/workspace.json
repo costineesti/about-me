@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3ef1349c695dfa9e",
+            "id": "97b5cb9c98c4164a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/genai5.md",
+                "file": "content/notes/RPCN 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "genai5"
+              "title": "RPCN 5"
             }
           }
         ]
@@ -190,12 +190,28 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3ef1349c695dfa9e",
+  "active": "97b5cb9c98c4164a",
   "lastOpenFiles": [
-    "quartz/static/notes/diffusion_9.png",
-    "quartz/static/notes/diffusion_8.png",
-    "quartz/static/notes/diffusion_7.png",
-    "quartz/static/notes/diffusion_6.png",
+    "content/notes/RPCN.md",
+    "content/notes/RPCN 5.md",
+    "content/notes/ICP.md",
+    "Pasted image 20241128181601.png",
+    "Pasted image 20250527143901.png",
+    "Pasted image 20250903002025.png",
+    "Pasted image 20251209123617.png",
+    "quartz/static/notes/lidar_5.png",
+    "content/notes/RPCN 4.md",
+    "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
+    "content/notes/VLM.md",
+    "quartz/static/notes/lidar_4.png",
+    "quartz/static/notes/lidar_3.png",
+    "content/notes/RPCN 3.md",
+    "quartz/static/notes/lidar_2.png",
+    "quartz/static/notes/lidar_1.png",
+    "quartz/static/notes/lidar_types.png",
+    "content/notes/RPCN 6.md",
+    "content/notes/RPCN 7.md",
+    "content/notes/genai5.md",
     "content/notes/genai8.md",
     "content/twente.md",
     "content/seaclear.md",
@@ -212,26 +228,10 @@
     "content/notes/systems engineering 5.md",
     "content/notes/RPCN IMU pen and paper.md",
     "content/notes/LU Decomposition.md",
-    "content/notes/likelihood function.md",
-    "content/notes/Systems Engineering Lecture 3.md",
-    "content/notes/cpp_nesting_cond_op.md",
-    "content/notes/cpp_auto_const_iterator.md",
-    "content/notes/systems engineering 1.md",
-    "content/notes/MiDaS.md",
-    "content/notes/zsl.md",
-    "content/notes/neg log likelihood.md",
-    "content/notes/PDF.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
     "content",
-    "quartz/static/notes/diffusion_5.png",
-    "quartz/static/notes/diffusion_4.png",
-    "Pasted image 20251205201219.png",
-    "Pasted image 20251201193741.png",
-    "Pasted image 20250903002025.png",
-    "Pasted image 20241128181601.png",
-    "quartz/static/notes/diffusion_3.png",
     "public/404.html",
     "public/notes/quartz.layout.ts",
     "public/static/bachelors/combined_video.mp4",

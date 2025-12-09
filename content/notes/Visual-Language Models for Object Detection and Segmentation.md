@@ -10,10 +10,10 @@ tags:
  
 Source: [this review paper on segmentation and object detection methods](https://arxiv.org/pdf/2504.09480), [MobileSAM paper](https://arxiv.org/pdf/2306.14289), [TinyCLIP paper](https://arxiv.org/pdf/2309.12314) and [OpenCV documentation](https://opencv.org/blog/vision-language-models/)
 
-Visual Language Models (`VLMs`) are advanced multimodal AI systems that combine large language models (`LLMs`) with vision encoders to understand and generate insights from both visual data (like images and videos) and textual information.
+[[VLM|Visual Language Models]] (`VLMs`) are advanced multimodal AI systems that combine large language models (`LLMs`) with vision encoders to understand and generate insights from both visual data (like images and videos) and textual information.
 
 >[!NOTE] I also like this explanation from the OpenCV documentation
->Vision Language Models (VLMs) are AI systems that seamlessly combine image understanding with natural language processing. Unlike earlier models that handled vision and text separately, VLMs connect what they see with the words that describe it, allowing machines to “see” and “read” at the same time.
+>Vision Language Models ([[VLM|VLMs]]) are AI systems that seamlessly combine image understanding with natural language processing. Unlike earlier models that handled vision and text separately, VLMs connect what they see with the words that describe it, allowing machines to “see” and “read” at the same time.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/VLMs.png" style="max-width: 100%; height: auto;">

@@ -2,7 +2,7 @@
 title: Robotic Perception, Cognition and Navigation
 draft: false
 tags:
-date: 2025-11-14
+date: 2025-12-09
 ---
  
 This subject should really sit at the core of my Robotics Master's at the [[twente|University of Twente]]. I take it in Q2 and hopefully I will deepen my SLAM understanding and overall sensor fusion knowledge in robotic applications.
@@ -12,6 +12,7 @@ This subject should really sit at the core of my Robotics Master's at the [[twen
 >* [[RPCN 3|Coordinate Systems]]
 >* [[RPCN 4|Mechanization]], [[rodrigues|Rodrigues' Rotation Formula]]
 >* [[RPCN IMU pen and paper|Pen and Paper Exercises Coordinate Systems]]
+>* [[RPCN 5|Lidar-Inertial Perception]], [[ICP|Iterative Closest Point (ICP)]]
 
 Reference material:
 
