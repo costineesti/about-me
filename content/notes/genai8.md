@@ -2,6 +2,7 @@
 title: DDPMS for Dynamical Systems (State Space Approach)
 draft: false
 tags:
+date: 2025-12-08
 ---
  
 This guy notates the states in state space as *s* and the inputs as *a* (actions). 

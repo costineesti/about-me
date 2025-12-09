@@ -185,6 +185,106 @@ Goal: Estimate the transformation to move one cloud so that it is aligned with t
 
 Detailed more at [[ICP]].
 
+**Problem in Scan Matching**: Lidar errors may cause drift. Looking at two very similar scans gives a lot of weight to the noise -- especially when the robot is stationary since there should be no drift.
+
+**Solution**: 
+
+* Use a ==keyframe== (first introduced in [PTAM](https://www.robots.ox.ac.uk/~gk/publications/KleinMurray2007ISMAR.pdf))
+	* Store one scan as a keyframe
+	* Check updates against the keyframe, not against the previous frame. This way, we don’t process every single new frame that don’t add information.
+	* Update the keyframe when the sensor moves significantly, e.g., 10 cm or 0.1 degrees
+
+More tricks include noise handling through markers or features, or use an IMU for the theta prediction of the scan registration.
+
+## Matching Techniques
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/lidar_6.png" style="max-width: 100%; height: auto;">
+</div>
+
+### Lidar-Inertial Fusion
+
+**Context**: a spinning lidar collects points sequentially over time, leading to motion distortions if the sensor moves or rotates during data acquisition. This results in points in the point cloud don't accurately represent their real-world positions because the lidar's frame of reference changes during the scan.
+
+**Solution**: IMU preintegration is a process that uses high-frequency inertial measurements (linear accelerations and angular velocities) to estimate the sensor's pose (position and orientation) changes over time.
+
+Rotation is the most critical to minimize in ICP formalism.
+
+* IMU saves multiple ICP iterations
+* CPU effort saved
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/lidar_7.png" style="max-width: 100%; height: auto;">
+</div>
+
+# ICP SLAM
+
+We need to take uncertainty into account with Gaussian Distributions. In addition to the pose **X**, the pose estimate $\bar{\mathbf{X}}$ and the pose error $\Delta\mathbf{X}$ are required.
+
+The positional error of a scan at its pose X is described by:
+
+$$
+E = \sum_{i=1}^{m} \|\mathbf{X} \oplus \mathbf{d}_i - \mathbf{m}_i\|^2 = \sum_{i=1}^{m} \|\mathbf{Z}_i(\mathbf{X})\|^2
+$$
+
+Here, $\oplus$ is a compounding operation that transforms a point $\mathbf{d}_i$ into the global coordinate system. For small pose errors $\triangle X$, E can be linearized through **Taylor Series Expansion**:
+
+$$
+\mathbf{Z}_i(\mathbf{X}) \approx \bar{\mathbf{X}} \oplus \mathbf{d}_i - \mathbf{m}_i - \nabla\mathbf{Z}_i(\bar{\mathbf{X}})\Delta\mathbf{X}
+$$
+
+$$
+\mathbf{Z}_i(\mathbf{X}) = \mathbf{Z}_i(\bar{\mathbf{X}}) - \nabla\mathbf{Z}_i(\bar{\mathbf{X}})\Delta\mathbf{X}
+$$
+
+Utilizing the matrix decomposition $M_iH$ of $\nabla\mathbf{Z}_i(\bar{\mathbf{X}})$ (i.e. the Jacobian) that separates the pose information $\mathbf{X}$, which is contained in $\mathbf{H}$, from the points information $\mathbf{m}_i$ and $\mathbf{d}_i$, which are contained in $\mathbf{M}_i$
+
+$$
+\mathbf{Z}_i(\mathbf{X}) \approx \mathbf{Z}_i(\bar{\mathbf{X}}) - \mathbf{M}_i\mathbf{H}\Delta\mathbf{X}
+$$
+
+Because $\mathbf{M}_i$ is independent of the pose, the positional error E is approximated as
+
+$$
+E \approx (\mathbf{Z} - \mathbf{MH}\Delta\mathbf{X})^T(\mathbf{Z} - \mathbf{MH}\Delta\mathbf{X})
+$$
+
+where $\mathbf{Z}$ is the concatenation of all $\mathbf{Z}_i(\bar{\mathbf{X}})$ and $\mathbf{M}$ the concatenation of all $\mathbf{M}_i$'s
+
+E is minimized by the ideal pose
+
+$$
+\bar{\mathbf{E}} = (\mathbf{M}^T\mathbf{M})^{-1}\mathbf{M}^T\mathbf{Z}
+$$
+
+and its covariance is given by
+
+$$
+\mathbf{C} = s^2(\mathbf{M}^T\mathbf{M})
+$$
+
+where $s^2$ is the unbiased estimate of the covariance of the identically, independently distributed errors of $\mathbf{Z}_i$
+
+$$
+s^2 = (\mathbf{Z} - \mathbf{M}\bar{\mathbf{E}})^T(\mathbf{Z} - \mathbf{M}\bar{\mathbf{E}})/(2m - 3)
+$$
+
+Note that $\bar{\mathbf{E}}$ is the minimum for the linearized pose $\mathbf{H}\Delta\mathbf{X}$. To obtain the optimal $\mathbf{X}$ the following transformation is performed:
+
+$$
+\mathbf{X} = \bar{\mathbf{X}} - \mathbf{H}^{-1}\bar{\mathbf{E}}
+$$
+
+$$
+\mathbf{C} = (\mathbf{H}^{-1})\mathbf{C}(\mathbf{H}^{-1})^T
+$$
+
+The representation of pose $\mathbf{X}$ in Euler angles, as well as its estimate and error is as follows:
+
+$$
+\mathbf{X} = \begin{pmatrix} t_x \\ t_y \\ t_z \\ \theta_x \\ \theta_y \\ \theta_z \end{pmatrix}, \bar{\mathbf{X}} = \begin{pmatrix} \bar{t}_x \\ \bar{t}_y \\ \bar{t}_z \\ \bar{\theta}_x \\ \bar{\theta}_y \\ \bar{\theta}_z \end{pmatrix}, \Delta\mathbf{X} = \begin{pmatrix} \Delta t_x \\ \Delta t_y \\ \Delta t_z \\ \Delta\theta_x \\ \Delta\theta_y \\ \Delta\theta_z \end{pmatrix}
+$$
+
 
 
 
