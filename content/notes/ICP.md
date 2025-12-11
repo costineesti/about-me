@@ -2,7 +2,7 @@
 title: Iterative Closest Point (ICP)
 draft: false
 tags:
-date: 2025-12-09
+date: 2025-12-11
 ---
 
 From **Indoor 3D: Overview on Scanning** **and Reconstruction Methods**, chapter 3.5.2.
@@ -21,6 +21,13 @@ $$
 where for each point $m_i \in M \subset \hat M$ there is a closest point $d_i \in D \subset \hat D$.
 
 Computation of the closest point is the most computationally expensive step in ICP. Therefore, we don't loop over all points in d to find a closest point for $m_i O(n^2)$, but we search with **optimized k-trees**, $O(N \log(N))$.
+
+* k-dimensional tree is a space-partitioning data structure for organizing points in a k-dimensional space
+* each point of the kd tree is k-dimensional and divides the space in two for the chosen direction.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/lidar_8.png" style="max-width: 100%; height: auto;">
+</div>
 
 **Normalize w.r.t. the center of mass of each point cloud**:
 

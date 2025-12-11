@@ -20,5 +20,8 @@ These are really applications of Generative AI.
 >* [[genai4|Flow Matching and Mean Flows]]
 >* [[genai5|Diffusion Models]]
 
+>[!danger] This field is moving so fast that things you used 6 months ago are already out-dated.
+
+
 
 

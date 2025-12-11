@@ -1,14 +1,287 @@
 ---
-title: SLAM
+title: Simultaneous Localization and Mapping (SLAM)
 draft: false
 tags:
-date: 2025-12-01
+date: 2025-12-11
 ---
- 
-Graph Representation (Pose Graph)
 
-How often do we update the pose (slide with STATE SPACE S)? We use the **key frame** concept. from last lecture.
+Specifically, Lidar-Inertial SLAM.
 
-We compute Jacobian of the info matrix to linearize.
+The basic idea is you build a map and then localize the robot on that map. I discussed in [[RPCN 5|Lidar-Inertial Perception]] the types of map representations and also the scan matching methods.
 
-Loop closure: extreme similarity between the scenes make a loop closure (landmarks mostly)
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_1.png" style="max-width: 100%; height: auto;">
+</div>
+
+# GRAPH-SLAM
+
+*"Given all sensor measurements and motion constraints collected so far... What is the most probable set of robot poses and map variables?"*
+
+<div class="encoder-section">
+  <img src="../static/notes/slam_2.png" style="width: 200px; height: auto; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <div class="encoder-text">
+    <ul>
+      <li>In graph representation, all robot states are discretized into nodes</li>
+      <li>Nodes are robot poses (circles) or observed features (stars)</li>
+      <li>Link indicate</li>
+      <ul>
+      <li>transformations (𝑹, 𝒕) between consecutive poses (i.e. spatial constraints)</li>
+      <li>observations of features, i.e., perception measurements</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+This means that this factor graph is a topological map.
+
+Since every edge corresponds to a spatial constraints between two nodes, we need to optimize the graph:
+
+* Minimize the error introduced by the two constraints (alter nodes and change links)
+
+## STATE SPACE 
+
+We consider the position and orientation as the states: $\mathbf{x}_t \in S$
+
+If we consider a 2D graph, then one robot state is equivalent to $\mathbf{x}_t = \begin{pmatrix} x \\ y \\ \theta \end{pmatrix}$
+
+>[!question] How to discretize the trajectory so that the problem is computationally sound?
+>We use the **key frames** concept from [[RPCN 5|Lidar-Inertial Perception]]. We discretize the trajectory w.r.t. time $\Delta t$, or by saying that there can be only one state per traveled distance (e.g. $d_0 = 0.1 m$)
+
+## Motion Constraint
+
+Since we are talking about Lidar-Inertial SLAM, the IMU tells us how the robot moved or the control input $u_t = \begin{pmatrix} v_t \\ \omega_t \end{pmatrix}$.
+
+$$
+\begin{pmatrix} x_t \\ y_t \\ \theta_t \end{pmatrix} = \begin{pmatrix} x_{t-1} \\ y_{t-1} \\ \theta_{t-1} \end{pmatrix} + \begin{pmatrix} \frac{-v_t}{\omega_t}\sin\theta_{t-1} + \frac{v_t}{\omega_t}\sin(\theta_{t-1} + \omega_t \Delta t) \\ \frac{v_t}{\omega_t}\cos\theta_{t-1} - \frac{v_t}{\omega_t}\cos(\theta_{t-1} + \omega_t \Delta t) \\ \omega_t \Delta t \end{pmatrix}
+$$
+
+We denote $g = g(u_t, \mathbf{x}_t) = \begin{pmatrix} x_{t-1} \\ y_{t-1} \\ \theta_{t-1} \end{pmatrix} + \begin{pmatrix} \frac{-v_t}{\omega_t}\sin\theta_{t-1} + \frac{v_t}{\omega_t}\sin(\theta_{t-1} + \omega_t \Delta t) \\ \frac{v_t}{\omega_t}\cos\theta_{t-1} - \frac{v_t}{\omega_t}\cos(\theta_{t-1} + \omega_t \Delta t) \\ \omega_t \Delta t \end{pmatrix}$ as the motion constraint.
+
+To complete the update from one state to the next, we also need to take noise into consideration:
+
+$$
+\begin{pmatrix} x_t \\ y_t \\ \theta_t \end{pmatrix} = \begin{pmatrix} x_{t-1} \\ y_{t-1} \\ \theta_{t-1} \end{pmatrix} + \begin{pmatrix} \frac{-v_t}{\omega_t}\sin\theta_{t-1} + \frac{v_t}{\omega_t}\sin(\theta_{t-1} + \omega_t \Delta t) \\ \frac{v_t}{\omega_t}\cos\theta_{t-1} - \frac{v_t}{\omega_t}\cos(\theta_{t-1} + \omega_t \Delta t) \\ \omega_t \Delta t \end{pmatrix} + \begin{pmatrix} N(0, \sigma_x^2) \\ N(0, \sigma_y^2) \\ N(0, \sigma_\theta^2) \end{pmatrix}
+$$
+
+where we define $R^{-1} = \begin{pmatrix} \sigma_x^2 & 0 & 0 \\ 0 & \sigma_y^2 & 0 \\ 0 & 0 & \sigma_\theta^2 \end{pmatrix}$ as the *Process noise covariance matrix*.
+
+## Measurement Constraint
+
+This is mainly about finding the landmarks and making use of the information from them. For this, we define a measurement model *h* which relies on landmarks $\mathbf{m}_i$ with signatures $\mathbf{s}_i$ and observer position $\mathbf{x}_t$.
+
+Therefore, we can define the measurement $\mathbf{z}_t$ against the previously known landmark position of $\mathbf{m}_i$.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_3.png" style="max-width: 100%; height: auto;">
+</div>
+
+Since for this we use the Lidar, the measurement vector contains the range $r$ and the viewing angle $\phi$ (against robot orientation $\theta$) with signature $s$:
+
+$$
+z_t = \begin{pmatrix} r_t \\ \phi_t \\ s_t \end{pmatrix} \approx \begin{pmatrix} \sqrt{(m_{j,x} - x)^2 + (m_{j,y} - y)^2} \\ atan2(m_{j,y} - y, m_{j,x} - x) - \theta \\ s_j \end{pmatrix} + noise
+$$
+
+where we define $h = \begin{pmatrix} \sqrt{(m_{j,x} - x)^2 + (m_{j,y} - y)^2} \\ atan2(m_{j,y} - y, m_{j,x} - x) - \theta \\ s_j \end{pmatrix}$ and $Q^{-1} = \begin{pmatrix} \sigma_r^2 & 0 & 0 \\ 0 & \sigma_\phi^2 & 0 \\ 0 & 0 & \sigma_s^2 \end{pmatrix}$ as the *Measurement noise covariance matrix*.
+
+>[!summary] The basic SLAM problem
+>These two constraints together describe a basic SLAM problem: given with the noisy control input $\mathbf{u}$ and the sensor reading $\mathbf{z}$ data, how to estimate $\mathbf{x}$ (localization) and mapping problem?
+
+So the 4 important variables:
+
+* $\mathbf{x}_t$ the pose of the robot in body frame
+* $g_t$ the motion constraint using the IMU data in body frame
+* $\mathbf{h}_t$ the measurement constraint in body frame
+* $\mathbf{z}_t$ the measurement model which is the pose of the landmark in body frame
+
+## Graph Construction
+
+After constructing the graph, we have a cost function **J** to minimize. The graph contains all the measurements between time $t_0$ and $t_T$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_4.png" style="max-width: 100%; height: auto;">
+</div>
+
+To construct the cost function, we first define the **information matrix** $\Omega$ where graph links are represented in a matrix.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_5.png" style="max-width: 100%; height: auto;">
+</div>
+
+Therefore, we define:
+
+$$
+J_{graphSLAM} = x_0^T \Omega_0 x_0 + \sum_{t=0}^{T}[x_t - g(u_t, x_{t-1})]^T R^{-1}[x_t - g(u_t, x_{t-1})] + \sum_{t=0}^{T}[z_t - h(m_{c_t}, x_t)]^T Q^{-1}[z_t - h(m_{c_t}, x_t)]
+$$
+
+Took from Section 11.4.3 of the Probabilistic Robotics book by S. Thrun:
+
+We define $y_{0:t}$ to be a vector composed of the robot poses $x_{0:t}$ and the landmark positions $m = (m_1, m_2, \dots, m_N)^T$, whereas $y_t$ is composed of the momentary pose at time $t$ and the respective landmark:
+
+* $y_{0:t} = \begin{pmatrix} x_0 \\ x_1 \\ . \\ . \\ x_t \\ m \end{pmatrix}$
+* $y_t = \begin{pmatrix} x_t \\ m \end{pmatrix}$
+
+**Linearizing the Motion Model:**
+
+The various terms in the loss function above are quadratic in the functions $g$ and $h$, not in the variables we seek to estimate (poses and the map). Thus, we have to linearize *g* and *h* via Taylor expansion around the current estimate $\mu_t$:
+
+$$
+g(u_t, x_{t-1}) \approx g(u_t, \mu_{t-1}) + G_t(x_{t-1} - \mu_{t-1})
+$$
+
+* Here $\mu_t$ is the current estimate of the state vector $y_t$. 
+* $G_t = \frac{\partial g(u_t, x_{t-1})}{\partial x_{t-1}}$ is the Jacobian of g at $x_t = \mu_{t-1}$
+
+We define the motion residual:
+
+$$
+r_t^{(u)} = x_t - g(u_t, \mu_{t-1})
+$$
+
+Then:
+
+$$
+x_t - g(u_t, x_{t-1}) \approx r_t^{(u)} - G_t(x_{t-1} - \mu_{t-1})
+$$
+
+**Linearizing the Measurement Model**:
+
+$$
+h_t(y_t, c_t) \approx h(\bar y_t, c_t) + H_t(y_t - \bar y_t)
+$$
+
+* $\bar y_t$ is the current estimate of state $y_t$
+* $H_t$ is the Jacobian of $h$
+
+We define the measurement residual:
+
+$$
+r_t^{(z)} = z_t - h(\bar y_t, c_t)
+$$
+
+In class, we expand
+
+$$
+H_t = \begin{bmatrix} \frac{\partial h}{\partial y_t} & \frac{\partial h}{\partial c_t^i} \end{bmatrix} = \begin{bmatrix} H_t^y & H_t^{c_i} \end{bmatrix}
+$$
+
+The Jacobian of $r_t^z$ w.r.t. the full state vector $X$ is:
+
+$$
+J_t^{(z)} = \begin{bmatrix} 0 \dots -H_t^y \dots H_t^{c_i} \dots 0 \end{bmatrix}
+$$
+
+* it's a **row vector** (a sparse matrix row) that:
+	* is **zero** everywhere except at the positions corresponding to:
+		* the current pose $x_t$ (where we have $-H_t^y$)
+		* the observed landmark $m_{ct}$ (where we have $-H_t^{c_i}$)
+
+>[!example] Example: If we are at pose $x_2$ observing landmark $m_1$:
+>$J_2^{(z)} = \begin{pmatrix} 0 & 0 & -H_2^y & 0 & \dots & -H_2^{m_1} & 0 \dots \end{pmatrix}$
+
+**The Full Linearization of the Cost Function**:
+
+After linearization, we substitute back into the cost function. For the **measurement term**:
+
+$$
+\|z_t - h(y_t, c_t)\|_{Q_t^{-1}}^2 \approx \|r_t^{(z)} - H_t(y_t - \bar{y}_t)\|_{Q_t^{-1}}^2
+$$
+
+Let $\delta y_t = y_t - \bar y_t$ be the correction we want to find. Then:
+
+$$
+\|r_t^{(z)} - H_t \delta y_t\|_{Q_t^{-1}}^2
+$$
+
+By expanding this quadratic, we will get the contribution to $\Omega$ and $\zeta$
+
+* **Information matrix** $\Omega$ (from quadratic terms $J^TQ^{-1}J$). It tells us which states are connected
+* **Information vector** $\zeta$ (from linear terms $J^TQ^{-1}r$). It tells us how much correction is needed in each direction.
+
+Similarly, for the **motion model**, we have:
+
+$$
+x_t - g(u_t, x_{t-1}) \approx r_t^{(u)} - G_t(x_{t-1} - \mu_{t-1})
+$$
+
+Define the Jacobian for motion in the global state space: $$ J_t^{(u)} = [0 \cdots -G_t \cdots I \cdots 0] $$ Where: 
+* $-G_t$ appears at position $i$ (for $x_{t-1}$) 
+* $I$ (identity) appears at position $j$ (for $x_t$) 
+
+**The contribution to $\Omega$:** 
+
+$$
+\Omega \gets \Omega + (J_t^{(u)})^T R_t^{-1} J_t^{(u)}
+$$
+**The contribution to $\zeta$:** 
+
+$$
+\zeta \gets \zeta + (J_t^{(u)})^T R_t^{-1} r_t^{(u)}
+$$
+
+Once we have $\Omega$ and $\zeta$, the solution is:
+
+$$
+\Omega \delta X = \zeta
+$$
+
+where $\delta X$ is the correction to apply to the current state estimate:
+
+$$
+X^{new} = X^{old} + \delta X
+$$
+
+```python 
+# Initialize X = initial_guess  # All poses and landmarks 
+
+for iteration in range(max_iterations): 
+	# 1. Compute residuals at current estimate 
+	Ω = Ω_0 
+	ζ = 0 
+	for t in range(T): 
+		r_u[t] = x[t] - g(u[t], X[t-1]) 
+		r_z[t] = z[t] - h(X[t], m[c[t]], X) 
+		# 2. Compute Jacobians 
+		G[t] = compute_jacobian_of_g(X[t-1]) 
+		H[t] = compute_jacobian_of_h(X[t], m[c[t]]) 
+		# 3. Build sparse J matrices 
+		J_u[t] = build_sparse_motion_jacobian(G[t], t) 
+		J_z[t] =build_sparse_measurement_jacobian(H[t], t, c[t]) 
+		# 4. Build Ω and ζ 
+		Ω += J_u[t].T @ inv(R[t]) @ J_u[t] 
+		Ω += J_z[t].T @ inv(Q[t]) @ J_z[t] 
+		ζ += J_u[t].T @ inv(R[t]) @ r_u[t] 
+		ζ += J_z[t].T @ inv(Q[t]) @ r_z[t] 
+		# 5. Solve for correction 
+		δX = solve(Ω, ζ)  # Using sparse solver 
+		# 6. Update 
+		X = X + δX 
+		# 7. Check convergence 
+		ifnorm(δX) < threshold: 
+			break 
+```
+
+Some insights:
+
+* we can recover the covariances after solving $\Sigma = \Omega^{-1}$
+* we iterate because linearization is only accurate near the linearization point
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_6.png" style="max-width: 100%; height: auto;">
+</div>
+
+>[!question] Now we can answer to these questions:
+>Why isn't integrating all odometry enough?
+>* Because odometry has cumulative errors (drift) that grow unbounded over time
+>
+>Consider a factor graph, why is it useful to represent the robot trajectory this way?
+>* **Sparsity** (the factor graph represents only the constraints, not all correlations), 
+>* **modularity** (we can add constraints incrementally)
+>
+>How do nodes help with scalability when the environment gets large?
+>* We can discretize using the ==key frame== concept. 
+>* Helps with traceability.
+
+# Loop Closure
+
+Covered in [[Loop Closure]].
+

@@ -13,6 +13,9 @@ This subject should really sit at the core of my Robotics Master's at the [[twen
 >* [[RPCN 4|Mechanization]], [[rodrigues|Rodrigues' Rotation Formula]]
 >* [[RPCN IMU pen and paper|Pen and Paper Exercises Coordinate Systems]]
 >* [[RPCN 5|Lidar-Inertial Perception]], [[ICP|Iterative Closest Point (ICP)]]
+>* [[RPCN 6|Simultaneous Localization and Mapping (SLAM)]]
+
+
 
 Reference material:
 

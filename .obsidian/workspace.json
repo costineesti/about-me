@@ -13,16 +13,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/genai9.md",
+                "file": "content/notes/ICP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "genai9"
+              "title": "ICP"
             }
           },
           {
-            "id": "4ca3345ffec80e41",
+            "id": "f34e68903977d00e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,9 +34,51 @@
               "icon": "lucide-file",
               "title": "RPCN 5"
             }
+          },
+          {
+            "id": "9c5ef671c2b687bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/RPCN 6.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RPCN 6"
+            }
+          },
+          {
+            "id": "d779de1189433ffd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/projects/Loop Closure.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Loop Closure"
+            }
+          },
+          {
+            "id": "6531dce0f1e09bdf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/RPCN.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RPCN"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -205,44 +247,44 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4ca3345ffec80e41",
+  "active": "9c5ef671c2b687bf",
   "lastOpenFiles": [
-    "content/notes/RPCN 7.md",
-    "content/notes/genai9.md",
-    "content/notes/RPCN 5.md",
-    "quartz/static/notes/lidar_7.png",
-    "quartz/static/notes/lidar_6.png",
+    "content/projects/Loop Closure.md",
     "content/notes/RPCN 6.md",
-    "content/notes/genai8.md",
+    "quartz/static/notes/slam_6.png",
     "content/notes/RPCN.md",
+    "content/notes/RPCN 5.md",
     "content/notes/ICP.md",
-    "Pasted image 20241128181601.png",
-    "Pasted image 20250527143901.png",
-    "Pasted image 20250903002025.png",
-    "Pasted image 20251209123617.png",
-    "quartz/static/notes/lidar_5.png",
-    "content/notes/RPCN 4.md",
-    "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
-    "content/notes/VLM.md",
-    "quartz/static/notes/lidar_4.png",
-    "quartz/static/notes/lidar_3.png",
-    "content/notes/RPCN 3.md",
-    "quartz/static/notes/lidar_2.png",
     "content/notes/genai5.md",
+    "content/notes/genai6.md",
+    "content/notes/genai7.md",
+    "content/notes/genai8.md",
+    "content/notes/genai10.md",
+    "content/notes/genai.md",
+    "content/notes/Deep Learning Fundamentals.md",
+    "content/notes/genai9.md",
+    "content/notes/systems engineering 9.md",
+    "content/notes/transformers.md",
+    "content/notes/systems engineering sde 3.md",
+    "content/notes/systems engineering sde 2.md",
+    "content/notes/RPCN 7.md",
+    "content/notes/RPCN IMU pen and paper.md",
+    "content/notes/Law.md",
+    "Pasted image 20251210155911.png",
+    "Pasted image 20251210154202.png",
+    "Pasted image 20251210153656.png",
+    "quartz/static/notes/slam_5.png",
+    "quartz/static/notes/slam_4.png",
+    "quartz/static/notes/slam_3.png",
+    "quartz/static/notes/slam_2.png",
+    "quartz/static/notes/slam_1.png",
+    "quartz/static/notes/lidar_8.png",
     "content/twente.md",
     "content/seaclear.md",
     "content/index.md",
     "content/notes/NLP 10.md",
-    "content/notes/genai.md",
     "content/notes/ONNX.md",
-    "content/notes/ray tracing.md",
-    "content/notes/systems engineering 4.md",
     "content/notes/cross product.md",
-    "content/notes/Line Segment Detector.md",
-    "content/notes/hadoop.md",
-    "content/notes/numerical_methods.md",
-    "content/notes/systems engineering 5.md",
-    "content/notes/RPCN IMU pen and paper.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
