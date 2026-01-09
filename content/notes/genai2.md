@@ -2,7 +2,7 @@
 title: Autoencoders
 draft: false
 tags:
-date: 2025-11-18
+date: 2026-01-10
 ---
 
 Lecture 2 from my [[genai|GenAI Models and Robotic Applications]] course.
@@ -51,7 +51,7 @@ Lecture 2 from my [[genai|GenAI Models and Robotic Applications]] course.
 * f(x) is the encoding function
 * g(h) is the decoding function
 * h is the latent space. Here we can use it to learn more about the information (extraction and probably compression or even manipulating this data e.g. features for classification)
-* the learning process is described as minimizing a loss function $L(x, g(f(h)))$
+* the learning process is described as minimizing a loss function $L(x, g(f(x)))$
 
 <div class="encoder-section">
   <img src="../static/notes/autoencoders_1.png" style="width: 200px; margin-bottom: 10px;">
@@ -119,13 +119,39 @@ it's a way to learn features in an unsupervised way.
 
 # Variational AutoEncoders (VAE)
 
-* Based on variational inference theory
 * Enforces the learning of a **regularized latent space** (with a probabilistic twist)
 * Does not encode inputs as points, but as a distribution over the latent space.
 	* **The latent code is sampled from the learned distribution**
 	* **The decoder reconstructs the sampled distribution points**
 
 The mean and standard deviation are now in high dimensional space (variance is the covariance matrix and the mean is also a matrix).
+
+**Process**
+
+**Forward Pass (Encoding $\rightarrow$ Sampling $\rightarrow$ Decoding)**
+
+1. **Encoder**:
+	Input data $x$, outputs parameters (mean and variance) of latent distribution $z$:
+
+$$
+q_{\phi}(z \mid x) = \mathcal{N}(z; \mu_{\phi}(x), \sigma^2_{\phi}(x))
+$$
+
+2. **Reparametrization trick**:
+	Differentiably sample latent variable $z$:
+
+$$
+z = \mu_{\phi}(x) + \sigma_{\phi}(x) \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
+$$
+
+3. **Decoder**:
+	Reconstruct data from sampled latent vector $z$:
+
+$$
+p_{\theta}(x \mid z)
+$$
+
+**Loss Function (ELBO)**
 
 * E\[$logp_g (x \mid z)$\] is the entropy loss.
 * $D_{KL}$ is a measure of difference between distributions.
@@ -135,7 +161,7 @@ $$
 \mathcal{L}_{ELBO}(x,f,g) = E[\log p_g(x|z)] - D_{KL}(q_f(z|x)||p(z))
 $$
 
-Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a ==reparametrization trick==: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$, instead of $z \approx N(\mu_{f(x)}, \sigma^2_{f(x)})$
+Sampling does not flow back (Backpropagation through randomness is not possible). That's why we have to do a ==reparametrization trick==: Separate the randomness from the learnable (and differentiable) parameters $z = \mu + \sigma \cdot \epsilon$, where $\epsilon \approx N(0,1)$, instead of $z \approx \mathcal{N}(\mu_{f(x)}, \sigma^2_{f(x)})$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/VAE.png" style="max-width: 100%; height: auto;">
@@ -146,6 +172,15 @@ Sampling does not flow back (Backpropagation through randomness is not possible)
 </div>
 
 ### VAE vs AE: latent space
+
+>[!question] It's basically an Autoencoder but we add gaussian noise to latent variable **z**?
+>
+>Key difference:
+>
+>* Regular Autoencoder
+>	* Input $\rightarrow$ Encoder $\rightarrow$ Fixed latent representation $\rightarrow$ Decoder $\rightarrow$ Reconstruction
+>* VAE
+>	* Input $\rightarrow$ Encoder $\rightarrow$ **Latent distribution** $\rightarrow$ **Sample from distribution (adds Gaussian noise via reparam. trick)** $\rightarrow$ Decoder $\rightarrow$ Reconstruction
 
 * In the **AE latent space**, the clusters are not correlated in any way. It's just a visualization.
 * In the **VAE latent space**, the clusters are correlated through the prior. The KL divergence term pushes all encodings toward $N(0,1)$, which:
@@ -185,6 +220,9 @@ Some examples include prompts like "make blonde" or "add glasses" which add or s
 </div>
 
 # Generative Adversarial Networks (GANS)
+
+Introductory video about [GAN](https://www.youtube.com/watch?v=Sw9r8CL98N0)
+[Tutorial](https://www.youtube.com/watch?v=Mng57Tj18pc) on how to train a GAN
 
 <div class="encoder-section">
   <img src="../static/notes/GANs.png" style="width: 200px; margin-bottom: 10px;">
