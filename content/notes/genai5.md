@@ -132,7 +132,7 @@ $$
 to the generative pass
 
 $$
-x_{t-1} = \frac{\sqrt{1}}{{\sqrt{1-\beta_t}}} \begin{pmatrix} x_t - \sqrt{\beta_t} \hat{\epsilon}_{\theta}(x_t, t) \end{pmatrix}
+x_{t-1} = \frac{1}{{\sqrt{1-\beta_t}}} \begin{pmatrix} x_t - \sqrt{\beta_t} \hat{\epsilon}_{\theta}(x_t, t) \end{pmatrix}
 $$
 
 And so we formulate the **loss function** as:
@@ -195,7 +195,7 @@ You go through decoder, do diffusion in latent space, and then decode that.
 
 * The idea is that diffusion is a very expensive process, but encoding / decoding is much faster
 
-The paper covering this is **High-Resolution Image Synthesis with Latent Diffusion Models**.
+The paper covering this is [**High-Resolution Image Synthesis with Latent Diffusion Models**](https://arxiv.org/pdf/2112.10752).
 
 >[!quote] Being likelihood-based models, they do not exhibit mode-collapse and training instabilities as GANs and, by heavily exploiting parameter sharing, they can model highly complex distributions of natural images without involving billions of parameters as in AR models
 >

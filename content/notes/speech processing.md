@@ -16,4 +16,5 @@ Reference material:
 **Related**:
 
 * [[pronounciation|The CMU Pronouncing Dictionary]]
+* [[speech processing 1|What automatic speech recognition can and cannot do for conversational speech transcription]]
 
