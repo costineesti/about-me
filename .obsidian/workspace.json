@@ -36,49 +36,21 @@
             }
           },
           {
-            "id": "d779de1189433ffd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/projects/Loop Closure.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Loop Closure"
-            }
-          },
-          {
-            "id": "6c8fd122ba44813c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/genai2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "genai2"
-            }
-          },
-          {
             "id": "6531dce0f1e09bdf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN.md",
+                "file": "content/notes/genai3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN"
+              "title": "genai3"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -247,9 +219,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6c8fd122ba44813c",
+  "active": "6531dce0f1e09bdf",
   "lastOpenFiles": [
-    "content/projects/Loop Closure.md",
+    "content/notes/genai5.md",
+    "quartz/static/notes/NF_squares.png",
+    "content/twente.md",
+    "content/seaclear.md",
+    "content/index.md",
+    "content/notes/NLP 10.md",
+    "content/notes/ONNX.md",
+    "content/notes/cross product.md",
+    "content/notes/genai10.md",
+    "content/notes/Line Segment Detector.md",
+    "content/notes/Law.md",
+    "content/notes/RPCN IMU pen and paper.md",
+    "content/notes/LU Decomposition.md",
+    "content/notes/Systems Engineering Lecture 3.md",
+    "content/notes/cpp_nesting_cond_op.md",
+    "content/notes/cpp_auto_const_iterator.md",
+    "content/notes/MiDaS.md",
+    "content/notes/PDF.md",
+    "content/notes/camera calibration.md",
+    "content/notes/Abstract Syntax Tree.md",
+    "content/notes/RPCN 2.md",
+    "content/notes/barcode detection and decoding.md",
+    "content/notes/ICP.md",
+    "content/notes/NLP 4.md",
+    "content/notes/Deep Learning Fundamentals.md",
+    "content/notes/genai2.md",
+    "content/notes/RPCN 6.md",
     "Pasted image 20251210155911.png",
     "Pasted image 20260109231307.png",
     "Pasted image 20251210154202.png",
@@ -257,33 +255,8 @@
     "Pasted image 20250903002025.png",
     "Pasted image 20250527143901.png",
     "Pasted image 20241128181601.png",
-    "content/notes/genai2.md",
-    "content/notes/speech processing 1.md",
-    "content/notes/speech processing.md",
     "quartz/static/notes/praat_2.png",
     "quartz/static/notes/comparison_asr_2.png",
-    "quartz/static/notes/praat_1.png",
-    "content/notes/transformers.md",
-    "content/notes/systems engineering 2.md",
-    "content/notes/genai4.md",
-    "content/notes/genai5.md",
-    "content/notes/RPCN 6.md",
-    "content/notes/RPCN 5.md",
-    "content/notes/genai6.md",
-    "content/notes/genai7.md",
-    "content/notes/RPCN.md",
-    "content/notes/ICP.md",
-    "content/notes/genai8.md",
-    "content/notes/genai10.md",
-    "content/notes/genai.md",
-    "content/notes/Deep Learning Fundamentals.md",
-    "content/notes/genai9.md",
-    "content/notes/systems engineering 9.md",
-    "content/notes/systems engineering sde 3.md",
-    "content/notes/systems engineering sde 2.md",
-    "content/notes/RPCN 7.md",
-    "content/notes/RPCN IMU pen and paper.md",
-    "content/notes/Law.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

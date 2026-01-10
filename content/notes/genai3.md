@@ -77,6 +77,9 @@ $$
 > The restriction ($J \neq 0$) ensures invertibility, which is why normalizing flows require bijective transformations.
 > 
 > Here, $| \partial f^{-1}(x)|$ indicates the ratio between the area of rectangles defined in two different coordinate of variables  and  respectively
+> 
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/NF_squares.png" style="max-width: 100%; height: auto;"> </div>
+>
 
 
 >[!NOTE] You can't just have $\mathbf{z}$
