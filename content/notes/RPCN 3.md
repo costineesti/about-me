@@ -241,7 +241,7 @@ So as a drawing because this is very complicated to remember..
 >* $\omega_{ib}^b$ is the rotation rate of the body with respect to the i-frame
 >* $\omega_{lb}^b$ is the rotation rate of the body with respect to the local(navigation) frame
 >* $\omega_{el}^b$ is the rotation rate of the local frame with respect to the ECEF-frame
->* $\omega_{ie}^b$ is is the rotation rate of the navigation frame with respect to the ECEF-frame
+>* $\omega_{ie}^b$ is is the rotation rate of the ECEF-frame with respect to the inertial frame
 
 # Derivative of the Rotation Matrix
 
@@ -254,7 +254,7 @@ So as a drawing because this is very complicated to remember..
 >* To transform **angular velocities** from one frame to another
 >* So basically, the derivatives (not position or attitude, those use the basic [[rotational frames|Rotation Matrix]]).
 
-The **key challenge** is to determine the time derivative of the rotation matrix $\dot R^i_b$. In [[rot derivative|Rotation Matrix Time Derivative]] I covered the mathematics behind finding the following solution:
+The **key challenge** is to determine the time derivative of the rotation matrix $\dot R^i_b = R_b^i \Omega_{ib}^b$. In [[rot derivative|Rotation Matrix Time Derivative]] I covered the mathematics behind finding the following solution:
 
 $$\dot r^i = R_b^i (\Omega_{ib}^b r^b + \dot r^b), \Omega_{ib}^b = S(\omega) = \begin{pmatrix} 0 & -\omega_z & \omega_y \\ \omega_z & 0 & -\omega_x \\ -\omega_y & \omega_x & 0 \end{pmatrix}$$
 

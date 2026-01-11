@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/RPCN 5.md",
+                "file": "content/notes/quaternions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RPCN 5"
+              "title": "quaternions"
             }
           },
           {
@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/genai3.md",
+                "file": "content/notes/rot derivative.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "genai3"
+              "title": "rot derivative"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -219,8 +219,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6531dce0f1e09bdf",
+  "active": "f34e68903977d00e",
   "lastOpenFiles": [
+    "content/notes/RPCN 3.md",
+    "content/notes/RPCN 5.md",
+    "content/notes/rot derivative.md",
+    "content/notes/RPCN 2.md",
+    "content/notes/RPCN 1.md",
+    "content/notes/ViT.md",
+    "content/notes/genai3.md",
     "content/notes/genai5.md",
     "quartz/static/notes/NF_squares.png",
     "content/twente.md",
@@ -241,13 +248,6 @@
     "content/notes/PDF.md",
     "content/notes/camera calibration.md",
     "content/notes/Abstract Syntax Tree.md",
-    "content/notes/RPCN 2.md",
-    "content/notes/barcode detection and decoding.md",
-    "content/notes/ICP.md",
-    "content/notes/NLP 4.md",
-    "content/notes/Deep Learning Fundamentals.md",
-    "content/notes/genai2.md",
-    "content/notes/RPCN 6.md",
     "Pasted image 20251210155911.png",
     "Pasted image 20260109231307.png",
     "Pasted image 20251210154202.png",

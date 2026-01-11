@@ -58,7 +58,7 @@ Let the rotation be specified by a unit quaternion **q**. First, we extend the 
 We just put the three coordinates into the imaginary part and leave the real part to be zero. Then, the rotated point p′ can be expressed as such a product:
 
 $$
-p' = qpq^-1
+p' = qpq^{-1}
 $$
 
 The multiplication here is the quaternion multiplication, and the result is also a quaternion. Finally, we take the imaginary part of p′ and get the coordinates of the point after the rotation.

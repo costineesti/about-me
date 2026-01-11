@@ -102,7 +102,7 @@ $$
 a_E = a_x \cdot cosA + a_y \cdot sinA
 $$
 $$
-a_E = -a_x \cdot sinA + a_y \cdot cosA
+a_N = -a_x \cdot sinA + a_y \cdot cosA
 $$
 
 * We can express this in a matrix form

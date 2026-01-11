@@ -17,10 +17,10 @@ $$
 R_\mathbf{x}(\theta)R_\mathbf{x}^T(\theta) = I
 $$
 
-* If we derivate this wr.t. time:
+* If we differentiate this wr.t. time:
 
 $$
-\begin{bmatrix} \frac{d}{d\theta} R_\mathbf{x}(\theta) \end{bmatrix} R_\mathbf{x}^T(\theta) + R_\mathbf{x}(\theta) \frac{d}{d\theta} R_\mathbf{x}^T(\theta) = 0
+\begin{bmatrix} \frac{d}{d\theta} R_\mathbf{x}(\theta) \end{bmatrix} R_\mathbf{x}^T(\theta) + R_\mathbf{x}(\theta) \begin{bmatrix} \frac{d}{d\theta} R_\mathbf{x}^T(\theta) \end{bmatrix} = 0
 $$
 
 * We know that $A^TB^T = (BA)^T$, thus:
@@ -47,6 +47,7 @@ $$
 
 >[!NOTE] THIS HOLDS FOR ALL OF THE EXAMPLES IN 1D!
 > $\frac{d}{d\theta}R_\mathbf{y}(\theta) = S([0, 1, 0]) R_\mathbf{y}(\theta)$
+> 
 > $\frac{d}{d\theta}R_\mathbf{z}(\theta) = S([0, 0, 1]) R_\mathbf{z}(\theta)$
 
 * So we get the general form: $\frac{d}{d\theta}R_\mathbf{l}(\theta) = S(l) R_\mathbf{l}(\theta)$
