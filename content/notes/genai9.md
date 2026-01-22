@@ -15,6 +15,8 @@ Learn [ray-tracing](https://pbr-book.org/3ed-2018/Introduction/Photorealistic_Re
 
 The concept itself sounds awesome. Let's see how it looks on paper. Also, Steven pointed out how this must have been a catalyst of all the fly-through videos we see today.
 
+Before we start, NeRF is data hungry. It simply memorizes the world, but it's unable to generalize. If we give it a set of drums, it will know that set and not another one.
+
 >[!summary] NERF
 >* Generating rays from camera poses
 >* Using an MLP to predict color and density for each point in space
@@ -110,9 +112,9 @@ $$
 
 >[!note] Computing the color for a set of rays through the pixels of an image yields a rendered image.
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/nerf5.png" style="max-width: 100%; height: auto;">
-</div> 
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/nerf5.png" alt="5" width="350" height="300"> </div> <div> <img src="../static/notes/nerf11.png" alt="11" width="350" height="300"> </div> </div>
+
+From the author: we first lay down points evenly and those points are supposed to tell us where the stuff is. If we get more opaque values at the beginning of the ray, then we know something is there and we can focus on that area. And so we "train" the model to understand this. (I say "train" because an MLP is really small. It's more about optimizing the weights)
 
 # Neural Networks as representations
 
