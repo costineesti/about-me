@@ -169,7 +169,7 @@ While DDPMS are typically used for image generation ($\mathbf{x}$ is an image), 
 - Observation window $O_t$ (past frames: $O_{t-2}, O_{t-1}, O_t$ and future $O_{t+4}$)
 - Conditioning $c$ (from observations)
 
-**Diffusion Policy ε_θ(O, A, k):**
+**Diffusion Policy $\epsilon_{\theta}(O, A, k)$:**
 
 - Takes noisy action sequence and denoises it
 - Conditioned on observations $O$

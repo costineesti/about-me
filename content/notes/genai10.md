@@ -7,7 +7,11 @@ date: 2025-12-11
  
 Resource endorsed by the professor: [learnopencv](https://learnopencv.com/3d-gaussian-splatting/).
 
-Massively used in many application nowadays. It's taking ground from [[genai9|NeRF]].
+Massively used in many application nowadays. It's taking ground from [[genai9|NeRF]]. 
+
+[[genai9|NeRF]] excels in producing high-quality, photorealistic renderings at the cost of computational efficiency, while Gaussian Splatting offers a faster and more memory-efficient alternative with potentially lower rendering quality. The choice between the two depends on the specific requirements of the application, such as the need for real-time rendering versus the demand for high-fidelity imagery.
+
+I mean, how cool is [this](https://x.com/Arata_Fukoe/status/1714931950719508967)?
 
 It's a rasterization method that enables real-time rendering of photorealistic scenes learned from a limited set of images. The scene is represented by millions of Gaussians.
 
