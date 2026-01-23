@@ -78,7 +78,8 @@ I will upload my personal <a href="/projects/">projects</a> and <a href="/notes/
 >[!summary] Most of my time goes into...
 > - [[seaclear|SeaClear]] -- I'm currently working on autonomous and real-time ground truth validation of 3D pose estimation.
 > - [[twente|University of Twente]] -- I'm currently undertaking a 2-year Master's in Robotics. I aim to specialize in Computer Vision as a whole with focus on perception algorithms combined with AI and ML.
-> - Technical University of Cluj-Napoca -- I'm in the last year of a 2-year Master's in Cyber Physical Systems. My thesis will be based on my work inside SeaClear since I am part of it through TUCN (benefitting from a scholarship).
+> - Technical University of Cluj-Napoca -- I'm in the last year of a 2-year Master's in Cyber Physical Systems. My thesis will be based on my work inside SeaClear since I am part of it through TUCN.
+> - Update: I'm starting to enjoy the Generative AI field a lot. Could very well be the field I will decide to specialize myself in.
 
 ### What I've worked on in the past
 
