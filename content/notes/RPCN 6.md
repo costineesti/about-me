@@ -2,7 +2,7 @@
 title: Simultaneous Localization and Mapping (SLAM)
 draft: false
 tags:
-date: 2025-12-11
+date: 2026-01-24
 ---
 
 Specifically, Lidar-Inertial SLAM.
@@ -13,7 +13,7 @@ The basic idea is you build a map and then localize the robot on that map. I dis
     <img src="../static/notes/slam_1.png" style="max-width: 100%; height: auto;">
 </div>
 
-# GRAPH-SLAM
+# GraphSLAM
 
 *"Given all sensor measurements and motion constraints collected so far... What is the most probable set of robot poses and map variables?"*
 
@@ -91,7 +91,7 @@ So the 4 important variables:
 * $\mathbf{x}_t$ the pose of the robot in body frame
 * $g_t$ the motion constraint using the IMU data in body frame
 * $\mathbf{h}_t$ the measurement constraint in body frame
-* $\mathbf{z}_t$ the measurement model which is the pose of the landmark in body frame
+* $\mathbf{z}_t$ the measurement model which is the pose of the landmark in body frame (LiDAR)
 
 ## Graph Construction
 
@@ -230,36 +230,6 @@ $$
 X^{new} = X^{old} + \delta X
 $$
 
-```python 
-# Initialize X = initial_guess  # All poses and landmarks 
-
-for iteration in range(max_iterations): 
-	# 1. Compute residuals at current estimate 
-	Ω = Ω_0 
-	ζ = 0 
-	for t in range(T): 
-		r_u[t] = x[t] - g(u[t], X[t-1]) 
-		r_z[t] = z[t] - h(X[t], m[c[t]], X) 
-		# 2. Compute Jacobians 
-		G[t] = compute_jacobian_of_g(X[t-1]) 
-		H[t] = compute_jacobian_of_h(X[t], m[c[t]]) 
-		# 3. Build sparse J matrices 
-		J_u[t] = build_sparse_motion_jacobian(G[t], t) 
-		J_z[t] =build_sparse_measurement_jacobian(H[t], t, c[t]) 
-		# 4. Build Ω and ζ 
-		Ω += J_u[t].T @ inv(R[t]) @ J_u[t] 
-		Ω += J_z[t].T @ inv(Q[t]) @ J_z[t] 
-		ζ += J_u[t].T @ inv(R[t]) @ r_u[t] 
-		ζ += J_z[t].T @ inv(Q[t]) @ r_z[t] 
-		# 5. Solve for correction 
-		δX = solve(Ω, ζ)  # Using sparse solver 
-		# 6. Update 
-		X = X + δX 
-		# 7. Check convergence 
-		ifnorm(δX) < threshold: 
-			break 
-```
-
 Some insights:
 
 * we can recover the covariances after solving $\Sigma = \Omega^{-1}$
@@ -269,7 +239,7 @@ Some insights:
     <img src="../static/notes/slam_6.png" style="max-width: 100%; height: auto;">
 </div>
 
->[!question] Now we can answer to these questions:
+>[!question] Now we can answer these questions:
 >Why isn't integrating all odometry enough?
 >* Because odometry has cumulative errors (drift) that grow unbounded over time
 >
@@ -284,6 +254,45 @@ Some insights:
 # Loop Closure
 
 Covered in [[Loop Closure]].
+
+**Impact on the map**:
+
+>[!question] Why can a _single_ loop-closure constraint dramatically reshape the entire map?
+> because Graph-SLAM solves one global least-squares problem over all poses. By directly coupling two distant poses in the trajectory, the new constraint changes the optimum for the entire problem. Consequently, many poses are adjusted simultaneously to satisfy all constraints, not just local ones
+
+**Applications for Graph-SLAM**:
+
+For example, in a forest. The tree foliage causes GNSS errors and the acquired trajectory and the point cloud is noisy. Therefore, formulating the trajectory as a graph means the poses are linked from the measured relative transformations between them. Also, the trees would appear circular and so easy to detect and insert in the Graph. Also, the method is successful only when **D>>d**. In this scenario, the trees are far enough apart that even with trajectory noise, the system can clearly separate observations from different trees.
+
+**Where the Method Fails**:
+
+The system breaks down in **dense forests**. When the distance between trees (D) becomes close to or smaller than the statistical error (d), the observations overlap.
+
+- **High Trajectory Noise**: Larger drift makes the estimated position of a tree very uncertain.
+- **Small Feature Distance**: When trees are packed together, the robot cannot distinguish if a measurement belongs to "Tree A" or "Tree B".
+
+**Another idea: 3D Point Clouds**
+
+* Each point is a landmark
+* use [[ICP]] for scan matching
+* Solve for Rotation \& Translation and Correct the Trajectory.
+
+>[!question] How does each sensor become just another constraint?
+>Sensor fusion is natural, diverse sensor data is encoded in constraints. New measurements affect only local parts of the graph, so it enables incremental and partial updates.
+
+**Data Association Uncertainty**:
+
+Often the **largest and most dangerous** source of error. The robot doesn't know:
+
+* which landmark it is observing
+* which scan feature corresponds to which past feature
+* whether scans overlap, or whether a loop closure is correct
+
+**Graph SLAM** is in post-processing phase, so ==OFFLINE==! It also has the largest sliding window possible: all the states ($N$).
+
+# Bayesian GraphSLAM
+
+slides 63-70
 
 
 <style>
