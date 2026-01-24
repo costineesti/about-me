@@ -2,7 +2,7 @@
 title: Iterative Closest Point (ICP)
 draft: false
 tags:
-date: 2025-12-11
+date: 2026-01-25
 ---
 
 From **Indoor 3D: Overview on Scanning** **and Reconstruction Methods**, chapter 3.5.2.
@@ -12,10 +12,10 @@ Process
 1. Take two scans of 2D/3D point cloud
 2. Compute the center of mass and shift the point clouds on top of each other
 
-We want to find the transformation *(R,t)* between model set $\hat M$ and data set $\hat D$. The problem is cast as a least squares minimization problem, so that we want to minimize the cost function
+We want to find the transformation $(R,t)$ between model set $\hat M$ and data set $\hat D$. The problem is cast as a least squares minimization problem, so that we want to minimize the cost function
 
 $$
-\min E(R,t) = \frac{1}{N} \sum_{i=1}^N \mid m_i - (R d_i + t) \mid^2
+\min E(R,t) = \frac{1}{N} \sum_{i=1}^N || m_i - (R d_i + t) ||^2
 $$
 
 where for each point $m_i \in M \subset \hat M$ there is a closest point $d_i \in D \subset \hat D$.
@@ -42,7 +42,7 @@ $$
 Then we can rewrite the cost function as:
 
 $$
-\min E(R,t) = \frac{1}{N} \sum_{i=1}^N \mid m'_i - R d'_i - (t-c_m + R c_d) \mid^2
+\min E(R,t) = \frac{1}{N} \sum_{i=1}^N || (m'_i - R d'_i) - (t-c_m + R c_d) ||^2
 $$
 
 where
@@ -51,25 +51,25 @@ where
 * $d_i = d'_i - c_d$
 * we denote $\tilde t = t-c_m + R c_d$
 
-After we rearrange the terms, we get
+After we rearrange the terms and raise to the power of 2, we get:
 
 $$
-\min E(R,t) = \frac{1}{N}\sum_{i=1}^{N}|m'_i - Rd'_i|^2 - 2\frac{1}{N}\tilde{t} \cdot \sum_{i=1}^{N}(m'_i - Rd'_i) + \frac{1}{N}\sum_{i=1}^{N}\tilde{t}^2
+\min E(R,t) = \frac{1}{N}\sum_{i=1}^{N}||m'_i - Rd'_i||^2 - 2\frac{1}{N}\tilde{t} \cdot \sum_{i=1}^{N}(m'_i - Rd'_i) + \frac{1}{N}\sum_{i=1}^{N}\tilde{t}^2
 $$
 
 where we divided the rotation and translation!
 
-* We want to minimize this: $\frac{1}{N}\sum_{i=1}^{N}|m'_i - Rd'_i|^2$
-* The second term $2\frac{1}{N}\tilde{t} \cdot \sum_{i=1}^{N}(m'_i - Rd'_i) = 0$ since all values refer to centroid.
-* The third term $\frac{1}{N}\sum_{i=1}^{N}\tilde{t}^2$ has its minimum when $\tilde t = 0$ or $t = c_m - R c_d$
+* We want to minimize this rotation error: $\frac{1}{N}\sum_{i=1}^{N}||m'_i - Rd'_i||^2$
+* The cross-term $2\frac{1}{N}\tilde{t} \cdot \sum_{i=1}^{N}(m'_i - Rd'_i) = 0$ since all values refer to centroid => $\sum m'_i$ and $\sum d'_i$ are both zero.
+* The translation error $\frac{1}{N}\sum_{i=1}^{N}\tilde{t}^2$ has its minimum when $\tilde t = 0$ or $t = c_m - R c_d$
 
 Therefore, the algorithm needs to only minimize the first term, i.e.
 
 $$
-\min E(R,t) \sim \frac{1}{N}\sum_{i=1}^{N}|m'_i - Rd'_i|^2
+\min E(R,t) \approx \frac{1}{N}\sum_{i=1}^{N}||m'_i - Rd'_i||^2
 $$
 
-The optimal solution is calculated by matrix factorization, $R = VU^T$ using [[Singular Value Decomposition|SVD (Singular Value Decomposition)]].
+The **optimal solution** is calculated by matrix factorization, $R = VU^T$ using [[Singular Value Decomposition|SVD (Singular Value Decomposition)]].
 
 We consider the $3 \times 3$ cross correlation matrix $\mathbf{H} = \mathbf{U}\mathbf{\Lambda}\mathbf{V}^T$
 

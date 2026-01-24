@@ -2,7 +2,7 @@
 title: Simultaneous Localization and Mapping (SLAM)
 draft: false
 tags:
-date: 2026-01-24
+date: 2026-01-25
 ---
 
 Specifically, Lidar-Inertial SLAM.
@@ -293,6 +293,83 @@ Often the **largest and most dangerous** source of error. The robot doesn't know
 # Bayesian GraphSLAM
 
 slides 63-70
+
+# Notes from the professor
+
+Why is it so hard for professors to make good materials? WHHYHWQQWRQ$!@#!EWQE!@# ok
+
+**Upgrading from Pair-wise** [[ICP]] **to Scan-to-Map**:
+
+* Instead of aligning two individual scans $(q_i \approx d_i)$, which causes drift, it's better to scan to a **local map** M
+* That translates into minimizing the cost function $E_m(T) = \sum_{(p_i,m_i)} ||m_i - Tp_i||^2$ where $m_i \in \text{map }M$ 
+* This "sliding window" of recent scans provides a more stable geometric reference.
+
+**Motion Compensation ("Unwrapping")**:
+
+The notes show how we can model the motion and measurement constraints. However, when we want **to implement them**; we have to take into account that points were taken at different points in time $\tau \in [t_{start}, t_{end}]$. If we want to align them, we need to "unwrap" them to a single reference time $t$. This actively prevents the **warping** of geometry (if I scan a wall, I want it to be fking straight, no?).
+
+So the raw points $p_{raw}(\tau)$ are corrected using:
+
+$$
+\tilde{p}_{corrected} = H_{W \rightarrow B(t)}H^{-1}_{W \rightarrow B(\tau)} \tilde{p}_{raw}(\tau)
+$$
+
+* The first transformation $H^{-1}_{W \rightarrow B(\tau)}$ takes the coordinates to **World Frame first**, and then we rearrange all of them to the **Body Frame** $H_{W \rightarrow B(t)}$ back again but **w.r.t to time** $t$.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/slam_7.png" style="max-width: 100%; height: auto;">
+</div>
+
+**Representing Errors in 3D (SE(3))**:
+
+We cannot subtract Rotation Matrices directly. It doesn't really represent anything.
+
+* So we use the **Log Map** to **convert** matrix differences **into a 6D vector**. It's actually a really smart way of computing errors or optimizations.
+* $r = Log(H_{meas}^{-1}H_{pred}) \in \mathbb{R}^6$ yields a vector where the first 3 components are the rotation error and the last 3 errors are the translation error.
+
+you don't believe me? I wouldn't! Let's see the mathematics
+
+We consider $H = \begin{bmatrix}R & t\\0 & 1 \end{bmatrix}, \quad R \in SO(3), \quad t \in \mathbb{R}^3$.
+
+The log map is $Log(H) = \begin{bmatrix}Log(R) \\ V^{-1}t\end{bmatrix}$, where $Log(R)$ is the [[axis-angle]] vector $\phi$ satisfying
+
+$$
+R = exp(\phi), \quad \theta = || \phi ||
+$$
+
+Hence, the rotation vector expresses a rotation of magnitude $\theta$ about the unit axis $u = \phi / \theta$. The rotation logarithm is
+
+$$
+Log(R) = \frac{\theta}{2 \sin(\theta)} \begin{bmatrix}R_{32}-R_{23} \\ R_{13} - R_{31}\\ R_{21}-R_{12}\end{bmatrix}, \quad \text{with } \theta=arccos \begin{pmatrix} \frac{trace(R)-1}{2} \end{pmatrix}
+$$
+
+I'm not gonn' memorize all this crap. But it's good to provide some context on how it's actually done.
+
+The matrix $V$ is the left Jacobian of SO(3):
+
+$$
+V = I - \frac{1}{2} \hat{\phi} + \frac{1}{\phi^2}\begin{pmatrix}1-\frac{\theta cot(\theta/2)}{2}\end{pmatrix}\hat\theta^2, \quad \hat\phi = \begin{bmatrix}0 &-\phi_3 & \phi_2\\ \phi_3 & 0 & -\phi_1\\ -\phi_2 & \phi_1 & 0\end{bmatrix}
+$$
+
+Very similar implementation in [[rodrigues|Rodrigues Rotation Formula]] where I implemented using the skew symmetric logic and SO(3) space.
+
+**Redefined Global Optimization**
+
+If we take sensor fusion into consideration, we need to take all residuals into account. Thus, the trajectory is solved by minimizing a sum of residuals from different sources (IMU, LiDAR, Loop Closures). It helps since it's how sensor fusion actually happens—by weighting each sensor based on its uncertainty.
+
+$$
+\hat{X} = arg min_X \begin{pmatrix} ||r_0||^2_{\sum_0}
++ \sum||r^{IMU}||^2_{\sum_{IMU}}
++ \sum||r^{LIO}||^2_{\sum_{LIO}}
++ \sum||r^{LC}||^2_{\sum_{LC}}
+\end{pmatrix}
+$$
+
+Each residual $r$ is weighted by its covariance $\sum$, allowing the system to trust the IMU during fast motion and LiDAR when the geometry is clear. I read somewhere that the covariance is uncertainty, so its inverse is information.
+
+* $||r||^2_{\sum} = r^T \sum^{-1} r$ 
+* So intuition tells us that if uncertainty is high, the information is low. This mathematically forces the optimizer to give that measurement less "vote" in the final trajectory.
+
 
 
 <style>
