@@ -298,7 +298,7 @@ slides 63-70
 
 Why is it so hard for professors to make good materials? WHHYHWQQWRQ$!@#!EWQE!@# ok
 
-**Upgrading from Pair-wise** [[ICP]] **to Scan-to-Map**:
+**Upgrading from Pair-wise** [[ICP]] **to Scan-to-Map** (covered in [[RPCN SLAM pen and paper|Pen and Paper Exercises SLAM]]):
 
 * Instead of aligning two individual scans $(q_i \approx d_i)$, which causes drift, it's better to scan to a **local map** M
 * That translates into minimizing the cost function $E_m(T) = \sum_{(p_i,m_i)} ||m_i - Tp_i||^2$ where $m_i \in \text{map }M$ 
@@ -355,7 +355,7 @@ Very similar implementation in [[rodrigues|Rodrigues Rotation Formula]] where I 
 
 **Redefined Global Optimization**
 
-If we take sensor fusion into consideration, we need to take all residuals into account. Thus, the trajectory is solved by minimizing a sum of residuals from different sources (IMU, LiDAR, Loop Closures). It helps since it's how sensor fusion actually happens—by weighting each sensor based on its uncertainty.
+If we take sensor fusion into consideration, we need to take all residuals into account. Thus, the trajectory is solved by minimizing a sum of residuals from different sources (IMU, LiDAR, Loop Closures). It helps since it's how sensor fusion actually happens—by weighting each sensor based on its uncertainty. How we get here is covered in [[RPCN SLAM pen and paper|Pen and Paper Exercises SLAM]].
 
 $$
 \hat{X} = arg min_X \begin{pmatrix} ||r_0||^2_{\sum_0}
