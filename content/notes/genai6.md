@@ -45,7 +45,7 @@ So the Lecture goes on about how [[genai5|DDPM]] would require 262,144 pixels fo
 MetaAI introduced T2I (Text to Image) and T2V(Text to Video) in 2023. 
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/twostream.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/meta2023.png" style="max-width: 100%; height: auto;">
 </div> 
 
 The idea: start with a pre-trained T2I model, then add temporal components.

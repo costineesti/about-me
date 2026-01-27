@@ -5,7 +5,7 @@ tags:
 date: 2026-01-10
 ---
 
-Lecture 2 from my [[genai|GenAI Models and Robotic Applications]] course.
+Lecture 2 from my [[genai|GenAI Models and Robotic Applications]] course. Nice explanatory [video](https://www.youtube.com/watch?v=9zKuYvjFFS8). Video to explain what [ELBO](https://www.youtube.com/watch?v=HxQ94L8n0vU) is -- also explains the KL Divergence term.
 
 # Encoder
 
@@ -119,6 +119,8 @@ it's a way to learn features in an unsupervised way.
 
 # Variational AutoEncoders (VAE)
 
+Really nice [blog](https://dfdazac.github.io/01-vae.html) on this topic.
+
 * Enforces the learning of a **regularized latent space** (with a probabilistic twist)
 * Does not encode inputs as points, but as a distribution over the latent space.
 	* **The latent code is sampled from the learned distribution**
@@ -221,7 +223,7 @@ Some examples include prompts like "make blonde" or "add glasses" which add or s
 
 # Generative Adversarial Networks (GANS)
 
-Introductory video about [GAN](https://www.youtube.com/watch?v=Sw9r8CL98N0)
+Really nice introductory video about [GAN]([https://www.youtube.com/watch?v=Sw9r8CL98N0](https://www.youtube.com/watch?v=Gib_kiXgnvA))
 [Tutorial](https://www.youtube.com/watch?v=Mng57Tj18pc) on how to train a GAN
 
 <div class="encoder-section">
@@ -251,7 +253,7 @@ $$
 ### Conditional GANS (cGANS)
 
 >[!summary] Conditional GANs
-> * Learning a generator G to reconstruct meaningful samples only from noise **z** can cause **mode collapse**(G generates few samples only, D is in a local minimum). Mode collapse means that the training of the network is stuck. 
+> * Learning a generator G to reconstruct meaningful samples only from noise **z** can cause **mode collapse**(G generates few samples only, D is in a local minimum). [[genai11|Mode Collapse]] means that the training of the network is stuck. 
 > * The **solution** implies conditioning: Both G and D receive an additional input **c** (condition) such as a class label, text description, or another image. This guides generation toward specific outputs. 
 
 The loss function stays the same but we take *c* into consideration.

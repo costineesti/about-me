@@ -14,7 +14,8 @@ RPCN should really sit at the core of my Robotics Master's at the [[twente|Unive
 >* [[RPCN IMU pen and paper|Pen and Paper Exercises Coordinate Systems]]
 >* [[RPCN 5|Lidar-Inertial Perception]], [[ICP|Iterative Closest Point (ICP)]]
 >* [[RPCN 6|Simultaneous Localization and Mapping (SLAM)]]
->* [[RPCN 7|PPROS and CONS of Sensor Configurations]]
+>* [[RPCN 12|Cameras - Beyond RGB]], [[RPCN 7|PPROS and CONS of Sensor Configurations]]
+>* [[RPCN 13|Camera Intrinsics]], [[RPCN 14|Depth Accuracy For Stereo Cameras]]
 >* [[RPCN 8|The foundation of higher cognition]], [[RPCN 9|Conceptual spatial representations for indoor mobile robots]], [[RPCN 10|Human-Agent-Robot Teamwork]]
 
 Reference material:

@@ -10,7 +10,7 @@ Resources: [1](https://hongruizheng.com/2020/03/13/normalizing-flow.html), [2](h
 Topic that I encountered in my [[genai|GenAI Models and Robotic Applications]] course at [[twente|Twente]].
 
 >[!summary] Basic Concept
->Normalizing flow exploit the rule for change of variables. Normalizing flow begin with an initial distribution, and apply a sequence of K invertible transforms to formulate a new distribution.
+>Normalizing flows exploit the rule for change of variables. Normalizing flows begin with an initial distribution, and apply a sequence of K invertible transforms to formulate a new distribution.
 
 Learns complex joint densities by decomposing the joint density into a product of one-dimensional conditional densities, where each $(x_i)$ depends on only the previous $(i-1)$ values (so just like in Markov Chains):
 
@@ -20,16 +20,16 @@ $$
 
 >[!summary] Quick summary of the difference between GAN, VAE, and flow-based generative models
 > 1. **Generative adversarial networks**: GAN provides a smart solution to model the data generation, an unsupervised learning problem, as a supervised one. The discriminator model learns to distinguish the real data from the fake samples that are produced by the generator model. Two models are trained as they are playing a minimax game.
-> 2. **Variational autoencoders**: VAE inexplicitly optimizes the [[likelihood function|log likelihood]] of the data by maximizing the evidence lower bound (ELBO).
-> 3. **Flow-based generative models**: A flow-based generative model is constructed by a sequence of invertible transformations. Unlike other two, the model explicitly learns the data distribution and therefore the loss function is simply the [[neg log likelihood|negative log likelihood]].
+> 2. **Variational autoencoders**: VAE inexplicitly optimizes the [[likelihood function|log likelihood]] of the data by maximizing the evidence lower bound (ELBO). VAE is **stochastic**: it uses a stochastic encoder that samples $z$ from a learned distribution $q(z \mid x)$. It outputs a **distribution**. In **VAEs**, the model learns to **approximate** the mapping between data and latent Gaussian through separate encoder/decoder networks.
+> 3. **Flow-based generative models**: A flow-based generative model is constructed by a sequence of invertible transformations. Unlike other two, the model explicitly learns the data distribution and therefore the loss function is simply the [[neg log likelihood|negative log likelihood]]. Normalizing Flows are **deterministic**: no randomness is added when transforming $x <-> z$. It's exact; we know what happens. In **flows**, the Gaussian is transformed through **exact, invertible functions** to match the data.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/normflow.png" style="max-width: 100%; height: auto;">
 </div>
 
-# What is Normalizing Flow?
+# What are Normalizing Flows?
 
-Normalizing flow learns an invertible transformation $f$ between data and latent variables: $x = f(z), z = f^{-1}(x)$
+Normalizing flows learn an invertible transformation $f$ between data and latent variables: $x = f(z), z = f^{-1}(x)$
 
 * $x$ is a target distribution data sample $\mathbf{x} \sim p_{\mathbf{x}}(\mathbf{x})$
 * $z$ is a latent variable sampled from the source distribution $\mathbf{z} \sim p_{\mathbf{z}}(\mathbf{z})$
@@ -125,7 +125,7 @@ $$
 z_i = f_i(z_{i-1}), \text{ thus } z_{i-1} = f_i^{-1}(z_i)
 $$
 
-What does f look like? They’re generally Affine Transforms
+What does f look like? They’re generally Affine Transforms (affine coupling layer) since they are differentiable.
 
 <div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/flow1.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/flow2.png" alt="flow 2" width="350" height="300"> </div> </div>
 
