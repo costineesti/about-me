@@ -20,7 +20,9 @@ RPCN should really sit at the core of my Robotics Master's at the [[twente|Unive
 >* [[RPCN 15|Bundle Adjustment]]
 >* [[RPCN 16|Path Planning]]
 >* [[RPCN 17|Global Navigation Satellite System (GNSS)]]
+>* [[RPCN 19|Sensor Fusion]]
 >
+
 
 Reference material:
 

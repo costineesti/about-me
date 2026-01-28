@@ -32,3 +32,9 @@ date: 2025-10-21
 >	* [[genai|GenAI Models and Robotic Applications]]
 >	* [[RPCN|Robot Perception, Cognition and Navigation]]
 >	* [[speech processing|Speech Processing]]
+>* **Q3**
+>	* Advanced Software Development for Robotics
+>	* Optimal Estimation in Dynamic Systems
+>	* Laser Scanning and Point Cloud Processing
+
+
