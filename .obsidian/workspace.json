@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/speech processing.md",
+                "file": "content/notes/HRI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "speech processing"
+              "title": "HRI"
             }
           }
         ]
@@ -206,20 +206,23 @@
   },
   "active": "bbaacc4ee63e226d",
   "lastOpenFiles": [
+    "content/notes/genai3.md",
+    "content/notes/HRI.md",
+    "quartz/static/notes/hri_diff_drive.png",
+    "quartz/static/notes/hri_fwk.png",
+    "quartz/static/notes/hri_morph.png",
+    "quartz/static/notes/hri_axis.png",
+    "content/notes/genai4.md",
+    "quartz/static/notes/hri_levels.png",
+    "content/notes/laser scanning 1.md",
+    "content/notes/speech processing.md",
     "content/notes/speech processing 101.md",
     "quartz/static/notes/voiceconv_framework.png",
     "quartz/static/notes/voiceconv.png",
     "quartz/static/notes/spss.png",
     "quartz/static/notes/vocoder.png",
     "quartz/static/notes/genflow.png",
-    "quartz/static/notes/uss_pipeline.png",
-    "quartz/static/notes/F1F2.png",
-    "quartz/static/notes/ctc.png",
-    "quartz/static/notes/hybrid_e2e.png",
     "content/notes/speech processing 1.md",
-    "quartz/static/notes/speech_arch.png",
-    "content/notes/genai4.md",
-    "content/notes/speech processing.md",
     "content/notes/RPCN 18.md",
     "content/notes/RPCN 17.md",
     "content/notes/RPCN 16.md",
@@ -238,9 +241,6 @@
     "content/notes/RPCN 9.md",
     "content/notes/RPCN 8.md",
     "content/twente.md",
-    "content/notes/genai.md",
-    "content/notes/NLP.md",
-    "content/notes/IPCV.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
