@@ -408,7 +408,7 @@ When we talk about arbitration, we need to touch on these concepts:
 **Blending Approaches**
 
 <div class="encoder-section">
-  <img src="../static/notes/hri_axis.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/hri_haptic.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li><b>Weighted summation</b>: Combine inputs from both agents based on weights </li>
@@ -416,6 +416,7 @@ When we talk about arbitration, we need to touch on these concepts:
     </ul>
   </div>
 </div>
+
 > Arbitration can also occur at different degrees of freedom.
 
 **Learning-based Approaches**
