@@ -5,7 +5,7 @@ tags:
 date: 2026-02-08
 ---
  
-This is lecture 1 from Laser Scanning and Point Cloud Processing. Related to [[laser scanning 2|TLS]].
+This is lecture 1 from [[laser scanning|Laser Scanning and Point Cloud Processing]]. Related to [[laser scanning 2|TLS]].
 
 Accurate digital terrain levels using LiDARS in the NL. They want to upgrade the elevation of the country since they are 1/3 below sea level.
 

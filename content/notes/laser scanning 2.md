@@ -5,7 +5,7 @@ tags:
 date: 2026-02-08
 ---
  
-Lecture from Twente. Also related to [[laser scanning 1|ALS]].
+Lecture 2 from [[laser scanning|Laser Scanning and Point Cloud Processing]]. Also related to [[laser scanning 1|ALS]].
 
 **Scanner Types**
 
