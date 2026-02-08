@@ -18,3 +18,5 @@ References:
 
 * Indoor 3D: Overview on Scanning and Reconstruction Methods
 * Vosselman, George Maas, Hans-Gerd. (2010). *Airborne and Terrestrial Laser Scanning*.
+	* [link](https://app-knovel-com.ezproxy2.utwente.nl/kn/resources/kpATLS0002/toc)
+

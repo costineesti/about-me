@@ -21,7 +21,7 @@ Source: [this review paper on segmentation and object detection methods](https:/
 
 So the key components for implementing a VLM are:
 
-* **Image Encoder:** Extracts meaningful features from images by dividing them into patches and processing them using a `Vision Transformer (ViT)`.
+* **Image Encoder:** Extracts meaningful features from images by dividing them into patches and processing them using a [[ViT|Vision Transformer (ViT)]].
 - **Vision–Language Projector:** Aligns image embeddings with text embeddings by projecting visual features into the same dimensional space, using a small multilayer perceptron (MLP).
 - **Tokenizer + Embedding Layer:** Converts input text into token IDs and maps them to dense vectors that capture semantic meaning.
 - **Positional Encoding:** Adds spatial or sequential information to embeddings, helping the model understand token order and context.
@@ -67,7 +67,7 @@ Their research states that ==MobileSAM is faster than FastSAM and performs on pa
 
 [This paper](https://arxiv.org/pdf/2309.12314) suggests that it can reduce the size of the pre-trained `CLIP ViT-B/32` by 50%, while maintaining comparable zero-shot performance. The idea is very similar to MobileSAM, as weight inheritance transmits the pre-trained weights from the teacher models to their student counterparts to improve distillation efficiency.
 
-CLIP-like language-image models commonly consist of two branches: an image encoder and a text encoder. CLIP uses 400M parameters while TinyCLIP only 63M. That's a significant reduction(84.25%) while maintaining similar performance. The original CLIP models are pre-trained on 400 million image-text pairs for 32 epochs, taking thousands of GPU days.
+[[CLIP]]-like language-image models commonly consist of two branches: an image encoder and a text encoder. CLIP uses 400M parameters while TinyCLIP only 63M. That's a significant reduction(84.25%) while maintaining similar performance. The original CLIP models are pre-trained on 400 million image-text pairs for 32 epochs, taking thousands of GPU days.
 
 >[!note] I tested the following models:
 >==wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M== - would return only the purple end of the marker

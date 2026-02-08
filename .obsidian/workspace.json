@@ -22,35 +22,21 @@
             }
           },
           {
-            "id": "3ceb8aca95c465ef",
+            "id": "bcf743ae883bb549",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/optimal estimation 2.md",
+                "file": "content/notes/laser scanning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "optimal estimation 2"
-            }
-          },
-          {
-            "id": "0307bdd107d7ca59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/twente.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "twente"
+              "title": "laser scanning"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -233,16 +219,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0307bdd107d7ca59",
+  "active": "bcf743ae883bb549",
   "lastOpenFiles": [
     "content/notes/asdfr.md",
+    "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
+    "content/notes/CLIP.md",
+    "content/notes/VLM.md",
+    "content/twente.md",
     "content/notes/laser scanning 1.md",
     "content/notes/RPCN 14.md",
     "content/notes/laser scanning 2.md",
     "content/notes/optimal estimation 2.md",
     "content/notes/optimal estimation 1.md",
     "content/notes/optimal estimation.md",
-    "content/twente.md",
     "content/notes/ros_basics.md",
     "content/notes/rot derivative.md",
     "content/notes/ray tracing.md",
@@ -268,9 +257,6 @@
     "content/notes/genai4.md",
     "content/notes/HRI.md",
     "content/notes/speech processing.md",
-    "content/notes/speech processing 101.md",
-    "content/notes/speech processing 1.md",
-    "content/notes/RPCN 18.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",
