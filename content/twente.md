@@ -36,7 +36,7 @@ date: 2025-10-21
 >	* [[RPCN|Robot Perception, Cognition and Navigation]]
 >	* [[speech processing|Speech Processing]]
 >* **Q3**
->	* Advanced Software Development for Robotics
+>	* [[asdfr|Advanced Software Development for Robotics]]
 >	* [[optimal estimation|Optimal Estimation in Dynamic Systems]]
 >	* [[laser scanning|Laser Scanning and Point Cloud Processing]]
 

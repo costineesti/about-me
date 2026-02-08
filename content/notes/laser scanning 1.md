@@ -55,8 +55,8 @@ How do you deal with echoes? How do you know which pulse is attributed to that e
 
 Example:
 
-* Suppose $f = 500 kHz$, pulse emitted every $2 \micro s$.
-* Suppose H = 750m, travel time $\Delta t = 2 \times 750 / v = 5 \micro s$.
+* Suppose $f = 500 kHz$, pulse emitted every $2 \mu s$.
+* Suppose H = 750m, travel time $\Delta t = 2 \times 750 / v = 5 \mu s$.
 
 <div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/als_5.png" alt="5" width="350" height="300"> </div> <div> <img src="../static/notes/als_6.png" alt="6" width="350" height="300"> </div> </div>
 

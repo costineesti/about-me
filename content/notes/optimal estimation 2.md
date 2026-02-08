@@ -89,34 +89,35 @@ $$
 	* $\hat{x}(z) = \arg \max_x p(x|z)$
 
 >[!example] A quick example from Claude to help me understand these three concepts.
+>
 >Imagine you're trying to estimate someone's age based on their appearance ($z$ = how they look). You have some uncertainty, so your belief is a probability distribution $p(\text{age}|\text{appearance})$.
 >
-Let's say this distribution shows they're likely between 25-35, with possibilities:
+>Let's say this distribution shows they're likely between 25-35, with possibilities:
 >
->- 25 years: 10% chance
->- 30 years: 70% chance
->- 35 years: 20% chance
+>* 25 years: 10% chance
+>* 30 years: 70% chance
+>* 35 years: 20% chance
 >
-**Now you must give ONE estimate. Which do you choose?**
+>**Now you must give ONE estimate. Which do you choose?**
 >
-**Quadratic cost (mean):**
+>**Quadratic cost (mean):**
 >
->- If you're wrong, the penalty grows with the square of your error
->- Being off by 10 years is MUCH worse than being off by 5
->- Best estimate: weighted average = 0.1×25 + 0.7×30 + 0.2×35 = **30.5 years**
+>* If you're wrong, the penalty grows with the square of your error
+>* Being off by 10 years is MUCH worse than being off by 5
+>* Best estimate: weighted average = 0.1×25 + 0.7×30 + 0.2×35 = **30.5 years**
 >
-**Absolute cost (median):**
+>**Absolute cost (median):**
 >
->- If you're wrong, penalty is just the absolute difference
->- Being off by 10 is exactly twice as bad as being off by 5
->- Best estimate: the middle value = **30 years**
+>* If you're wrong, penalty is just the absolute difference
+>* Being off by 10 is exactly twice as bad as being off by 5
+>* Best estimate: the middle value = **30 years**
 >
-**Uniform cost (mode):**
+>**Uniform cost (mode):**
 >
->- You either get it exactly right (no penalty) or wrong (same penalty regardless)
->- Best estimate: most likely value = **30 years** (the 70% one)
+>* You either get it exactly right (no penalty) or wrong (same penalty regardless)
+>* Best estimate: most likely value = **30 years** (the 70% one)
 >
-Different loss functions $\rightarrow$ different "best guess" from the same distribution.
+>Different loss functions $\rightarrow$ different "best guess" from the same distribution.
 
 **Maximum Likelihood Estimation (MLE)**
 
