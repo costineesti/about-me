@@ -10,3 +10,5 @@ This is a course I'm taking in Q3 during my first year at [[twente|Twente]]. **A
 I should like this!!!! I hope I will have a nice learning curve regarding my C++ and ROS2 (Jazzy) skills.
 
 The book is on outlook.
+
+This teacher really likes what he does. A lecture feels like a Ted Talk.

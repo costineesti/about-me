@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1525821dc962d4c8",
+            "id": "0daaa258e0459e1e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/asdfr.md",
+                "file": "content/notes/optimal estimation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "asdfr"
+              "title": "optimal estimation"
             }
           },
           {
-            "id": "bcf743ae883bb549",
+            "id": "70efb3bd372435e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/laser scanning.md",
+                "file": "content/notes/optimal estimation 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "laser scanning"
+              "title": "optimal estimation 3"
             }
           }
         ],
@@ -219,14 +219,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bcf743ae883bb549",
+  "active": "70efb3bd372435e1",
   "lastOpenFiles": [
+    "content/notes/optimal estimation.md",
+    "content/notes/optimal estimation 4.md",
+    "content/notes/optimal estimation 3.md",
+    "content/notes/genai4.md",
+    "content/notes/genai6.md",
+    "content/notes/genai5.md",
+    "quartz/static/notes/ex1_result_2.png",
+    "quartz/static/notes/ex1_result_1.png",
+    "quartz/static/notes/ex1_result.png",
+    "content/notes/optimal estimation 1.md",
+    "content/notes/optimal estimation 2.md",
+    "quartz/static/notes/gnm_3.png",
+    "quartz/static/notes/gnm_2.png",
+    "quartz/static/notes/gnm_1.png",
+    "quartz/static/notes/ex1_context.png",
+    "content/notes/asdfr 1.md",
+    "quartz/static/notes/gac.png",
+    "content/notes/genai3.md",
+    "quartz/static/notes/modeldriven.png",
+    "content/notes/asdfr.md",
+    "content/notes/laser scanning.md",
     "content/notes/laser scanning 3.md",
     "content/notes/RPCN 17.md",
     "content/notes/RPCN 16.md",
     "content/notes/RPCN 18.md",
-    "content/notes/laser scanning.md",
-    "content/notes/asdfr.md",
     "content/notes/Visual-Language Models for Object Detection and Segmentation.md",
     "content/notes/CLIP.md",
     "content/notes/VLM.md",
@@ -234,29 +253,9 @@
     "content/notes/laser scanning 1.md",
     "content/notes/RPCN 14.md",
     "content/notes/laser scanning 2.md",
-    "content/notes/optimal estimation 2.md",
-    "content/notes/optimal estimation 1.md",
-    "content/notes/optimal estimation.md",
     "content/notes/ros_basics.md",
     "content/notes/rot derivative.md",
-    "content/notes/ray tracing.md",
-    "content/notes/ros_architecture.md",
-    "content/notes/genai3.md",
-    "content/notes/MLE.md",
     "quartz/static/notes/oed_parad3.png",
-    "quartz/static/notes/oed_parad2.png",
-    "quartz/static/notes/oed_parad1.png",
-    "quartz/static/notes/oed_intro2.png",
-    "content/notes/RPCN 3.md",
-    "quartz/static/notes/oed_intro1.png",
-    "content/notes/NLP 5.md",
-    "content/notes/genai.md",
-    "quartz/static/notes/als_12.png",
-    "quartz/static/notes/als_11.png",
-    "quartz/static/notes/als_10.png",
-    "quartz/static/notes/als_9.png",
-    "quartz/static/notes/als_8.png",
-    "content/notes/genai6.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

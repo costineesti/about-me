@@ -16,6 +16,7 @@ The accent of the course is on the utilization aspects, not on a mathematically 
 >[!summary] Topics covered so far
 >* [[optimal estimation 1|Introduction to Optimal Estimation and Dynamics]]
 >* [[optimal estimation 2|The Estimation Paradigm (the static case)]]
+>* [[optimal estimation 3|Fundamentals of parameter estimation]], [[optimal estimation 4|Generalized Normal Distribution]]
 
 Sadly, we use MATLAB.
 
