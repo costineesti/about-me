@@ -14,6 +14,7 @@ I will learn about different kinds of laser scanning, point cloud processing (cl
 >* [[laser scanning 1|Aerial Laser Scanning (ALS)]]
 >* [[laser scanning 2|Terrestrial Laser Scanning (TLS)]]
 >* [[laser scanning 3|Mobile Laser Scanning (MLS)]]
+>* [[laser scanning 4|Point Cloud Segmentation Practical]]
 
 References:
 
