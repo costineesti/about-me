@@ -7,7 +7,7 @@ date: 2026-02-16
 
 These notes are from the Practical session.
 
-In the images George showed us, there was a middle line that was brigher. It simply shows that the point density was higher in the middle region. This software (Point cloud mapper), was entirely done by George in C++. Waay back in the days. And it goes without saying that many enterprises and organizations make use of it. Insane!!
+In the images George showed us, there was a middle line that was brigher. It simply shows that the point density was higher in the middle region. So it was higher in the flight direction and lower across the flight direction. This software (Point cloud mapper), was entirely done by George in C++. Waay back in the days. And it goes without saying that many enterprises and organizations make use of it. Insane!!
 
 # Task 1: Surface growing
 
