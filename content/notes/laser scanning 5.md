@@ -207,7 +207,7 @@ So I need to divide and conquer it in two steps
 
 On the left side of the image above, I can see 3 dominant directions: vertical, horizontal and inclined. 
 
-So to approach this, George suggests to plot all the normal vectors on a Gaussian sphere (right image). So ignore the positions of where they are computed, all starting from the middle point of that sphere. There we have the frequencies with which normal vectors are pointing to a certain direction. That's when we take all the big circles going around that sphere and I can already see 3 of them. in the right picture. The last one might not be so obvious (it's the one that starts from the right side, it finishes on the left side).
+So to approach this, George suggests to plot all the normal vectors on a Gaussian sphere (right image). So ignore the positions of where they are computed, all starting from the middle point of that sphere. There we have the frequencies with which normal vectors are pointing to a certain direction. That's when we take all the big circles going around that sphere and I can already see 3 of them. in the right picture. The last one might not be so obvious (it's the one that starts from the right side, it finishes on the left side). I use the normal vectors to divide in the common points (where it's not so obvious if it's vertical or horizontal).
 
 `Step 2`: **Detection of the cylinder position and the radius**
 
