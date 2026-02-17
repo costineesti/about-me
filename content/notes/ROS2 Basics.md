@@ -201,6 +201,7 @@ The command for viewing rosbags stays `rqt_bag`.
 
 >ros2 bag info \<bag_file_name\>
 
+Related: [[ROS2 Client libraries]], [[ROS2 - Writing Publishers and Subscribers]].
 
 
 
