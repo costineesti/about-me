@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of parameter estimation
-draft: true
+draft: false
 tags:
 date: 2026-02-11
 ---
@@ -68,6 +68,8 @@ For the current case, the following parameters are given:
 	* $x_{max} = 3m$
 	* $\beta = 20$
 
+---
+
 **First Question**: If we model $p(x)$ and $p(z \mid x)$ against $z$ for $x = 1.5m$ and $x=2m$, what do these PDFs model?
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
@@ -97,7 +99,11 @@ For the current case, the following parameters are given:
 > example for $\beta=5$ and $\sigma=0.3$
 > <div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/ex1_result_2.png" style="max-width: 100%; height: auto;"> </div>
 
-**Second Question**: Compute the PDFs regarding $p(z)$ and $p(x \mid z)$. Now we model these against $x$ for $z=3.1m$ and for $z=4m$. What do they represent?
+---
+
+**Second Question**: Compute the PDFs regarding $p(z)$ and $p(x \mid z)$. Now we model these against $x$ for $z=3.1m$ and for $z=4m$. 
+
+>[!question] What do they represent?
 
 The **evidence** $p(z)$ is the total probability of observing a measurement $z$. It is calculated by **integrating** **the** **likelihood** over all possible true depths $x$.
 
@@ -105,9 +111,112 @@ $$
 p(z) = \int_\infty^\infty p(z \mid x) p(x)dx
 $$
 
-The **posterior** $p(x \mid z)$ represent my **updated belief** about the true depth $x$ after seeing measurement $z$. Per Bayes' Theorem:p
+The **posterior** $p(x \mid z)$ represent my **updated belief** about the true depth $x$ after seeing measurement $z$. Per Bayes' Theorem:
 
 $$
 p(x \mid z) = \frac{p(z \mid x)p(x)}{p(z)} \propto p(z\mid x)p(x)
 $$
 
+The marginal PDF $p(z)$ and the posterior PDF $p(x\mid z)$ look like this:
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ex1_result_3.png" style="max-width: 100%; height: auto;">
+</div>
+
+* The top plot $p(z)$ shows the two plateaus -- the taller one for $z \in [1,3]$ corresponds to the $90\%$ chance of a direct reflection from the uniform prior $x \in [1,3]$. What follows is the $10\%$ plateau which corresponds to the echoes.
+	* "What measurement are we likely to see?"
+* The bottom plot $p(x\mid z)$ captures the two cases mentioned above. 
+	* "Given I measured $z$, what is the true depth $x$?"
+	* For $z=4m$, a direct reflection is impossible since the maximum known depth is $3m$ (I know that from the prior). Therefore a measurement of $4m$ cannot possibly be a direct echo. The model infers it must be a double reflection which happens at $2x$, resulting in the distinct, confident peak at exactly $x=2.0m$ for $z=3.1m$.
+	* In the case for $z=3.1m$ is ambiguous and presents two conflicting possibilities. It could be a double reflection, meaning the true depth is half of the measurement (the first small peak at $\sim x=1.55m$). Alternatively, it could be a direct reflection of a true depth very close to the $3m$ maximum, pushed up to $3.1m$ by sensor noise. Since direct reflections are highly probable, the model strongly leans toward this explanation, causing the massive spike at the $x=3.0m$ boundary.
+
+---
+
+**Third Question**: Create m-files that calculate:
+
+- The MMSE estimator $\hat{x}_{\text{MMSE}}(z)$ for $z = 3.1\,\text{m}$ and for $z = 4\,\text{m}$.
+	- **Minimum Mean Square Error** calculates the expected value, or the center of mass, of the posterior distribution. It minimizes the squared error of the estimate, meaning its position is influenced by all possible outcomes, including the small distant probabilities of secondary echoes.
+	- $\hat{x}_{MMSE} = \int x p(x \mid z)dx$
+- The MAP estimator $\hat{x}_{\text{MAP}}(z)$ for $z = 3.1\,\text{m}$ and for $z = 4\,\text{m}$.
+	- **Maximum A Posteriori** maximizes the posterior distribution $p(x\mid z)$. It identifies the absolute highest peak of the combined probability, representing the single most likely depth when both the sensor measurement and the prior bounds are factored in.
+	- $\hat{x}_{MAP} = \arg \max_x p(x \mid z)$
+- The MMAE estimator $\hat{x}_{\text{MMAE}}(z)$ for $z = 3.1\,\text{m}$ and for $z = 4\,\text{m}$.
+	- **Minimum Mean Absolute Error** calculates the median of the posterior distribution. It finds the exact depth that divides the total probability area perfectly in half, making it more robust against distant secondary peaks than the MMSE. (look more into this)
+	- $\hat{x}_{MMAE} = \int_{-\infty}^x p(x' \mid z) dx' = 0.5$
+		- In other words, minimize the expected absolute error $\mathbb{E}[|x-\hat{x}| \mid z]$. The solution is provably the **median** of the posterior, hence finding where the CDF(Cumulative Distribution Function) crosses 0.5.
+- The ML estimator $\hat{x}_{\text{ML}}(z)$ for $z = 3.1\,\text{m}$ and for $z = 4\,\text{m}$.
+	- **Maximum Likelihood** maximizes the the likelihood function $p(z \mid x)$. It strictly trusts the sensor data and finds the depth that makes the observed measurement most probable, completely ignoring the prior knowledge from the nautical map.
+	- $\hat{x}_{ML} = \arg \max_{x} p(z|x)$
+
+>[!question] Can you explain the results, especially the ones for $z = 3.1\,\text{m}$?
+
+Results:
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ex1_result_4.png" style="max-width: 100%; height: auto;">
+</div>
+
+**z=4m**
+
+All four estimators agree at $x=2m$. The posterior is unimodal so, naturally, all estimators converge because the prior eliminates any chance of a direct echo.
+
+**z=3.1m**
+
+In this case, the posterior is bimodal (two peaks which I explained earlier). 
+
+* The **MMSE** is the only one that's pulled more to the left since it acts as a center of gravity. It does incline towards the correct answer, but in this case the value of 2.66 doesn't make sense given the posterior.
+* The **MAP** is the same as ML but multiplies the likelihood by the prior $p(x)$ first. The prior slightly penalizes $x=3.0$ since it's near the boundary, nudging the peak marginally left to $x=2.98$. Very close to ML here because the likelihood peak dominates.
+* The **MMAE** integrates the posterior from left to right until it has accumulated 50% of the total probability mass. The small left peak at $x=1.55$ contributes some mass, which means the $50\%$ point is reached slightly earlier than the MAP peak, pulling it to $2.93m$. Essentially asking "where is the middle of all the probability?"
+
+  ```
+  p(x|z)                        CDF
+  |                              1|          ___
+  |  /\      /\                   |         /
+  | /  \    /  \                0.5|_ _ _ _/· · ·  ← median here
+  |/    \  /    \                  |      /
+  |      \/      \               0|_____/
+  +-------------->x               +------------>x
+  ```
+
+* The **ML** looks at $p(z \mid x)$ and asks "for which x is this measurement most likely?". It finds the peak of the likelihood. Since $z=3.1$ is just inside the prior boundary, the direct echo peak lands at $x\approx3.0$. No prior involved at all.
+
+---
+
+**Fourth+Fifth Question**:
+
+Calculate for each case in 3 the conditional risk. Compare and explain the results. Do that for any of the following cost functions:
+
+* Quadratic cost function $(x - \hat{x}^2)$
+* Absolute cost function $(|x - \hat{x}|)$
+* Uniform cost function with $\Delta = 0.5$. The definition of $\Delta$ is $C_{uni}(x \mid \hat{x}) = 1$ if $|x-\hat{x}|\gt \Delta$
+
+> The risks that are calculated may have a physical unit. Don't forget to add them.
+
+
+From [[optimal estimation 2|The Estimation Paradigm]], the **risk** is defined as the **expected cost** of an estimation error:
+
+$$
+R(\hat{x}|z) = E_x[C(\hat{x}|x)|z] = \int C(\hat{x}|x)p(x|z)dx
+$$
+
+**z = 3.1m**
+
+| Estimator | Quadratic (m²) | Absolute (m) | Uniform (-) |
+| --------- | -------------- | ------------ | ----------- |
+| MMSE      | 0.3098         | 0.4435       | 0.9997      |
+| MAP       | 0.4100         | 0.3211       | 0.4838      |
+| MMAE      | 0.3819         | 0.3071       | 0.4732      |
+| ML        | 0.4258         | 0.3406       | 0.6333      |
+
+**z = 4.0m**
+
+| Estimator | Quadratic (m²) | Absolute (m) | Uniform (-) |
+| --------- | -------------- | ------------ | ----------- |
+| MMSE      | 0.0025         | 0.0399       | 0.3168      |
+| MAP       | 0.0025         | 0.0399       | 0.3267      |
+| MMAE      | 0.0025         | 0.0399       | 0.3267      |
+| ML        | 0.0025         | 0.0399       | 0.3267      |
+
+* For $z=4.0m$ all estimators agree, so the risks are nearly identical across estimators for each cost function. The posterior distribution is unimodal, meaning there is only one logical explanation for the measurement.
+* For $z=3.1m$ each estimator is lowest **on its own cost function** (MMSE lowest quadratic, MMAE lowest absolute, MAP lowest uniform) — exactly as the theory predicts.
+* The uniform risk of MMSE at $z=3.1m$ is nearly $1.0$, meaning it almost always falls outside the $\Delta=0.05m$ window. Since the uniform cost function penalizes any estimate outside the 0.05m threshold, and there is virtually zero probability mass in that valley, the MMSE is almost guaranteed to incur the maximum penalty.
