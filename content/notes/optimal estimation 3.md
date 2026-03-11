@@ -5,7 +5,7 @@ tags:
 date: 2026-02-11
 ---
  
-The fist exercise out of eight that I have to solve in the [[optimal estimation]] course.
+The fist exercise out of eight that I have to solve in the [[optimal estimation]] course. The focus is on **MAP estimation, MMSE estimation; MMAE estimation; ML estimation**.
 
 In this case, I need to use the **minimum risk (Bayes) estimators** from [[optimal estimation 2|The Estimation Paradigm (the static case)]] and also apply the knowledge from [[optimal estimation 1|Introduction to Optimal Estimation and Dynamics]].
 

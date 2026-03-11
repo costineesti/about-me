@@ -18,6 +18,7 @@ The accent of the course is on the utilization aspects, not on a mathematically 
 >* [[optimal estimation 2|The Estimation Paradigm (the static case)]]
 >* [[optimal estimation 3|Fundamentals of parameter estimation - Part I]], [[optimal estimation 5|Fundamentals of parameter estimation - Part II]]
 >* [[optimal estimation 4|Generalized Normal Distribution]]
+>* [[optimal estimation 7|Particle Filter]]
 
 Sadly, we use MATLAB.
 

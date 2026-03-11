@@ -4,53 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "88e542a96f15f11f",
+        "id": "c9294c862739e165",
         "type": "tabs",
         "children": [
           {
-            "id": "e5abee4324926560",
+            "id": "2727c23c38d77d95",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/optimal estimation 5.md",
+                "file": "content/notes/pointnet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "optimal estimation 5"
+              "title": "pointnet"
             }
           },
           {
-            "id": "2bfa1543d8e581d3",
+            "id": "e9f7196c7a984988",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/optimal estimation.md",
+                "file": "content/notes/laser scanning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "optimal estimation"
-            }
-          },
-          {
-            "id": "68b9ec3e6e6e9674",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/optimal estimation 5.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "optimal estimation 5"
+              "title": "laser scanning"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -233,44 +219,43 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "68b9ec3e6e6e9674",
+  "active": "e9f7196c7a984988",
   "lastOpenFiles": [
-    "content/notes/optimal estimation.md",
-    "content/notes/optimal estimation 4.md",
-    "content/notes/optimal estimation 5.md",
+    "content/notes/pointnet.md",
+    "quartz/static/notes/pointnet3.png",
+    "quartz/static/notes/pointnet2.png",
+    "content/notes/genai4.md",
+    "content/notes/asdfr 1.md",
+    "content/notes/asdfr 2.md",
+    "quartz/static/notes/pointnet1.png",
+    "content/notes/principal_component_analysis.md",
+    "content/notes/laser scanning 7.md",
+    "content/notes/optimal estimation 7.md",
     "content/notes/optimal estimation 3.md",
     "content/notes/optimal estimation 2.md",
-    "quartz/static/notes/ex2_oeds4.png",
-    "content/notes/asdfr 2.md",
-    "content/notes/asdfr 1.md",
-    "quartz/static/notes/ex2_oeds3.png",
-    "quartz/static/notes/ex2_oeds2.png",
-    "quartz/static/notes/ex2_oeds1.png",
-    "quartz/static/notes/ex1_result_4.png",
-    "quartz/static/notes/ex1_result_3.png",
     "content/notes/optimal estimation 1.md",
+    "quartz/static/notes/pf4.png",
+    "quartz/static/notes/pf3.png",
+    "quartz/static/notes/pf2.png",
+    "content/notes/CLIP.md",
+    "quartz/static/notes/pf1.png",
+    "content/notes/optimal estimation.md",
+    "content/notes/optimal estimation 6.md",
+    "quartz/static/notes/ex3_oeds6.png",
+    "quartz/static/notes/ex3_oeds5.png",
+    "quartz/static/notes/ex3_oeds4.png",
+    "content/notes/optimal estimation 5.md",
+    "content/notes/optimal estimation 4.md",
     "content/notes/personality.md",
-    "content/notes/genai4.md",
-    "quartz/static/notes/pers_types.png",
-    "quartz/static/notes/INTJ-A.png",
     "content/notes/Deep Learning Fundamentals.md",
     "content/notes/systems engineering 8.md",
     "content/notes/systems engineering 5.md",
     "content/notes/NLP 6.md",
-    "content/notes/CLIP.md",
     "content/notes/genai3.md",
     "content/notes/genai12.md",
     "content/notes/genai.md",
     "content/notes/RPCN 19.md",
     "content/notes/RPCN 18.md",
-    "content/notes/RPCN 6.md",
-    "content/notes/RPCN 5.md",
-    "content/notes/ros_basics.md",
-    "content/notes/ROS2 - Writing Publishers and Subscribers.md",
-    "content/notes/ROS2 Client libraries.md",
-    "content/notes/ROS2 Basics.md",
-    "quartz/static/notes/ros2_basics4.png",
-    "quartz/static/notes/ros2_basics3.png",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

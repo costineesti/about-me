@@ -5,7 +5,7 @@ tags:
 date: 2026-02-27
 ---
  
-This is the continuation to [[optimal estimation 3|Fundamentals of parameter estimation - Part I]]. Exercise 2/8 from my [[optimal estimation]] course.
+This is the continuation to [[optimal estimation 3|Fundamentals of parameter estimation - Part I]]. Exercise 2/8 from my [[optimal estimation]] course. The focus is on **linear MMSE and unbiased linear MMSE**.
 
 I need to reconsider the ultrasonic depth gauge discussed in Part 1. The Figure below shows two data sets that are obtained from the probabilistic model. Each data set contains 200 points $(x_n,z_n)$. The realizations are a-select and independent. 
 
