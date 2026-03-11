@@ -55,7 +55,7 @@ The resulting vector then gets fed into a MLP. This solved ==unnecessary volumin
 
 > The Classification and Segmentation share the same MLP. They only differ in what comes after the global vector — classification just maps it to class scores, segmentation feeds it back to each point.
 
-<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/flow1.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/flow2.png" alt="flow 2" width="350" height="300"> </div> </div>
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/pointnet2.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/pointnet3.png" alt="flow 2" width="350" height="300"> </div> </div>
 
 <style>
   .encoder-section {

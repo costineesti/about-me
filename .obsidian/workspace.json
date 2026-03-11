@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/laser scanning.md",
+                "file": "content/notes/pointnet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "laser scanning"
+              "title": "pointnet"
             }
           }
         ],
@@ -221,6 +221,7 @@
   },
   "active": "e9f7196c7a984988",
   "lastOpenFiles": [
+    "content/notes/laser scanning.md",
     "content/notes/pointnet.md",
     "quartz/static/notes/pointnet3.png",
     "quartz/static/notes/pointnet2.png",
