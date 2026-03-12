@@ -17,6 +17,7 @@ I will learn about different kinds of laser scanning, point cloud processing (cl
 >* [[laser scanning 4|Point Cloud Segmentation Practical]]
 >* [[laser scanning 5|Point Cloud Segmentation]], [[laser scanning 6|Point Cloud Segmentation with Segment Anything (SAM)]]
 >* [[pointnet|PointNet]]
+>* [[laser scanning 8|Point Cloud Classification]]
 
 References:
 
