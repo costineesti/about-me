@@ -176,3 +176,113 @@ Again, I simply add to each axis the values from $\mu_{\mathbf{x}}$.
     <img src="../static/notes/ex3_oeds6.png" style="max-width: 100%; height: auto;">
 </div>
 
+---
+
+**Second topic**: Add the line of sight to the Figure. From the context, the uncertainty of the measured bearing is the standard deviation $\sigma_{\Delta \theta}$. The range $[\theta - \sigma_{\Delta \theta}, \theta + \sigma_{\Delta \theta}]$ defines an uncertainty region in the shape of a 2D cone. Visualize this cone in the graph by adding two dashed lines.
+
+The line of sight is a line starting from the beacon position $\mathbf{x}_0$ going in the direction of the measured bearing $\theta$. So I must simply apply the equation:
+
+$$
+y_{\text{los}}-y_0 = m(x_{\text{los}}-x_0)
+$$
+
+where $m = \tan(\theta)$. 
+
+For the upper and lower bounds of the LoS (the 2D cone), I can simply reapply the formula like this:
+
+$$
+y = y_0 + \tan(\theta \pm \sigma_{\Delta \theta})(x-x_0)
+$$
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex3_oeds7.png" alt="compass reading" width="350" height="300"> </div> <div> <img src="../static/notes/ex3_oeds8.png" alt="true bearing" width="350" height="300"> </div> </div>
+
+In the Figure above, in the left plot, the lines do not intersect the uncertainty region if I consider the compass reading of $\theta=35$. This would indicate that the prior position estimate and the compass measurement are pointing at slightly different locations (so the reading of the compass is off). To see what the true bearing should be, I applied $atan2$ between the bearing and the prior estimate, and I get the result of $\sim 41.63$ degrees. In this case, the line of sight would pass straight through the ship's position in the right plot.
+
+---
+
+**Third topic**: The linearized measurement function replaces the cone by a bar (i.e. two parallel lines). The width of this bar is $2 \sigma_v$. Calculate it and show the results.
+
+According to the document, $\sigma_v = d \sigma_{\Delta \theta}$, where $d = || x_0 - \mu_x ||$ is the euclidean distance between the bearing and the prior position estimate. According to the calculations, the initial width of the bar is $\sim 4.2033 Nm$.
+
+Although $\theta$ is the **real measurement**, I can use $z$ as a **derived measurement** instead. 
+
+$$
+z = \mathbf{x_0} \sin(\theta) - \mathbf{y_0} \cos(\theta)
+$$
+
+>[!question] Okk, but what is $z$? What does it represent?
+>
+>While the actual physical measurement is the bearing angle $\theta$, its relationship to the ship's position is non-linear. To make this usable for linear estimation, the measurement model is linearized using a Taylor series expansion. This process groups the known variables—the beacon's position $(x_0, y_0)$ and the measured angle $\theta$ - into a single known scalar value $z$.
+>
+>* Geometrically, **the absolute value of z represents the shortest, perpendicular distance from the origin (0, 0) to the measured line of sight**. Because it is a signed value, the positive or negative sign simply indicates which side of the origin the line falls on.
+
+> Basically, the true relationship is non-linear and I linearize it through the standard linear format $z=Hx+v$. I will need it in the unbiased linear MMSE estimator.
+
+The linearized bar consists of two parallel lines defined by
+
+$$
+x \sin(\theta) - y \cos(\theta) = z \pm \sigma_v
+$$
+
+After rearranging, I get $y=x \tan(\theta) - \frac{z \pm \sigma_v}{\cos(\theta)}$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ex3_oeds9.png" style="max-width: 100%; height: auto;">
+</div>
+
+According to the plot, the results do make sense, since the cone and the bar are approximately equal in width near the ship's position (they actually overlap, since the dashed line of the cone is no longer visible), which is where the linearization is valid. Further away from that, the approximation becomes less accurate.
+
+---
+
+**Fourth topic**: Determine the derived measurement $z$, the measurement matrix $H$, and the Kalman Gain matrix. The covariance matrix of the measurement noise is $C_v = \sigma_v^2$. Next, calculate the unbiased linear MMSE estimate of the position and the corresponding (error) covariance matrix.
+
+For the first part, I already had to compute the derived measurement $z$ in the last question, and its value is $z \sim -24.5576$ which makes sense. The minus sign signals that the side on which the shortest perpendicular falls on the line of sight is to the left of the origin. The actual distance would be $z = 24.5576Nm$.
+
+Since $H = [\sin \theta \quad - \cos \theta]$, the actual values of the measurement matrix would be $H=[0.5736, -0.8192]$. It maps the 2D position to the scalar measurement.
+
+The Kalman Gain $K=C_{\mathbf{x}} H^T \begin{pmatrix} HC_{\mathbf{x}}H^T + C_v \end{pmatrix}^{-1}$ (taken from eq. 3.33 from the book) weights how much to trust the measurement versus the prior knowledge. The actual values are $K \approx [0.419, -0.8625]$.
+
+The updated estimate $\mu_{\text{post}} = \hat{\mathbf{x}}_{\text{ulMMSE}}(z) = \mu_{\mathbf{x}} + K(z-H \mu_{\mathbf{x}})$ depends mostly on the **innovation** $z-H \mu_{\mathbf{x}}$. The Kalman Gain transforms the innovation into a **correction term** that represents the knowledge that we have gained from the measurements.
+
+> When you invert a covariance matrix, you get the information matrix. Just a reminder.
+
+The updated covariance $C_e = \begin{pmatrix} C_{\mathbf{x}}^{-1} + H^TC_V^{-1}H \end{pmatrix}^{-1}$ (taken from eq 3.44 from the book) represents the reduced uncertainty after incorporating the measurement. The actual values are $C_e \approx \begin{bmatrix} 10.4122 \quad 5.0316 \\ 5.0316 \quad 8.174 \end{bmatrix}$.
+
+---
+
+**Fifth topic**: Draw the uncertainty region of the estimate. That is, plot the posterior mean and covariance matrix.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ex3_oeds10.png" style="max-width: 100%; height: auto;">
+</div>
+
+Now, based on the updated information, the ship's updated uncertainty region falls within the designated bounds of the line of sight.
+
+---
+
+**Sixth topic**: Repeat questions 2 to 4 a number of times, but with varying values of $\sigma_{\Delta \theta}$ and explain what you see.
+
+The term $\sigma_{\Delta \theta}$ directly influences the width of the linearized bar width and the covariance matrix of the measurement noise. Therefore, if the bearing uncertainty increases, then the update would take the measurement less into consideration, since the Kalman Gain has it in the denominator and the updated covariance matrix computes the error term based on its inverse. 
+
+However, since the uncertainty increases, that also increases the change of the initial guess to fall more and more within the linearized bar width. The updated position $\mu_\text{post}$ is more than likely to fall within the bounds, but the uncertainty also increases. This suggests that the lower the bearing uncertainty, the better and more accurate will the updates be, and a narrower space for uncertainty.
+
+* An interesting observations is that as $\sigma_{\Delta \theta} \rightarrow \infty$, the posterior converges towards the prior. That happens because $K \rightarrow 0$ and $C_{\mathbf{x}\_\text{post}} \rightarrow C_{\mathbf{x}}$, meaning the measurement holds no value and no influence to the update.
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex3_oeds13.png" alt="compass reading" width="350" height="300"> </div> <div> <img src="../static/notes/ex3_oeds14.png" alt="true bearing" width="350" height="300"> </div> </div>
+
+* As $\sigma_{\Delta \theta} \rightarrow 0$, there is no real uncertainty region, because it would mean we would trust the measurement completely and the posterior ellipse collapses onto the line of sight.
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex3_oeds11.png" alt="compass reading" width="350" height="300"> </div> <div> <img src="../static/notes/ex3_oeds12.png" alt="true bearing" width="350" height="300"> </div> </div>
+
+---
+
+**Seventh topic**: Repeat question 2 up to 4 a number of times, but with varying $C_{\mathbf{x}}$ by $\alpha$.
+
+* If $\alpha$ increases, that means a larger prior uncertainty, which leads the Kalman Filter to trust the measurement much more. While the posterior will be placed inside the bar width, the uncertainty region grows bigger, which still translates to possible errors.
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex3_oeds15.png" alt="compass reading" width="350" height="300"> </div> <div> <img src="../static/notes/ex3_oeds16.png" alt="true bearing" width="350" height="300"> </div> </div>
+
+* As $\alpha$ decreases, that translates into trusting the prior more. Therefore, the posterior will incline towards $\mu_{\mathbf{x}}$ and not $\mu_{\text{post}}$.
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex3_oeds17.png" alt="compass reading" width="350" height="300"> </div> <div> <img src="../static/notes/ex3_oeds18.png" alt="true bearing" width="350" height="300"> </div> </div>
+
