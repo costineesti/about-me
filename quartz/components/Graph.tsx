@@ -42,9 +42,9 @@ const defaultOptions: GraphOptions = {
   },
   globalGraph: {
     drag: true,
-    zoom: false,
+    zoom: true,
     depth: -1, // Always show everything in the global graph
-    scale: 0.9,
+    scale: 0.7,
     repelForce: 0.5,
     centerForce: 0.3,
     linkDistance: 30,
