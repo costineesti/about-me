@@ -18,6 +18,7 @@ I will learn about different kinds of laser scanning, point cloud processing (cl
 >* [[laser scanning 5|Point Cloud Segmentation]], [[laser scanning 6|Point Cloud Segmentation with Segment Anything (SAM)]]
 >* [[pointnet|PointNet]]
 >* [[laser scanning 8|Point Cloud Classification]]
+>* [[laser scanning 9|Building Detection and Reconstruction]]
 
 References:
 
