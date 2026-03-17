@@ -81,55 +81,6 @@ The distance $d$ is unknown, but can be estimated from prior knowledge $\mu_{\ma
 
 # The Case
 
-$$
-\text{prior knowledge:} \quad
-
-\mu_x =
-
-\begin{bmatrix}
-
-10\\
-
-20
-
-\end{bmatrix}
-
-\qquad
-
-C_x =
-
-\begin{bmatrix}
-
-25 & -25\\
-
--25 & 70
-
-\end{bmatrix}
-$$
-
-$$
-\text{measurement:} \quad
-
-\mathbf{x}_0 =
-
-\begin{bmatrix}
-
-100\\
-
-100
-
-\end{bmatrix}
-
-\qquad
-
-\theta = 35^\circ
-
-\qquad
-
-\sigma_{\Delta\theta} = 1^\circ
-$$
-
-
 > Physical units are Nautical miles (Nm).
 
 ### Uncertainty regions and principal axes

@@ -58,18 +58,6 @@ For example, if the depth interval is $[x_{min}, x_{max}]$, then $\mu = \frac{1}
 
 # My case
 
-For the current case, the following parameters are given:
-
-* **sensor system** $p(z \mid x)$
-	* $P_0 = 0.95$
-	* $\sigma = 0.1$
-* **prior knowledge** $p(x)$
-	* $x_{min} = 1m$
-	* $x_{max} = 3m$
-	* $\beta = 20$
-
----
-
 **First Question**: If we model $p(x)$ and $p(z \mid x)$ against $z$ for $x = 1.5m$ and $x=2m$, what do these PDFs model?
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">

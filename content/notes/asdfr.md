@@ -12,6 +12,7 @@ I should like this!!!! I hope I will have a nice learning curve regarding my C++
 >[!Summary] Subjects covered so far
 >
 >* [[ROS2 Basics]]
+>* [[asdfr 3|RELBot]]
 
 The book is on outlook.
 
