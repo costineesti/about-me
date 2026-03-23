@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/optimal estimation 8.md",
+                "file": "content/notes/systems engineering 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "optimal estimation 8"
+              "title": "systems engineering 9"
             }
           }
         ]
@@ -206,8 +206,10 @@
   },
   "active": "fd53fa888386bd67",
   "lastOpenFiles": [
-    "content/notes/optimal estimation 6.md",
+    "content/notes/test for asdfr.md",
+    "content/notes/systems engineering 9.md",
     "content/notes/optimal estimation 8.md",
+    "content/notes/optimal estimation 6.md",
     "quartz/static/notes/ex4_oeds6_l10_i90.png",
     "quartz/static/notes/ex4_oeds5_l30_i70.png",
     "quartz/static/notes/ex4_oeds4_l50_i50.png",
@@ -215,7 +217,6 @@
     "quartz/static/notes/ex4_oeds2_l90_i10.png",
     "content/notes/optimal estimation 7.md",
     "quartz/static/notes/ex4_oeds1.png",
-    "content/notes/test for asdfr.md",
     "content/notes/asdfr.md",
     "content/notes/asdfr 3.md",
     "content/notes/genai4.md",
