@@ -13,15 +13,42 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/systems engineering 9.md",
+                "file": "content/notes/optimal estimation 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "systems engineering 9"
+              "title": "optimal estimation 9"
+            }
+          },
+          {
+            "id": "9edbda86317a906f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/optimal estimation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "optimal estimation"
+            }
+          },
+          {
+            "id": "0e1bb8e80738c36e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.7"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -204,34 +231,36 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fd53fa888386bd67",
+  "active": "0e1bb8e80738c36e",
   "lastOpenFiles": [
-    "content/notes/test for asdfr.md",
-    "content/notes/systems engineering 9.md",
+    "content/notes/optimal estimation 7.md",
     "content/notes/optimal estimation 8.md",
     "content/notes/optimal estimation 6.md",
+    "content/notes/optimal estimation 9.md",
+    "content/notes/optimal estimation.md",
+    "quartz/static/notes/ex5_oeds4.png",
+    "quartz/static/notes/ex5_oeds3.png",
+    "quartz/static/notes/ex5_oeds2.png",
+    "quartz/static/notes/ex5_oeds1.png",
+    "content/notes/laser scanning 8.md",
+    "content/notes/systems engineering 9.md",
+    "content/notes/test for asdfr.md",
     "quartz/static/notes/ex4_oeds6_l10_i90.png",
     "quartz/static/notes/ex4_oeds5_l30_i70.png",
     "quartz/static/notes/ex4_oeds4_l50_i50.png",
     "quartz/static/notes/ex4_oeds3_l70_i30.png",
     "quartz/static/notes/ex4_oeds2_l90_i10.png",
-    "content/notes/optimal estimation 7.md",
     "quartz/static/notes/ex4_oeds1.png",
     "content/notes/asdfr.md",
     "content/notes/asdfr 3.md",
     "content/notes/genai4.md",
-    "quartz/static/notes/relbot5.png",
-    "quartz/static/notes/relbot4.png",
-    "quartz/static/notes/relbot3.png",
     "content/notes/genai5.md",
-    "quartz/static/notes/relbot2.png",
     "content/notes/genai3.md",
     "content/notes/laser scanning 6.md",
     "content/notes/optimal estimation 3.md",
     "content/notes/optimal estimation 4.md",
     "content/notes/optimal estimation 5.md",
     "content/notes/PDF.md",
-    "content/notes/laser scanning 8.md",
     "content/notes/laser scanning 9.md",
     "content/notes/laser scanning.md",
     "content/notes/laser scanning 2.md",
@@ -240,8 +269,6 @@
     "content/notes/optimal estimation 2.md",
     "content/notes/pointnet.md",
     "content/notes/asdfr 1.md",
-    "content/notes/asdfr 2.md",
-    "content/notes/principal_component_analysis.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

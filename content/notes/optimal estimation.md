@@ -16,8 +16,10 @@ The accent of the course is on the utilization aspects, not on a mathematically 
 >[!summary] Topics covered so far
 >* [[optimal estimation 1|Introduction to Optimal Estimation and Dynamics]]
 >* [[optimal estimation 2|The Estimation Paradigm (the static case)]]
->* [[optimal estimation 3|Fundamentals of parameter estimation - Part I]], [[optimal estimation 5|Fundamentals of parameter estimation - Part II]]
 >* [[optimal estimation 4|Generalized Normal Distribution]]
+>* [[optimal estimation 3|Fundamentals of parameter estimation - Part I]], [[optimal estimation 5|Fundamentals of parameter estimation - Part II]], [[optimal estimation 6|Fundamentals of parameter estimation - Part III]]
+>* [[optimal estimation 8|Prediction in a linear dynamic system]]
+>* [[optimal estimation 9|Discrete Kalman Filtering for Radar Tracking Applications]]
 >* [[optimal estimation 7|Particle Filter]]
 
 Sadly, we use MATLAB.
