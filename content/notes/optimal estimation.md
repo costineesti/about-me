@@ -20,6 +20,7 @@ The accent of the course is on the utilization aspects, not on a mathematically 
 >* [[optimal estimation 3|Fundamentals of parameter estimation - Part I]], [[optimal estimation 5|Fundamentals of parameter estimation - Part II]], [[optimal estimation 6|Fundamentals of parameter estimation - Part III]]
 >* [[optimal estimation 8|Prediction in a linear dynamic system]]
 >* [[optimal estimation 9|Discrete Kalman Filtering for Radar Tracking Applications]]
+>* [[optimal estimation 10|Extended Kalman Filtering (EKF)]]
 >* [[optimal estimation 7|Particle Filter]]
 
 Sadly, we use MATLAB.
