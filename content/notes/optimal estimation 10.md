@@ -2,7 +2,7 @@
 title: Extended Kalman Filtering (EKF)
 draft: true
 tags:
-date: 2026-03-25
+date: 2026-03-28
 ---
  
 This is exercise 6/8 from my [[optimal estimation]] course.
@@ -201,3 +201,42 @@ As the filter progresses, the ellipses shrink because the EKF is actively integr
 
 See eq (8.53), section 8.4.1.
 
+Apparently it falls under "Consistency Checks". What I want is a guarantee that my design approaches the minimal attainable variance. However, if we have reached the optimal solution, then the actual variances of the estimation errors must coincide with the calculated variances. Such a correspondence between actual and calculated variances is a necessary condition for an optimal filter, but not a sufficient one. **Usually this requires the real estimation errors, which can get costly.**
+
+> Apparently the focus is on the Innovation Matrix (S) and the residuals $\tilde z = z(i) - \hat{z}(i)$
+
+The **NIS (Normalized Innovation Squared)** is a test signal defined as:
+
+$$
+Nis(i) = \tilde{z}^T(i)S^{-1}(i)\tilde{z}(i)
+$$
+
+In the linear-Gaussian case, the NIS has a $\mathcal{X}^2_N$ distribution (**chi-square with N degrees of freedom**). 
+
+>[!note] Logic of the chi-square distribution
+>
+>If both the process noise and the measurement noise are normally distributed, then so is $y(i)$, which is another notation for the **innovation** or **measurement residual** at time step $i$. Hence the inner product is the sum of $M$ squared, independent random variables each normally distributed with **zero mean and unit variance**. Such a sum has a $\mathcal{X}^2_N$ distribution
+
+>[!question] So how does this apply to my application?
+>
+>In this application, each measurement gives 3 specific pieces of information: bearing, speed, heading. This means the chi-square test has exactly 3 DOFs. The expected mean is therefore 3, and approximately 95\% of the values should fall within the 95\% confidence interval bounds. 
+>
+>* Passing this test practically proves that the values we chose for our process noise matrix $C_w$​ and measurement noise matrix $C_n$​ accurately represent the real-world physics and sensor inaccuracies of the yacht
+>* It compares the actual measurement error, the innovation $y(i)$, against the theoretical uncertainty that the filter predicted, the matrix $S(i)$. By multiplying the squared innovation by the inverse of its covariance, I effectively normalize the error. If the filter is perfectly tuned, these normalized values will strictly follow a chi-square distribution.
+
+* If the **NIS falls above the upper boundary**, the **filter is overconfident**, meaning the actual measurement errors are much larger than the predicted covariance $S(i)$
+* If the **NIS falls below the lower boundary**, the **filter is too pessimistic**, expecting a lot of noise while the actual measurements are sitting extremely close to the predictions.
+* The one-sided 95% acceptance boundary would only check for overconfidence, but an optimal filter should pass both tests.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ex6_oeds5.png" style="max-width: 100%; height: auto;">
+</div>
+
+The results from the Figure above are quite insightful. First of all, my actual computed mean of the NIS scores is ~1.5171 instead of the expected 3 (roughly half). Both plots confirm it visually:
+
+* in the top plot, the majority of the NIS scores sit well below the green expected mean line.
+* in the bottom plot, the histogram is heavily shifted to the left compared to the theoretical blue probability density curve.
+
+> **The takeaway would be that the filter is overly pessimistic**. What happens is that the actual measurement errors are systematically smaller than the filter's predicted uncertainty matrix $S$.
+
+Practically, **decreasing the values** in the process noise covariance $C_w$ (i.e. the system dynamics are more predictable than assumed) or in the measurement noise covariance $C_n$ (i.e. trust the sensor more) **would fix the problem**, since the filter is currently expecting a lot of noise, but the actual data is much cleaner and closer to the model's predictions.
