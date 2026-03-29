@@ -21,7 +21,7 @@ The accent of the course is on the utilization aspects, not on a mathematically 
 >* [[optimal estimation 8|Prediction in a linear dynamic system]]
 >* [[optimal estimation 9|Discrete Kalman Filtering for Radar Tracking Applications]]
 >* [[optimal estimation 10|Extended Kalman Filtering (EKF)]]
->* [[optimal estimation 7|Particle Filter]]
+>* [[optimal estimation 7|Particle Filter]], [[optimal estimation 11|Particle Filtering]]
 
 Sadly, we use MATLAB.
 

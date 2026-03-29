@@ -107,7 +107,7 @@ $w_{\phi}(i)$ is the process noise of the heading of the ship. Its variance is $
 The state vector $\mathbf{x}$ is 8-dimensional and contains the position $\xi$, the velocity $\mathbf{v}$, the acceleration $a$, all 2-dimensional and the 1-dimensional thrust $t$ and heading $\phi$. We can write it under the following equation:
 
 $$
-\mathbf{x}(i+1) = f\bigg(\mathbf{x}(i),u(i)\bigg)+w(i) \text{ with } u=\begin{bmatrix} t_0(i) \\ \phi_0(i) \end{bmatrix}
+\mathbf{x}(i+1) = f\big(\mathbf{x}(i),u(i)\big)+w(i) \text{ with } u=\begin{bmatrix} t_0(i) \\ \phi_0(i) \end{bmatrix}
 $$
 
 ### The measurement model
