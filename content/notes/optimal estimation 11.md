@@ -2,7 +2,7 @@
 title: Particle Filtering
 draft: true
 tags:
-date: 2026-03-29
+date: 2026-03-30
 ---
  
 So I need to finish my notes on the [[optimal estimation 7|Particle Filter]]. The process is the exact same as in the [[optimal estimation 10|EKF]] application.
@@ -179,4 +179,30 @@ Since the right plot ($N=5000$) shows smoother ellipses and a more consistent pa
 
 ---
 
-**6. **
+**6. Adjust the EKF code to anticipate the time variant $\phi$ vector. Interpret the results regarding the path + uncertainty regions, as well as the plot of the NIS.**
+
+**Analysis of the path and the uncertainty regions**
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex6_oeds4.png" alt="example 1 from the book" width="350" height="300"> </div> <div> <img src="../static/notes/ex7_oeds10.png" alt="example 2 from the book" width="350" height="300"> </div> </div>
+
+The right plot (time-variant $\phi_0$) shows a much clearer path with sharp turns and clear directional changes. The right path (fixed $\phi_0=45 deg$) shows the yacht drifting mostly in one direction diagonally, which does make sense since a constant heading of $45deg$ simply drives the yacht in that direction indefinitely. 
+
+In terms of uncertainty regions, both cases display large initial uncertainty that shrinks as measurements update the states. However, it seems that the time-variant $\phi_0$ has larger ellipses which makes sense since the yacht is constantly changing direction, so between measurements he kinematic model is less certain about where the yacht might be next. The time span between two updates remains 500 seconds.
+
+**Analysis of the NIS Scores**
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ex6_oeds5.png" alt="example 1 from the book" width="350" height="300"> </div> <div> <img src="../static/notes/ex7_oeds11.png" alt="example 2 from the book" width="350" height="300"> </div> </div>
+
+The time-variant $\phi_0$ gives a mean NIS of 2.9 versus 1.51 for fixed $\phi_0$. The new performances seem nearly perfect, since the mean NIS should be ~3 (DOF) for a consistent filter. In the previous case, the filter was overly pessimistic. This shifts the idea that $C_w, C_n$ were wrong; now they seem to be correctly tuned for the time-variant case.
+
+Therefore, it seems that not the noise covariance matrices were the issue in the fixed $\phi_0$ case, but the model itself. The NIS score is then not just a tool for tuning $C_w, C_n$, but also a **model validation tool**. 
+
+---
+
+**7. Which of the two estimation methods do you prefer? Motivate! Computational load is of secondary importance.**
+
+There are both upsides and downsides to both methods. For example, the EKF started showing good results when we introduced the time-variant $\phi_0$, with the NIS indicating that the filter is approaching its ideal form. Moreover, from a visualization point of view, the EKF is able to compute the covariance matrix at each iteration, not only at measurement times as in the PF. Also, even for a non-linear system like this, the EKF was able to handle those non-linearities with some light assumptions/linearizations in a deterministic manner -- running it twice will give the same result, while the PF introduces randomness through the particle sampling.
+
+For the Particle Filter, the consistency check revealed ideal results, with all the variables being symmetric around $[0,1]$, which signals the correct distribution of measurements. The PF also makes no assumptions about linearity and works directly with the nonlinear model, which reveals a more truthful representation of the results, as close as possible to reality. Therefore, for highly nonlinear systems or different distributions than Gaussian, the PF is expected to perform better.
+
+Having the advantages and disadvantages listed, I would personally choose the EKF for this specific application. It was able to handle the non-linearities through the selected assumptions and the representation with the time-variant $\phi_0$ looked more than decent. Both methods give comparable consistency check scores, and the PF's advantage of handling non-linearity fades since the posterior remains approximately Gaussian throughout (the posterior revealed clean ellipses regarding uncertainty regions, never a 'cloud'). Part of my last arguments holds also because the measurements are informative and frequent enough - every 500 seconds, the posterior gets corrected on three measurement channels.
