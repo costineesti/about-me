@@ -19,6 +19,7 @@ I will learn about different kinds of laser scanning, point cloud processing (cl
 >* [[pointnet|PointNet]]
 >* [[laser scanning 8|Point Cloud Classification]]
 >* [[laser scanning 9|Building Detection and Reconstruction]]
+>* [[laser scanning 10|Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving]]
 
 References:
 
