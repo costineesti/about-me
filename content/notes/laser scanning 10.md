@@ -24,7 +24,7 @@ Autonomous Vehicles can already perform point-cloud **pre-processing** and neura
 2. they made the implementation "`hardware-friendly`" by r**eplacing deconvolution with bi-linear interpolation** (look into it)
 
 <div class="encoder-section">
-  <img src="../static/notes/lidar_paper.png" style="width: 200px; height: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/lidar_paper.png" style="width: 200px; height: 150px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>Moving objects are represented by red masks.</li>
@@ -162,7 +162,7 @@ The reason they give is intuitive: CRF works in 2D image space, but the problem 
 **Run-Time Evaluation on GPU**
 
 <div class="encoder-section">
-  <img src="../static/notes/lidar_paper.png" style="width: 200px; height: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/IoU_inf.png" style="width: 200px; height: 150px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li><b>Table 5</b> simply shows that they're faster, ~3x smaller, at the cost of ~11\% IoU.</li>
@@ -184,7 +184,7 @@ The system is split in two parts.
 Somehow, it ties it all together. It supports their design choices like the bilinear interpolation and it suggests the network was designed while keeping the hardware in mind.
 
 <div class="encoder-section">
-  <img src="../static/notes/lidar_paper.png" style="width: 200px; height: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/hardware_arch_ls10.png" style="width: 200px; height: 150px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>The LiDAR is connected directly via Ethernet (UDP Protocol)</li>

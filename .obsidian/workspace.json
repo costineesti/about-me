@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/optimal estimation 11.md",
+                "file": "content/notes/laser scanning 10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "optimal estimation 11"
+              "title": "laser scanning 10"
             }
           }
         ]
@@ -206,10 +206,11 @@
   },
   "active": "ce3d398307c69d27",
   "lastOpenFiles": [
+    "quartz/static/notes/hardware_arch_ls10.png",
+    "content/notes/optimal estimation 11.md",
     "content/notes/optimal estimation 10.md",
     "content/notes/laser scanning 10.md",
     "quartz/static/notes/IoU_inf.png",
-    "content/notes/optimal estimation 11.md",
     "quartz/static/notes/lmnet_2.png",
     "quartz/static/notes/lmnet_1.png",
     "quartz/static/notes/network_architecture_ls10.png",
