@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Requirements Engineering Framework</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Requirements Engineering Framework"/><meta property="og:description" content="This is from Chapter 2 of the ASE book mentioned in Systems Engineering. Concepts, Needs and Requirements When describing a system, we make the distinction between concepts, needs and requirements."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="This is from Chapter 2 of the ASE book mentioned in Systems Engineering. Concepts, Needs and Requirements When describing a system, we make the distinction between concepts, needs and requirements."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/Systems-Engineering-3"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Requirements Engineering Framework</a></div></nav><h1 class="article-title">Requirements Engineering Framework</h1><p show-comma="true" class="content-meta"><span>Nov 18, 2025</span><span>6 min read</span></p></div></div><article class="popover-hint"><p>This is from Chapter 2 of the ASE book mentioned in <a href="../notes/Systems-Engineering" class="internal alias" data-slug="notes/Systems-Engineering">Systems Engineering</a>.</p>
+<h1 id="concepts-needs-and-requirements">Concepts, Needs and Requirements<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#concepts-needs-and-requirements" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>When describing a system, we make the distinction between <em>concepts, needs</em> and <em>requirements</em>.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Concepts </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>are typically narrative descriptions of ways in which the organization and its entities expect to manage, acquire, develop, deploy, operate, support, and retire the capability offered by the system. They are written or graphic representations that concisely express how an entity will satisfy the problem it was defined to address. Life-cycle concepts include operations concepts, acquisition concepts, deployment concepts, support and retirement concepts.</p>
+</div>
+</blockquote>
+<ul>
+<li>The Acquisition Concept describes the way the system will be acquired including aspects such as stakeholder engagement, requirements definition, solicitation and contracting issues, design, production, and verification</li>
+<li>The Deployment Concept describes the way the system will be validated, delivered, and introduced into operations</li>
+<li>The Support Concept describes the desired support infrastructure and manpower considerations for supporting the system after it is deployed.</li>
+<li>The Retirement Concept describes the way the system will be removed from operation and retired.</li>
+</ul>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Needs </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>are formal representations of expectations for an entity stated in the language and perspective of stakeholders. They are a formal transformation of one or more concepts into an agreed-to expectation for an entity to perform some function or posses some quality. Generally stated as business needs in the language of business management.</p>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Requirements </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Needs are transformed into requirements, which are formal representations that communicate what an entity must do to realize the intent of the needs. They are formal statements that are structured and can be validated.</p>
+</div>
+</blockquote>
+<p>Needs and requirements exist at a number of levels corresponding to four major views:</p>
+<ul>
+<li><strong>Enterprise view</strong>: the enterprise leadership set the strategies and concepts of operations</li>
+<li><strong>Strategic view</strong>: business management derive business concepts and needs as well as formalize their requirements</li>
+<li><strong>Operational view</strong>: stakeholders define their concepts, needs and requirements</li>
+<li><strong>Systems view</strong>: system designers define the system in logical and physical terms</li>
+</ul>
+<p>The majority of these views are in the <strong>problem domain</strong> while only the <em>systems view</em> lies in the <strong>solution domain</strong>.</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Problem Domain VS Solution Domain </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li><strong>The problem domain</strong> is the responsibility of those who have ownership of the problem to be solved. The descriptions are called <em>logical</em> (or often <em>functional</em>).</li>
+<li><strong>The solution domain</strong> is the responsibility of the developer implementing the solution, most commonly a contractor so the descriptions are mostly in engineering and physical terms, focusing on how the problem is to be solved.</li>
+</ul>
+</div>
+</blockquote>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/views.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>At the highest level, there is an enterprise view in which leadership sets business vision, strategic goals and objectives in the form of a <em>Concept of Operations</em> (<em>ConOps</em>), which is also called a <em>Strategic Business Plan (SBP)</em>.</p>
+<p>The transformation of needs into requirements occurs at each level.</p>
+<ul>
+<li><em>Business Needs and Requirements (BNR)</em> - business management, based on ConOps, define Business Needs, largely in the form of Preliminary Life-cycle Concept Documents (PLCD) which capture the Preliminary Acquisition, Preliminary Operational Concept (OpsCon), …</li>
+<li><em>Stakeholder Needs and Requirements (SNR)</em> - using the ConOps, Preliminary OpsCon and the other PLCD as guidance, stakeholders develop Stakeholder Needs in the form of a refined OpsCon document and other Life-cycle Concept Documents (LCD) and transform them into a formal set of Stakeholder Requirements, which are documented in the StRS.</li>
+<li><em>System Requirements Definition Process</em> - the requirements in the StRS are then transformed by requirements engineers into <em>System Requirements</em>, which are contained in the SyRS.</li>
+</ul>
+<blockquote class="callout quote" data-callout="quote">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>The ConOps, at the organization level, addresses the leadership's intended way of operating the organization. It may refer to the use of one or more systems, as black boxes, to forward organization's goals and objectives. </p></div>
+                  
+                </div>
+</blockquote>
+<blockquote class="callout quote" data-callout="quote">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>A system OpsCon document describes what the system will do (not how it will do it) and why (rationale). It is used to communicate overall quantitative and qualitative system characteristics to the acquirer, user, supplier and other organizational elements. Therefore it contains the Stakeholder Needs. </p></div>
+                  
+                </div>
+</blockquote>
+<h3 id="what-is-a-requirement">What is a Requirement?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-is-a-requirement" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>something that the system must do,</li>
+<li>a quality or attribute that it must posses, or</li>
+<li>a constraint under which it must operate or be developed.</li>
+</ul>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Functional Requirements </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>the services and functions that the system should provide, the things it should do, or some action it should take.</p>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Non-Functional Requirements </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>the qualities, interfaces, constraints, properties, or attributes(size, weight power) that the system must posses.</p>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Constraints </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>any restrictions or bounds under which the system should operate, or on the way in which the system is to be developed.</p>
+</div>
+</blockquote>
+<p>Requirements are often stated in terms of their importance (priority - high, medium, low) to individual stakeholders.</p>
+<blockquote class="callout danger" data-callout="danger">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Requirements should be statements of <em>what</em> a system should no, rather than <em>how</em> it should do it.</p></div>
+                  
+                </div>
+</blockquote>
+<h1 id="what-is-requirements-engineering">What is Requirements Engineering?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-is-requirements-engineering" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Requirements Engineering is the process by which we identify a problem’s context, locate the business and stakeholder needs and requirements within that context, and deliver specifications that meet those needs.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/reqeng.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Unless the requirement set is well defined, the project has no firm base and the resources allocated to it will be inappropriate. Worse still, without sufficient oversight, the business may be held to ransom by stakeholders insisting on unrealistic requirements that business management have not approved.</p>
+<h1 id="requirements-elicitation-and-elaboration">Requirements Elicitation and Elaboration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#requirements-elicitation-and-elaboration" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Requirements should be hierarchical (priority) and easy to trace (where each requirement came from). If a requirement must change for some reason, good traceability allows us to identify all requirements affected by the change.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/hier_trace.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><em>Elicited requirements</em> can be attributed to the source and are normally gathered via interview or a structured workshop.</p>
+<p><em>Elaborated requirements</em> are used to move between levels in the hierarchy (also known as <em>requirements flowdown</em>). They are of two types:</p>
+<ul>
+<li><em>Decomposed requirements</em> - breaking a higher-level requirement into those lower-level requirements. In decomposition, the need for the children requirements is obvious in the parent.</li>
+<li><em>Derivation requirements</em> - derivation entails requirements engineers drawing some inference from the higher-level requirements to obtain lower-level statements.</li>
+</ul>
+<h1 id="smart">SMART<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#smart" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Requirements must be:</p>
+<ol>
+<li><strong>S</strong>pecific</li>
+<li><strong>M</strong>easurable</li>
+<li><strong>A</strong>chievable</li>
+<li><strong>R</strong>elevant / Reasonable / Realistic</li>
+<li><strong>T</strong>ime-bound / Traceable / Testable</li>
+</ol>
+<p>Other than that, they must be concise, clear and correct.</p>
+<h3 id="ears-easy-approach-to-requirement-syntax-for-clarity">EARS (Easy Approach to Requirement Syntax) for clarity<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ears-easy-approach-to-requirement-syntax-for-clarity" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/ears.png" style="max-width:100%;height:auto;"/>
+</div>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Good VS Bad Example </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>The oven should be quick to reach operating temperature.</li>
+<li>The motion stage must have a range of 5 cm in x direction and 10 cm in y direction.</li>
+</ul>
+</div>
+</blockquote>
+<h1 id="requirements-breakdown-structure-rbs">Requirements Breakdown Structure (RBS)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#requirements-breakdown-structure-rbs" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>It is a Requirements Framework around which the logical description of the system can be based.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/RBS.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>It shows the hierarchical elaboration of requirements for the mission statement.</p>
+<p>The RBS can be used to capture the business requirements in the BRS, which can be further refined to reflect stakeholders requirements in the StRS, and then the system requirement in the SyRS.</p>
+<h1 id="functional-flow-block-diagrams-ffbd">Functional Flow Block Diagrams (FFBD)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#functional-flow-block-diagrams-ffbd" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>FFBDs are useful in showing the interrelationship of the functions to be performed by the system. Some functions must be performed sequentially; some may be performed in parallel and these type of things can easily be shown with FFBDs.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/FFBDs.png" style="max-width:100%;height:auto;"/>
+</div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#concepts-needs-and-requirements" data-for="concepts-needs-and-requirements">Concepts, Needs and Requirements</a></li><li class="depth-2"><a href="#what-is-a-requirement" data-for="what-is-a-requirement">What is a Requirement?</a></li><li class="depth-0"><a href="#what-is-requirements-engineering" data-for="what-is-requirements-engineering">What is Requirements Engineering?</a></li><li class="depth-0"><a href="#requirements-elicitation-and-elaboration" data-for="requirements-elicitation-and-elaboration">Requirements Elicitation and Elaboration</a></li><li class="depth-0"><a href="#smart" data-for="smart">SMART</a></li><li class="depth-2"><a href="#ears-easy-approach-to-requirement-syntax-for-clarity" data-for="ears-easy-approach-to-requirement-syntax-for-clarity">EARS (Easy Approach to Requirement Syntax) for clarity</a></li><li class="depth-0"><a href="#requirements-breakdown-structure-rbs" data-for="requirements-breakdown-structure-rbs">Requirements Breakdown Structure (RBS)</a></li><li class="depth-0"><a href="#functional-flow-block-diagrams-ffbd" data-for="functional-flow-block-diagrams-ffbd">Functional Flow Block Diagrams (FFBD)</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/Systems-Engineering" class="internal">Systems Engineering</a></li><li><a href="../notes/systems-engineering-2" class="internal">Conceptual Design</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

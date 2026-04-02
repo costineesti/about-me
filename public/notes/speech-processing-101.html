@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Speech Processing 101</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Speech Processing 101"/><meta property="og:description" content="Speech Processing 101 baby Lecture 1: Understanding Speech Physical factors: vocal cord size length of vocal tract nasal voice (lack of airflow) tongue thickness, palatal lisp ..."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Speech Processing 101 baby Lecture 1: Understanding Speech Physical factors: vocal cord size length of vocal tract nasal voice (lack of airflow) tongue thickness, palatal lisp ..."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/speech-processing-101"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Speech Processing 101</a></div></nav><h1 class="article-title">Speech Processing 101</h1><p show-comma="true" class="content-meta"><span>Jan 30, 2026</span><span>15 min read</span></p></div></div><article class="popover-hint"><p>Speech Processing 101 baby</p>
+<h1 id="lecture-1-understanding-speech">Lecture 1: Understanding Speech<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-1-understanding-speech" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Physical factors:</p>
+<ul>
+<li>vocal cord size</li>
+<li>length of vocal tract</li>
+<li>nasal voice (lack of airflow)</li>
+<li>tongue thickness, palatal lisp (/th/)</li>
+</ul>
+<p>Consonants — place of articulation where airflow is most constricted</p>
+<ul>
+<li>Labial (lips) — /b/, /m/</li>
+<li>Coronal (tip of tongue) — /s/, /z/, /t/</li>
+<li>Dorsal (back of tongue) — /k/, /g/, /n/</li>
+</ul>
+<p>Fricatives = hissing sound /f/, /v/, /s/, /z/</p>
+<p>Affricative = stop immediately followed by a fricative /ch/</p>
+<p>Stop = first - close, then explode /b/, /m/</p>
+<p>Vowel depend on</p>
+<ol>
+<li>height</li>
+<li>backness</li>
+<li>rounded lips /uw/, /ao/, /ow/</li>
+</ol>
+<p><strong>Consonants</strong> are defined in terms of their <strong>place and manner</strong> of articulation and voicing; <strong>vowels by their height, backness, and roundness</strong>.</p>
+<p>IPA = universal system using unique symbols to represent sounds from every human language</p>
+<p>ARPAbet = American English with keyboard letters</p>
+<p>Sources for variation:</p>
+<ul>
+<li>within speakers: ambient conditions, health, state of mind, speech style</li>
+<li>among speakers: physical condition, accent</li>
+</ul>
+<p>Co-articulation = The movement of articulators to anticipate the next sounds, or fixate on movement from the last sound</p>
+<p>Reduction = Sounds are shortened, reduced and generally run together</p>
+<ul>
+<li>She is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> she’s</li>
+<li>Want to / going to <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> wanna, gonna</li>
+</ul>
+<p>Assimilation &amp; Deletion = Sounds are deleted due to context</p>
+<ul>
+<li>must be (‘t’ deletion)</li>
+<li>Sounds adapt to its neighbor
+<ul>
+<li>Green boat <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> ‘n’ becomes ‘m’</li>
+<li>Don’t you <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> ‘y’ becomes ‘zh’</li>
+</ul>
+</li>
+</ul>
+<p><strong>Levels of Abstraction</strong>:</p>
+<p>Phonetic = aspect of pronunciation including variability due to context</p>
+<p>Phonemic = context effects are factored <code>out</code></p>
+<p>Phonological = general representation</p>
+<p><strong>Phonology</strong> = Linguistic subsystem that transforms a phonemic sequence according to rules and produces the phonetic form that is uttered by the user.</p>
+<p>Rule-based:</p>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.5em;vertical-align:-2em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35em;"><span style="top:-4.35em;"><span class="pstrut" style="height:6.2em;"></span><span style="width:0.667em;height:4.200em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.200em" viewBox="0 0 667 4200"><path d="M403 1759 V84 H666 V0 H319 V1759 v600 v1759 h347 v-84
+H403z M403 1759 V0 H319 V1759 v600 v1759 h84z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.85em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.5em;"><span class="pstrut" style="height:4.5em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.5em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-3em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-1.5em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord text"><span class="mord">+stop</span></span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord text"><span class="mord">+consonant</span></span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord text"><span class="mord">+alveolar</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span></span><span class="tag"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5em;"><span style="top:-4.5em;"><span class="pstrut" style="height:2.84em;"></span><span class="eqn-num"></span></span><span style="top:-3em;"><span class="pstrut" style="height:2.84em;"></span><span class="eqn-num"></span></span><span style="top:-1.5em;"><span class="pstrut" style="height:2.84em;"></span><span class="eqn-num"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.35em;"><span style="top:-4.35em;"><span class="pstrut" style="height:6.2em;"></span><span style="width:0.667em;height:4.200em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.200em" viewBox="0 0 667 4200"><path d="M347 1759 V0 H0 V84 H263 V1759 v600 v1759 H0 v84 H347z
+M347 1759 V0 H263 V1759 v600 v1759 h84z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.85em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">+</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">+</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">resse</span><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">+</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">resse</span><span class="mord mathnormal">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span>
+<p>Minimal Pairs = words that differ in only one phonological feature.</p>
+<ul>
+<li>cat - bat</li>
+<li>maid [m e i d] - made [m e i d] are not minimal!</li>
+</ul>
+<p>Phones = speech sounds adopted from Roman alphabet to represent the pronunciation of words: SPEECH <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> S P YI CH</p>
+<p>Phonemes = smallest unit of sound: cat <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> /k/ /a/ /t/</p>
+<p>A distinctive feature creates minimal pairs when changed.</p>
+<h2 id="place-of-articulation-where-the-air-is-blocked">Place of Articulation (where the air is blocked)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#place-of-articulation-where-the-air-is-blocked" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Term</strong></th><th><strong>Meaning</strong></th><th><strong>Examples</strong></th></tr></thead><tbody><tr><td><strong>Bilabial</strong></td><td>Both <strong>lips</strong> touch.</td><td><strong>/p/, /b/, /m/, /w/</strong></td></tr><tr><td><strong>Labiodental</strong></td><td>Top <strong>teeth</strong> on bottom <strong>lip</strong>.</td><td><strong>/f/, /v/</strong></td></tr><tr><td><strong>Dental</strong></td><td><strong>Tongue</strong> tip against <strong>teeth</strong>.</td><td><strong>/θ/</strong> (th in <em>thin</em>), <strong>/ð/</strong> (th in <em>this</em>)</td></tr><tr><td><strong>Alveolar</strong></td><td><strong>Tongue</strong> tip touches the <strong>ridge</strong> behind teeth.</td><td><strong>/t/, /d/, /s/, /z/, /n/, /l/</strong></td></tr><tr><td><strong>Palatal</strong></td><td><strong>Tongue</strong> body touches the <strong>hard roof</strong> (middle).</td><td><strong>/j/</strong> (<em>y</em> in <em>yes</em>), <strong>/ʃ/</strong> (<em>sh</em>)</td></tr><tr><td><strong>Velar</strong></td><td><strong>Back of tongue</strong> touches the <strong>soft palate</strong> (back).</td><td><strong>/k/, /g/</strong>, <strong>/ŋ/</strong> (<em>ng</em> in <em>sing</em>)</td></tr><tr><td><strong>Glottal</strong></td><td>In the <strong>throat</strong> (vocal cords).</td><td><strong>/h/</strong></td></tr><tr><td><strong>Coronal</strong></td><td>Any sound using the <strong>tongue tip/blade</strong> (covers Dental &amp; Alveolar).</td><td><strong>/t/, /d/, /n/, /s/</strong></td></tr></tbody></table></div>
+<h2 id="manner-of-articulation-how-the-air-is-blocked">Manner of Articulation (How the air is blocked)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#manner-of-articulation-how-the-air-is-blocked" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Term</strong></th><th><strong>Meaning</strong></th><th><strong>Examples</strong></th></tr></thead><tbody><tr><td><strong>Stop</strong></td><td>Air is <strong>stopped completely</strong>, then bursts out.</td><td><strong>/p/, /b/, /t/, /d/, /k/, /g/</strong></td></tr><tr><td><strong>Fricative</strong></td><td>Air is <strong>squeezed</strong> through a small gap (hissing noise).</td><td><strong>/f/, /v/, /s/, /z/, /h/</strong></td></tr><tr><td><strong>Nasal</strong></td><td>Air flows through the <strong>nose</strong> (mouth is blocked).</td><td><strong>/m/, /n/, /ŋ/</strong> (<em>ng</em>)</td></tr><tr><td><strong>Approximant</strong></td><td>Air flows <strong>smoothly</strong> (like a vowel, no hiss).</td><td><strong>/w/, /r/, /j/</strong> (<em>y</em>)</td></tr><tr><td><strong>Lateral</strong></td><td>Air flows around the <strong>sides</strong> of the tongue.</td><td><strong>/l/</strong></td></tr></tbody></table></div>
+<h1 id="lecture-2-speech-in-digital-realm">Lecture 2: Speech in Digital Realm<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-2-speech-in-digital-realm" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Vocal folds vibrate at multiple different frequencies. The <strong>Fundamental Frequency F0</strong> is the strongest and slowest vibration. The fundamental frequency is often called <strong>pitch</strong>. The frequency of the vocal fold vibration, or the frequency of the complex wave, is called the fundamental frequency of the wave-form, often abbreviated F0.</p>
+<p>Harmonics make a sound richer and are referred to as ”overtones”.</p>
+<p>Harmonics are repetitions of the ’base’ in a pattern</p>
+<ul>
+<li>2nd harmonic: twice as fast as F0</li>
+<li>3rd harmonic: three times as fast as F0</li>
+<li>etc</li>
+</ul>
+<p>The higher the harmonic the softer the vibration/volume. With only the vocal folds, higher harmonics would barely be heard. We have a resonator to boost harmonics: the <strong>vocal tract</strong>.</p>
+<p>The vocal tract can be interpreted as tubes of air. Sound waves vibrate in these tubes and, depending on the <strong>shape</strong> of the tubes, some harmonics <strong>get boosted</strong>, they <strong>resonate</strong>.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/tract.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Variables that influence the vibrations (pitch):</p>
+<ul>
+<li>size</li>
+<li>shape</li>
+<li>density of the walls</li>
+<li>size of opening</li>
+</ul>
+<p>The <strong>harmonics</strong> that are <strong>boosted</strong> are called <strong>formants</strong>.</p>
+<ul>
+<li>F1: vibrations in the tube <strong>behind the tongue</strong></li>
+<li>F2: vibrations in the tube <strong>above and in front of the tongue</strong></li>
+</ul>
+<p><span class="text-highlight">As a rule of thumb, the higher the harmonic, the higher the frequency</span></p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/harmonics.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Analogue to digital: through sampling.</p>
+<p>This <strong>analog-to-digital</strong> conversion has two steps: <strong>sampling</strong> and <strong>quantization</strong>. To sample a signal, we <strong>measure its amplitude</strong> at a particular time; the sampling rate is the number of samples taken per second. To accurately measure a wave, we must have <strong>at least two samples</strong> in each cycle: <strong>one measuring the positive</strong> part of the wave and <strong>one measuring the negative</strong> part.</p>
+<p>Thus, the maximum frequency wave that can be measured is one whose frequency is half the sample rate (since every cycle needs two samples). This maximum frequency for a given sampling rate is called the Nyquist frequency.</p>
+<p>Most information in human speech is in frequencies below 10kHz; thus, a 20kHz sampling rate would be necessary for complete accuracy. Typically, 16kHz is used.</p>
+<p>Human hearing is most sensitive up to 20kHz: CD quality sample frequency (44.1kHz) is sufficient, going higher doesn’t add much for humans.</p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Why is interpreting phones from a waveform  problematic? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Because we can express the same thing in different ways (shouting, calmly, etc.)</p>
+</div>
+</blockquote>
+<p><strong>Spectrum</strong> (plural: spectra) =  time-domain to frequency domain. The spectrum of a signal is a representation of each of its frequency components and their amplitudes. The X-Axis is frequency, and Y-axis is amplitude (dB/volume).</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/spectrum.png" style="max-width:100%;height:auto;"/>
+</div>
+<ul>
+<li>the one on the left is a <strong>waveform</strong>: represents <strong>sound in</strong> <strong>time domain</strong></li>
+<li>the one on the right is a <strong>spectrum</strong>: the sound in the <strong>frequency domain</strong> at a single point in time</li>
+</ul>
+<p><strong>Spectogram</strong> = plotting the frequency domain in the time-domain. While a <strong>spectrum</strong> shows the frequency components of a wave <strong>at one point in time</strong>, a <strong>spectrogram</strong> is a way of envisioning how the different frequencies that make up a waveform <strong>change over time</strong>.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/spectogram.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>The dark bands represent the formants. The lowest one is F0.</p>
+<p><strong>Mel Frequency Spectrum (MFC)</strong></p>
+<p>Human hearing is not equally sensitive at all frequency bands; it is less sensitive at higher frequencies. This bias toward low frequencies helps human recognition, since information in low frequencies (like formants) is crucial for distinguishing vowels or nasals, while information in high frequencies (like stop bursts or fricative noise) is less crucial for successful recognition.</p>
+<p>A <strong>mel</strong> is a unit of pitch. Pairs of sounds that are perceptually equidistant in pitch are separated by an equal number of mels. Uniformly before 1kHz, logarithmic after 1 kHz.</p>
+<p>Mel scale is about sensitivity on frequency level. Loudness (dB) is perceptual correlate of power (intensity). It’s not linear, though. Humans have greater resolution in the low-power.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/cepstrumceva.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>The magnitude spectrum (a), log magnitude spectrum (b), and cepstrum (c).</p>
+<p>One way to think about the <strong>cepstrum</strong> is as a useful way of separating the source and filter. The <strong>most useful information</strong> for phone detection is the <strong>filter</strong>, that is, <strong>the exact position of the vocal tract</strong>. If we knew the shape of the vocal tract, we would know which phone was being produced.</p>
+<p>The cepstrum can be thought of as the spectrum of the log of the spectrum. Or as the Inverse Fourier Transform (IFT) of the Log Spectrum.</p>
+<blockquote class="callout quote" data-callout="quote">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>The speech waveform is created when a glottal source waveform of a particular fundamental frequency is passed through the vocal tract, which because of its shape has a particular filtering characteristic. But many characteristics of the glottal source (its fundamental frequency, the details of the glottal pulse, etc.) are not important for distinguishing different phones. Instead, the most useful information for phone detection is the filter, that is, the exact position of the vocal tract. If we knew the shape of the vocal tract, we would know which phone was being produced. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Low dimensional region (in cepstrum) correspond to the vocal tract features</p>
+</div>
+</blockquote>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/source_filter.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>In Graph (a), the <strong>source</strong> is represented by the jagged vertical lines (harmonics) which are caused by vocal fold vibration. The <strong>filter</strong> is the smooth dashed line (spectral envelope) that shows how your mouth and throat shape the sound.</p>
+<p>In Graph (b), the <strong>source</strong> is that single sharp peak on the right side of the graph. The <strong>filter</strong> is the cluster of activity on the far left.</p>
+<p><strong>From Waveform to MFCC</strong></p>
+<ul>
+<li>Raw signal <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1113em;vertical-align:-0.011em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1003em;"><span style="top:-3.322em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">DFT</span></span></span></span></span><span class="svg-align" style="top:-2.689em;"><span class="pstrut" style="height:2.7em;"></span><span class="hide-tail" style="height:0.522em;min-width:1.469em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.011em;"><span></span></span></span></span></span></span></span></span> Power Spectrum <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1191em;vertical-align:-0.011em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1081em;"><span style="top:-3.322em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">log</span></span></span></span></span><span class="svg-align" style="top:-2.689em;"><span class="pstrut" style="height:2.7em;"></span><span class="hide-tail" style="height:0.522em;min-width:1.469em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.011em;"><span></span></span></span></span></span></span></span></span> Log Power Spectrum <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1113em;vertical-align:-0.011em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1003em;"><span style="top:-3.322em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">IDFT</span></span></span></span></span><span class="svg-align" style="top:-2.689em;"><span class="pstrut" style="height:2.7em;"></span><span class="hide-tail" style="height:0.522em;min-width:1.469em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.522em" viewBox="0 0 400000 522" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.011em;"><span></span></span></span></span></span></span></span></span> Cepstrum</li>
+</ul>
+<p><strong>MFCCs</strong> are the standard “features” used in voice recognition. You start with a <strong>Power Spectrum</strong>. You then apply a <strong>log</strong> operation to it. This is done because human hearing is logarithmic—we are much more sensitive to changes in lower volumes and frequencies than higher ones.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/MFCC.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>From Gemini:</p>
+<ul>
+<li><strong>The Filter:</strong> The broad, “slow” moving shape of the spectrum (the vocal tract info) gets pushed to the <strong>far left</strong> of the Cepstrum.</li>
+<li><strong>The Source:</strong> The fast, periodic ripples (the harmonics from your vocal folds) get condensed into that <strong>single sharp peak</strong> on the right, labeled as the <strong>1st rhamonic</strong> (or pitch peak).</li>
+</ul>
+<p>Another way to get information about voice quality: Inverse-filtering</p>
+<h1 id="lecture-3-paralinguistics">Lecture 3: Paralinguistics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-3-paralinguistics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>paralinguistic functions: conveying affective meanings like happiness, surprise, or anger.</p>
+<p>recent challenges: emotion share &amp; requests</p>
+<p>The relationship between vocal variables and their marking functions.</p>
+<p>Physical markers are permanent:</p>
+<ul>
+<li>Age, sex, physique, state of health</li>
+</ul>
+<p>Sociological markers vary:</p>
+<ul>
+<li>Personality, affective state, social status, social role, educational status</li>
+</ul>
+<p><strong>Extralinguistics</strong> — informative rather than communicative (informative)</p>
+<p><strong>Pragmatics</strong>: Sarcasm</p>
+<p><strong>Prosody</strong> is an umbrella term for:</p>
+<ul>
+<li>F0 (fundamental frequency, pitch) - related information</li>
+<li>Intensity (loudness) - related information</li>
+<li>Rhythm / durational - related information (e.g. speaking rate)</li>
+<li>Voice quality</li>
+</ul>
+<h3 id="f0">F0<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#f0" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>High <strong>pitch</strong>(F0) denotes small meanings such as <code>submissive, friendly, uncertain, vulnerable</code>.</p>
+<p>Low pitch (F0) denotes big meanings such as <code>dominant, aggressive, certain, protective</code>.</p>
+<p>Subglottal air pressure will be higher at the beginning of the phrase than towards the end (this is how speaking and the respiratory system works).</p>
+<p>In utterance beginnings:</p>
+<ul>
+<li>high pitch signals new topic, low pitch continuation of topic</li>
+</ul>
+<p>In utterance ending:</p>
+<ul>
+<li>high pitch signals continuation, low pitch signals finality.</li>
+</ul>
+<p><strong>Prominence</strong>: Stands out. Signals new information. We represent prominence via a linguistic marker called pitch accent. Words or syllables that are prominent are said to bear (be associated with) a pitch accent.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/prominence.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>F0 can also signal end of phrasing (F0 declination). It can also signal a question.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/f0_prominence.png" style="max-width:100%;height:auto;"/>
+</div>
+<h3 id="intensityloudness">Intensity/Loudness<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#intensityloudness" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Intensity is measured on a logarithmic scale normalized to human auditory threshold, expressed in dB. Intensity is bit of a complicated measure to interpret as it partly depends on the distance between source (mouth) and microphone.</p>
+<p><strong>Articulation Rate / Speaking Rate</strong>: usually measured as number of syllables per second.</p>
+<h3 id="spectral-related">Spectral-Related<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spectral-related" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Formants MFCC work well for paralinguistics tasks such as emotion recognition. F1 and F2 differ between emotions.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/spectral.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Long-term averaged spectra (LTAS) contain information related to voice quality.</p>
+<p>Jitter and Shimmer: variations in signal frequency and amplitude respectively, caused by irregular vocal fold vibration. Perceived as roughness, breathiness, hoarsness. <strong>Best measured in sustained vowels</strong></p>
+<p><strong>Jitter</strong>: frequency variation from cycle to cycle, indicates lack of control of vibration of the cords.</p>
+<p><strong>Shimmer</strong>: amplitude variation of the sound wave, usually indicates breathiness.</p>
+<p>Low-level descriptors such as F0, intensity, MFCCs can be derived by applying speaker normalization (Z-scores).</p>
+<p><strong>Typical Pipeline</strong></p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/typical_pipeline.png" style="max-width:100%;height:auto;"/>
+</div>
+<h1 id="lecture-4-automatic-speech-processing">Lecture 4: Automatic Speech Processing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-4-automatic-speech-processing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>The Noisy Channel Model</strong></p>
+<ul>
+<li>What is the most likely sentence out of all sentences in the language L given some acoustic input O?</li>
+<li>Treat acoustic input O (features) as sequence of individual observations <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span></span></span></span></li>
+<li>Define a sentence as a sequence of words <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span></span></span></span></li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/noisy_channel.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Since the observation <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span></span></span></span> is fixed (it’s what the computer just heard), P(O) stays the same no matter which word W you test against it.</p>
+<h2 id="speech-recognition-architecture">Speech Recognition Architecture<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#speech-recognition-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/speech_arch.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><strong>Feature Extraction Techniques</strong></p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Linear Predictive Coding (LPC) </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Formant estimation, static. Disadvantage: Assumption that signals are stationary</p>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Perceptual Linear Prediction (PLP) </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Describes the psychophysics of human hearing more accurately (bark-spaced filter bank)</p>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Mel Frequency Cepstrum (MFCC) </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Mimics human auditory system. Disadvantage: background noise</p>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Relative Spectral (RASTA) filtering </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Relative Spectral (RASTA) filtering</p>
+</div>
+</blockquote>
+<p>As mentioned earlier, MFCC is the most widely used.</p>
+<p><strong>Acoustic Modeling</strong></p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Paradigm </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>Choose a model type</li>
+<li>Train with example data</li>
+<li>Use model to compute probabilities <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</div>
+</blockquote>
+<p>Acoustic model defines the probability distributions: the likelihood that a given value falls within the region that identifies a particular phone. Each phone is modeled using a Probability Density Function (PDF).</p>
+<p><strong>Vocabulary and Lexicon</strong></p>
+<ul>
+<li>Vocabulary: all unigrams in the language model</li>
+<li>Lexicon connects the LM with AM.</li>
+<li>Include pronunciation variation: include multiple pronunciations, optionally with probs (based on training data)</li>
+</ul>
+<p>WER is used to evaluate ASR. I covered ASR in <a href="../notes/speech-processing-1" class="internal alias" data-slug="notes/speech-processing-1">What automatic speech recognition can and cannot do for conversational speech transcription</a>.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Spoken Document Retrieval </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Using automatic speech recognition to convert speech in audio and video to time-coded transcripts that can be used for searching in the audiovisual data.</p>
+<p>aka speach retrieval, voice search</p>
+<p>To perform SDR, we require</p>
+<ul>
+<li>large vocabulary, speaker independent</li>
+<li>handling of Out of Vocabulary (OOV) by <code>miss</code> - consider that it can not be found, or <code>false positive</code> - an OOV word is replaced by another word that “accidentally” matches a query.</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Alignment </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Alignment in the context of speech recognition is a technique to add time-codes to an verbatim transcript that has already been generated maunally, using the acoustic models from a speech recognition system (’informed speech recognition’).</p>
+<ul>
+<li>Typically used for training acoustic models: which parts of the audio belong to a word or even a phone</li>
+</ul>
+</div>
+</blockquote>
+<p><strong>Requirements for ASR evaluation</strong></p>
+<p>A requirement for ASR evaluation is the <strong>reference</strong>: verbatim account of what was said.</p>
+<ul>
+<li>typically no punctuation, but correct spelling!</li>
+<li>typically manually generated</li>
+<li>Segment Time Marked (STM): short phrases.</li>
+</ul>
+<p>Another requirements is <strong>The Hypothesis</strong>: what the speech recognition produces, typically including time-codes for each word.</p>
+<ul>
+<li>Conversation Time Marked (CTM): word based</li>
+</ul>
+<p>Normalization: make sure that both hyp and ref follow the same principles:</p>
+<ul>
+<li>Spelling</li>
+<li>numbers2text</li>
+<li>Global Mapping: doesn’t <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> does not, A. <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> A</li>
+</ul>
+<h1 id="lecture-5-deep-learning-in-asr">Lecture 5: Deep Learning in ASR<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-5-deep-learning-in-asr" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Asta e roman de-a nostruuuu, Dragoș Bǎlan</p>
+<p><strong>Hybrid vs End to End (E2E)</strong></p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/hybrid_e2e.png" style="max-width:100%;height:auto;"/>
+</div>
+<ul>
+<li>Hybrid models offer <strong>modularity</strong> when training (can train the 3 components separately with different techniques)</li>
+<li>E2E models <strong>simplify</strong> the training pipeline (only some pre-/post-processing required)</li>
+<li>Less types of data required for E2E</li>
+<li>Most <strong>E2E</strong> models <strong>outperform</strong> the <strong>state-of-the-art</strong> in <strong>hybrid</strong> models</li>
+</ul>
+<p><strong>Explicit alignment</strong>: <strong>Connectionist Temporal Classification (CTC)</strong></p>
+<ul>
+<li>It <strong>maps</strong> an <strong>input sequence</strong> of frames to an <strong>output sequence</strong> of tokens/characters.</li>
+<li>Achieved by defining a <strong>vocabulary of characters</strong> + a special <strong>“blank” token</strong> used for decoding.</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/ctc.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>After generating the sequence of tokens, a <strong>sequence of identical non-blank tokens</strong> separated by blank tokens (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span></span></span>) will be <strong>merged into one non-blank token</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span></span></span></span>.</p>
+<p>All <strong>blank tokens</strong> are <strong>removed</strong> to obtain the final character sequence (from <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">}</span></span></span></span> to <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">e</span><span class="mclose">}</span></span></span></span> <span>→</span> “<strong>see</strong>”)</p>
+<p><strong>CTC Versus Attention</strong></p>
+<p><strong>Advantage</strong> of <strong>explicit alignment</strong>: can be used in <strong>streaming ASR</strong> models (real-time). <strong>However,</strong> explicit alignment methods make predictions using <strong>only the current frame</strong> and previous outputs.</p>
+<p><strong>Implicit alignment</strong> instead takes <strong>entire</strong> <strong>input sequence</strong> into account and assigns weights/scores to all elements of the input sequence, for each output element.</p>
+<p><strong>Implicit</strong> <strong>alignment</strong>: <strong>Attention</strong>-based <strong>E</strong>ncoder-<strong>D</strong>ecoder (<strong>AED</strong>)</p>
+<p><strong>Attention</strong> however is not easily streamable. It’s mainly used for <strong>offline</strong> ASR. Also, the <strong>performance degrades if the text is too long</strong> and <strong>large amounts of data</strong> are required for training them.</p>
+<h3 id="additional-modules">Additional Modules<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#additional-modules" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Voice Activity Detection (VAD)</strong> – Filters out non-speech segments</li>
+<li><strong>Speaker Diarization(SD)</strong> – Labels “who spoke when” in multi-speaker audio</li>
+<li><strong>Speech Enhancement</strong> – Removes noise/reverberation, improves clarity</li>
+<li><strong>(L)LM Rescoring</strong> – Re-ranks hypothesized words using a (Large) Language Model</li>
+</ol>
+<p>Majority of languages are considered low-resource.</p>
+<p>Most of the <strong>pretraining</strong> <strong>data</strong> comes from <strong>adults</strong> that speak the language at a <strong>native</strong> level. <strong>Data</strong> from <strong>children</strong>/people with <strong>pathological speech</strong> is <strong>sensitive</strong> (difficult to gather).</p>
+<p>challenge: noisy environments - ASRs cannot focus on one speech source like humans can.</p>
+<h1 id="lecture-6-speech-synthesis">Lecture 6: Speech Synthesis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lecture-6-speech-synthesis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>They introduce a new element of speech besides <strong>pitch</strong> and <strong>loudness</strong>, and that is <strong>timber</strong>.</p>
+<p>The <strong>timber</strong> varies depending on the shape of the tube, even if the vibration is the same.</p>
+<p>F1-F2 chart has good correlation with vowel chart.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/F1F2.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Doing speech synthesis via F1-F2 correlation with the vowel chart sounds robotic. It’s also difficult to synthesize consonants.</p>
+<h2 id="unit-selection-synthesis-uss">Unit Selection Synthesis (USS)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#unit-selection-synthesis-uss" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Concept</strong>: Concatenate pre-recorded small speech units</p>
+<p><strong>Goal</strong>: to convert text into tokens that computer can process, analyze syntax and extract contextual information. Methods include:</p>
+<ul>
+<li>Text normalization,</li>
+<li>Text tokenization,</li>
+<li>Syntax analysis,</li>
+<li>Linguistic analysis.</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/uss_pipeline.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>USS needs a large database and therefore can present memory constraints.</p>
+<h2 id="statistical-parametric-speech-synthesis-spss">Statistical Parametric Speech Synthesis (SPSS)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#statistical-parametric-speech-synthesis-spss" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Goal</strong>: Create the sound that the most likely to the text</p>
+<p>Pipeline looks like this:</p>
+<ul>
+<li>Extract Features <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> Analysis <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> Estimation <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> Synthesis</li>
+</ul>
+<p><strong>General Flow of Statistical Parametric Speech Synthesis</strong></p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/genflow.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>We have 3 steps in these models:</p>
+<ol>
+<li>Extract relevant features from speech and text.
+<ol>
+<li>Paralinguistic features e.g. pause, speech rate, emotion</li>
+<li>Nonlinguistic features e.g. speaker information</li>
+<li>try raw waveform or formants</li>
+</ol>
+</li>
+<li>Describe the feature distribution as precise as possible.</li>
+<li>Synthesize speech from the feature sequence.</li>
+</ol>
+<h2 id="vocoder">Vocoder<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#vocoder" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Goal</strong>: Estimate waveform from the predicted features.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/vocoder.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Types of Vocoders:</p>
+<ul>
+<li><strong>Wavenet</strong> (autoregressive) = predict a next sample based on previous samples in a long-range window.</li>
+<li><a href="../notes/genai2" class="internal alias" data-slug="notes/genai2">GAN</a>-based vocoders.</li>
+</ul>
+<p>The vocoder holds the key to sound quality. It can handle text that hasn’t been recorded and add various changes to the voice (even emotions!).</p>
+<h2 id="e2e-spss-large-system-which-estimate-sound-signal-directly-from-the-input-text">E2E SPSS: Large system which estimate sound signal directly from the input text<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e2e-spss-large-system-which-estimate-sound-signal-directly-from-the-input-text" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/spss.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>This is still too difficult. Text is too lossy compression of speech, not much information!</p>
+<p>You can couple it with the vocoder. They can also be trained independently. The E2E SPSS gives the (mel) spectrum and vocoder takes it as input to calculate the waveform.</p>
+<p>So in total there are 5 ways to read text aloud:</p>
+<ol>
+<li>mimic human organs (very early history)</li>
+<li>formant speech synthesis (robot-like performance)</li>
+<li>USS (the one with the database?)</li>
+<li>SPSS(probabilistic approach)</li>
+<li>E2E (mix between SPSS and Vocoder)</li>
+</ol>
+<h2 id="information-that-ones-voice-contains">Information that one’s voice contains<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#information-that-ones-voice-contains" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>pitch, rythm, intonation, emotion,</li>
+<li>age, gender, body shape(???), regional accent, social status.</li>
+</ul>
+<p><strong>What is voice conversion</strong>?</p>
+<ul>
+<li>Extract <strong>contents</strong> of speech (words)</li>
+<li>Deduce <strong>Paralinguistic</strong> Elements (pitch, speed, emotion)</li>
+<li>Derive <strong>Nonlinguistic</strong> information: elements beyond language, which the speaker cannot control e.g. age, accent, personality.</li>
+</ul>
+<p>You want to change the voice, but not the contents. Sounds like Sebastian Dobrincu and his startup ideas.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/voiceconv.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Voice Conversion that requires only one sentence or really small amount of sentence is called “one/<a href="../notes/zsl" class="internal alias" data-slug="notes/zsl">zero shot</a> voice conversion”.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/voiceconv_framework.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><strong>Near-End Listening Enhancement</strong>: Technology that converts speech into easily intelligible audio even in noisy or reverberant environments (it’s not noise cancelling!).</p>
+<p>There are 2 ways to convert your voice: GMM / GAN.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#lecture-1-understanding-speech" data-for="lecture-1-understanding-speech">Lecture 1: Understanding Speech</a></li><li class="depth-1"><a href="#place-of-articulation-where-the-air-is-blocked" data-for="place-of-articulation-where-the-air-is-blocked">Place of Articulation (where the air is blocked)</a></li><li class="depth-1"><a href="#manner-of-articulation-how-the-air-is-blocked" data-for="manner-of-articulation-how-the-air-is-blocked">Manner of Articulation (How the air is blocked)</a></li><li class="depth-0"><a href="#lecture-2-speech-in-digital-realm" data-for="lecture-2-speech-in-digital-realm">Lecture 2: Speech in Digital Realm</a></li><li class="depth-0"><a href="#lecture-3-paralinguistics" data-for="lecture-3-paralinguistics">Lecture 3: Paralinguistics</a></li><li class="depth-2"><a href="#f0" data-for="f0">F0</a></li><li class="depth-2"><a href="#intensityloudness" data-for="intensityloudness">Intensity/Loudness</a></li><li class="depth-2"><a href="#spectral-related" data-for="spectral-related">Spectral-Related</a></li><li class="depth-0"><a href="#lecture-4-automatic-speech-processing" data-for="lecture-4-automatic-speech-processing">Lecture 4: Automatic Speech Processing</a></li><li class="depth-1"><a href="#speech-recognition-architecture" data-for="speech-recognition-architecture">Speech Recognition Architecture</a></li><li class="depth-0"><a href="#lecture-5-deep-learning-in-asr" data-for="lecture-5-deep-learning-in-asr">Lecture 5: Deep Learning in ASR</a></li><li class="depth-2"><a href="#additional-modules" data-for="additional-modules">Additional Modules</a></li><li class="depth-0"><a href="#lecture-6-speech-synthesis" data-for="lecture-6-speech-synthesis">Lecture 6: Speech Synthesis</a></li><li class="depth-1"><a href="#unit-selection-synthesis-uss" data-for="unit-selection-synthesis-uss">Unit Selection Synthesis (USS)</a></li><li class="depth-1"><a href="#statistical-parametric-speech-synthesis-spss" data-for="statistical-parametric-speech-synthesis-spss">Statistical Parametric Speech Synthesis (SPSS)</a></li><li class="depth-1"><a href="#vocoder" data-for="vocoder">Vocoder</a></li><li class="depth-1"><a href="#e2e-spss-large-system-which-estimate-sound-signal-directly-from-the-input-text" data-for="e2e-spss-large-system-which-estimate-sound-signal-directly-from-the-input-text">E2E SPSS: Large system which estimate sound signal directly from the input text</a></li><li class="depth-1"><a href="#information-that-ones-voice-contains" data-for="information-that-ones-voice-contains">Information that one’s voice contains</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/speech-processing" class="internal">Speech Processing</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

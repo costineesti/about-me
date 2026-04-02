@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Point Cloud Segmentation</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Point Cloud Segmentation"/><meta property="og:description" content="Lecture from Laser Scanning and Point Cloud Processing. Needless to say, we want to extract information from point clouds. Some segmentation algorithms include: Extraction of smooth surfaces Scan line segmentation Surface growing Surface merging Voxel space analysis Extraction of parametrized surfaces (planes, cylinders) Hough Transform RANSAC (used it in Visual Odometry) Connected Components I saw how all techniques work in Point Cloud Segmentation Practical."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Lecture from Laser Scanning and Point Cloud Processing. Needless to say, we want to extract information from point clouds. Some segmentation algorithms include: Extraction of smooth surfaces Scan line segmentation Surface growing Surface merging Voxel space analysis Extraction of parametrized surfaces (planes, cylinders) Hough Transform RANSAC (used it in Visual Odometry) Connected Components I saw how all techniques work in Point Cloud Segmentation Practical."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/laser-scanning-5"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Point Cloud Segmentation</a></div></nav><h1 class="article-title">Point Cloud Segmentation</h1><p show-comma="true" class="content-meta"><span>Feb 17, 2026</span><span>9 min read</span></p></div></div><article class="popover-hint"><p>Lecture from <a href="../notes/laser-scanning" class="internal alias" data-slug="notes/laser-scanning">Laser Scanning and Point Cloud Processing</a>.</p>
+<p>Needless to say, we want to extract information from point clouds. Some segmentation algorithms include:</p>
+<ul>
+<li>Extraction of smooth surfaces
+<ul>
+<li>Scan line segmentation</li>
+<li>Surface growing</li>
+<li>Surface merging</li>
+<li>Voxel space analysis</li>
+</ul>
+</li>
+<li>Extraction of parametrized surfaces (planes, cylinders)
+<ul>
+<li>Hough Transform</li>
+<li>RANSAC (used it in <a href="../projects/visual-odom" class="internal alias" data-slug="projects/visual-odom">Visual Odometry</a>)</li>
+</ul>
+</li>
+<li>Connected Components</li>
+</ul>
+<p>I saw how all techniques work in <a href="../notes/laser-scanning-4" class="internal alias" data-slug="notes/laser-scanning-4">Point Cloud Segmentation Practical</a>. The algorithms were based on Hough Transform.</p>
+<h3 id="scan-line-segmentation">Scan line segmentation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-line-segmentation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<div class="encoder-section">
+  <img src=".././static/notes/segment_1.png" style="width:200px;margin-bottom:0;margin-right:20px;"/>
+  <div class="encoder-text">
+    <ul>
+	 <li>It is independent of each scan line based on <b>proximity, curve fit/height continuity and normal vector direction</b></li>
+      <li>It is basically the process of merging the scan line segments across neighboring scan lines.</li>
+    </ul>
+  </div>
+</div>
+<p>One technique to do multiple scan line segmentation and combine them into sections is to join segments with common nodes.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/segment_2.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Some applications include</p>
+<ul>
+<li>Extraction of large smooth surface</li>
+<li>Decomposition into terrain and bridge</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/segment_3.png" style="max-width:100%;height:auto;"/>
+</div>
+<h3 id="surface-growing">Surface Growing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#surface-growing" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>It’s been adapted from Image Processing — the process of <strong>Region growing</strong> where the aim is to merge all pixels in a digital image which are adjacent. So basically, you start with an arbitrary pixel and you look around to see if there are any neighboring pixels which have the same color as the one you started with. If that’s the case, you consider them to be part of the same segment. Usually done in the grayscale domain.</p>
+<p>In <strong>Surface growing</strong> we apply the same methodology, but with 2 differences:</p>
+<ol>
+<li>The data is not organized in a grid as in a digital image, as we work with point clouds.</li>
+<li>We don’t compare gray values, but we check if the points are approximately coplanar.</li>
+</ol>
+<p>For example, in the left image below, I start with those points and accept them to be part of the initial plane. Next step, I then look again to the neighbors of the newly selected points (right image), while ignoring the points I already checked priorly. After I’m done with expanding that region, I then select another arbitrary point and apply the same steps.</p>
+<div style="display:flex;justify-content:space-around;"> <div> <img src=".././static/notes/segment_4.png" alt="segment 1" width="350" height="300"/> </div> <div> <img src=".././static/notes/segment_5.png" alt="segment 2" width="350" height="300"/> </div> </div>
+<ul>
+<li>Determination of seeds i.e. locally smooth patches based on
+<ul>
+<li>Local surface fitting</li>
+<li>Local normal vector field
+<ul>
+<li>You can look at the points as independent and compare their normal vector or you can also compare the plane normal vector with the points normal vectors.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The growing of surfaces is based on
+<ul>
+<li>Proximity (TIN, kNN)</li>
+<li>Surface fit/height continuity (in scan line it was curve fit/height cont.)</li>
+<li>Again normal vector direction</li>
+</ul>
+</li>
+</ul>
+<h3 id="surface-merging">Surface Merging<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#surface-merging" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Surface merging is a <strong>bottom-up</strong> approach that starts with small surface elements and combines them into larger segments.</p>
+<p>The process involves 2 steps:</p>
+<p><code>Step 1</code>: <strong>Initial Triangulation</strong></p>
+<ul>
+<li>Split the point cloud into triangles using <strong>Delaunay triangulation</strong></li>
+<li>Each triangle is a tiny surface segment</li>
+</ul>
+<p><code>Step 2</code>: <strong>Iterative Merging</strong> - the algorithm repeatedly merges adjacent surfaces based on</p>
+<ul>
+<li><strong>Adjacency</strong> - surfaces must share an edge or vertices</li>
+<li><strong>Surface-to-surface distance</strong> - how well the surfaces fit together geometrically</li>
+</ul>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>There's an important problem: <strong>multi-layered surfaces</strong>. When you have overlapping or multiple layers (like a roof overhang), the method can struggle because it tries to merge surfaces that shouldn't be combined.</p></div>
+                  
+                </div>
+<div class="callout-content">
+<div class="container" style="display:flex;justify-content:center;align-items:center;"> <img src=".././static/notes/segment_6.png" style="max-width:100%;height:auto;"/> </div>
+<p>Surface merging works well for:</p>
+<ul>
+<li>Building roofs (as shown in the example)</li>
+<li>Relatively smooth, continuous surfaces</li>
+<li>When you want to build segments gradually from local to global</li>
+</ul>
+</div>
+</blockquote>
+<h3 id="voxel-space-analysis">Voxel Space Analysis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#voxel-space-analysis" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>This method converts the <strong>3D point cloud into a regular 3D grid</strong> (like 3D pixels - called voxels), then applies image processing techniques.</p>
+<p><code>Step 1</code>: <strong>Rasterization</strong></p>
+<ul>
+<li>Divide 3D space into uniform cubic cells (voxels)</li>
+<li>Mark voxels as “occupied” if they contain points, “empty” otherwise</li>
+</ul>
+<p>Once I have the grid, I can then apply techniques from image processing</p>
+<p><code>Step 2</code>: <strong>Apply 3D Image Processing</strong></p>
+<p><strong>Connected Component Analysis</strong></p>
+<ul>
+<li>Find groups of adjacent occupied voxels</li>
+<li>Each connected group becomes a segment</li>
+</ul>
+<p><strong>Mathematical Morphology</strong></p>
+<ul>
+<li><strong>Erosion, Dilation, Opening Closing</strong>, I covered them in <a href="../notes/IPCV" class="internal" data-slug="notes/IPCV">IPCV</a>.</li>
+</ul>
+<p><strong>Skeletonization</strong></p>
+<ul>
+<li>Reduce 3D objects to their “skeleton” (centerline)</li>
+<li>Useful for tree branches, pipes, roads</li>
+</ul>
+<p>It’s best used for separating distinct objects (cars, trees, buildings), processing vegetation. It is memory intensive since I need to store the entire 3D grid.</p>
+<p>Example of voxel space analysis for tree segmentation:</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/segment_7.png" style="max-width:100%;height:auto;"/>
+</div>
+<h1 id="extraction-of-parametrized-surfaces">Extraction of parametrized surfaces<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#extraction-of-parametrized-surfaces" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="hough-transform">Hough Transform<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hough-transform" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Another example of a technique originating from image processing, where it is mainly used to extract straight lines from binary images.</p>
+<p>In 2D, we can also use it for detecting straight lines, by using the equation</p>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span>
+<p>where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span> is the distance of the line to the origin, and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span> is the angle of the line to the Y axis.</p>
+<div class="encoder-section">
+  <img src=".././static/notes/segment_8.png" style="width:200px;margin-bottom:0;margin-right:20px;"/>
+  <div class="encoder-text">
+    <ul>
+	 <li>If we select the random point on the left with its X and Y coordinates, d becomes a function of α. It's plotted as the multiple lines on the right side of the image.</li>
+      <li>Each of those lines go through the each point on the left, so not only the first red one.</li>
+      <li>What is interesting: all those lines intersect in one point. The parameters d and α that correspond to that point give the line equation that goes through all the points on the left. This is called the <b>Hough Space</b></li>
+    </ul>
+  </div>
+</div>
+<p>It’s interesting, in the example above, we discretize by overlaying that grid and we count the square in which we see the most amount of lines. That’s how we know where the point is and how to calculate for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>.</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Pay attention to the cell size. If you choose it too wide, you can't find the parameters very accurately. However, if you choose it very small, then the maximum amount of lines passing through that cell may not be very obvious, due to noise. </p></div>
+                  
+                </div>
+</blockquote>
+<p>This can now be generalized to <strong>3D surfaces</strong> such as <strong>planes, cylinders or circles</strong>.</p>
+<p><strong>Detection of planes</strong></p>
+<p><strong>Plane</strong> in object space - <strong>point</strong> in Hough space</p>
+<ul>
+<li>We describe a plane by two slopes and a distance to the origin(distance to the Z-axis). Here we know <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span></span></span></span> and want to extract <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>.</li>
+</ul>
+<p><strong>Point</strong> in object space - <strong>plane</strong> in Hough space</p>
+<ul>
+<li>just like in the 2D case, we can get use the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> coordinates of a point and determine the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span></span></span></span> parameters</li>
+<li>this case corresponds to <strong>not using normal vectors</strong>. We simply compute a plane in the Hough Space for every point <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="mclose">)</span></span></span></span> and we look for the intersection point of all those planes.
+<ul>
+<li>If we do <strong>make use of the normal vectors</strong>, those points already define a plane in object space. And if I have the parameters of the plane, then that plane corresponds to a point in the Hough Space. So instead of calculating the whole plane in the Hough Space, I would only indicate a point in the Hough Space. I still need to localize the cell where most points are plotted.</li>
+</ul>
+</li>
+</ul>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span>
+<p>Some example of planes detected by <strong>Hough Transform</strong>:</p>
+<div style="display:flex;justify-content:space-around;"> <div> <img src=".././static/notes/segment_9.png" alt="segment 1" width="350" height="300"/> </div> <div> <img src=".././static/notes/segment_10.png" alt="segment 2" width="350" height="300"/> </div> </div>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>There are some drawbacks, however. For example, if we apply it to larger datasets. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>For example, in the right picture above, the Hough transform could suggest drawing a middle line like that. But why does it happen? Because it’s not mainly looking at the points themselves that fit on the line, but at all the points that are within the buffer around that line.</p>
+<ul>
+<li>So, if I count the number of points that are within the yellow line, it is greater than any ascending or descending sides of each roof. That’s how I end up with this result.</li>
+</ul>
+</div>
+</blockquote>
+<blockquote>
+<p>So it’s not guaranteed that we get good segmentation by using the Hough Space, we always need to check our initial hypothesis.</p>
+</blockquote>
+<p><strong>Hough Transform to detect cylinders</strong></p>
+<p>In 3D, cylinders are described by 5 parameters. It would lead to 5 dimensions in the Hough Space, which is not ideal since we care about memory constraints and it also makes the detection of the maxima very difficult.</p>
+<p>So I need to divide and conquer it in two steps</p>
+<ol>
+<li>Detection of orientation (2 parameters)</li>
+<li>Detection of position and radius (3 parameters)</li>
+</ol>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/segment_11.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><code>Step 1</code>: <strong>Detection of the orientation of cylinders</strong></p>
+<p>On the left side of the image above, I can see 3 dominant directions: vertical, horizontal and inclined.</p>
+<p>So to approach this, George suggests to plot all the normal vectors on a Gaussian sphere (right image). So ignore the positions of where they are computed, all starting from the middle point of that sphere. There we have the frequencies with which normal vectors are pointing to a certain direction. That’s when we take all the big circles going around that sphere and I can already see 3 of them. in the right picture. The last one might not be so obvious (it’s the one that starts from the right side, it finishes on the left side). I use the normal vectors to divide in the common points (where it’s not so obvious if it’s vertical or horizontal).</p>
+<p><code>Step 2</code>: <strong>Detection of the cylinder position and the radius</strong></p>
+<p>I take one of the cylinder directions found previously and now project all the points on the plane perpendicular to the cylinder axis.</p>
+<ul>
+<li>So, for the vertical direction, project all the points on a horizontal plane.</li>
+</ul>
+<p>Interestingly enough, this reduces the problem from 3D to 2D because now we only need to find the coordinates of the circle in 2D — the center coordinates and the radius <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>.</p>
+<p>Again, I can choose to work with or without normal vectors. In the images below, they applied two methods.</p>
+<ul>
+<li>First they applied the surface growing method to connect all the components that might be part of the same smooth surface (bottom left)</li>
+<li>And second they applied the Hough Transform on the detected segments to extract the parameters of the cylinders (bottom right)</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/segment_12.png" style="max-width:100%;height:auto;"/>
+</div>
+<h1 id="ransac">RANSAC<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ransac" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The <strong>key insight</strong>: instead of using ALL points to fit a shape, randomly sample small subsets and find which subset produces the best model.</p>
+<p><code>Step 1</code>: <strong>Random Sampling</strong></p>
+<ul>
+<li>Randomly select <strong>3 points</strong> (minimum needed to define a plane)</li>
+<li>Calculate the plane equation through these 3 points</li>
+</ul>
+<p><code>Step 2</code>: <strong>Count Inliers</strong></p>
+<ul>
+<li>For every other point in the cloud, measure distance to this plane</li>
+<li>If distance &lt; threshold <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> it’s an <strong>inlier</strong> (agrees with the model)</li>
+<li>Count how many inliers this plane has</li>
+</ul>
+<p><code>Step 3</code>: <strong>Evaluate</strong></p>
+<ul>
+<li>If inlier count > minimum threshold <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>plane found!</strong></li>
+<li>If not <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> go back to Step 1</li>
+</ul>
+<p><code>Step 4</code>: <strong>Repeat</strong></p>
+<style>
+  .encoder-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .encoder-text {
+    max-width: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .encoder-section {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .encoder-text {
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 40px; /* Maintain indentation for desktop */
+    }
+  }
+
+  @media (max-width: 767px) {
+    .encoder-text {
+      padding: 0 15px; /* Add padding on mobile for better spacing */
+      text-align: left; /* Align text to the left on mobile */
+    }
+
+    ul {
+      padding-left: 20px; /* Reduce padding for better mobile view */
+    }
+
+    li {
+      margin-bottom: 10px; /* Add space between list items for clarity */
+    }
+  }
+</style></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-2"><a href="#scan-line-segmentation" data-for="scan-line-segmentation">Scan line segmentation</a></li><li class="depth-2"><a href="#surface-growing" data-for="surface-growing">Surface Growing</a></li><li class="depth-2"><a href="#surface-merging" data-for="surface-merging">Surface Merging</a></li><li class="depth-2"><a href="#voxel-space-analysis" data-for="voxel-space-analysis">Voxel Space Analysis</a></li><li class="depth-0"><a href="#extraction-of-parametrized-surfaces" data-for="extraction-of-parametrized-surfaces">Extraction of parametrized surfaces</a></li><li class="depth-2"><a href="#hough-transform" data-for="hough-transform">Hough Transform</a></li><li class="depth-0"><a href="#ransac" data-for="ransac">RANSAC</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/laser-scanning" class="internal">Laser Scanning and Point Cloud Processing</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

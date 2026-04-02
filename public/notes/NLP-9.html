@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Constituency Grammars</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Constituency Grammars"/><meta property="og:description" content="This is from Lecture 9 from my Natural Language Processing class at Twente. Syntax concerns the internal structure of sentences (also called “grammar”) Parsing is using a grammar to assign a syntactic structure (“parse tree”) to a phrase or sentence Constituents (also knows as: phrases) are groups of words that behave as a single unit."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="This is from Lecture 9 from my Natural Language Processing class at Twente. Syntax concerns the internal structure of sentences (also called “grammar”) Parsing is using a grammar to assign a syntactic structure (“parse tree”) to a phrase or sentence Constituents (also knows as: phrases) are groups of words that behave as a single unit."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/NLP-9"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Constituency Grammars</a></div></nav><h1 class="article-title">Constituency Grammars</h1><p show-comma="true" class="content-meta"><span>Nov 18, 2025</span><span>4 min read</span></p></div></div><article class="popover-hint"><p>This is from Lecture 9 from my <a href="../notes/NLP" class="internal alias" data-slug="notes/NLP">Natural Language Processing</a> class at Twente.</p>
+<p>Syntax concerns the internal structure of sentences (also called <em>“grammar”</em>)</p>
+<p>Parsing is using a <strong>grammar</strong> to assign a syntactic structure (“parse tree”) to a phrase or sentence</p>
+<h1 id="constituents-also-knows-as-phrases">Constituents (also knows as: phrases)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#constituents-also-knows-as-phrases" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>are groups of words that behave as a single unit.</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>The constituent can only be moved as a whole. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ol>
+<li>The prime witness told the police a very long story <u>at the bank</u></li>
+<li><u>At the bank</u> the prime witness told the police a very long story</li>
+<li>The prime witness told the police <u>at the bank</u> a very long story</li>
+</ol>
+<p>But not: <u>At the</u> the prime witness told the police a very long story <u>bank</u></p>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>The constituent answers to questions </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ol>
+<li>Who told the story?</li>
+</ol>
+<ul>
+<li>It was <u>the prime witness</u></li>
+<li><u>The prime witness</u></li>
+<li><u>The prime witness at the bank</u></li>
+</ul>
+<ol start="2">
+<li>Where did he tell the story?</li>
+</ol>
+<ul>
+<li>At the bank</li>
+<li>The bank</li>
+</ul>
+<ol start="3">
+<li>To whom did he tell the story?</li>
+</ol>
+<ul>
+<li>To the police</li>
+<li>The police</li>
+</ul>
+<ol start="4">
+<li>What did he tell?</li>
+</ol>
+<ul>
+<li>The story</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Conjuction: only between constituents of the same type </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>I ate <u>a hamburger</u> and <u>a hot dog</u></p>
+<p>I will <u>eat the hamburger</u> and <u>throw away the hot dog</u></p>
+<p>I ate a <u>cold</u> and <u>well-burned</u> hot dog</p>
+<p>I ate a <u>hamburger</u> and <u>well-burned</u> * (incorrect grammar)</p>
+</div>
+</blockquote>
+<h1 id="heads">Heads<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#heads" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Heads</strong> are the most important, mandatory parts in a constituent.</p>
+<ul>
+<li>a very long <strong><u>story</u></strong> about the robbery</li>
+<li>the <u>flights</u> the airline was cancelling</li>
+<li><u>money</u></li>
+</ul>
+<p>Phrases are named after the word class (part-of-speech) of their head.</p>
+<h1 id="parts-of-speech-or-word-class">Parts of speech (or word class)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#parts-of-speech-or-word-class" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>I also covered them in <a href="../notes/NLP-4" class="internal alias" data-slug="notes/NLP-4">this lecture</a>.</p>
+<p>| Word Class    | part of speech |</p>
+<p>| -------- | ------- |</p>
+<p>| N or Noun  | noun, singular, plural or mass    |</p>
+<p>| V or Verb  | verb, past tense    |</p>
+<p>| P or Prep  | preposition    |</p>
+<p>| Det  | determiner    |</p>
+<p>| A or Adj  | adjective    |</p>
+<h1 id="constituent-types">Constituent Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#constituent-types" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Phrases are named after the word class of their head:</p>
+<ul>
+<li>Noun phrase (NP): the prime <strong>witness</strong></li>
+<li>Prepositional phrase (PP): <strong>at</strong> the bank</li>
+<li>Verb phrase (VP): <strong>told</strong> them a story</li>
+<li>Adjectival phrase (AP): <strong>prime</strong>, very <strong>long</strong></li>
+</ul>
+<h3 id="constituent-types-np">Constituent types: NP<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#constituent-types-np" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>We can say that the following are all noun phrases in English:</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/NP.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Why?</p>
+<ul>
+<li>they can all precede verbs</li>
+<li>they all have a noun (or pronoun) as their head</li>
+</ul>
+<h1 id="modifiers">Modifiers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modifiers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Heads</strong> are mandatory parts in a constituent, <u>modifiers</u> are optional. A modifier “modifies” the meaning of the head. That is, it gives extra information about it. Leaving it out doesn’t damage grammaticality.</p>
+<ul>
+<li>a <u>very long</u> <strong>story</strong> <u>about the robbery</u></li>
+<li>the <strong>flights</strong> <u>the airline was cancelling</u></li>
+<li><strong>money</strong></li>
+</ul>
+<h1 id="complements">Complements<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#complements" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Parts within a phrase that are required by the head are complements. Typical examples are the complements of the verb in a verb phrase (VP)</p>
+<p>Transitive verbs have an NP as complement:</p>
+<ul>
+<li>The cat chases a dog / The cat chases</li>
+</ul>
+<p>Intransitive verbs do not have a complement:</p>
+<ul>
+<li>The cat yawns / The cat yawns a dog*</li>
+</ul>
+<h1 id="specifiers">Specifiers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#specifiers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>NP: the (modifier) green (specifier) mat(head)</p>
+<p>The specifier is to the left of the head. There is at most one specifier.</p>
+<h1 id="context-free-grammar-cfg">Context-Free Grammar (CFG)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#context-free-grammar-cfg" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>A CFG for natural language models how constituents are built up and combined. Components: <u>rules</u> and <u>lexicon</u>.</p>
+<p>G = &lt;T, N, S, R></p>
+<ul>
+<li>T is a set of terminals (the <strong>words</strong> in the lexicon = the <strong>leaves</strong> of the tree)</li>
+<li>N is a set of non-terminals (the <strong>nodes</strong> in the tree)</li>
+<li>S is the <strong>start symbol</strong> (one of the non-terminals)</li>
+<li>R is a set of <strong>rules</strong> (also called productions) of the form A → β, where
+<ul>
+<li>A is a non-terminal</li>
+<li>β is a sequence of terminals and/or non-terminals</li>
+</ul>
+</li>
+</ul>
+<p>A grammar G defines a language L</p>
+<p>Language L defined by a CFG: the set of all (and only) strings that can be derived from the start symbol S.</p>
+<p>A derivation is a sequence of rules that can be expanded to form a certain string.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/CFG1.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Parsing is the process of taking a string and a grammar and returning a parse tree (or multiple parse trees) for that string according to that grammar. More on that in <a href="../notes/NLP-10" class="internal alias" data-slug="notes/NLP-10">Constituency Parsing</a></p>
+<h3 id="example">Example<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#example" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Given the following grammar, which of the following sentences is ungrammatical?</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/CFGex1.png" style="max-width:100%;height:auto;"/>
+</div>
+<ul>
+<li>
+<p>People have dangerous ideas.</p>
+</li>
+<li>
+<p>Young people sleep very well.</p>
+</li>
+<li>
+<p>Green ideas sleep furiously.</p>
+</li>
+<li>
+<p>Young people sleep furious people.</p>
+</li>
+<li>
+<p>NP (“people”) + VP (“have” + NP “dangerous ideas”)</p>
+</li>
+<li>
+<p>NP(“young people”) + VP( Verb “sleep” + Adv “very” + Adv “well”)</p>
+</li>
+<li>
+<p>NP (“green ideas”) + VP (“sleep” + Adv “furiously”)</p>
+</li>
+<li>
+<p>NP (“young people”) + VP (“sleep” + NP “furious people”) (odd semantically, but allowed syntactically)</p>
+</li>
+</ul>
+<p>Here, the second one is incorrect given the rules since VP <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> V (Adv) allows for only one adverb.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/CFGex2.png" style="max-width:100%;height:auto;"/>
+</div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#constituents-also-knows-as-phrases" data-for="constituents-also-knows-as-phrases">Constituents (also knows as: phrases)</a></li><li class="depth-0"><a href="#heads" data-for="heads">Heads</a></li><li class="depth-0"><a href="#parts-of-speech-or-word-class" data-for="parts-of-speech-or-word-class">Parts of speech (or word class)</a></li><li class="depth-0"><a href="#constituent-types" data-for="constituent-types">Constituent Types</a></li><li class="depth-2"><a href="#constituent-types-np" data-for="constituent-types-np">Constituent types: NP</a></li><li class="depth-0"><a href="#modifiers" data-for="modifiers">Modifiers</a></li><li class="depth-0"><a href="#complements" data-for="complements">Complements</a></li><li class="depth-0"><a href="#specifiers" data-for="specifiers">Specifiers</a></li><li class="depth-0"><a href="#context-free-grammar-cfg" data-for="context-free-grammar-cfg">Context-Free Grammar (CFG)</a></li><li class="depth-2"><a href="#example" data-for="example">Example</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/NLP" class="internal">Natural Language Processing</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

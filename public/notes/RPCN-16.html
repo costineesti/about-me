@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Path Planning</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Path Planning"/><meta property="og:description" content="Lecture from RPCN. Related to the Navigation part. Table of contents with helpful questions/answers Where to go? Point X or Area A How to get there? Path planning for a route, i.e., planned trajectory."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Lecture from RPCN. Related to the Navigation part. Table of contents with helpful questions/answers Where to go? Point X or Area A How to get there? Path planning for a route, i.e., planned trajectory."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/RPCN-16"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Path Planning</a></div></nav><h1 class="article-title">Path Planning</h1><p show-comma="true" class="content-meta"><span>Jan 28, 2026</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>Lecture from <a href="../notes/RPCN" class="internal" data-slug="notes/RPCN">RPCN</a>. Related to the Navigation part.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Table of contents with helpful questions/answers </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Where to go?</p>
+<ul>
+<li>Point X or Area A</li>
+</ul>
+<p>How to get there?</p>
+<ul>
+<li>Path planning for a route, i.e., planned trajectory. Which routes are valid?</li>
+</ul>
+<p>What if we are looking for a path but do not yet know where it might be?</p>
+<ul>
+<li>Path finding</li>
+<li>Exploration action</li>
+</ul>
+<p>What if we want to fully explore something, e.g. see a large object of interest from all sides?</p>
+<ul>
+<li>Next best view planning</li>
+</ul>
+<p>What if we visit a place we have visited before?</p>
+<ul>
+<li>Loop closure</li>
+</ul>
+</div>
+</blockquote>
+<p>A configuration space <strong>C</strong> is the set of all possible states (configurations) that a system can be in. Each point in this space represents one unique configuration of the system.</p>
+<p>For a robot/drone, the configuration describes:</p>
+<ul>
+<li>Where it is (position)</li>
+<li>How it’s oriented (rotation/attitude)</li>
+</ul>
+<p><strong>The SO and SE groups explained briefly</strong>:</p>
+<p><strong>SO</strong>: The special orthogonal group, denoted as <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">SO</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, is a group of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> matrices that have the property of being both orthogonal and having a determinant of 1. The Rotation Matrix is a  special orthogonal group.</p>
+<p><strong>SE</strong>: The upper left corner (3×3) is the rotation matrix, the right side is the translation vector (3×1), the lower-left corner is 0 vector (1×3), and the lower right corner is 1 (1×1). This set of transform matrix is known as the Special Euclidean Group.</p>
+<p>So, as a <strong>rule of thumb</strong>, if translation exists <span>⇒</span> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">SE</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>. If only rotation <span>⇒</span> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">SO</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WHAT IS THE CONFIGURATION SPACE OF A QUADROTOR DRONE WHILE AIRBORNE </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>SE(3) — 3 rotations, 3 translations in free air.</p>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WHAT IS THE CONFIGURATION SPACE OF AN AUTONOMOUS CAR DRIVING ON A ROAD </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>SE(2) — translate forward, backwards, rotate because of the heading angle <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span></p>
+<p>SO(2) would mean the car is <strong>fixed in position</strong> but can only rotate in place (like a compass needle).</p>
+</div>
+</blockquote>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>WHAT IS THE CONFIGURATION SPACE OF A WAREHOUSE FORKLIFT </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>SE(2) <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">×</span></span></span></span> h.</p>
+<ul>
+<li><strong>SE(2)</strong>: Position <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> on the warehouse floor + orientation angle <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> = 3 DOF</li>
+<li><strong>h</strong>: Height of the fork (can lift up and down) = 1 DOF</li>
+</ul>
+</div>
+</blockquote>
+<hr/>
+<h1 id="graph-notation">Graph Notation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#graph-notation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Path-finding problems are often formulated with graphs. One such algorithm is <strong>Djikstra’s Algorithm</strong>. The main concept is to loop over all links of the current node and update distances if a shorter path was found.</p>
+<ul>
+<li>Nodes are labelled, edges have a cost.</li>
+</ul>
+<p>If we take a maze for example, it’s basically a 2D grid with some grid points blocked by obstacles. Each obstacle is just a missing link between two grid points.</p>
+<h1 id="a-star-or-a">A-STAR or A*<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-star-or-a" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>As a <strong>rule of thumb</strong>, if we do not know where to search from, we use Dijkstra. <strong>But if we do know where we want to end up</strong>, then we can leverage <strong>A*</strong> — a heuristic function. A heuristic function is a way to inform the search about the direction to a goal.</p>
+<p><strong>A*</strong> finds the shortest path from a start node to a goal node on a <strong>static</strong> (unchanging) map.</p>
+<p>Instead of minimizing the path cost distance <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> from the start, we attempt to minimize <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> is the next node in the graph,</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> is the heuristic function that estimates the remaining path to be travelled
+<ul>
+<li>Typically Manhattan Distance (L1) or Euclidean Distance (L2)</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout question" data-callout="question">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>When to use A*? </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Imagine when the search tree is huge (dense environment). A* reduces the number of tree nodes required to be visited.</p>
+<p>Also when we know where we want to end up or start from. If obstacles appear after planning, A* must be <strong>run again from scratch</strong>.</p>
+</div>
+</blockquote>
+<h1 id="d-or-dynamic-a">D* or Dynamic A*<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#d-or-dynamic-a" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>D*</strong> fixes the earlier problem and does not mind environments that are <strong>partially known</strong> or <strong>change over time</strong>.</p>
+<ul>
+<li>When new obstacles are discovered, <strong>D*</strong> updates only the affected parts rather than recomputing the entire path.</li>
+<li>Reuses previous search results to update the path <strong>incrementally</strong>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th style="text-align:left;">Feature</th><th style="text-align:left;">A*</th><th style="text-align:left;">D*</th></tr></thead><tbody><tr><td style="text-align:left;">Environment</td><td style="text-align:left;">Static</td><td style="text-align:left;">Dynamic/unknown</td></tr><tr><td style="text-align:left;">Replanning</td><td style="text-align:left;">Not efficient (must restart)</td><td style="text-align:left;">Efficient (incremental updates)</td></tr><tr><td style="text-align:left;">Memory usage</td><td style="text-align:left;">Lower</td><td style="text-align:left;">Higher (stores search tree)</td></tr><tr><td style="text-align:left;">Real-time robotics</td><td style="text-align:left;">Not ideal</td><td style="text-align:left;">Designed for it</td></tr></tbody></table></div>
+<blockquote>
+<p>Use D* Lite whenever you want to implement this.</p>
+</blockquote>
+<hr/>
+<h1 id="potential-fields">Potential Fields<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#potential-fields" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Artificial Potential Fields are another approach to guiding robots into obstacle-filled environments. The basic idea here is to construct a smooth function over the extent of the configuration space, which has high values when the robot is near to an obstacle and lower values when it’s further away.</p>
+<p>Create</p>
+<ul>
+<li>an attractor field for the goal</li>
+<li>Repulsive field for the obstacles</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">es</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/potfield.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>This algorithm is <strong>real-time</strong> since the computations involve gradients which are very fast (I presume because they are parallelazableqweq. you can compute them in parallel on GPUs :) ). It is also <strong>reactive</strong>: the robot does not need a full map; it can react to local sensor data.</p>
+<p><strong>Attractive Potential Fields</strong></p>
+<ul>
+<li>Can be constructed by considering the distance between the current position of the robot <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> and the desired goal location <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+</ul>
+<p><strong>Repulsive Potential Fields</strong></p>
+<ul>
+<li>Now in addition to getting to the goal, we also want the robot to avoid the obstacles in the environment.</li>
+</ul>
+<h3 id="issues-with-local-minima">Issues with Local Minima<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#issues-with-local-minima" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The simple gradient based control strategy may or may not converge the goal depending upon where the robot starts. Therefore, <strong>it does not guarantee global optimality</strong>.</p>
+<p>I would probably only use these in local searches.</p>
+<hr/>
+<p><strong>NP-hard</strong> problem: Exact solutions scale poorly with the number of locations(idk what that means).</p>
+<p>Example of NP-hard problem: Traveling Salesman Problem</p>
+<p>How to solve NP-hard problems: <strong>through brute force or heuristic methods</strong>.</p>
+<h1 id="next-best-view-planning-nvp">Next Best View Planning (NVP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#next-best-view-planning-nvp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>NVP</strong> is a strategy used to decide <strong>where a sensor (camera, LiDAR, drone, robot)</strong> <strong>should move next</strong> to <strong>gain the most useful information</strong> about an object or environment.</p>
+<ul>
+<li>In TSP, all locations are known beforehand, while in NVP, viewpoints are dynamically generated based on the environment.</li>
+</ul>
+<p><strong>Workflow</strong>:</p>
+<ul>
+<li>Represent each potential sensor position or orientation as a node in the graph.</li>
+<li>Nodes must capture the constraints of sensor capabilities, such as field of view, range, and orientation</li>
+<li>Assign weights (edges) between nodes</li>
+<li>Include information gain as a secondary cost or priority measure for nodes.</li>
+</ul>
+<p><strong>Context</strong>:</p>
+<p>Imagine a drone is scanning a building façade to create a complete 3D model.</p>
+<p><strong>Step 1</strong>: Drone takes first scan. Starts at point A and captures a depth image or LiDAR scan.</p>
+<p><strong>Step 2</strong>: Identify Incomplete Surface Elements (ISEs).</p>
+<p><strong>Step 3</strong>: Generate several candidate viewpoints.</p>
+<p><strong>Step 4</strong>: Compute “visibility gain” from each candidate viewpoint. For each candidate viewpoint perform ray casting/ray tracing and count how many ISE (green) voxels are visible. Score them.</p>
+<p><strong>Step 5</strong>: Choose the best viewpoint.</p>
+<p><strong>Step 6</strong>: Drone flies to the NBV and scans again.</p>
+<p><strong>Step 7</strong>: Repeat until the entire surface <strong>is reconstructed</strong>.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/nvp.png" style="max-width:100%;height:auto;"/>
+</div>
+<hr/>
+<h1 id="coverage-path-planning-cpp">Coverage Path Planning (CPP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#coverage-path-planning-cpp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Definition</strong>: Determine a path that ensures complete coverage of a given area or environment while optimizing certain objectives, such as minimizing travel distance, time, or energy consumption. This is not about generating the shortest path from <strong>A</strong> to <strong>B</strong>, but to cover an entire area.</p>
+<p><strong>Key subproblems in CPP</strong>:</p>
+<ol>
+<li><strong>Decomposition of the Area</strong></li>
+</ol>
+<ul>
+<li>Dividing the environment into smaller, manageable cells.</li>
+</ul>
+<ol start="2">
+<li><strong>Path Generation</strong></li>
+</ol>
+<ul>
+<li>Determining the sequence of movements within and between subregions to ensure complete coverage.</li>
+</ul>
+<ol start="3">
+<li><strong>Start and End Positioning</strong></li>
+</ol>
+<ul>
+<li>Identifying optimal starting and ending positions for the path to minimize travel costs.</li>
+</ul>
+<ol start="4">
+<li><strong>Dynamic Adaptation</strong></li>
+</ol>
+<ul>
+<li>Updating the plan in real-time when changes occur in the environment (e.g. new obstacles).</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/cpp.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><strong>Approaches to Solve CPP</strong>:</p>
+<ol>
+<li><strong>Grid-Based Methods</strong></li>
+</ol>
+<ul>
+<li>Represent the environment as a grid of cells, marking each cell as visited during traversal.</li>
+</ul>
+<ol start="2">
+<li><strong>Graph-Based Methods</strong></li>
+</ol>
+<ul>
+<li>Model the environment as a graph, where nodes represent regions, and edges represent traversable paths</li>
+</ul>
+<ol start="3">
+<li><strong>Continuous Methods</strong></li>
+</ol>
+<ul>
+<li>Treat the environment as a continuous space and solve using coverage strategies like sweeping or spiral patterns.</li>
+</ul>
+<ol start="4">
+<li><strong>Heuristics</strong></li>
+</ol>
+<ul>
+<li>Use algorithms like backtracking, greedy methods, or genetic algorithms to optimize path planning</li>
+</ul>
+<p>Some <strong>applications</strong> could include vacuum cleaning robots, to not miss a spot; Agrorobotics (you want to harvest everything), robotic inspections over areas; mapping and exploration.</p>
+<hr/>
+<h1 id="meta-heuristics">Meta Heuristics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#meta-heuristics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>They are high-level optimization strategies that can handle non-linear &amp; NP-hard problems. through <strong>global search, randomness</strong>. They are inspired by natural processes.</p>
+<p>One example would be Genetic Algorithms (Survival of the fittest).</p>
+<p>The professor simply decided to give endless bullet points. whatever I guess — it’s not really ‘robotics’, is it?</p>
+<p>They converge slow and have many parameters to tune. It’s 02:49 AM I am done.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/studyq.png" style="max-width:100%;height:auto;"/>
+</div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#graph-notation" data-for="graph-notation">Graph Notation</a></li><li class="depth-0"><a href="#a-star-or-a" data-for="a-star-or-a">A-STAR or A*</a></li><li class="depth-0"><a href="#d-or-dynamic-a" data-for="d-or-dynamic-a">D* or Dynamic A*</a></li><li class="depth-0"><a href="#potential-fields" data-for="potential-fields">Potential Fields</a></li><li class="depth-2"><a href="#issues-with-local-minima" data-for="issues-with-local-minima">Issues with Local Minima</a></li><li class="depth-0"><a href="#next-best-view-planning-nvp" data-for="next-best-view-planning-nvp">Next Best View Planning (NVP)</a></li><li class="depth-0"><a href="#coverage-path-planning-cpp" data-for="coverage-path-planning-cpp">Coverage Path Planning (CPP)</a></li><li class="depth-0"><a href="#meta-heuristics" data-for="meta-heuristics">Meta Heuristics</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/RPCN" class="internal">Robotic Perception, Cognition and Navigation</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

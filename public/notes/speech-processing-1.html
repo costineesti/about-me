@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>What automatic speech recognition can and cannot do for conversational speech transcription</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="What automatic speech recognition can and cannot do for conversational speech transcription"/><meta property="og:description" content="This is a paper from 2024 which we had to study in my speech processing lecture at Twente. Source: link ASR (Automatic Speech Recognition) has had a lot of attention lately, driven by the wide availability of ASR platforms such as OpenAI’s Whisper."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="This is a paper from 2024 which we had to study in my speech processing lecture at Twente. Source: link ASR (Automatic Speech Recognition) has had a lot of attention lately, driven by the wide availability of ASR platforms such as OpenAI’s Whisper."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/speech-processing-1"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>What automatic speech recognition can and cannot do for conversational speech transcription</a></div></nav><h1 class="article-title">What automatic speech recognition can and cannot do for conversational speech transcription</h1><p show-comma="true" class="content-meta"><span>Jan 09, 2026</span><span>7 min read</span></p></div></div><article class="popover-hint"><p>This is a paper from 2024 which we had to study in my <a href="../notes/speech-processing" class="internal alias" data-slug="notes/speech-processing">speech processing</a> lecture at <a href="../twente" class="internal alias" data-slug="twente">Twente</a>.</p>
+<p>Source: <a href="https://www.sciencedirect.com/science/article/pii/S2772766124000697" class="external">link<svg class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>ASR (Automatic Speech Recognition) has had a lot of attention lately, driven by the wide availability of ASR platforms such as OpenAI’s Whisper.</p>
+<h1 id="context">Context<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#context" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Spoken conversation is complex</p>
+<ul>
+<li>Interlocutors exchange speaking turns rapidly, ofter speaking in overlap (Sacks et. al, 1978)</li>
+<li>Words may be spoken incompletely as interlocutors correct themselves or others (Schegloff, 2000)</li>
+<li>There is also a rich use of interjections: short words such as uh-hum and gosh which have many functions including signalling agreement or the intent to speak (Dingemanse, 2024)</li>
+</ul>
+<p>Computer scientists also study conversation: robots which can understand NLTs (non-lexical tokens) such as umm in human speech tend to interrupt humans less often, improving the interaction (Bilac et. al 2017)</p>
+<blockquote>
+<p>The development of these algorithms requires training data, i.e. transcribed conversations.</p>
+</blockquote>
+<h1 id="openai-whisper-radford-et-al-2023">OpenAI Whisper (Radford et. al, 2023)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#openai-whisper-radford-et-al-2023" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Source: <a href="https://openai.com/index/whisper/" class="external">official documentation<svg class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<blockquote class="callout quote" data-callout="quote">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Whisper is an automatic speech recognition (ASR) system trained on 680,000 hours of multilingual and multitask supervised data collected from the web. We show that the use of such a large and diverse dataset leads to improved robustness to accents, background noise and technical language. Moreover, it enables transcription in multiple languages, as well as translation from those languages into English. We are open-sourcing models and inference code to serve as a foundation for building useful applications and for further research on robust speech processing. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>The Whisper architecture is a simple end-to-end approach, implemented as an encoder-decoder <a href="../notes/transformers" class="internal alias" data-slug="notes/transformers">Transformer</a>. Input audio is split into 30-second chunks, converted into a log-Mel spectrogram, and then passed into an encoder. A decoder is trained to predict the corresponding text caption, intermixed with special tokens that direct the single model to perform tasks such as language identification, phrase-level timestamps, multilingual speech transcription, and to-English speech translation.</p>
+</div>
+</blockquote>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/whisper_1.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Because Whisper was trained on a large and diverse dataset and was not fine-tuned to any specific one, it does not beat models that specialize in LibriSpeech performance, a famously competitive benchmark in speech recognition. However, when they measure Whisper’s zero-shot performance across many diverse datasets they find it is much more robust and makes 50% fewer errors than those models.</p>
+<p>About a third of Whisper’s audio dataset is non-English, and it is alternately given the task of transcribing in the original language or translating to English.</p>
+<h1 id="word-error-rate-wer">Word Error Rate (WER)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#word-error-rate-wer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>ASR accuracy is typically quoted using the word error rate (WER), which rewards correct spelling and word placement.</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>A lower WER indicated superior performance </p></div>
+                  
+                </div>
+</blockquote>
+<p>State-of-the-art ASR systems such as Whisper achieve a 2-3% WER on audiobook speech, out-performing humans who transcribe with a 4% WER.</p>
+<p>Factors which impact the WER:</p>
+<ul>
+<li>as the level of background noise</li>
+<li>the dialects</li>
+<li>accents of native and non-native speakers</li>
+</ul>
+<p>An ASR transcription is generally considered ready-to-use when the WER is less than 10% (Microsoft, 2024). However, the <strong>WER metric does not detail the types of errors that occur</strong>.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Apparently, these ASR systems fail to capute NLTs such as uhmm (94-98% error by Google and Amazon) in patient-doctor interactions. It's considered that these words carry important clinical meaning, thus ASR cannot be used to automate medical notetaking tools, irrespective of the overall WER. </p></div>
+                  
+                </div>
+</blockquote>
+<h1 id="datasets">Datasets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#datasets" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>In the study they used 3 datasets:</p>
+<ul>
+<li><strong>Switchboard</strong> — common ASR benchmark consisting of unscripted, two-party, English telephone conversations about set topics, e.g. recycling. The transcripts include word timings and annotation of filled pauses, which contain NLTs (uhm, etc.). Dialogue partners are native speakers of US English grouped into 7 dialect categories covering the continental US (e.g. New York, Southern, Western, etc.). Recordings are captured at 16 kHz stereo with one channel per speaker, although the respective other speaker is faintly audible (microphone bleed). There are no other specific sources of noise which would be detrimental to ASR performance in the recordings, e.g. echo or background noise</li>
+<li><strong>RoomReader</strong> — is a corpus of small group, English conversational interactions recorded over Zoom. A tutor guides 3–4 students through a game using prompts such as “Name somewhere you could catch a cold or flu.”. Most speakers are native speakers of Irish-English. The remaining speakers are fluent in English and have a variety of native languages (Greek, French, etc.). The mix of native and non-native speakers in this corpus makes it a valuable benchmark as ASR performance is degraded in non-native accented speech (since ASR performance is often optimised of US English). The corpus contains a single 32 kHz mono recording per speaker with no microphone bleed. The recordings were made in the wild during the COVID-19 pandemic, recordings are from wide variety of domestic environments such as home offices and shared kitchens.</li>
+<li><strong>LibriSpeech</strong> — English audiobook recordings to assess read speech transcription. LibriSpeech recordings are captured at 16 kHz mono. Each recording in LibriSpeech is assigned either a <code>clean</code> or an <code>other</code> label, where <code>other</code> means that it is more challenging for an ASR system to transcribe.</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/datasets_asr.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>They resample the RoomReader audio to 16kHz to match Switchboard and LibriSpeech using <code>ffmpeg</code> — a library which I used intensively to modify videos and pictures in Ubuntu. In Switchboard, they also removed the microphone bleed using <code>Torchaudio</code> as the corpus is provided with a ground-truth word alignment based on timings.</p>
+<blockquote>
+<p>Speaker diarisation is an alternative strategy which could be employed to handle microphone bleed in recordings. It solves the “who spoke when” problem which arises when multiple speakers are present in a single audio channel or signal.</p>
+</blockquote>
+<p>However, they opted not to use diarisation as it introduces its own sources of error, such as distortion.</p>
+<p>They evaluate the datasets based on four criteria:</p>
+<ol>
+<li>accurate representation of what was said</li>
+<li>NLTs</li>
+<li>timing of words</li>
+<li>overlapping speech</li>
+</ol>
+<p>To determine if an ASR accurately captures what was said, they used WER at corpus level.</p>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">WER</span></span><span class="mopen">(</span><span class="mord">%</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">100</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">words in ground truth transcript</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">insertions + deletions + substitutions</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+<p>They used the <code>jiwer</code> Python package to compute the number of matches, as well as deletion, substitution and insertion errors.</p>
+<p>Prior to running <code>jiwer</code>, they removed all non-alphanumeric characters except apostrophes and performed <a href="https://github.com/openai/whisper/blob/main/whisper/normalizers/english.py" class="external">normalization<svg class="external-icon" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> (numbers translated into words “1” <span>→</span> “one”, “0” <span>→</span> “th”, “1” <span>→</span> “st”, ”-” <span>→</span> “minus”, ”%” <span>→</span> “percent”, removing commas, etc.) to ensure the WER was not penalized by differences between UK and US spelling (rumour vs. rumor), numbers (100 vs. one hundred), contractions (you’ll vs. you will), etc.</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>As a rule of thumb, Microsoft(2024) advise that </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>a 5-10% WER means an ASR is “ready to use”,</li>
+<li>20-30% indicates optimisation is necessary,</li>
+<li>> 30% indicates poor quality</li>
+</ul>
+</div>
+</blockquote>
+<h1 id="results">Results<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#results" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>All ASR platforms have a lower WER on read speech (LibriSpeech) than on conversational speech (Switchboard and RoomReader).</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/results_asr.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>During this study, they mainly wanted to conduct a comparison between open-source and commercial models.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/comparison_asr.png" style="max-width:100%;height:auto;"/>
+</div>
+<h2 id="top-asr-errors-involve-non-lexical-tokens">Top ASR errors involve non-lexical tokens<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#top-asr-errors-involve-non-lexical-tokens" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>They count the the occurrences of each word in the human and ASR transcripts excluding stopwords and compare counts using the log-likelihood ratio (LLR), which compares relative word frequencies. They found that NLTs such as <em>uhhuh</em> and <em>huh</em> are less likely to occur in an ASR-generated transcript than in a human transcription.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/comparison_asr_1.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>They also looked more in detail which words were mostly deleted, inserted, matched, etc. More can be found in their study.</p>
+<h2 id="word-timing-and-overlap">Word timing and overlap<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#word-timing-and-overlap" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>They used the switchboard corpus as it contains a ground-truth word alignment and showed the results using Praat(software).</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/praat_1.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>They also compute the absolute difference between the human and ASR start and end times of each word (the <em>onset error</em> and the <em>offset error</em>. The table shows that the median onset and offset timing errors are approximately 500 ms.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/comparison_asr_2.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>They also looked at how these models interpret the overlap</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/praat_2.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Overall, their conclusion is that open-source ASR has substantially more errors than commercial ASR.</p>
+<blockquote>
+<p>We found that a notable difference between commercial and open-source ASR is that commercial ASR captures more NLTs such as <em>uh-hum</em>, though misspellings are common. We discussed how cost and privacy advantages may outweigh performance issues.</p>
+</blockquote></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#context" data-for="context">Context</a></li><li class="depth-0"><a href="#openai-whisper-radford-et-al-2023" data-for="openai-whisper-radford-et-al-2023">OpenAI Whisper (Radford et. al, 2023)</a></li><li class="depth-0"><a href="#word-error-rate-wer" data-for="word-error-rate-wer">Word Error Rate (WER)</a></li><li class="depth-0"><a href="#datasets" data-for="datasets">Datasets</a></li><li class="depth-0"><a href="#results" data-for="results">Results</a></li><li class="depth-1"><a href="#top-asr-errors-involve-non-lexical-tokens" data-for="top-asr-errors-involve-non-lexical-tokens">Top ASR errors involve non-lexical tokens</a></li><li class="depth-1"><a href="#word-timing-and-overlap" data-for="word-timing-and-overlap">Word timing and overlap</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/speech-processing-101" class="internal">Speech Processing 101</a></li><li><a href="../notes/speech-processing" class="internal">Speech Processing</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

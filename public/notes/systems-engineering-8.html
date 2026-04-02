@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Systems Engineering Management</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Systems Engineering Management"/><meta property="og:description" content="Final lecture of the Systems Engineering course — Chapter 8 of the ASE book. Technical Review and Audit Management In previous stages, we considered the major reviews and audits in each stage of the Acquisition Phase."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Final lecture of the Systems Engineering course — Chapter 8 of the ASE book. Technical Review and Audit Management In previous stages, we considered the major reviews and audits in each stage of the Acquisition Phase."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/systems-engineering-8"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Systems Engineering Management</a></div></nav><h1 class="article-title">Systems Engineering Management</h1><p show-comma="true" class="content-meta"><span>Nov 18, 2025</span><span>9 min read</span></p></div></div><article class="popover-hint"><p>Final lecture of the <a href="../notes/Systems-Engineering" class="internal alias" data-slug="notes/Systems-Engineering">Systems Engineering</a> course — Chapter 8 of the ASE book.</p>
+<h1 id="technical-review-and-audit-management">Technical Review and Audit Management<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#technical-review-and-audit-management" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>In previous stages, we considered the major reviews and audits in each stage of the Acquisition Phase. This discusses the management considerations of technical reviews and audits which we discussed in <a href="../notes/systems-engineering-7" class="internal alias" data-slug="notes/systems-engineering-7">Production, Use and Retirement</a>.</p>
+<p>As a small reminder, technical reviews and audits provide both the customer and contractor with a measure of progress.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Reviews and Audits </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>clarifying and prioritizing design requirements,</li>
+<li>providing an effective means of formal communications between the stakeholders,</li>
+<li>recording design decisions and rationales for later reference,</li>
+<li>…</li>
+</ul>
+</div>
+</blockquote>
+<p>The customer normally specifies the required technical reviews and audits and their timing in the contractual documentation.</p>
+<p>The technical review and audit effort is principally managed via a <em>Technical Reviews and Audits Plan</em> (TRAP). The TRAP (or the contract) documents all formal reviews, detailing the entry criteria that must be met prior to the commencement of the review or audit and the exit criteria that must be demonstrated prior to approval of the review or audit. It is normally drafted during <a href="../notes/systems-engineering-2" class="internal alias" data-slug="notes/systems-engineering-2">Conceptual Design</a> and should be finalized and approved prior to any contract being signed.</p>
+<h1 id="test-and-evaluation">Test and Evaluation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#test-and-evaluation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>A thorough evaluation of a system involves validating the system against the original business and stakeholder needs and requirements. The aim of a useful T&amp;E approach is to test and evaluate the system progressively as it passes through the <a href="../notes/systems-engineering-1" class="internal alias" data-slug="notes/systems-engineering-1">Acquisition</a> and <a href="../notes/systems-engineering-7" class="internal alias" data-slug="notes/systems-engineering-7">Utilization</a> phases in order to avoid costly and time-consuming modifications to the system design late in the life cycle (could be considered <strong>Risk Mitigation</strong>).</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/verif_cost.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Testing can be expensive, time-consuming, and sometimes dangerous. We try to avoid it if other evaluation methods are available.</p>
+<p>Remember AT&amp;E VS DT&amp;E VS OT&amp;E from <a href="../notes/systems-engineering-7" class="internal alias" data-slug="notes/systems-engineering-7">Utilization</a>. OT&amp;E must be conducted in as realistic an environment as possible, where as DT&amp;E and AT&amp;E to a certain extent, can be performed in clinical conditions. This way, OT&amp;E supports true validation of the system.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/DTE_OTE_ATE.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>The contractor should be responsible for managing DT&amp;E and AT&amp;E to ensure a coordinated approach to testing.</p>
+<h1 id="te-activities-in-conceptual-design">T&amp;E Activities in Conceptual Design<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#te-activities-in-conceptual-design" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The customer typically prepares an outline of the TEMP to address the T&amp;E requirements specified in the contract — the tenderers are required to respond with a draft TEMP that conforms to the customer’s preliminary outline. So TEMP is a contractual deliverable that details how the contractor intends to approach the overall test and evaluation effort.</p>
+<h1 id="te-activities-in-preliminary-design">T&amp;E Activities in Preliminary Design<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#te-activities-in-preliminary-design" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>T&amp;E during Preliminary Design achieves the following: </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>evaluate any design areas that have been identified as a significant risks in the overall design;</li>
+<li>help select the preferred technical approach to the system design from the alternatives under consideration;</li>
+<li>help to validate that the preferred technical approach has the ability to meet the original user requirements;</li>
+<li>finalize the T&amp;E requirements for the remainder of the Acquisition Phase and document this in the TEMP</li>
+</ul>
+</div>
+</blockquote>
+<h1 id="te-activities-in-detailed-design-and-development">T&amp;E Activities in Detailed Design and Development<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#te-activities-in-detailed-design-and-development" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The DT&amp;E effort during this stage concentrates on demonstrating that the design of the system is very close to complete and that all outstanding design issues have been adequately resolved.</p>
+<p>Thus, some examples include:</p>
+<ul>
+<li>Functional testing,</li>
+<li>Interface testing,</li>
+<li>Environmental testing,</li>
+<li>Physical and configurational testing,</li>
+<li>Quality factor testing</li>
+</ul>
+<p>Testing in this stage is normally conducted at the supplier’s facility. The tests qualify the system to enter into Construction and/or Production.</p>
+<h1 id="te-activities-in-construction-andor-production">T&amp;E Activities in Construction and/or Production<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#te-activities-in-construction-andor-production" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>This stage is focused on AT&amp;E conducted in the later stages of this stage as systems begin to be produced. It is conducted by operational personnel for either the contractor or the customer.
+OT&amp;E is now able to start ensuring that all production systems meet the original system requirements as they are accepted into service and recommending any modification that may be required to the system.</p>
+<h1 id="te-activities-in-the-utilization-phase">T&amp;E Activities in the Utilization Phase<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#te-activities-in-the-utilization-phase" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Testing of the system continues throughout the Utilization Phase of the system life cycle. Typical focus is on integration with external systems, supportability issues, functional performance and operation in the true operational environment.</p>
+<h1 id="test-and-evaluation-master-plan-temp">Test and Evaluation Master Plan (TEMP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#test-and-evaluation-master-plan-temp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The TEMP is also commonly referred to as the <em>Master Test Plan</em> (MTP) or the <em>Verification and Validation (V&amp;V) Plan</em>.</p>
+<p>It is:</p>
+<ul>
+<li>required by the contract,</li>
+<li>prepared by the contractor</li>
+<li>reviewed and approved by the customer</li>
+</ul>
+<p>It should be finalized and approved during Conceptual Design.</p>
+<h1 id="technical-risk-management">Technical Risk Management<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#technical-risk-management" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Risk is defined as the possibility of a loss or injury, or the possibility of some disadvantage or destruction. Systems Engineering management is concerned with the management of technical risks.</p>
+<ul>
+<li>Internal risks are those that are within the control of the customer (e.g. unqualified staff)</li>
+<li>External risks are beyond the control of the project office. (e.g. a new law)</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/risk_management.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>PERT and Critical Path Method (CPM) assist in risk analysis.</p>
+<h3 id="risk-management-plan-rmp">Risk Management Plan (RMP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#risk-management-plan-rmp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If there appears to be significant risk associated with a given system development, there may be a requirement for a <strong>RMP</strong> which is a formal document written by the contracting organization and reviewed and approved by the customer organization. The RMP details the risk management process and the results of the application of that process for the particular development effort.</p>
+<h1 id="configuration-management">Configuration Management<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#configuration-management" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><em>Configuration Management</em> (CM) is the act of controlling and managing the physical and functional make-up (defined in the baselines) of the <em>configuration items</em> that comprise the system.</p>
+<p>The main aims are to identify the functional and physical characteristics of selected system components, designated as configuration items; to control changes to those characteristics; and to record and report on change processing and implementation status.</p>
+<h3 id="establishing-the-baselines">Establishing the Baselines<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#establishing-the-baselines" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Each approved baseline provides a firm position from which to move forward.</p>
+<ul>
+<li>The <em>Functional Baseline (FBL)</em> of the system has at its centre the SyRS that is produced during the early stages of the Acquisition Phase</li>
+<li>The <em>Allocated Baseline (ABL)</em> is defined by the set of Development Specifications for each of the CIs making up the system.</li>
+<li>The <em>Product Baseline (PBL)</em> is the set of Product Specifications for each of the CIs comprising the system. It is approved by FCA and PCA.</li>
+</ul>
+<p>FBL > ABL > PBL in terms of priority in case of conflict or discrepancy.</p>
+<h3 id="configuration-management-functions">Configuration Management Functions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#configuration-management-functions" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><em>CM planning and management</em> ensures the appropriate tasks are performed and the necessary resources are available at the right times</li>
+<li><em>Configuration Identification</em> identifies the CIs to be placed under configuration management. The initial identification of CIs represents the translation from functional to physical description during Preliminary Design.</li>
+<li><em>Configuration Change Management</em> provides up-to-date info on the configuration of the items placed under control. A body called the <em>Configuration Control Board (CCB)</em> is charged with the responsibility of managing changes.
+<ul>
+<li>The CCB includes major stakeholders and users, relevant ICWG (Interface Control Working Group) participants, and production representatives.</li>
+<li>The CCB investigates the change and decides on the severity of the change.</li>
+<li>Major changes (changes to form, fit or function of the system) are called <em><strong>Class I</strong></em>. The customer must be involved in the approval of these.</li>
+<li>Minor changes (change in documentation, changes to the aspect of the design) are called <em><strong>Class II</strong></em>. The customer should be informed regarding these.</li>
+<li>The customer must be involved in assessing a change as major or minor.</li>
+</ul>
+</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/change_management_process.png" style="max-width:100%;height:auto;"/>
+</div>
+<h3 id="configuration-management-in-acquisition-and-in-utilization">Configuration Management in Acquisition and in Utilization<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#configuration-management-in-acquisition-and-in-utilization" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>CM does not stop when a system is introduced into service if a system is to be managed effectively (possibly over decades).</p>
+<p>There are at least 2 CM activities — 1 conducted by the contractor during Acquisition and 1 conducted by the customers in-service management staff.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/CM.png" style="max-width:100%;height:auto;"/>
+</div>
+<h3 id="configuration-management-plan-cmp">Configuration Management Plan (CMP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#configuration-management-plan-cmp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The CMP is one of the major systems engineering management plans and details the approach and processes involved in the configuration management for the project. As mentioned above, there will be 2 CMPs.</p>
+<h3 id="change-proposals">Change Proposals<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#change-proposals" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>There are 2 major types of change proposals relevant to Systems Engineering Management:</p>
+<ol>
+<li><em>Engineering Change Proposals (ECP)</em> — relates to the engineering design aspects of the project</li>
+<li><em>Contract Change Proposals (CCP)</em> — relates to the contractual aspects of the project.</li>
+</ol>
+<p>The content and use of ECP are determined by the customer organization and stated in the contractual document. The information will include a statement of the reason for the change, the various alternative solutions considered and the preferred solution. Another important piece of information is an impact assessment of the change that analyses the impact the change will have on other aspects of the design, the interfaces with other CIs, and the likely changes required to the current documentation set.</p>
+<h3 id="system-requirement-specification-syrs">System Requirement Specification (SyRS)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#system-requirement-specification-syrs" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>An SyRS needs to state the requirement of the system in terms of both operational terms and maintenance and support terms, and document the interfaces between the system and its environment, and between major functional areas of the system. Significant design constraints should also be detailed in the SyRS.</li>
+<li>The requirements should avoid reference to products and equipment and should concentrate on explaining the requirements in mission or capability terms.</li>
+<li>It will define the FBL of the system.</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/SyRS_tree.png" style="max-width:100%;height:auto;"/>
+</div>
+<h1 id="systems-engineering-management-planning-semp">Systems Engineering Management Planning (SEMP)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#systems-engineering-management-planning-semp" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li>SEMP should cover the entire systems engineering effort.</li>
+<li>Constructed by the contractor in accordance with the systems requirements in the contractual documentation and reviewed and approved by the customer.</li>
+<li>The SEMP should cover all of the major systems engineering functions: CMP, RMP, TRAP, TEMP and CI lists as well as internal company design plans and processes.</li>
+<li>Detail positions of particular responsibility within the design team: chief designers, hardware and software team leaders, project managers, testing personnel and also some key qualifications and skills.</li>
+</ul>
+<p>Example of Project Management for the MsC thesis</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/PM_MsC.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Gantt chart: if one task gets longer it shift everything</p>
+<pre><code>We can set milestones
+
+	And some tasks depend on the milestones
+	
+Helps with traceability
+</code></pre>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/Gantt.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>Parkinson’s Law: the work always expands to the time assigned (people will extend it to the time provided).</p>
+<p>PERT: We are X% sure it’s going to get done in 3 weeks</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/PERT.png" style="max-width:100%;height:auto;"/>
+</div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#technical-review-and-audit-management" data-for="technical-review-and-audit-management">Technical Review and Audit Management</a></li><li class="depth-0"><a href="#test-and-evaluation" data-for="test-and-evaluation">Test and Evaluation</a></li><li class="depth-0"><a href="#te-activities-in-conceptual-design" data-for="te-activities-in-conceptual-design">T&amp;E Activities in Conceptual Design</a></li><li class="depth-0"><a href="#te-activities-in-preliminary-design" data-for="te-activities-in-preliminary-design">T&amp;E Activities in Preliminary Design</a></li><li class="depth-0"><a href="#te-activities-in-detailed-design-and-development" data-for="te-activities-in-detailed-design-and-development">T&amp;E Activities in Detailed Design and Development</a></li><li class="depth-0"><a href="#te-activities-in-construction-andor-production" data-for="te-activities-in-construction-andor-production">T&amp;E Activities in Construction and/or Production</a></li><li class="depth-0"><a href="#te-activities-in-the-utilization-phase" data-for="te-activities-in-the-utilization-phase">T&amp;E Activities in the Utilization Phase</a></li><li class="depth-0"><a href="#test-and-evaluation-master-plan-temp" data-for="test-and-evaluation-master-plan-temp">Test and Evaluation Master Plan (TEMP)</a></li><li class="depth-0"><a href="#technical-risk-management" data-for="technical-risk-management">Technical Risk Management</a></li><li class="depth-2"><a href="#risk-management-plan-rmp" data-for="risk-management-plan-rmp">Risk Management Plan (RMP)</a></li><li class="depth-0"><a href="#configuration-management" data-for="configuration-management">Configuration Management</a></li><li class="depth-2"><a href="#establishing-the-baselines" data-for="establishing-the-baselines">Establishing the Baselines</a></li><li class="depth-2"><a href="#configuration-management-functions" data-for="configuration-management-functions">Configuration Management Functions</a></li><li class="depth-2"><a href="#configuration-management-in-acquisition-and-in-utilization" data-for="configuration-management-in-acquisition-and-in-utilization">Configuration Management in Acquisition and in Utilization</a></li><li class="depth-2"><a href="#configuration-management-plan-cmp" data-for="configuration-management-plan-cmp">Configuration Management Plan (CMP)</a></li><li class="depth-2"><a href="#change-proposals" data-for="change-proposals">Change Proposals</a></li><li class="depth-2"><a href="#system-requirement-specification-syrs" data-for="system-requirement-specification-syrs">System Requirement Specification (SyRS)</a></li><li class="depth-0"><a href="#systems-engineering-management-planning-semp" data-for="systems-engineering-management-planning-semp">Systems Engineering Management Planning (SEMP)</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/Systems-Engineering" class="internal">Systems Engineering</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>

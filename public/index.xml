@@ -6,65 +6,65 @@
       <description>Last 10 notes on 🚀 Costin Chitic</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>SeaClear</title>
-    <link>https://costineesti.github.io/about-me/seaclear</link>
-    <guid>https://costineesti.github.io/about-me/seaclear</guid>
-    <description>Everything I do inside this project is out of passion and constant drive to learn from professionals. I have also been awarded with a scholarship. We are building the first robots to clean the litter from the ocean floor.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Fundamentals of parameter estimation - Part I</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-3</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-3</guid>
+    <description>The fist exercise out of eight that I have to solve in the optimal estimation course. The focus is on MAP estimation, MMSE estimation; MMAE estimation; ML estimation.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:24 GMT</pubDate>
   </item><item>
-    <title>Visual Odometry</title>
-    <link>https://costineesti.github.io/about-me/projects/visual-odom</link>
-    <guid>https://costineesti.github.io/about-me/projects/visual-odom</guid>
-    <description>Visual Odometry was my main contribution to my bachelor’s degree. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Fundamentals of parameter estimation - Part II</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-5</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-5</guid>
+    <description>This is the continuation to Fundamentals of parameter estimation - Part I. Exercise 2/8 from my optimal estimation course. The focus is on linear MMSE and unbiased linear MMSE.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:21 GMT</pubDate>
   </item><item>
-    <title>Simple Online and Real-Time Tracking</title>
-    <link>https://costineesti.github.io/about-me/projects/sort</link>
-    <guid>https://costineesti.github.io/about-me/projects/sort</guid>
-    <description>Sources: this paper with code attached Mission: Multiple Object Tracking (MOT) According to [1], only detections from the previous and the current frame are presented to the tracker ...</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Fundamentals of parameter estimation - Part III</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-6</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-6</guid>
+    <description>This is the continuation to Fundamentals of parameter estimation - Part II. Exercise 3/8 from my optimal estimation course. The focus is on random vectors and unbiased linear MMSE estimation.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:19 GMT</pubDate>
   </item><item>
-    <title>Computer Vision for detecting a Metallic Grid and a set reference</title>
-    <link>https://costineesti.github.io/about-me/projects/metalic-grid</link>
-    <guid>https://costineesti.github.io/about-me/projects/metalic-grid</guid>
-    <description>Code: GitHub Related to: SeaClear, Line Segment Detector Final mission Real-time ground truth validation of 3D pose estimation. Context I had to clean up a pool using a mop and constantly throwing out the accumulated water with a bucket that I stole from the cleaning ladies.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Prediction in a linear dynamic system</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-8</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-8</guid>
+    <description>This is exercise 4/8 from my optimal estimation course. The focus is on propagation of uncertainty and prediction. Context Again, to gather data, we use dead reckoning.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:15 GMT</pubDate>
   </item><item>
-    <title>Inertial Odometry</title>
-    <link>https://costineesti.github.io/about-me/projects/inertial-odom</link>
-    <guid>https://costineesti.github.io/about-me/projects/inertial-odom</guid>
-    <description>Inertial Odometry is great because it does not care of the environment variables. I used a BNO055 which is an “absolute orientation” sensor made by Bosch.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Discrete Kalman Filtering for Radar Tracking Applications</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-9</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-9</guid>
+    <description>This is exercise 5/8 from my optimal estimation course. The goal is to implement a discrete Kalman Filter for a radar tracking application. Context I consider the same dynamic process from Prediction in a linear dynamic system (ex 4).</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:13 GMT</pubDate>
   </item><item>
-    <title>Proportional-Derivative Control</title>
-    <link>https://costineesti.github.io/about-me/projects/Proportional-Derivative</link>
-    <guid>https://costineesti.github.io/about-me/projects/Proportional-Derivative</guid>
-    <description>This control was mainly used in my bachelor’s degree project in order to adjust the angle of the servomotor so that the ego was situating itself in the middle of the road ...</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Extended Kalman Filtering (EKF)</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-10</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-10</guid>
+    <description>This is exercise 6/8 from my optimal estimation course. The application revolves around Dead reckoning and bearing measurements, so a ship again. To recall previous exercises, in Fundamentals of parameter estimation - Part III, we applied the unbiased linear MMSE estimation to update the position of a ship using a line-of-sight measurement knowing the position of an observed beacon.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:11 GMT</pubDate>
   </item><item>
-    <title>Loop Closure</title>
-    <link>https://costineesti.github.io/about-me/projects/Loop-Closure</link>
-    <guid>https://costineesti.github.io/about-me/projects/Loop-Closure</guid>
-    <description> .</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Particle Filtering</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation-11</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation-11</guid>
+    <description>So I need to finish my notes on the Particle Filter. The process is the exact same as in the EKF application. Sections 4.4 and 9.3.3 from the book. Two differences from the prior exercise The intended heading \phi_0(i) is now time variant and given at any moment in time.</description>
+    <pubDate>Wed, 01 Apr 2026 11:58:09 GMT</pubDate>
   </item><item>
-    <title>Kalman Filter</title>
-    <link>https://costineesti.github.io/about-me/projects/Kalman-Filter</link>
-    <guid>https://costineesti.github.io/about-me/projects/Kalman-Filter</guid>
-    <description>The concept of probabilistic or stochastic mathematics deals with the study and modeling of uncertainties. It seeks to combine concepts from probability theory with statistical methods to understand and make decisions under conditions of uncertainty.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</title>
+    <link>https://costineesti.github.io/about-me/notes/laser-scanning-10</link>
+    <guid>https://costineesti.github.io/about-me/notes/laser-scanning-10</guid>
+    <description>Link to research paper. Context and adjacent research As an abstract, autonomous driving should be able to recognize static and moving objects in the environment in order to avoid collisions and plan tasks (i.e.</description>
+    <pubDate>Tue, 31 Mar 2026 20:58:29 GMT</pubDate>
   </item><item>
-    <title>Gaussian Distribution</title>
-    <link>https://costineesti.github.io/about-me/projects/Gaussian-distribution</link>
-    <guid>https://costineesti.github.io/about-me/projects/Gaussian-distribution</guid>
-    <description>A Gaussian or normal distribution always has a bell-shaped curve and is determined by two parameters: the mean \mu and the standard deviation \sigma. The graph associated with this phenomenon is symmetric with its center at the mean, and its shape is determined by the standard deviation.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Laser Scanning and Point Cloud Processing</title>
+    <link>https://costineesti.github.io/about-me/notes/laser-scanning</link>
+    <guid>https://costineesti.github.io/about-me/notes/laser-scanning</guid>
+    <description>I take this course in Q3 during my first year at Twente. It’s kind of a niched continuation of the RPCN course, where we focus on LiDARs. I think I will like it.</description>
+    <pubDate>Tue, 31 Mar 2026 18:58:00 GMT</pubDate>
   </item><item>
-    <title>My Bachelor&#039;s Degree Thesis</title>
-    <link>https://costineesti.github.io/about-me/projects/Bachelors</link>
-    <guid>https://costineesti.github.io/about-me/projects/Bachelors</guid>
-    <description>In 2024 I finished my Bachelor’s studies at Technical University of Cluj-Napoca. My diploma project is intitulated Visual-Inertial Odometry based on lane-detection of an autonomous vehicle with constant speed.</description>
-    <pubDate>Sun, 27 Jul 2025 21:21:59 GMT</pubDate>
+    <title>Optimal Estimation in Dynamic Systems</title>
+    <link>https://costineesti.github.io/about-me/notes/optimal-estimation</link>
+    <guid>https://costineesti.github.io/about-me/notes/optimal-estimation</guid>
+    <description>I’m taking this course in Q3 during my first year at Twente. The aim is to learn how to design optimal estimators that can uncover the time-dependent states of a dynamic system.</description>
+    <pubDate>Sat, 28 Mar 2026 19:57:57 GMT</pubDate>
   </item>
     </channel>
   </rss>

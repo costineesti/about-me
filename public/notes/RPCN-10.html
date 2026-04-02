@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Human-Agent-Robot Teamwork</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Roboto:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Human-Agent-Robot Teamwork"/><meta property="og:description" content="Zender, H., Kruijff, G. J., Janicek, M. (2012). Situated communication for joint activity in human-robot teams. IEEE Intelligent Systems, 27(02), 27-35. The question here is what it takes to make a robot understand human communication and produce communication that humans can easily understand in a given context."/><meta property="og:image" content="https://costineesti.github.io/about-me//static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Zender, H., Kruijff, G. J., Janicek, M. (2012). Situated communication for joint activity in human-robot teams. IEEE Intelligent Systems, 27(02), 27-35. The question here is what it takes to make a robot understand human communication and produce communication that humans can easily understand in a given context."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="notes/RPCN-10"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="..">🚀 Costin Chitic</a></h1><div class="spacer mobile-only"></div><div class="search"><div id="search-icon"><p>Search</p><div></div><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="search-layout" data-preview="true"></div></div></div></div><div class="darkmode"><input class="toggle" id="darkmode-toggle" type="checkbox" tabindex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="recent-notes desktop-only"><h3>Recent Notes</h3><ul class="recent-ul"><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/laser-scanning-10" class="internal">Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving</a></h3></div><p class="meta">Mar 31, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-11" class="internal">Particle Filtering</a></h3></div><p class="meta">Mar 30, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-10" class="internal">Extended Kalman Filtering (EKF)</a></h3></div><p class="meta">Mar 28, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/optimal-estimation-9" class="internal">Discrete Kalman Filtering for Radar Tracking Applications</a></h3></div><p class="meta">Mar 23, 2026</p></div></li><li class="recent-li"><div class="section"><div class="desc"><h3><a href="../notes/asdfr-3" class="internal">RELBot</a></h3></div><p class="meta">Mar 17, 2026</p></div></li></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../notes/">notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Human-Agent-Robot Teamwork</a></div></nav><h1 class="article-title">Human-Agent-Robot Teamwork</h1><p show-comma="true" class="content-meta"><span>Jan 12, 2026</span><span>8 min read</span></p></div></div><article class="popover-hint"><ul>
+<li>Zender, H., Kruijff, G. J., Janicek, M. (2012). Situated communication for joint activity
+in human-robot teams. IEEE Intelligent Systems, 27(02), 27-35.</li>
+</ul>
+<blockquote class="callout quote" data-callout="quote">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>The question here is what it takes to make a robot understand human communication and produce communication that humans can easily understand in a given context. This requires an understanding of human communication—yet robots see and experience the world differently from humans. </p></div>
+                  
+                </div>
+</blockquote>
+<h1 id="modeling-experience">Modeling Experience<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modeling-experience" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Gary Klein and his colleagues outlined several basic requirements for turning agents (robots) into team players. However, their work includes a notion of shared or common information among actors. We assume that <strong>there is no common ground</strong>: robots and humans have their own perspective, their own experience, and their own ways of interpreting a situation. This approach allows for correcting misaligned interpretations.</p>
+<p>Their approach to modeling situational awareness for robots makes it possible for an individual robot to comprehend and reason with distributed situational awareness. This conceptual approach establishes a link between probabilistic representations of experience and logical representations of domain knowledge. The latter make it possible to infer properties, available actions, and possible consequences. By modeling the <strong>inferences as beliefs</strong>, they can be attributed to any number of team members, both robot and human. <strong>Linking the beliefs to experience</strong> makes it possible to place them into <strong>time and space</strong> and suitably restrict them to what is actually possible.</p>
+<p>Let’s assume the following accident proposed in the study: several cars are involved, identifiable by color, and a lot of rubble has resulted. The UAV mission specialist, looking at the UAV’s video feed, reports that there appears to be a victim in the red car.</p>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/zender_accident.png" style="max-width:100%;height:auto;"/>
+</div>
+<p><strong>Context</strong>: The mission commander instructs the UGV, “There is a victim in the red car; please ascertain status.” How does the robot link this command to its experience to know how to act on it?</p>
+<p>Based on NIFTI architecture, the builds up a map incrementally for every situation it encounters.</p>
+<ul>
+<li>At the lowest level, the robot uses 2D and 3D data from a laser range sensor to build a metrical representation of the environment that provides a quantitative representation of spatial structure. The robot uses this information to navigate and avoid obstacles.</li>
+<li>To the metrical representation, the robot adds several qualitative levels of experience. Topological mapping constructs a 2.5D representation from the metrical information. The 2.5D view typically represents “free space”—space without any obstacles, landmarks, or other objects that would make it inaccessible. Anchored to this topological representation are the objects the robot has perceived with its camera. Such visual objects are located in metrical space and have a volume.</li>
+<li>Around these objects, the robot can construe topological regions: specifically, identify where the robot needs to be relative to an object or landmark in order to perform a particular action. This step makes these regions functional: they indicate where a particular action relative to a landmark is possible.</li>
+<li>This is where logical inference comes in. The robot is equipped with several domain ontologies, linking objects, areas, and landmarks to actions the robot is able to perform. Once it encounters an instance of an ontological concept, it can derive further properties of that instance.</li>
+</ul>
+<p>For example, upon observing a car in an accident scenario, the robot can infer that the car has windows and is likely to have passengers. If a robot is instructed to look into a car, it will try to place itself near the car windows.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Functional Mapping </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>construction of conceptual-functional areas on top of the topological structure.</p>
+</div>
+</blockquote>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/zender_funcmap.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>It’s a multi-layered map which, together with the metrical and topological layers, provides the robot with an awareness of the environment on which it can base its observations, understand what it sees, and project expectations about how it can act in the environment.</p>
+<p>The robot has episodic-like memory. It’s a database which lets the robot recall events individually, by spatial area, by spatiotemporal window, or by content.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>A belief </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>is a structure that captures a piece of information, such as the presence of a car or victim at a specific location, along with a spatio-temporal frame in which it is assumed to be valid, the robot’s degree of (un)certainty about its validity, and a set of agents (robot and human) for which the information is supposed to be valid.</p>
+<p>It lets the robot consider situation awareness as a distributed phenomenon, encompassing its individual experience, common ground, and the contrast between these perspectives.</p>
+</div>
+</blockquote>
+<h1 id="modeling-communcation">Modeling Communcation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modeling-communcation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>If a robot is to understand what communication means, it first of all needs to understand the intention behind an utterance. This requirement sets the context for what kinds of meanings to construct (<strong>intension</strong>) and how to link that to actual experience (<strong>denotation</strong>).</p>
+<p>Their approach allows for each proposition to be associated with an index by which it can be referenced, and the index has an ontological sort to express the kind of information it represents. For example, <em><strong>(i1:car &amp; datsun)</strong></em> is a propositional formula about a car, i1, which is a Datsun. A property is expressed relationally, connecting one proposition with another: <em><strong>(i1:car &amp; datsun &amp; &lt;\Color>(c1:color &amp; red))</strong></em> represents a red Datsun. Explicitly indexing the color means we can also reference it as a property in a question like “What is the color of the car?”</p>
+<ul>
+<li><em><strong>intention recognition</strong></em>: contextual information which tries to establish why somebody might have said what they said. It indicates how the robot is supposed to act upon information received.</li>
+<li><em><strong>reference solution</strong></em>: contextual information which tries to link possible interpretations to actual experience.</li>
+</ul>
+<p>The result is a loop, not a strict pipeline, in which all three processes—parsing, intention recognition, and reference resolution—work together to gradually form a contextually appropriate interpretation.</p>
+<p>Intention recognition is thus essentially a form of inference that we can model using <strong>abduction</strong>, logical reasoning in the following form:</p>
+<ol>
+<li>a surprising observa­tion O was made</li>
+<li>if P were the case, O would follow; hence</li>
+<li>there is reason to believe that P.</li>
+</ol>
+<p>These beliefs are typically uncertain, and they may provide only partial information. The inference therefore proceeds by constructing the most probable proof, given the probabilities associated with beliefs, and the least costly assumptions to fill in any gaps arising from incomplete information.</p>
+<ul>
+<li>Should it turn out, later on in the human-robot collaboration, that the robot made an incorrect assumption, it can be <strong>retracted</strong>. This makes the inference, and thus the entire process of dialogue interpretation, <strong>defeasible</strong>—that is, we can retract it in the light of new evidence, which may in turn invalidate some earlier assumptions.</li>
+<li>It’s important that the source of the misunderstanding can be explicit, letting the robot reason further.</li>
+</ul>
+<div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src=".././static/notes/zender_nuj.png" style="max-width:100%;height:auto;"/>
+</div>
+<p>The parser thus gradually constructs possible meaning representations, and intention recognition tries to establish possible (partial) proofs for how to explain them. In forming the explanation, intention recognition must establish which beliefs it can use (the intension), based on reference resolution.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Reference solution </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>computes which of the robot’s beliefs would “materialize” the proposed explanations in the given context.</li>
+<li>The robot must link the reference to an object in the environment to know what the task is about.</li>
+</ul>
+</div>
+</blockquote>
+<p><strong>The three-part process of parsing, intention recognition, and reference resolution</strong> thus involves the construction and grounding of graph structures against possibly uncertain and incomplete information in situational awareness.</p>
+<h1 id="modeling-teamwork">Modeling Teamwork<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modeling-teamwork" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Particularly for robots, we know that they can’t always perform every task fully autonomously</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Robin Murphy's Law </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>any deployment of robotic systems will fall short of the target level of autonomy, creating or exacerbating a shortfall in mechanisms for coordination with human problem holders.</p>
+</div>
+</blockquote>
+<p>In other words, as robot autonomy in situ is going to vary, the roles these robots play will need to shift. This in turn affects the humans’ roles and thus the team dynamics.</p>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>Integrity limit factors </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>indicate conditions on autonomy, such as required network bandwidth, confidence in perception, or locomotion.</li>
+</ul>
+</div>
+</blockquote>
+<blockquote class="callout abstract" data-callout="abstract">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>LOA (Level of Autonomy) </p></div>
+                  
+                </div>
+<div class="callout-content">
+<ul>
+<li>a model that links levels of autonomy to an explicit statement of the decisions and actions the robot can select to carry out, with or without human involvement.</li>
+</ul>
+</div>
+</blockquote>
+<p>A common aspect of all these systems is that situated dialogue processing is not a standalone process. Rather, it is closely tied to the spatiotemporal models built up through vision and mapping, uses a plan structure to determine an utterance’s context, and feeds important information back into the robot’s situation awareness.</p>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NIFTi adopts a user-driven view, involving first responders in the entire development cycle. </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Currently, NIFTi is at a stage in which several humans remotely collaborate with one or more semiautonomous unmanned ground vehicles (UGVs) using a multimodal GUI including spoken dialogue, and with an unmanned aerial vehicle (UAV) acting as a roving sensor.</p>
+</div>
+</blockquote></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.7,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#modeling-experience" data-for="modeling-experience">Modeling Experience</a></li><li class="depth-0"><a href="#modeling-communcation" data-for="modeling-communcation">Modeling Communcation</a></li><li class="depth-0"><a href="#modeling-teamwork" data-for="modeling-teamwork">Modeling Teamwork</a></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul class="overflow"><li><a href="../notes/RPCN" class="internal">Robotic Perception, Cognition and Navigation</a></li></ul></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.2.3</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+            const socket = new WebSocket('ws://localhost:3001')
+            // reload(true) ensures resources like images and scripts are fetched again in firefox
+            socket.addEventListener('message', () => document.location.reload(true))
+          </script><script src="../postscript.js" type="module"></script></html>
