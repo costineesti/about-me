@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ce3d398307c69d27",
+            "id": "5482834d4a024120",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,20 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "laser scanning 11"
-            }
-          },
-          {
-            "id": "5482834d4a024120",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/laser scanning 3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "laser scanning 3"
             }
           }
         ]
@@ -218,16 +204,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ce3d398307c69d27",
+  "active": "5482834d4a024120",
   "lastOpenFiles": [
-    "content/notes/laser scanning 3.md",
+    "content/notes/laser scanning 6.md",
+    "quartz/static/notes/overall_architecture_sam.png",
+    "quartz/static/notes/SAM_3d.png",
+    "quartz/static/notes/SAM_2d.png",
+    "content/notes/laser scanning 5.md",
+    "content/notes/laser scanning 10.md",
+    "quartz/static/notes/sam_unsupervised.png",
+    "quartz/static/notes/cylindrical_proj2.png",
+    "quartz/static/notes/cylindrical_proj.png",
+    "quartz/static/notes/ortho_normal2.png",
     "content/notes/laser scanning 11.md",
+    "quartz/static/notes/ortho_normal.png",
+    "content/notes/laser scanning 4.md",
+    "quartz/static/notes/segment_13.png",
+    "content/notes/laser scanning 3.md",
     "quartz/static/notes/mls_6.png",
-    "quartz/static/notes/mls_5.png",
-    "quartz/static/notes/mls_4.png",
-    "quartz/static/notes/mls_3.png",
-    "quartz/static/notes/mls_2.png",
-    "quartz/static/notes/mls_1.png",
     "content/notes/laser scanning 2.md",
     "content/notes/systems engineering 2.md",
     "content/notes/optimal estimation 2.md",
@@ -235,13 +229,8 @@
     "content/notes/laser scanning 7.md",
     "content/notes/laser scanning 8.md",
     "content/notes/laser scanning 9.md",
-    "content/notes/laser scanning 10.md",
-    "quartz/static/notes/hardware_arch_ls10.png",
     "content/notes/optimal estimation 11.md",
     "content/notes/optimal estimation 10.md",
-    "quartz/static/notes/IoU_inf.png",
-    "quartz/static/notes/lmnet_2.png",
-    "quartz/static/notes/lmnet_1.png",
     "content/notes/optimal estimation 8.md",
     "content/notes/optimal estimation 9.md",
     "content/notes/optimal estimation 6.md",
@@ -252,9 +241,6 @@
     "content/notes/optimal estimation 7.md",
     "content/notes/laser scanning 1.md",
     "content/notes/genai4.md",
-    "content/notes/genai5.md",
-    "content/notes/optimal estimation.md",
-    "content/notes/ray tracing.md",
     "content/notes/quartz.layout.ts",
     "content/projects",
     "content/notes",

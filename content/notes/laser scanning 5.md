@@ -21,6 +21,8 @@ Needless to say, we want to extract information from point clouds. Some segmenta
 
 I saw how all techniques work in [[laser scanning 4|Point Cloud Segmentation Practical]]. The algorithms were based on Hough Transform.
 
+# Extraction of smooth surfaces
+
 ### Scan line segmentation
 
 <div class="encoder-section">
@@ -207,7 +209,7 @@ So I need to divide and conquer it in two steps
 
 On the left side of the image above, I can see 3 dominant directions: vertical, horizontal and inclined. 
 
-So to approach this, George suggests to plot all the normal vectors on a Gaussian sphere (right image). So ignore the positions of where they are computed, all starting from the middle point of that sphere. There we have the frequencies with which normal vectors are pointing to a certain direction. That's when we take all the big circles going around that sphere and I can already see 3 of them. in the right picture. The last one might not be so obvious (it's the one that starts from the right side, it finishes on the left side). I use the normal vectors to divide in the common points (where it's not so obvious if it's vertical or horizontal).
+So to approach this, George suggests to plot all the normal vectors on a Gaussian sphere (right image). So ignore the positions of where they are computed, all starting from the middle point of that sphere. There we have the frequencies with which normal vectors are pointing to a certain direction. That's when we take all the big circles going around that sphere and I can already see 3 of them in the right picture. The last one might not be so obvious (it's the one that starts from the right side, it finishes on the left side). I use the normal vectors to divide in the common points (where it's not so obvious if it's vertical or horizontal).
 
 `Step 2`: **Detection of the cylinder position and the radius**
 
@@ -226,7 +228,7 @@ Again, I can choose to work with or without normal vectors. In the images below,
     <img src="../static/notes/segment_12.png" style="max-width: 100%; height: auto;">
 </div>
 
-# RANSAC
+### RANSAC
 
 The **key insight**: instead of using ALL points to fit a shape, randomly sample small subsets and find which subset produces the best model.
 
@@ -248,6 +250,18 @@ The **key insight**: instead of using ALL points to fit a shape, randomly sample
 
 `Step 4`: **Repeat**
 
+# Connected Component Analysis
+
+
+<div class="encoder-section">
+  <img src="../static/notes/segment_13.png" style="width: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <div class="encoder-text">
+    <ul>
+	 <li>Neighboring points within some distance belong to the same segment</li>
+      <li>Combination with segmentation into planes, removal of small segments</li>
+    </ul>
+  </div>
+</div>
 
 
 <style>

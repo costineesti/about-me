@@ -26,3 +26,13 @@ Q: So the difference between Multi-line LiDARs and Single-line is the density? A
 
 A: I understand the multi-line is better for vegetation penetration and would mostly be considered in MLS since it covers more on the horizontal and it achieves 360 degrees. But what else?
 
+# Point Cloud Segmentation Lecture
+
+Q: Explaining the Hough Space? So determining which square contains the most lines gives us an idea on how to compute $\alpha$ and $d$. But maybe a refreshment on that idea? Because if you fix the point, of course the equation's only variable is $\alpha$, and that's how I get the multiple lines, but isn't the exact location of the point always the region where I'll find the most lines? It's confusing a bit.
+
+Q: A lot of ideas in this lecture rely on the normal vector of a point. I assume I don't get it for free?
+
+Q: In the SAM practical, we talked about projection. It helps me go from 3D to 2D and it lets me leverage deep neural networks like CNNs or SAM. That was the main idea right? Go from unordered 3D sets to organized grids in 2D, apply the segmentation in that space since it's less expensive and there are countless models who can do it, and then reproject the label of each point back to its 3D representation?
+
+Q: So basically the previous topic [[laser scanning 5|Point Cloud Segmentation]] applied the segmentation techniques in directly in the 3D unordered space of point clouds using Hough, Growing Surface, etc., and this one applies segmentation in the projected 2D space using deep NNs.
+
