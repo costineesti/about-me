@@ -40,7 +40,7 @@ Lecture 2 from [[laser scanning|Laser Scanning and Point Cloud Processing]]. Als
 * Power Consumption
 * Range, Weight
 * Occlusions, Point Density
-	* To avoid these two shortcomings, we acquire multiple scans from different POVs.
+	* **To avoid these two shortcomings, we acquire multiple scans from different POVs.**
 * Scanner Settings
 	* One or two scanners
 	* coverage, orientation of scanning plane
