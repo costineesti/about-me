@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "content/notes/laser scanning 8.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "laser scanning 8"
+            }
+          },
+          {
+            "id": "655bba26c5799041",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "content/notes/laser scanning 11.md",
                 "mode": "source",
                 "source": false
@@ -206,29 +220,29 @@
   },
   "active": "5482834d4a024120",
   "lastOpenFiles": [
+    "content/notes/laser scanning 11.md",
+    "content/notes/laser scanning 8.md",
+    "content/notes/laser scanning 7.md",
     "content/notes/laser scanning 6.md",
+    "content/notes/laser scanning 9.md",
+    "content/notes/laser scanning 10.md",
+    "content/notes/laser scanning 5.md",
+    "quartz/static/notes/ls9_6.png",
+    "content/notes/laser scanning 4.md",
+    "quartz/static/notes/ls9_5.png",
+    "quartz/static/notes/ls9_3.png",
+    "quartz/static/notes/ls9_4.png",
+    "quartz/static/notes/ls9_2.png",
+    "quartz/static/notes/ls9_1.png",
     "quartz/static/notes/overall_architecture_sam.png",
     "quartz/static/notes/SAM_3d.png",
     "quartz/static/notes/SAM_2d.png",
-    "content/notes/laser scanning 5.md",
-    "content/notes/laser scanning 10.md",
     "quartz/static/notes/sam_unsupervised.png",
-    "quartz/static/notes/cylindrical_proj2.png",
-    "quartz/static/notes/cylindrical_proj.png",
-    "quartz/static/notes/ortho_normal2.png",
-    "content/notes/laser scanning 11.md",
-    "quartz/static/notes/ortho_normal.png",
-    "content/notes/laser scanning 4.md",
-    "quartz/static/notes/segment_13.png",
     "content/notes/laser scanning 3.md",
-    "quartz/static/notes/mls_6.png",
     "content/notes/laser scanning 2.md",
     "content/notes/systems engineering 2.md",
     "content/notes/optimal estimation 2.md",
     "content/notes/laser scanning.md",
-    "content/notes/laser scanning 7.md",
-    "content/notes/laser scanning 8.md",
-    "content/notes/laser scanning 9.md",
     "content/notes/optimal estimation 11.md",
     "content/notes/optimal estimation 10.md",
     "content/notes/optimal estimation 8.md",

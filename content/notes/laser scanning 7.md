@@ -4,7 +4,9 @@ draft: false
 tags:
 date: 2026-02-17
 ---
- 
+
+Laser scanners consist of three different sensors. A lot of issues can go wrong with the individual sensors as well as with their integration.
+
 Imaging point clouds: use binning to define a raster and for each raster cell I can see if I have points inside. If there is, I assign a height to each point in that cell.
 
 I can also use interpolation techniques (some cells have no data) like Nearest neighbor, TIN, Splines. In the Figure, he used triangulation.

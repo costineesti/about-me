@@ -9,16 +9,10 @@ tags:
 **context**: A single pulse can result in multiple reflections if it hits several objects (e.g., tree canopy then the ground). Systems can record discrete returns (first and last echoes) or the **full waveform**.
 
 Q: How do you know which pulse is attributed to what echo? 
-
 A: I solve it by slightly varying the intervals between emitted pulses. And make these intervals irregular so I can ensure the correct $\Delta t$ ⇒ correct association. Do I need to ensure that the time between pulses is larger than maximum ToF?  And I measure the incoming relflection of the light ray on the rising edge when it exceeds a set threshold, correct?
 
 Q: How do I measure the full waveform?
-
 A: To measure the full waveform, the common practice is to discretize the return
-
-# TLS Lecture
-
-Q: For Relative Orientation i.e. Registration, we need scans from multiple POVs
 
 # MLS Lecture
 
@@ -35,4 +29,17 @@ Q: A lot of ideas in this lecture rely on the normal vector of a point. I assume
 Q: In the SAM practical, we talked about projection. It helps me go from 3D to 2D and it lets me leverage deep neural networks like CNNs or SAM. That was the main idea right? Go from unordered 3D sets to organized grids in 2D, apply the segmentation in that space since it's less expensive and there are countless models who can do it, and then reproject the label of each point back to its 3D representation?
 
 Q: So basically the previous topic [[laser scanning 5|Point Cloud Segmentation]] applied the segmentation techniques in directly in the 3D unordered space of point clouds using Hough, Growing Surface, etc., and this one applies segmentation in the projected 2D space using deep NNs.
+
+# Building Detection Lecture
+
+Slide 10 -- please explain the 2D $\alpha$-shape concept from picture C?
+
+# Classification Lectures
+
+In terms of papers, should we only prepare PointNet and RandLA? As in, should we know the improvements that led to PointNet++, or is it enough that we know that PointNet missed local structure, and so the **Ball Query** and **Farthest Point Sampling** topics were introduced? So, how far?
+
+# Stupid Questions
+
+1. Could you please explain the Q(15\%) from the sample?
+
 
