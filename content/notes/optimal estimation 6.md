@@ -207,7 +207,7 @@ The updated covariance $C_e = \begin{pmatrix} C_{\mathbf{x}}^{-1} + H^TC_V^{-1}H
     <img src="../static/notes/ex3_oeds10.png" style="max-width: 100%; height: auto;">
 </div>
 
-Now, based on the updated information, the ship's updated uncertainty region falls within the designated bounds of the line of sight.
+Now, based on the updated information, the ship's updated uncertainty region falls within the designated bounds of the line of sight. An interesting idea is that the bearing measurement only constrains the position perpendicular to the line of sight. Along the line of sight, distance remains uncertain, so the ellipse stretches in that direction (the red uncertainty region). Visibly, the Kalman gain K determined how much weight to give the measurement versus the prior. Since $\sigma_v$ was relatively small, the measurement was trusted and the uncertainty collapsed significantly in the perpendicular direction. Due to the innovation being nonzero, meaning the prior mean was not on the line of sight, the estimate got pulled onto it.
 
 ---
 

@@ -44,7 +44,7 @@ $$
 
 The line represents the best **linear** estimate of $x$ given $z$, passing through the origin (since there's no offset $\beta$). It fits the main cluster of data reasonably well, but the outliers in the upper-left — those are likely the secondary echo measurements from the depth gauge model — pull the estimator slightly off.
 
-To get derive the linear MMSE $\alpha$, I need to minimize the MSE cost function $J(\alpha)=\mathbb{E}[(x-\alpha z)^2]$. Now I take the derivative of $J$ w.r.t. $\alpha$ and set it to 0: $\frac{\partial J}{\partial \alpha} = -2 \mathbb{E}[z(x-\alpha z)]=0$. Distributing the expectations gives $\mathbb{E}[xz] - \alpha \mathbb{E}[z^2] = 0$, which gives $\alpha = \frac{\mathbb{E}[xz]}{\mathbb{E}[z^2]}$.
+To derive the linear MMSE $\alpha$, I need to minimize the MSE cost function $J(\alpha)=\mathbb{E}[(x-\alpha z)^2]$. Now I take the derivative of $J$ w.r.t. $\alpha$ and set it to 0: $\frac{\partial J}{\partial \alpha} = -2 \mathbb{E}[z(x-\alpha z)]=0$. Distributing the expectations gives $\mathbb{E}[xz] - \alpha \mathbb{E}[z^2] = 0$, which gives $\alpha = \frac{\mathbb{E}[xz]}{\mathbb{E}[z^2]}$.
 
 ---
 
@@ -71,7 +71,7 @@ From the provided equation, $\hat{x}(z) = \alpha z + \beta$, I can deduce that $
 		* Dividing the two gives $\alpha = \frac{\text{Cov}[x,z]}{\text{Var}[z]}$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ex2_oeds3.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ex2_oeds4.png" style="max-width: 100%; height: auto;">
 </div>
 
 As a comparison, the ulMMSE line passes through **the mean of the data** $x,z$ (unlike the lMMSE which was forced through the origin), since the $\beta$ parameter allows the line to shift and pass directly through the mean value of the dataset. However, the outliers (secondary echoes) pull the overall mean slightly upward.

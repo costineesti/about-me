@@ -115,8 +115,8 @@ The marginal PDF $p(z)$ and the posterior PDF $p(x\mid z)$ look like this:
 	* "What measurement are we likely to see?"
 * The bottom plot $p(x\mid z)$ captures the two cases mentioned above. 
 	* "Given I measured $z$, what is the true depth $x$?"
-	* For $z=4m$, a direct reflection is impossible since the maximum known depth is $3m$ (I know that from the prior). Therefore a measurement of $4m$ cannot possibly be a direct echo. The model infers it must be a double reflection which happens at $2x$, resulting in the distinct, confident peak at exactly $x=2.0m$ for $z=3.1m$.
-	* In the case for $z=3.1m$ is ambiguous and presents two conflicting possibilities. It could be a double reflection, meaning the true depth is half of the measurement (the first small peak at $\sim x=1.55m$). Alternatively, it could be a direct reflection of a true depth very close to the $3m$ maximum, pushed up to $3.1m$ by sensor noise. Since direct reflections are highly probable, the model strongly leans toward this explanation, causing the massive spike at the $x=3.0m$ boundary.
+	* For $z=4m$, a direct reflection is impossible since the maximum known depth is $3m$ (I know that from the prior). Therefore a measurement of $4m$ cannot possibly be a direct echo. The model infers it must be a double reflection which happens at $2x$, resulting in the distinct, confident peak at exactly $x=2.0m$.
+	* The case regarding $z=3.1m$ is ambiguous and presents two conflicting possibilities. It could be a double reflection, meaning the true depth is half of the measurement (the first small peak at $\sim x=1.55m$). Alternatively, it could be a direct reflection of a true depth very close to the $3m$ maximum, pushed up to $3.1m$ by sensor noise. Since direct reflections are highly probable, the model strongly leans toward this explanation, causing the massive spike at the $x=3.0m$ boundary.
 
 ---
 
@@ -176,7 +176,7 @@ Calculate for each case in 3 the conditional risk. Compare and explain the resul
 
 * Quadratic cost function $(x - \hat{x}^2)$
 * Absolute cost function $(|x - \hat{x}|)$
-* Uniform cost function with $\Delta = 0.5$. The definition of $\Delta$ is $C_{uni}(x \mid \hat{x}) = 1$ if $|x-\hat{x}|\gt \Delta$
+* Uniform cost function with $\Delta = 0.05$. The definition of $\Delta$ is $C_{uni}(x \mid \hat{x}) = 1$ if $|x-\hat{x}|\gt \Delta$
 
 > The risks that are calculated may have a physical unit. Don't forget to add them.
 
