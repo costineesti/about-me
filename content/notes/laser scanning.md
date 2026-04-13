@@ -17,10 +17,11 @@ I will learn about different kinds of laser scanning, point cloud processing (cl
 >* [[laser scanning 4|Point Cloud Segmentation Practical]]
 >* [[laser scanning 5|Point Cloud Segmentation]], [[laser scanning 6|Point Cloud Segmentation with Segment Anything (SAM)]]
 >* [[laser scanning 7|Error Analysis of Airborne Laser Scanning Data]]
->* [[pointnet|PointNet]]
->* [[laser scanning 8|Point Cloud Classification]]
+>* [[pointnet|PointNet]], [[laser scanning 8|Point Cloud Classification]]
 >* [[laser scanning 9|Building Detection and Reconstruction]]
 >* [[laser scanning 10|Real-Time LiDAR Point-Cloud Moving Object Segmentation for Autonomous Driving]]
+>* [[laser scanning 12|3D HD Roads]]
+>* [[laser scanning 13|3D Indoor Reconstruction]], [[laser scanning 14|3D Point Cloud Shape Detection for Indoor Modeling]]
 
 References:
 
