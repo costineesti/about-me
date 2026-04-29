@@ -16,7 +16,7 @@ Sections 4.4 and 9.3.3 from the book.
 
 # Context
 
-Apparently, the struggle shifts to expressing how consistent is the Particle Filter and how to measure it. So what we want is a equivalent to the NIS, but for the Particle Filter. 
+Apparently, the struggle shifts to expressing how consistent is the Particle Filter and how to measure it. So what we want is an equivalent to the NIS, but for the Particle Filter. 
 
 The idea is as follows:
 
