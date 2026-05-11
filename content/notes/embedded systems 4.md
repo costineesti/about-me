@@ -2,15 +2,15 @@
 title: PWM Module in Verilog
 draft: false
 tags:
-date: 2026-05-11
+date: 2026-05-12
 ---
  
 I was provided the datasheet for the `Automotive fully integrated H-bridge motor driver` (**VNH2SP30-E**).
 
-The assignment is to design and develop a PWM module. It has to provide three output signals:
+The assignment is to design and develop a PWM module. It has to provide **three output signals**:
 
 1. `INA (Pin 5)` and `INB (Pin 11)` which provide the direction
-2. `PWM (Pin 8)`. The pins are provided by Table 3.
+2. `PWM (Pin 8)`. The pins are provided by Table 3 (and the .csv in our case).
 
 The **implementation follows Table 12** from the datasheet.
 
@@ -22,23 +22,46 @@ So for forward: `INA=1, INB=0`. For backward: `INA=0, INB=1`.
 
 Some design choices:
 
-- **Maximum PWM frequency: 20 kHz** (Table 9) — so 20 kHz is actually the **maximum**, not the minimum. I will go with the maximum value.
-- **Minimum PWM off time: 6 µs** (Table 9, footnote) — the PWM signal must stay low for at least 6 $\mu s$ per cycle to avoid false short-circuit detection. At 20 kHz the period is 50 µs, so this is naturally satisfied unless duty cycle is above 88%.
-- **Logic input thresholds** (Table 7): low = 1.25V, high = 3.25V — the FPGA's 3.3V output is compatible.
+- **Maximum PWM frequency: (Table 9) — 20 kHz is actually the **maximum**, not the minimum => I use exactly 20kHz. At 50 MHz clock this gives $\text{PERIOD} = \frac{50MHz}{20kHz} = 2500$.
+- **Minimum PWM off time: 6 µs** (Table 9, footnote) — the PWM signal must stay low for at least 6 $\mu s$ per cycle to avoid false short-circuit detection => $\text{MIN\_OFF\_CYCLES} = \frac{6 \mu s}{20 ns} = 300 \text{cycles}$
+- **Logic input thresholds** (Table 7): FPGA outputs 3.3V which satisfies the 3.25V high threshold from Table 7
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/embedsys4_1.png" style="max-width: 100%; height: auto;">
 </div>
 
-I can see the duty cycle going `00 -> 80 -> FF -> 40` which matches the testbench sequence exactly (0\% => 50\% => 100\% => 25\%) with inverse direction on the last section.
+The duty cycle input is 8-bit (0–255). The raw PWM high-time in clock cycles is:
 
->[!NOTE] To avoid **false Short to battery**, the PWM signal must be low for a time longer than $6 \mu s$. The documentation specifically mentions this aspect.
->
->`max_threshold` vs `raw_threshold` — at `FF` (100%), `raw_threshold` is `0x09BA` (2490) but `max_threshold` is capped at `0x0898` (2200), which is exactly `PERIOD - MIN_OFF_CYCLES = 2500 - 300`. The minimum off-time enforcement is working correctly.
->
->* Normally, at `duty_cycle = 255`, the code would calculate 2490 clock cycles. The total period is 2500 cycles though (50 MHz clock with 20kHz PWM module => 50$\mu s$).
->	* This would only leave 10 clock cycles where `PWM_OUT` would be low. It would provide only $0.2 \mu s$ off-time which would violently violate the minimum $6 \mu s$.
->	* So I clamped with a `max_threshold` which leaves $6 \mu s$ at the end of every cycle like this: $6 \mu s / 20ns = 300 \text{clock cycles}$. So the absolute maximum "high" time would be $2500 - 300 = 2200 \text{cycles}$.
+```c
+raw_threshold = (duty_cycle * PERIOD) / 256
+```
 
+At `duty_cycle = 255`, this gives `2490` cycles high out of `2500` — leaving only 10 cycles ($0.2 \mu s$) low, which violates the 6 µs minimum off-time required by the documentation. We also saw ourselves that a full 180 degree rotation results in 2490 on the encoder readings (at least on the yaw). To fix this, `raw_threshold` is capped:
 
+```c
+max_threshold = min(raw_threshold, PERIOD - MIN_OFF_CYCLES) = min(raw_threshold, 2200)
+```
+
+This guarantees `PWM_OUT` is always low for at least 300 cycles (6 µs) at the end of every period, regardless of duty cycle.
+
+**The main loop**
+
+```c
+base[2] = (1 << 31) | (direction << 8) | duty;
+```
+
+Writing to `base[2]` means writing to Avalon address `0x02` (third 32-bit word). This hits the write case in `esl_bus_demo.v`. The 32-bit value is packed as:
+
+```c
+bit 31     = 1         -> cnt_enable = 1 (motor running) 
+bit 8      = direction -> 1=CW, 0=CCW 
+bits [7:0] = duty      -> 0-255 duty cycle
+```
+
+Reading `base[0]` and `base[1]` hits the read case in `esl_bus_demo.v` and returns the current encoder counts as signed 32-bit integers.
+
+```c
+int32_t yaw   = (int32_t) base[0]; // read slave_address 0x00 -> yaw_count
+int32_t pitch = (int32_t) base[1]; // read slave_address 0x01 -> pitch_count
+```
 
