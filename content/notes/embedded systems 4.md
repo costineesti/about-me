@@ -20,9 +20,9 @@ The **implementation follows Table 12** from the datasheet.
 
 So for forward: `INA=1, INB=0`. For backward: `INA=0, INB=1`.
 
-Some design choices:
+**Design choices**
 
-- **Maximum PWM frequency: (Table 9) — 20 kHz is actually the **maximum**, not the minimum => I use exactly 20kHz. At 50 MHz clock this gives $\text{PERIOD} = \frac{50MHz}{20kHz} = 2500$.
+- **Maximum PWM frequency**: (Table 9) — 20 kHz is actually the **maximum**, not the minimum => I use exactly 20kHz. At 50 MHz clock this gives $\text{PERIOD} = \frac{50MHz}{20kHz} = 2500$.
 - **Minimum PWM off time: 6 µs** (Table 9, footnote) — the PWM signal must stay low for at least 6 $\mu s$ per cycle to avoid false short-circuit detection => $\text{MIN\_OFF\_CYCLES} = \frac{6 \mu s}{20 ns} = 300 \text{cycles}$
 - **Logic input thresholds** (Table 7): FPGA outputs 3.3V which satisfies the 3.25V high threshold from Table 7
 
