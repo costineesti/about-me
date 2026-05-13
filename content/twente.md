@@ -23,7 +23,7 @@ date: 2025-10-21
 | ---------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------- |
 | **Systems Engineering**                  | **Robot Perception, Cognition, and Navigation**                        | **Optimal Estimation in Dynamic Systems**      | **AI for Autonomous Robots: Deep Learning and Reinforcement Learning** |
 | **Image Processing and Computer Vision** | **Generative Artificial Intelligence Models and Robotic Applications** | **Advanced Software Development for Robotics** | **Foundation Models**                                                  |
-| **Natural Language Processing**          | **Speech Processing**                                                  | **Laser Scanning and Point Cloud Processing**  | **Aerial Robotics**                                                    |
+| **Natural Language Processing**          | **Speech Processing**                                                  | **Laser Scanning and Point Cloud Processing**  | **Embedded Systems Laboratory**                                        |
 
 
 >[!summary] Courses I covered on this website
@@ -39,4 +39,10 @@ date: 2025-10-21
 >	* [[asdfr|Advanced Software Development for Robotics]]
 >	* [[optimal estimation|Optimal Estimation in Dynamic Systems]]
 >	* [[laser scanning|Laser Scanning and Point Cloud Processing]]
+>* **Q4**
+>	* [[ai for robotics|AI for Robotics]]
+>	* [[foundation models|Foundation Models]]
+>	* [[embedded systems|Embedded Systems Laboratory]]
+
+
 

@@ -1,6 +1,6 @@
 ---
 title: Prediction in a linear dynamic system
-draft: true
+draft: false
 tags:
 date: 2026-03-16
 ---

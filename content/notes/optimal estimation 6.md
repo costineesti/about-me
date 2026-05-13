@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of parameter estimation - Part III
-draft: true
+draft: false
 tags:
 date: 2026-03-09
 ---
