@@ -42,7 +42,7 @@ At `duty_cycle = 255`, this gives `2490` cycles high out of `2500` — leav
 max_threshold = min(raw_threshold, PERIOD - MIN_OFF_CYCLES) = min(raw_threshold, 2200)
 ```
 
-This guarantees `PWM_OUT` is always low for at least 300 cycles (6 µs) at the end of every period, regardless of duty cycle.
+This guarantees `PWM_OUT` is always low for at least 300 cycles (6 $\mu s$) at the end of every period, regardless of duty cycle.
 
 **The main loop**
 
