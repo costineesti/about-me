@@ -14,4 +14,5 @@ Elective course I took in Q4 of my first year while at [[twente|Twente]]. I want
 >* [[embedded systems 2|Verilog]]
 >* [[embedded systems 3|GStreamer Appsink]]
 >* [[embedded systems 4|PWM Module in Verilog]]
+>* [[embedded systems 5|Vision-in-the-loop Architecture]]
 
