@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/embedded systems 5.md",
+                "file": "content/notes/foundation model 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "embedded systems 5"
+              "title": "foundation model 5"
             }
           }
         ]
@@ -206,9 +206,12 @@
   },
   "active": "0c52b59975bceb26",
   "lastOpenFiles": [
+    "content/notes/ViT.md",
+    "content/notes/foundation model 5.md",
+    "content/notes/embedded systems 5.md",
+    "content/notes/foundation models 5.md",
     "content/notes/embedded systems.md",
     "content/notes/foundation models.md",
-    "content/notes/embedded systems 5.md",
     "content/notes/foundation models 4.md",
     "quartz/static/notes/fmod6_8.png",
     "quartz/static/notes/fmod6_7.png",
@@ -237,8 +240,6 @@
     "content/twente.md",
     "content/notes/embedded systems 3.md",
     "content/notes/embedded systems 2.md",
-    "content/notes/ai for robotics.md",
-    "content/notes/MiDaS.md",
     "quartz/static/notes/embedsys4_1.png",
     "quartz/static/notes/table12_hbridge.png",
     "public/notes/quartz.layout.ts",
