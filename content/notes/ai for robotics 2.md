@@ -24,7 +24,7 @@ date: 2026-05-30
 >	* **Network intrusion detection**, **Medical image segmentation**
 >	* **Techniques**: Pseudo-labeling, Consistency regularization, Self-training vs co-training
 >
-><div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/fmod1_3.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/fmod1_4.png" alt="flow 2" width="350" height="300"> </div> </div>
+><div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/fmod1_3.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/fmod1_4.png" alt="flow 2" width="350" height="150"> </div> </div>
 >
 >* **Self-supervised Learning** -- generate supervisory signals from input data and designing pretext tasks.
 >	* **Spatial or temporal relationships**, **data transformations** (i.e. generative modeling, image colorization), **Depth estimation from stereo images**
