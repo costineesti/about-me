@@ -14,4 +14,5 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >* [[camera calibration and 3d recontruction|Stereo Reconstruction]], [[RPCN 15|Bundle Adjustment]]
 >* [[RPCN 6|SLAM, but mostly covered the camera oriented side]]
 >* [[MiDaS]]
+>* [[ai for robotics 2|Machine Learning Paradigms]]
 
