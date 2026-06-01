@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3fee6707ed2b4fff",
+        "id": "410fde1f7b592c38",
         "type": "tabs",
         "children": [
           {
-            "id": "0c52b59975bceb26",
+            "id": "c03ab7610fcb3e0c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/foundation models.md",
+                "file": "content/notes/foundation models 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "foundation models"
+              "title": "foundation models 2"
             }
           }
         ]
@@ -204,28 +204,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0c52b59975bceb26",
+  "active": "c03ab7610fcb3e0c",
   "lastOpenFiles": [
-    "content/notes/foundation models 6.md",
-    "content/notes/foundation models.md",
+    "quartz/static/notes/swin.png",
+    "quartz/static/notes/subword_tokenization.png",
+    "quartz/static/notes/gelu.png",
     "content/notes/foundation models 4.md",
+    "content/notes/foundation models 6.md",
+    "content/notes/foundation models 2.md",
+    "Pasted image 20241128181601.png",
+    "Pasted image 20250527143901.png",
+    "Pasted image 20250903002025.png",
+    "Pasted image 20251210153656.png",
+    "Pasted image 20251210154202.png",
+    "Pasted image 20251210155911.png",
+    "content/notes/conv properties.md",
+    "quartz/static/notes/dl_imaging.png",
+    "dl_imaging.png",
+    "content/notes/foundation models.md",
     "content/notes/foundation models 5.md",
-    "quartz/static/notes/fmod_5.png",
-    "quartz/static/notes/fmod_4.png",
-    "quartz/static/notes/fmod_3.png",
-    "quartz/static/notes/fmod_2.png",
     "content/notes/genai3.md",
     "content/notes/genai4.md",
     "content/notes/genai5.md",
-    "quartz/static/notes/fmod_1.png",
-    "quartz/static/notes/fmodels.png",
     "content/notes/ai for robotics 1.md",
-    "quartz/static/notes/ai4r2_10.png",
-    "quartz/static/notes/ai4r2_9.png",
-    "quartz/static/notes/ai4r2_8.png",
     "content/notes/ai for robotics 2.md",
-    "quartz/static/notes/ai4r2_7.png",
-    "content/notes/foundation models 2.md",
     "content/notes/ai for robotics.md",
     "content/notes/embedded systems 4.md",
     "content/notes/embedded systems 3.md",
@@ -240,7 +242,6 @@
     "content/notes/optimal estimation 8.md",
     "content/notes/optimal estimation 7.md",
     "content/notes/optimal estimation 6.md",
-    "content/notes/optimal estimation 5.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

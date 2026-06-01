@@ -2,46 +2,75 @@
 title: Introduction to Transformers in Deep Learning
 draft: false
 tags:
-date: 2026-04-22
+date: 2026-06-01
 ---
-
-Depths via Compositions/Folding
-
-The left plot si the first approx. The right plot we apply again some representations. And the result is something more complex which we can use? Verify this.
 
 $a$ stands for activation functions in this lecture. $\Omega$ stands for weights $W$. $\beta$ is bias? The subindex of each hidden layer $h_i$ represents the $i^{th}$ hidden layer of the neural network.
 
-Convolution assumes *weights sharing*. Which means it always goes with the same parameters over the image. Each layer is a filter. We only have width and depth. The connections are sparse (between the hidden layers), but we have the same information in the layers, if I understood that correctly. Equivariant features (i.e. due to the parameter sharing used in CNNs, the feature maps are equivariant w.r.t. translations. so in my own words, if i rotate the image; the filter also rotates with it?)
+**Convolution** assumes *weights sharing*. Which means it always goes with the same parameters over the image. Each layer is a filter. We only have width and depth. The connections are sparse (between the hidden layers), but we have the same information in the layers, if I understood that correctly. Equivariant features (i.e. due to the parameter sharing used in CNNs, the feature maps are equivariant w.r.t. translations. so in my own words, if i rotate the image; the filter also rotates with it?) -- see [[conv properties|Convolutional Properties]].
 
-Understand what registration is in the slide with the brain and the u-net. He said something about understanding the vector field between the two images and (you learn the vector field and then you do something)
+**Deep Learning in Imaging**: Image registration aligns two images into the same coordinate space. You use a neural network to compare a moving image with a fixed target image. The network learns the registration field, which acts as a dense mathematical map of movement instructions.Then, you apply this vector field to the moving image using a spatial transform. This step warps and pushes the moving image so that it perfectly matches the anatomy of the fixed image.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/dl_imaging.png" style="max-width: 100%; height: auto;">
+</div>
 
 In NLP it's different because the input size usually fluctuates. You embed each word, and it's kind of challenging to relate every word to every word (ofc with [[transformers|Transformers]]). 
 
-Apparently, Attention is Not all you need (look at the paper, lol. it's exactly this name). 
+Apparently, Attention is NOT all you need (look at the paper, lol. it's exactly this name). 
 
-In Language Processing, we use Tokens, not pixels or smth else.
+With [[transformers|Transformers]], a `token` is a unit of data. In [[NLP]], tokens represent words or syllables. **The motivation was the need of a model where parameters don't increase with input length.**
 
 **How to handle a sequence of tokens?**
 
 * In CNN, token features depend on those of neighboring tokens
-	* 
+	* Stack many layers or use large kernels to consider more context
 * RNNs maintain a hidden state of past data.
 	* Vanishing gradients for long-term dependencies
 	* Struggle with parallel processing
 
-# Attention
+>[!summary] **GeLU** is generally considered more stable and statistically meaningful than ReLU, particularly in deep architectures like Transformers.
+>
+>* it helps prevent the "dead unit" problem. ReLU strictly outputs zero for all negative values, which can cause the gradient to drop to zero and neurons to permanently stop updating during training. GeLU, as shown in the graph, has a smooth curve that dips slightly below zero for small negative inputs. This ensures there is a continuous gradient everywhere, allowing the network to always receive feedback and keep learning.
+>* it incorporates probability. Instead of a hard mathematical threshold at zero like ReLU, GeLU multiplies the input by the cumulative distribution function of a Gaussian distribution. This means the activation acts like a smooth, probabilistic gate, weighting inputs based on their statistical likelihood rather than a simple cutoff.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/gelu.png" style="max-width: 100%; height: auto;"> </div>
 
-* Query **q**: How do I bake bread?
-* Keys **k**: Book titles
-* Values **v**: Book contents
+>[!NOTE] Sub-word Tokenization
+>He mentioned **byte-pair encoding (BPE)** for reduction of the tokens (see, sea example). Familiar concept from [[NLP]]. The original issue was that the vocabulary would need different tokens for versions of the same word with different suﬀixes (e.g., walk, walks, walked, walking) and there was no way to clarify that these variations are related.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/subword_tokenization.png" style="max-width: 100%; height: auto;"> </div>
 
-The keys are the inputs. The query enters everywhere (the actual question), we get the attention scoring function, ensure all weights sum up to 1 (softmax), and then getting that results as the respective value which gives me an idea of how relevant that key is to the query, if I understand correctly?
+**Three types of Transformer Layer**
 
-As a measure of similarity, we use the dot product between the query and keys inside the softmax function. 
+1. **Encoder Models (BERT)**
 
-Look into GeLU (Gaussian Error Linear Unit). Why is it more stable and meaningful than ReLU?
+Encoder architectures **process the entire input sequence simultaneously to build a deep understanding of the context**. Encoders are typically used for tasks that require analyzing text, such as classification or extracting information, rather than generating new text
 
-He mentioned byte-pair encoding for reduction of the tokens (see, sea example).
+2. **Decoder Models (GPT-3)**
 
-Understand Encoder/Decoder models. For example BERT vs GPT
+Decoder models are built specifically for generation. **Their primary job is to predict the next word in a sequence** by building an autoregressive probability model. A key feature of decoders is "masked" self-attention, which ensures the model can only attend to past words and cannot "cheat" by looking ahead at words it hasn't generated yet.
+
+3. **Encoder-Decoder Models**
+
+These models **combine both structures for sequence-to-sequence tasks**, such as machine translation. In this setup, the encoder processes the source input (e.g., an English sentence) into a mathematical representation, and the decoder then relies on that representation to generate the target output (e.g., a French sentence) step-by-step.
+
+>[!summary] Positional Encodings
+>
+>solves the problem with self-attention not distinguishing between the positions of tokens.
+>
+>* "The dog bit the man"
+>* "The man bit the dog"
+>
+>Self-attention can not figure out who bit whom without positional information.
+
+Look into Swin (Shifted Window Transformer)?
+
+>[!quote] From Gemini
+>
+>Standard Vision Transformers are computationally heavy because they analyze the entire image globally at once. Swin Transformers solve this by restricting their focus to small, local windows and calculating attention only within them. To ensure the network still understands the big picture, the windows are shifted in the next layer so information can flow across the boundaries.
+>
+>I saw something with Swin U-Nets.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/swin.png" style="max-width: 100%; height: auto;"> </div>
 
