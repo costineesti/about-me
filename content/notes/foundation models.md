@@ -12,6 +12,7 @@ Elective course I took in Q4 of my first year while at [[twente|Twente]]. It's b
 >* [[transformers|Transformers]], [[foundation models 2|Introduction to Transformers in Deep Learning]]
 >* [[foundation models 3|Transformers in depth]]
 >* [[foundation models 4|Efficient FoMos]]
+>* [[foundation models 7|Training Foundation Models]]
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fmodels.png" style="max-width: 100%; height: auto;">

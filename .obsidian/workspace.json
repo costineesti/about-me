@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/foundation models 2.md",
+                "file": "content/notes/foundation models 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "foundation models 2"
+              "title": "foundation models 7"
             }
           }
         ]
@@ -206,12 +206,14 @@
   },
   "active": "c03ab7610fcb3e0c",
   "lastOpenFiles": [
+    "content/notes/foundation models.md",
+    "content/notes/foundation models 7.md",
+    "content/notes/foundation models 2.md",
     "quartz/static/notes/swin.png",
     "quartz/static/notes/subword_tokenization.png",
     "quartz/static/notes/gelu.png",
     "content/notes/foundation models 4.md",
     "content/notes/foundation models 6.md",
-    "content/notes/foundation models 2.md",
     "Pasted image 20241128181601.png",
     "Pasted image 20250527143901.png",
     "Pasted image 20250903002025.png",
@@ -220,8 +222,6 @@
     "Pasted image 20251210155911.png",
     "content/notes/conv properties.md",
     "quartz/static/notes/dl_imaging.png",
-    "dl_imaging.png",
-    "content/notes/foundation models.md",
     "content/notes/foundation models 5.md",
     "content/notes/genai3.md",
     "content/notes/genai4.md",
