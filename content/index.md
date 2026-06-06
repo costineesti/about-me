@@ -81,10 +81,9 @@ Through my notes you can visualize the way I think, the way I reason, the questi
 
 >[!summary] Most of my time goes into...
 >
-> - [[twente|University of Twente]] -- I'm currently undertaking a 2-year Master's in Robotics. I aim to specialize in Computer Vision as a whole with focus on perception algorithms combined with AI and ML.
-> 	- $1^{st}$ **Update**: I'm starting to enjoy the Generative AI field a lot. Could very well be the field I will decide to specialize myself in.
-> 	- $2^{nd}$ **Update**: I am very eager to try and enter the Computer Vision [[Edge Computing]] field as I believe it's the future.
-> - Currently searching for a internship to write my Master's Thesis.
+> - [[twente|University of Twente]] -- I'm currently undertaking a 2-year Master's in Robotics. I aim to specialize in Computer Vision and Multimodal AI as a whole with focus on perception algorithms combined with AI and ML.
+> 	- **Update**: Curious of [[Edge Computing|Edge]] Computer Vision as I believe it's the future.
+> - Currently searching for an internship to write my Master's Thesis.
 
 ### What I've worked on in the past
 
