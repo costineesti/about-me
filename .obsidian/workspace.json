@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/foundation models 7.md",
+                "file": "content/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "foundation models 7"
+              "title": "index"
             }
           }
         ]
@@ -206,8 +206,8 @@
   },
   "active": "c03ab7610fcb3e0c",
   "lastOpenFiles": [
-    "content/notes/foundation models.md",
     "content/notes/foundation models 7.md",
+    "content/notes/foundation models.md",
     "content/notes/foundation models 2.md",
     "quartz/static/notes/swin.png",
     "quartz/static/notes/subword_tokenization.png",
