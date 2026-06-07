@@ -22,7 +22,7 @@ Feature matching -- descriptors and similarity measures
 >3. Then, they are stored in a $4 \times 4$ keypoint descriptor with 8 possible orientations which are weighted => 128 byte descriptor vector
 >4. Similarity is assessed considering the Euclidean distance
 >
-><div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ai4r3_1.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ai4r3_2.png" alt="flow 2" width="350" height="150"> </div> </div>
+><div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ai4r3_1.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ai4r3_2.png" alt="flow 2" width="350" height="300"> </div> </div>
 
 Triangulation is basically determining a 3D point in space given its projection onto two or more images. So these points are usually called tie-points. However, one question was asked during the lecture: how do we remove the wrong matches? 
 

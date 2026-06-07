@@ -2,6 +2,7 @@
 title: Introduction to Foundation Models
 draft: false
 tags:
+date: 2026-06-07
 ---
  
 **A foundation model is anything that gives you meaningful re-usable features.** Foundation Models are trained on massive datasets and perform well in zero-shot (no fine-tuning) scenarios (so like BERT, DALL-E, GPT-3).
