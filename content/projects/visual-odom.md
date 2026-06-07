@@ -8,6 +8,8 @@ tags:
   - robotics
 ---
 
+The main task in Visual Odometry is to compute the relative transformations $T_k$ from the images $I_k$ and $I_{k-1}$ and then to **concatenate the transformations** to recover the full trajectory $C_{0:n}$ of the camera.
+
 Visual Odometry was my main contribution to my [[Bachelors|bachelor's degree]]. It represents the update step in the Kalman Filter and I based it on the lane-detection algorithm that was already implemented on the Raspberry. It's goal is to give the yaw-rate with respect to a starting point.
 
 The main disadvantage of this approach is that the camera is very sensitive to any environmental variables, the most significant one being the proper lightning.
