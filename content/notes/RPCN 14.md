@@ -16,6 +16,8 @@ We consider 2 cameras:
 * we observe the same point from both POVs. The line between the two projection centers is called the *Baseline* **B**.
 
 >[!summary] Stereo rectification is the process where two images taken from different perspectives are mathematically warped onto a single common plane so that their image rows align.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/stereo_rect.png" style="max-width: 100%; height: auto;"> </div>
 
 * In a "**standard**" stereo setup, two cameras are placed perfectly side-by-side. Their optical axes are parallel, and their horizontal axes (x-axes) are aligned. Because of this perfect alignment, a point in the real world will appear at the **exact same row** (y-coordinate) in both images.
 * But in reality, you won't find this; almost never (with some small exception like room mapping). Once we know how the cameras are oriented relative to each other, we mathematically project both images onto a common virtual plane (the blue plane in the diagram). This virtual plane is parallel to the baseline. After this projection, the "tilted" images are transformed into "normal" images.

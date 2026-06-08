@@ -10,11 +10,10 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >[!summary] Topics covered
 >
 >* [[ai for robotics 1|Detectors and Tracking]]
->* [[RPCN 14|Depth Accuracy for Stereo Cameras]]
->* [[camera calibration and 3d recontruction|Stereo Reconstruction]], [[RPCN 15|Bundle Adjustment]]
 >* [[RPCN 6|SLAM, but mostly covered the camera oriented side]]
 >* [[MiDaS]]
 >* [[ai for robotics 2|Machine Learning Paradigms]]
 >* [[ai for robotics 3|Deep Learning SfM, SLAM, and VO]]
->* [[ai for robotics 4|Single Image Depth Estimation (SIDE)]]
+>* [[ai for robotics 4|Single Image Depth Estimation (SIDE)]], [[RPCN 14|Depth Accuracy for Stereo Cameras]], [[RPCN 15|Bundle Adjustment]]
+>* [[ai for robotics 5|Deep Feature Matching]]
 
