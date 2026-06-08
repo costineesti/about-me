@@ -16,4 +16,5 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >* [[MiDaS]]
 >* [[ai for robotics 2|Machine Learning Paradigms]]
 >* [[ai for robotics 3|Deep Learning SfM, SLAM, and VO]]
+>* [[ai for robotics 4|Single Image Depth Estimation (SIDE)]]
 
