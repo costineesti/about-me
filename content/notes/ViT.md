@@ -49,3 +49,5 @@ Each flattened patch is a vector of length 768.
     <img src="../static/notes/vit_arch.png" style="max-width: 100%; height: auto;">
 </div>
 
+* Learnable `[class]` embedding
+* Learnable position embeddings

@@ -62,7 +62,7 @@ These models **combine both structures for sequence-to-sequence tasks**, such as
 >* "The dog bit the man"
 >* "The man bit the dog"
 >
->Self-attention can not figure out who bit whom without positional information.
+>Self-attention can not figure out who bit whom without positional information. Attention is **permutation invariant** because it is only a weighted sum of values. That's where the positional encoding comes in and makes it clear that "The dog bit the man" and not the inverse.
 
 Look into Swin (Shifted Window Transformer)?
 
@@ -70,7 +70,20 @@ Look into Swin (Shifted Window Transformer)?
 >
 >Standard Vision Transformers are computationally heavy because they analyze the entire image globally at once. Swin Transformers solve this by restricting their focus to small, local windows and calculating attention only within them. To ensure the network still understands the big picture, the windows are shifted in the next layer so information can flow across the boundaries.
 >
->I saw something with Swin U-Nets.
+>I saw something with Swin U-Nets. **Gray is patches and Red is windows**
 >
 ><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/swin.png" style="max-width: 100%; height: auto;"> </div>
+>
+>Shifted Window (**SWIN**) Transformer brings back 2 inductive biases from CNNs:
+>
+>1. Locality (attention only within blocks)
+>2. Hierarchy (aggrating smaller patches into larger ones)
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/foundmod3_1.png" style="max-width: 100%; height: auto;"> </div>
+>
+>Also see `nnU-Net revisited`: is it actually worth it to use Transformers for e.g. in medicine applications when CNNs already do the job so well? It's actually useful to understand the distribution of the data you're working with. Is it Gaussian or something else? Do you even need transformers? See [[ViT]].
+
+>[!question] What exactly prevents the heads from learning the same thing?
+>
+>To prevent the multiple heads from learning the same thing, you could set different activation functions (if I understood correctly) + ensure the initialization is different.
 
