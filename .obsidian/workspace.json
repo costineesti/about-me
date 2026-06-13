@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/foundation models 3.md",
+                "file": "content/notes/DINO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "foundation models 3"
+              "title": "DINO"
             }
           }
         ]
@@ -206,8 +206,20 @@
   },
   "active": "3a557d5335508771",
   "lastOpenFiles": [
-    "content/notes/genai2.md",
+    "quartz/static/notes/DINOv3_2.png",
+    "quartz/static/notes/DINOv3.png",
+    "quartz/static/notes/DINO.png",
+    "quartz/static/notes/SimCLR.png",
+    "content/notes/genai8.md",
+    "content/notes/DINO.md",
+    "content/notes/Deep Learning Fundamentals.md",
+    "content/notes/camera calibration and 3d recontruction.md",
+    "content/notes/cpp_arraysvsvectors.md",
+    "quartz/static/notes/byol.png",
+    "content/notes/representation learning.md",
+    "content/notes/genai.md",
     "content/notes/foundation models 3.md",
+    "content/notes/genai2.md",
     "quartz/static/notes/foundmod3_6.png",
     "content/notes/foundation models 2.md",
     "content/notes/foundation models 4.md",
@@ -218,14 +230,9 @@
     "content/notes/ai for robotics 5.md",
     "content/notes/ai for robotics 4.md",
     "content/notes/ai for robotics.md",
-    "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/RPCN 14.md",
     "quartz/static/notes/ai4r5_6.png",
     "quartz/static/notes/ai4r5_5.png",
-    "quartz/static/notes/ai4r5_4.png",
-    "quartz/static/notes/ai4r5_3.png",
-    "quartz/static/notes/ai4r5_2.png",
-    "quartz/static/notes/stereo_rect.png",
     "content/notes/ai for robotics 3.md",
     "content/notes/foundation models 6.md",
     "content/notes/foundation models 7.md",
@@ -235,12 +242,6 @@
     "content/notes/foundation models.md",
     "content/notes/foundation models 5.md",
     "content/index.md",
-    "content/notes/conv properties.md",
-    "content/notes/genai3.md",
-    "content/notes/genai4.md",
-    "content/notes/genai5.md",
-    "content/notes/embedded systems 4.md",
-    "content/notes/embedded systems 3.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",
