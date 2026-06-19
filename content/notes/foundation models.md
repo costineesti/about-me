@@ -15,6 +15,7 @@ Elective course I took in Q4 of my first year while at [[twente|Twente]]. It's b
 >* [[CLIP]], [[DINO]]
 >* [[foundation models 8|Self-Supervision Objectives for FoMo Pre-training]]
 >* [[foundation models 7|Training Foundation Models]]
+>* [[foundation models 8|FoMo Post-training and Adaption]]
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fmodels.png" style="max-width: 100%; height: auto;">

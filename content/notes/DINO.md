@@ -2,6 +2,7 @@
 title: DINO
 draft: false
 tags:
+date: 2026-06-18
 ---
 
 [youtube video](https://youtu.be/oGTasd3cliM?si=NthPtybKAgV2NJjL), [official github repo](https://github.com/facebookresearch/dino)
