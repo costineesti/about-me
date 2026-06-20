@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "410fde1f7b592c38",
+        "id": "66d278133b1667d6",
         "type": "tabs",
         "children": [
           {
-            "id": "97d7df39b91e4835",
+            "id": "3a00e4ac7e9cf0a1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/foundation models 9.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "foundation models 9"
+              "title": "New tab"
             }
           }
         ]
@@ -204,34 +200,36 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "97d7df39b91e4835",
+  "active": "3a00e4ac7e9cf0a1",
   "lastOpenFiles": [
-    "quartz/static/notes/fomo9_11.png",
-    "quartz/static/notes/fomo9_10.png",
-    "content/notes/ai for robotics 3.md",
+    "content/notes/foundation models 10.md",
+    "content/notes/foundation models.md",
+    "content/notes/transformers.md",
+    "quartz/static/notes/fomo10_9.png",
+    "quartz/static/notes/fomo10_8.png",
+    "quartz/static/notes/fomo10_7.png",
+    "quartz/static/notes/fomo10_6.png",
+    "content/notes/foundation models 8.md",
     "content/notes/foundation models 9.md",
-    "quartz/static/notes/fomo9_9.png",
+    "quartz/static/notes/fomo10_5.png",
+    "quartz/static/notes/fomo10_4.png",
+    "quartz/static/notes/fomo10_3.png",
+    "quartz/static/notes/fomo10_2.png",
+    "quartz/static/notes/fomo10_1.png",
+    "content/notes/genai3.md",
+    "content/notes/changeofvar.md",
+    "content/notes/foundation models 4.md",
+    "content/notes/foundation models 5.md",
+    "quartz/static/notes/fomo9_11.png",
+    "content/notes/ai for robotics 3.md",
     "content/notes/ai for robotics 4.md",
     "content/notes/ai for robotics 5.md",
     "content/notes/genai4.md",
-    "content/notes/genai3.md",
     "content/notes/genai2.md",
-    "content/notes/foundation models 8.md",
     "content/notes/foundation models 7.md",
     "content/notes/foundation models 6.md",
-    "content/notes/foundation models 5.md",
-    "content/notes/foundation models 4.md",
     "content/notes/foundation models 3.md",
     "content/notes/foundation models 2.md",
-    "quartz/static/notes/fomo9_8.png",
-    "quartz/static/notes/fomo9_7.png",
-    "quartz/static/notes/fomo9_6.png",
-    "quartz/static/notes/fomo9_5.png",
-    "quartz/static/notes/fomo9_4.png",
-    "quartz/static/notes/fomo9_2.png",
-    "quartz/static/notes/fomo9_3.png",
-    "quartz/static/notes/fomo9_1.png",
-    "content/notes/foundation models.md",
     "content/notes/DINO.md",
     "content/notes/representation learning.md",
     "content/notes/genai8.md",
@@ -240,8 +238,6 @@
     "content/notes/cpp_arraysvsvectors.md",
     "content/notes/genai.md",
     "content/notes/ViT.md",
-    "content/notes/ai for robotics.md",
-    "content/notes/RPCN 14.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",
