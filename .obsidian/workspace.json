@@ -11,10 +11,14 @@
             "id": "3a00e4ac7e9cf0a1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/foundation models 3.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "foundation models 3"
             }
           }
         ]
@@ -202,7 +206,15 @@
   },
   "active": "3a00e4ac7e9cf0a1",
   "lastOpenFiles": [
+    "content/notes/Neural ODE.md",
+    "content/notes/foundation models 6.md",
+    "content/notes/foundation models 5.md",
+    "quartz/static/notes/node_2.png",
+    "content/notes/changeofvar.md",
     "content/notes/foundation models 10.md",
+    "quartz/static/notes/node_1.png",
+    "content/notes/genai3.md",
+    "content/notes/foundation models 2.md",
     "content/notes/foundation models.md",
     "content/notes/transformers.md",
     "quartz/static/notes/fomo10_9.png",
@@ -215,29 +227,20 @@
     "quartz/static/notes/fomo10_4.png",
     "quartz/static/notes/fomo10_3.png",
     "quartz/static/notes/fomo10_2.png",
-    "quartz/static/notes/fomo10_1.png",
-    "content/notes/genai3.md",
-    "content/notes/changeofvar.md",
     "content/notes/foundation models 4.md",
-    "content/notes/foundation models 5.md",
-    "quartz/static/notes/fomo9_11.png",
     "content/notes/ai for robotics 3.md",
     "content/notes/ai for robotics 4.md",
     "content/notes/ai for robotics 5.md",
     "content/notes/genai4.md",
     "content/notes/genai2.md",
     "content/notes/foundation models 7.md",
-    "content/notes/foundation models 6.md",
     "content/notes/foundation models 3.md",
-    "content/notes/foundation models 2.md",
     "content/notes/DINO.md",
     "content/notes/representation learning.md",
     "content/notes/genai8.md",
     "content/notes/Deep Learning Fundamentals.md",
     "content/notes/camera calibration and 3d recontruction.md",
     "content/notes/cpp_arraysvsvectors.md",
-    "content/notes/genai.md",
-    "content/notes/ViT.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

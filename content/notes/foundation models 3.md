@@ -7,7 +7,7 @@ date: 2026-06-10
 
 > The mean-field particle perspective
 
-We started with a small recap on Neural ODEs (do look into it a bit). The concept is basically an extension of the mathematics covered in [[genai4|Normalizing Flows]] and [[changeofvar|Change-of-Variable Formula]].
+We started with a small recap on [[Neural ODE|Neural ODEs]]. The concept is basically an extension of the mathematics covered in [[genai4|Normalizing Flows]] and [[changeofvar|Change-of-Variable Formula]].
 
 The goal is to plan a path (via **K** and $b$) such that the initial data can be linearly separated. It happened automatically in NNs and Neural ODEs show that. It's called ==gradient flow==. See *Deep Neural Networks Motivated by Partial Differential Equations, J Mathematical Imaging and Vision, 2019*. Also *Neural Ordinary Differential Equations, Neurips, 2018*.
 

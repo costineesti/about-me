@@ -9,6 +9,8 @@ $a$ stands for activation functions in this lecture. $\Omega$ stands for weights
 
 **Convolution** assumes *weights sharing*. Which means it always goes with the same parameters over the image. Each layer is a filter. We only have width and depth. The connections are sparse (between the hidden layers), but we have the same information in the layers, if I understood that correctly. Equivariant features (i.e. due to the parameter sharing used in CNNs, the feature maps are equivariant w.r.t. translations. so in my own words, if i rotate the image; the filter also rotates with it?) -- see [[conv properties|Convolutional Properties]].
 
+* smartass, when you say translation you understand rotation?? This is just a self-roast. The idea is that if the image gets shifted a bit to the right or whatever, that won't change the way the Convolutional Layer observes it, since the feature map will simply shift by the same amount.
+
 **Deep Learning in Imaging**: Image registration aligns two images into the same coordinate space. You use a neural network to compare a moving image with a fixed target image. The network learns the registration field, which acts as a dense mathematical map of movement instructions.Then, you apply this vector field to the moving image using a spatial transform. This step warps and pushes the moving image so that it perfectly matches the anatomy of the fixed image.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
