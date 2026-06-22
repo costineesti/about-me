@@ -5,7 +5,7 @@ tags:
 date: 2025-11-22
 ---
 
-Resources: UTwente slides + [Attention is all you need](https://arxiv.org/abs/1706.03762). Also, I genuinely suggest watching this [video](https://www.youtube.com/watch?v=bCz4OMemCcA) which explains very well the mathematics and architecture of the Transformers.
+Resources: UTwente slides + [Attention is all you need](https://arxiv.org/abs/1706.03762). Also, I genuinely suggest watching this [video](https://www.youtube.com/watch?v=bCz4OMemCcA) which explains very well the mathematics and architecture of the Transformers. See [[foundation models 3|Transformers in depth and time]] to understand the mathematics behind transformers and how they reach their conclusion.
 
 # Transformers
 

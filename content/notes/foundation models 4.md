@@ -65,7 +65,27 @@ So for before, $S$ and $O$ will be computed with tiling, but for $A$ we will nee
 
 $exp$ is **not numerically stable in binary floating point**. The fix is stable softmax, which is removing the max of $S$ from the row sequence. You scale the values to the negative, the max will be 0, and by applying the exponential, we scale into a much smaller range than before. He lost me at $m_i$ and $m_N$. It's about optimizing the second loop of $d$. Finally it comes down to a recursive formulation. Apparently you can also include the computation of $O=AV$ in these loops. 
 
-There is also flash attention which I see that it gets the job done in only one loop $O(n)$.
+clarifying the stable softmax idea:
+
+Plain softmax needs the **whole row** before I can normalize:
+
+$$
+softmax(x)_i = \frac{e^{x_i-m}}{\sum_je^{x_j-m}}
+$$
+
+I need `max` and `sum` over the *entire* row of $S$. But tiling only gives me one chunk of the row at a time.
+
+>[!question] So how do I compute a correct softmax without seeing the whole row at once?
+>
+>**Trick**: keep a running max `m` and running sum `l`, and _correct_ my previous partial output whenever a new tile reveals a bigger max. Concretely, after processing tiles `1..j`, I track:
+>
+>* $m_j$ = max seen so far
+>* $d_j$ = sum of $exp(x-m_j)$ so far, correctly rescaled
+>* $O_j$ = output accumulated so far, correctly rescaled
+>
+>When tile `j+1` arrives with new max candidate, we take it into consideration and update
+
+The mechanism above corresponds to [[Flash Attention]] which gets the job done in only one loop $O(n)$.
 
 <div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/fmod6_3.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/fmod6_4.png" alt="flow 2" width="350" height="300"> </div> </div>
 
@@ -73,7 +93,7 @@ There is also flash attention which I see that it gets the job done in only one 
 
 * $2 \times 128 \times 2 \text{bytes/head} \times 128 \text{heads} \times 61 \times 32768 = 131GB$
 
-This is where experts make the difference. They understand these things when designing neural networks. For the entire formula, **the one thing we can control easily is the number of heads**, i.e. **Multi-Query Attention (MQA) which means use only one head for the keys and the values (validate this).**
+> This is where experts make the difference. They understand these things when designing neural networks. For the entire formula, **the one thing we can control easily is the number of heads**, i.e. **Multi-Query Attention (MQA) which means use only one head for the keys and the values (validate this).**
 
 * With MHA we might need 4MB for KV cache, 
 * With MQA we need only 31kB (128 $\times$ reduction),
@@ -96,13 +116,20 @@ See the slide with the comparison between what each technique stores (kB, MB). W
 >
 >MLA requires 70kB KV cache per token.
 
+| Method                                | What it does                                                     | Cache size                             |
+| ------------------------------------- | ---------------------------------------------------------------- | -------------------------------------- |
+| **MHA** (Multi-Head Attention)        | every head has its own K, V                                      | ~4MB                                   |
+| **MQA** (Multi-Query Attention)       | all query heads share **one** K, V head                          | ~31kB (128x smaller)                   |
+| **GQA** (Grouped-Query Attention)     | query heads share K, V in small groups                           | ~500kB (middle ground)                 |
+| **MLA** (Multi-Head Latent Attention) | compress K, V into a small latent vector, up-project when needed | ~70kB, but **better quality than MHA** |
+
 ---
 
 **Softmax?**
 
-Currently we know about $o_t = \sum_{j<t} \frac{exp(q_tk_j^\top)}{exp(q_tk_l^\top)}v_j$. We need to escape the $exp$ function i.e. converting to **linear attention**.
+Currently we know about $o_t = \sum_{j<t} \frac{exp(q_tk_j^\top)}{exp(q_tk_l^\top)}v_j$ which requires storing *all* past $K,V$ (**O(L)** memory) because the softmax normalization mixes everything together. We need to escape the $exp$ function i.e. converting to **linear attention**.
 
-State matrix $S_t = \sum_{j<t} k_j^T v_j = S_{t-1} + k_j^Tv_j$. Again, recursion. Insert the slide he has on the computations. Again, smart. `This is Linear Attention which replaces Softmax Attention.`
+State matrix $S_t = \sum_{j<t} k_j^T v_j = S_{t-1} + k_j^Tv_j$. Again, recursion. Insert the slide he has on the computations. Again, smart. `This is Linear Attention which replaces Softmax Attention with plain dot product.`
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fmod6_5.png" style="max-width: 100%; height: auto;">
@@ -123,7 +150,7 @@ But linearity includes challenges. There's no real parallelism possible since ea
 >
 ><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/fmod6_6.png" style="max-width: 100%; height: auto;"> </div>
 
-Next he talks about moving the key vector close to the value vector through $\hat{v} = kS$ and then compute the loss function with SDG update at t. See delta update rule for linear attention, that's how he formulates it.
+Next he talks about moving the key vector close to the value vector through $\hat{v} = kS$ and then compute the loss function with SDG update at t. See delta update rule for linear attention, that's how he formulates it. So the idea is to train $S$ to be *the operator that maps keys to their values*. This loss is small when $k_t S \approx v_t$, i.e. when my current state $S$, applied to key $k_t$, successfully predicts/reconstructs $v_t$.
 
 $$
 L_t(S) = -(k_tS)^\top \mathbf{v}_t \quad \quad \text{loss at t}
@@ -144,27 +171,34 @@ $$
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fmod6_7.png" style="max-width: 100%; height: auto;">
 </div>
+
+**The difference** is that istead of just adding $k_t^\top v_t$ (which can pile up redundant info), it adds the **error term** $v_t - k_t S_{t-1}$ -- i.e. only update $S$ by however much it's currently *wrong* about predicting $v_t$.
+
 ---
 
 **RMSNorm**
 
 Attention captures token dependencies. However, it's not enough for retrieving factual information.
 
-> I did not understand the Routing concept.
+look again over this and understand the concept which constrains to a unit sphere. Well, it's better explained now in [[foundation models 3|Transformers in depth and time]]. It's the idea of *representing tokens as particles on a sphere*. The prior claim ("attention captures dependencies but isn't enough for factual retrieval") is gesturing the idea that [[Mixture of Experts (MOE)|MoE]]/expert layers are what store factual/parametric knowledge, while attention handles relational/contextual mixing.
 
-look again over this and understand the concept which constrains to a unit sphere.
+>[!summary] Routing / Mixture of Experts
+>
+>See OLMoE to understand the experts explanation he gave. From 2024 (GPT 3.5 nano) onwards, everything is a mixture of experts. 
+>
+>**Idea of [[Mixture of Experts (MOE)]]**: learn E separate MLPs per block; route each token to $A<E$ active experts. Increases total params by $E$, compute by only $A$. Almost every frontier LLM today (GPT-4o, Claude, Gemini) is believed to be MoE with >1T params. 
+>
+>instead of every token passing through the same dense FFN, route each token to a small subset of "expert" FFNs.
+>
+>$$
+>\text{Expert capacity} = \frac{\text{Total tokens in a batch}}{\text{Number of experts}} \times \text{Capacity factor}
+>$$
+>
+>**Intuition**: most parameters are “dormant” for any given token. Each token only pays for the handful of experts relevant to it, so total capacity scales without paying FLOPs for every parameter
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/fmod6_8.png" style="max-width: 100%; height: auto;"> </div>
 
-See OLMoE to understand the experts explanation he gave. From 2024 (GPT 3.5 nano) onwards, everything is a mixture of experts.
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/fmod6_8.png" style="max-width: 100%; height: auto;">
-</div>
-
-$$
-\text{Expert capacity} = \frac{\text{Total tokens in a batch}}{\text{Number of experts}} \times \text{Capacity factor}
-$$
-
-> **token overlflow**: tokens are dropped.
+> **token overlflow**: tokens are dropped. Each expert can only handle a fixed number of tokens per batch (its "capacity"). If more tokens get routed to one expert than it has capacity for, the overflow tokens are simply **dropped** (skip that expert, e.g., passed through via a residual/skip path)
 
 
 <style>

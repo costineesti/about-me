@@ -102,7 +102,7 @@ $$
 
 If you take the entries of the gradient and sum them up, you get the diversion $div$. Here comes the nice idea of the **trace** of the Jacobian Matrix from [[genai4|Flow Matching]]. This is how the Transformer comes to its answer. ufffff.....
 
-In other words: if probability mass is flowing with velocity field VV, this equation says "mass is conserved" — whatever flows in equals what flows out. The div⁡div (divergence) is the sum of partial derivatives of VV in all directions — it measures whether the flow is compressing or expanding at each point. The [[transformers|Transformer]] arrives at its final output distribution by solving this PDE.
+In other words: if probability mass is flowing with velocity field $V$, this equation says "mass is conserved" — whatever flows in equals what flows out. The $div$ (divergence) is the sum of partial derivatives of $V$ in all directions — it measures whether the flow is compressing or expanding at each point. The [[transformers|Transformer]] arrives at its final output distribution by solving this PDE.
 
 ---
 
@@ -114,7 +114,7 @@ $$
 \mathcal{E}(\mu) = \frac{1}{2} \int_{\mathcal{S}} \int_{\mathcal{S}} e^{x \cdot Dy} \,\mathrm{d}\mu(x) \,\mathrm{d}\mu(y)
 $$
 
-This **interaction energy** measures how "aligned" all token pairs are (via the kernel $e^{x \cdot Dy}$, which is large when $x$ and $Dy$ point in similar directions). The dynamics monotonically increase EE along trajectories — tokens are being pushed toward mutual alignment. This is a **gradient flow** with respect to a modified Wasserstein (optimal transport) distance. Optimal transport of token distributions directly links to [[genai4|Flow Matching]] and [[genai5|Diffusion models]].
+This **interaction energy** measures how "aligned" all token pairs are (via the kernel $e^{x \cdot Dy}$, which is large when $x$ and $Dy$ point in similar directions). The dynamics monotonically increase $\mathcal{E}$ along trajectories — tokens are being pushed toward mutual alignment. This is a **gradient flow** with respect to a modified Wasserstein (optimal transport) distance. Optimal transport of token distributions directly links to [[genai4|Flow Matching]] and [[genai5|Diffusion models]].
 
 ---
 
@@ -133,7 +133,7 @@ The stationary states of the dynamics depend entirely on the **eigenvalues of $
 - $D=diag(1,0,1)$: any configuration with the 1st and 3rd coordinates zero is a minimizer — collapse onto a great circle.
 - $D=diag(0,0,1)$: full **rank collapse** — all tokens collapse to a ring in a single direction.
 
-> **Rank collapse** is when all tokens converge to the same (or a low-dimensional) representation, destroying the diversity of information. It's the Transformer analogue of [[genai11|Mode Collapse]] in [[genai2|GANs]]. The eigenvalues of DD directly predict when and how this happens — zero eigenvalues in DD are the danger signal. If DD changes over time, we get Neural PDEs as a natural extension.
+> **Rank collapse** is when all tokens converge to the same (or a low-dimensional) representation, destroying the diversity of information. It's the Transformer analogue of [[genai11|Mode Collapse]] in [[genai2|GANs]]. The eigenvalues of $D$ directly predict when and how this happens — zero eigenvalues in $D$ are the danger signal. If $D$ changes over time, we get Neural PDEs as a natural extension.
 
 ==Final pipeline==
 
@@ -173,7 +173,7 @@ With **Un-supervised learning** we apply SVD and PCA to see the clusters that fo
 
 ==Golden rules of Self-supervised learning==: 
 
-1. **Don't let your features collapse (make it stable)** through contrastive loss ([[CLIP]]), teacher-student asymmetry (DINO).
+1. **Don't let your features collapse (make it stable)** through contrastive loss ([[CLIP]]), teacher-student asymmetry ([[DINO]]).
 2. **Don't make your features random**. The similarity signal enforces this: two views of the same image *must* produce similar features, so the network is forced to learn something meaningful about the content.
 
 >[!summary] Foundation Model
