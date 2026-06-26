@@ -8,49 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2d26e0eaad3acd39",
+            "id": "4f26495ac071e463",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Flash Attention.md",
+                "file": "content/notes/ai for robotics 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flash Attention"
-            }
-          },
-          {
-            "id": "96342b8fe09b703e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/foundation models 4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "foundation models 4"
-            }
-          },
-          {
-            "id": "b222a9eea97f0dc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/foundation models.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "foundation models"
+              "title": "ai for robotics 6"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -233,12 +204,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b222a9eea97f0dc1",
+  "active": "4f26495ac071e463",
   "lastOpenFiles": [
-    "content/notes/foundation models 9.md",
+    "content/notes/genai4.md",
+    "content/notes/ai for robotics 6.md",
+    "quartz/static/notes/rl3.png",
+    "content/notes/Markov Decision Process.md",
+    "content/notes/ai for robotics.md",
+    "content/notes/foundation models 4.md",
+    "quartz/static/notes/rl2.png",
+    "content/notes/ai for robotics 2.md",
+    "content/notes/ai for robotics 5.md",
+    "quartz/static/notes/rl1.png",
+    "content/notes/embedded systems 4.md",
+    "content/notes/embedded systems 2.md",
+    "content/notes/embedded systems 3.md",
+    "content/notes/embedded systems 5.md",
     "content/notes/foundation models.md",
     "content/notes/foundation models 10.md",
-    "content/notes/foundation models 4.md",
+    "content/notes/foundation models 9.md",
     "content/notes/foundation models 5.md",
     "content/notes/Mixture of Experts (MOE).md",
     "content/notes/Flash Attention.md",
@@ -257,20 +241,6 @@
     "quartz/static/notes/fomo10_8.png",
     "quartz/static/notes/fomo10_7.png",
     "quartz/static/notes/fomo10_6.png",
-    "content/notes/foundation models 8.md",
-    "quartz/static/notes/fomo10_5.png",
-    "quartz/static/notes/fomo10_4.png",
-    "quartz/static/notes/fomo10_3.png",
-    "content/notes/ai for robotics 3.md",
-    "content/notes/ai for robotics 4.md",
-    "content/notes/ai for robotics 5.md",
-    "content/notes/genai4.md",
-    "content/notes/genai2.md",
-    "content/notes/DINO.md",
-    "content/notes/representation learning.md",
-    "content/notes/genai8.md",
-    "content/notes/Deep Learning Fundamentals.md",
-    "content/notes/camera calibration and 3d recontruction.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

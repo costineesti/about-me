@@ -17,7 +17,7 @@ Elective course I took in Q4 of my first year while at [[twente|Twente]]. It's b
 >* [[foundation models 7|Training Foundation Models]]
 >* [[foundation models 5|Improving the Generalization of ViTs for Action Understanding with VLM Pre-Training]]
 >* [[foundation models 9|FoMo Post-training and Adaption]]
->* [[foundation models 10|Beyond attention-based methods]]
+>* [[foundation models 10|Beyond attention-based methods -- Structured State Space Sequence Models (SSM)]]
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fmodels.png" style="max-width: 100%; height: auto;">

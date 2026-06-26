@@ -1,5 +1,5 @@
 ---
-title: Beyond attention-based methods
+title: Structured State Space Sequence Models (SSM)
 draft: false
 tags:
 date: 2026-06-20
@@ -50,11 +50,11 @@ $$
 
 However, **in real world our inputs are sampled data, not continuous observations**. We need to integrate our discrete signals.
 
->[!summary] ZOH converts discrete inputs to a continuous signal (staircase). 
+>[!summary] ZOH converts continuous inputs to a discrete signal (staircase). 
 >The idea is basically saving the value of the lower bound.
 >
 >* $a \leq t < b \rightarrow u(t) = u(a)$, and $a$ and $b$ are samples at timesteps $T, 2T, 3T, \dots$
->* this implies however constant values in inter-sample periods
+>* this implies however constant values in inter-sample periods (i.e. linearization)
 >* points can be represented with delays $e^{A \Delta}$
 >	* $A$ is learnable
 >	* $\Delta$ is our step size between $t$ and $t+1$
