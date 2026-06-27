@@ -11,10 +11,14 @@
             "id": "7252f8022e31971e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/ai for robotics.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "ai for robotics"
             }
           }
         ]
@@ -202,14 +206,19 @@
   },
   "active": "7252f8022e31971e",
   "lastOpenFiles": [
+    "content/notes/Deep Q-Learning.md",
+    "quartz/static/notes/rl10.png",
+    "quartz/static/notes/rl9.png",
+    "quartz/static/notes/rl8.png",
+    "content/notes/ai for robotics 6.md",
     "content/notes/Q-Learning.md",
+    "content/notes/ai for robotics 7.md",
+    "quartz/static/notes/rl7.png",
     "content/notes/ai for robotics.md",
     "content/notes/Temporal Difference Learning.md",
     "content/notes/Monte Carlo Learning.md",
-    "content/notes/ai for robotics 7.md",
     "quartz/static/notes/rl6.png",
     "content/notes/ai for robotics 5.md",
-    "content/notes/ai for robotics 6.md",
     "quartz/static/notes/rl5.png",
     "quartz/static/notes/rl4.png",
     "content/notes/Bellman Equation.md",
@@ -231,12 +240,7 @@
     "content/notes/Mixture of Experts (MOE).md",
     "content/notes/Flash Attention.md",
     "content/notes/foundation models 7.md",
-    "quartz/static/notes/moe_1.png",
     "content/notes/foundation models 3.md",
-    "content/notes/transformers.md",
-    "quartz/static/notes/node_2.png",
-    "quartz/static/notes/node_1.png",
-    "quartz/static/notes/fomo10_9.png",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

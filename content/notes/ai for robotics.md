@@ -22,6 +22,7 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >	* [[Monte Carlo Learning]] 
 >	* [[Temporal Difference Learning]]
 >	* [[Q-Learning]]
+>	* [[Deep Q-Learning]]
 
 
 
