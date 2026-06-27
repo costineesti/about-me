@@ -74,10 +74,7 @@ $$
 >Therefore $A(s,a) = r + \gamma V(s') - V(s)$ is the [[Temporal Difference Learning|TD Error]].
 >
 >$$
->\text{Gradient Update Direction} = \begin{cases} 
-+\nabla_\theta \log \pi_\theta(a|s) & \text{if } A(s,a) > 0 \text{ i.e. does better} \\ 
--\nabla_\theta \log \pi_\theta(a|s) & \text{if } A(s,a) < 0 \text{ i.e. does worse}  
-\end{cases}
+>\text{Gradient Update Direction} = \begin{cases} +\nabla_\theta \log \pi_\theta(a|s) & \text{if } A(s,a) > 0 \text{ i.e. does better} \\ -\nabla_\theta \log \pi_\theta(a|s) & \text{if } A(s,a) < 0 \text{ i.e. does worse} \end{cases}
 >$$
 
 We use $A(s,a)$ instead of $Q(s,a)$ since $V(s)$ acts as a **baseline**, centering the updates around 0, which directly reduces variance without introducing bias.

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ai for robotics.md",
+                "file": "content/notes/ai for robotics 11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ai for robotics"
+              "title": "ai for robotics 11"
             }
           }
         ]
@@ -206,20 +206,20 @@
   },
   "active": "e521cad04a255d51",
   "lastOpenFiles": [
+    "content/notes/ai for robotics 7.md",
+    "content/notes/PPO.md",
+    "content/notes/TD3.md",
+    "content/notes/SAC.md",
+    "content/notes/ai for robotics 8.md",
+    "content/notes/Actor Critic Methods.md",
+    "content/notes/ai for robotics.md",
     "content/notes/ai for robotics 1.md",
     "content/notes/ai for robotics 11.md",
-    "content/notes/ai for robotics.md",
     "content/notes/ai for robotics 10.md",
     "content/notes/ai for robotics 6.md",
     "content/notes/ai for robotics 9.md",
     "content/notes/genai2.md",
-    "content/notes/TD3.md",
-    "content/notes/Actor Critic Methods.md",
-    "content/notes/SAC.md",
-    "content/notes/ai for robotics 7.md",
-    "content/notes/ai for robotics 8.md",
     "quartz/static/notes/rl16.png",
-    "content/notes/PPO.md",
     "quartz/static/notes/rl15.png",
     "quartz/static/notes/rl14.png",
     "content/notes/foundation models 6.md",

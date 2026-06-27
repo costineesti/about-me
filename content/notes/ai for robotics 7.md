@@ -53,12 +53,12 @@ There are two strategies on how train our value function or our policy function.
 **On-policy** = learning from policy’s own demonstrations
 
 * Direct experience. Evaluates or improves the policy that is used to make decisions. **Less** sample efficient
-* **Examples**: `Value-Based Methods`(Sarsa), `Policy Gradient Methods`(PPO, A2C, A3C)
+* **Examples**: [[ai for robotics 7|Value-Based Methods]] (Sarsa), [[ai for robotics 8|Policy Gradient Methods]] ([[PPO]], A2C, A3C)
 
 **Off-policy** = learning from other policy’s demonstrations. Off-Policy Learning is the idea of evaluating target policy $\pi(a \mid s)$ while following behavior policy $\mu(a \mid s)$.
 
 * Evaluates or improves a policy different from that used to generate the data. **More** sample efficient.
-* **Examples**: `Value-Based Methods`([[Q-Learning]], DQN), `Policy Gradient Methods`(DDPG, SAC, TD3)
+* **Examples**: [[ai for robotics 7|Value-Based Methods]] ([[Q-Learning]], DQN), [[ai for robotics 8|Policy Gradient Methods]] (DDPG, [[SAC]], [[TD3]])
 
 >[!question] [[Q-Learning]] is off-policy, but we only update states that we visited?
 >The fundamental difference is that the optimal policy is not followed from that. You learn about the optimal policy using data collected from a different policy.

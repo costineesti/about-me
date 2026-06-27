@@ -59,7 +59,7 @@ PG can learn a stochastic policy, while [[ai for robotics 7|value methods]] cann
 
 ---
 
-Policy-Based vs Policy-Gradient
+**Policy-Based versus Policy-Gradient**
 
 $$
 \text{Policy-gradient methods} \in \text{Policy-based Methods}
