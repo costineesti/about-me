@@ -11,7 +11,12 @@ Related to [[ai for robotics 6|Reinforcement Learning]].
 
 * can be deterministic or stochastic
 
-**Value-based** methods learn the value function that maps a state to the expected value of being at that state to have an optimal policy $\pi^*$. 
+>[!NOTE] Definition
+>**Value-based** methods learn the value function that maps a state to the expected value of being at that state to have an optimal policy $\pi^*$. 
+>
+>$$
+>\pi^*(s) = \arg \max_a Q^*(s,a)
+>$$
 
 $$
 v(s) = \mathbb{E}[G_t \mid S_t=s]

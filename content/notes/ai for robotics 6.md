@@ -7,7 +7,8 @@ date: 2026-06-26
 
 Reinforcement Learning (RL) was invented as a way to model and solve problems of **decision making under uncertainty.**
 
-The goal is to maximize the expected sum of discounted rewards: $\max_\theta \mathbb{E} [\sum_t \lambda_t r(s_t, a_t)]$
+>[!NOTE] Main goal of RL
+>The goal is to maximize the expected sum of discounted rewards: $\max_\theta \mathbb{E} [\sum_t \lambda_t r(s_t, a_t)]$ or to find the optimal policy $\pi^*$ that will maximize the expected cumulative reward.
 
 >[!summary] Terminology
 >
@@ -52,6 +53,8 @@ Contrast to other learning tasks:
 >
 >RL is like a one-size fits all solution.
 
+---
+
 **Exploitation vs Exploration**
 
 * **Exploration** is exploring the environment by trying random actions in order to find more information about the environment
@@ -59,10 +62,14 @@ Contrast to other learning tasks:
 
 There is a trade-off. We need to balance the two.
 
+---
+
 **Type of task in RL**
 
 * **Episodic task**: here is a starting point and an ending point (**a terminal state**). This creates an episode: a list of States, Actions, Rewards, and new States.
 * **Continuing task**: These are tasks that continue forever (**no terminal state**). In this case, the agent must learn how to choose the best actions and simultaneously interact with the environment.
+
+---
 
 **Policy**
 
@@ -93,10 +100,16 @@ A policy is a mapping $\pi : \mathcal{S} \times \mathcal{A} \rightarrow [0,1]$ t
 
 We need to find the optimal policy $\pi^*$, which maximizes the expected return.
 
-* **Policy-based methods**: by training your policy directly: the agent learns which action to take given a state
+* [[ai for robotics 8|Policy-based methods]]: by training your policy directly: the agent learns which action to take given a state
 	* This function will define a mapping from each state to the best corresponding action
-* **Value-based methods**: by training a value function that tells us the expected return the agent will get at each state, and use this function to define our policy
+* [[ai for robotics 7|Value-based methods]]: by training a value function that tells us the expected return the agent will get at each state, and use this function to define our policy
 	* $\pi(s) = \arg \max_a Q_{\pi}(s,a)$
+
+**On-policy learning** $\rightarrow$ use the deterministic outcomes or samples from the target policy to train the algorithm
+
+**Off-policy learning** $\rightarrow$ training on a distribution of transitions or episodes produced by a different behavior policy rather than that produced by the target policy.
+
+---
 
 **Observations vs. States**
 
@@ -115,12 +128,26 @@ $$
 \mathcal{H}_t = O_0, A_0, R_1, O1, \dots, O_{t-1}, A_{t-1}, R_t, O_t
 $$
 
+---
+
 **Discrete vs. Continuous Action space**
 
 * **Discrete Space**: finite number of actions
 * **Continuous Space**: infinite number of actions
 
 > kinda intuitive
+
+---
+
+**Offline vs. Online**
+
+Deep Reinforcement Learning agents learn with batches of experience. The question is, how do they collect it?
+
+* In **Online RL**, the agent **gathers data directly**: it collects a batch of experience by interacting with the env. Then, it uses this experience immediately (or via some replay buffer) to learn from it (update its policy).
+	* It implies either training your agent in the real world or have a simulator
+* In **Offline RL**, the agent only uses data collected from **other agents or human demonstrations**. It does not interact with the env.
+
+
 
 <style>
   .encoder-section {

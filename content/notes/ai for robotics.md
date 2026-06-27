@@ -16,13 +16,17 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >* [[ai for robotics 3|Deep Learning SfM, SLAM, and VO]]
 >* [[ai for robotics 4|Single Image Depth Estimation (SIDE)]], [[RPCN 14|Depth Accuracy for Stereo Cameras]], [[RPCN 15|Bundle Adjustment]]
 >* [[ai for robotics 5|Deep Feature Matching]]
->* [[ai for robotics 6|Reinforcement Learning Basics]]
->* [[Markov Decision Process]]
+>* [[ai for robotics 6|Reinforcement Learning Basics]], [[Markov Decision Process]]
+>* [[ai for robotics 9|Imitation Learning]], [[ai for robotics 10|Model-Based Reinforcement Learning]], [[ai for robotics 11|Decision Transformers]]
 >* [[ai for robotics 7|Value Based Methods]]
 >	* [[Monte Carlo Learning]] 
 >	* [[Temporal Difference Learning]]
 >	* [[Q-Learning]]
 >	* [[Deep Q-Learning]]
-
-
+>* [[ai for robotics 8|Policy Gradient Methods]]
+>	* [[PPO]]
+>* [[Actor Critic Methods]]
+>	* [[PPO]]
+>	* [[SAC]]
+>	* [[TD3]]
 
