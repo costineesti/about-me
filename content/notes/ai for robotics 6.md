@@ -122,21 +122,6 @@ $$
 
 > kinda intuitive
 
-**State values functions**
-
-Two typologies of value-based functions:
-
-* **state-value function** (denoted with $v$): it calculates the value of a state $S_t$
-	* $v(s) = \mathbb{E}[G_t \mid S_t = s] = \mathbb{E}[R_{t+1} + R_{t+2} + R_{t+3} + \dots \mid S_t = s]$
-	* For each state, the state-value function $v(s)$ outputs the expected return $\mathbb{E}$ if the agent starts at that state **_s_** and then follows the policy $\pi$ forever afterwards (for all future timesteps, if you prefer).
-* **action-value function** (denoted with $q$): calculate the value of the state-action pair $(S_t, A_t)$.
-	* $q(s,a) = \mathbb{E}[G_t \mid S_t=s, A_t=a] = \mathbb{E} \left[ R_{t+1} + R_{t+2} + R_{t+3} + \dots \mid S_t = s, A_t=a \right]$
-	* for each state and action pair, the action-value function outputs the expected return if the agent starts in that state, takes that action, and then follows the policy forever after.
-
->[!danger] To calculate **EACH** value of a state or a state-action pair is redundant. 
->Bellman Equation simplifies the state value or state-action value calculation.
-
-
 <style>
   .encoder-section {
     display: flex;

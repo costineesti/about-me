@@ -18,6 +18,10 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >* [[ai for robotics 5|Deep Feature Matching]]
 >* [[ai for robotics 6|Reinforcement Learning Basics]]
 >* [[Markov Decision Process]]
+>* [[ai for robotics 7|Value Based Methods]]
+>	* [[Monte Carlo Learning]] 
+>	* [[Temporal Difference Learning]]
+>	* [[Q-Learning]]
 
 
 
