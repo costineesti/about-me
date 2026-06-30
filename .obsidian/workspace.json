@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ai for robotics 11.md",
+                "file": "content/twente.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ai for robotics 11"
+              "title": "twente"
             }
           }
         ]
@@ -206,6 +206,7 @@
   },
   "active": "e521cad04a255d51",
   "lastOpenFiles": [
+    "content/notes/ai for robotics 11.md",
     "content/notes/ai for robotics 7.md",
     "content/notes/PPO.md",
     "content/notes/TD3.md",
@@ -214,7 +215,6 @@
     "content/notes/Actor Critic Methods.md",
     "content/notes/ai for robotics.md",
     "content/notes/ai for robotics 1.md",
-    "content/notes/ai for robotics 11.md",
     "content/notes/ai for robotics 10.md",
     "content/notes/ai for robotics 6.md",
     "content/notes/ai for robotics 9.md",

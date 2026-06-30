@@ -16,17 +16,9 @@ date: 2025-10-21
 >[!quote] Everything that moves will be robotic
 >Jensen Huang, CEO of NVIDIA.
 
-* This is an idea of what my curriculum will look like in the 1st year. 
-* In the second year my focus will be on finding an internship inside a startup (really looking after AxeleraAI -- an interesting startup focused on [[Edge Computing]] from the Netherlands) and doing my Master's Thesis.
+* In the second year my focus will be on finding an internship inside a startup and doing my Master's Thesis.
 
-| 1A                                       | 1B                                                                     | 2A                                             | 2B                                                                     |
-| ---------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------- |
-| **Systems Engineering**                  | **Robot Perception, Cognition, and Navigation**                        | **Optimal Estimation in Dynamic Systems**      | **AI for Autonomous Robots: Deep Learning and Reinforcement Learning** |
-| **Image Processing and Computer Vision** | **Generative Artificial Intelligence Models and Robotic Applications** | **Advanced Software Development for Robotics** | **Foundation Models**                                                  |
-| **Natural Language Processing**          | **Speech Processing**                                                  | **Laser Scanning and Point Cloud Processing**  | **Embedded Systems Laboratory**                                        |
-
-
->[!summary] Courses I covered on this website
+>[!summary] Courses I took
 >* **Q1**
 >	* [[NLP|Natural Language Processing]]
 >	* [[Systems Engineering]]
@@ -43,6 +35,3 @@ date: 2025-10-21
 >	* [[ai for robotics|AI for Robotics]]
 >	* [[foundation models|Foundation Models]]
 >	* [[embedded systems|Embedded Systems Laboratory]]
-
-
-
