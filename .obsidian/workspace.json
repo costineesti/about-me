@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/twente.md",
+                "file": "content/seaclear.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "twente"
+              "title": "seaclear"
             }
           }
         ]
@@ -206,6 +206,8 @@
   },
   "active": "e521cad04a255d51",
   "lastOpenFiles": [
+    "content/twente.md",
+    "content/notes/Untitled.md",
     "content/notes/ai for robotics 11.md",
     "content/notes/ai for robotics 7.md",
     "content/notes/PPO.md",
@@ -240,8 +242,6 @@
     "quartz/static/notes/rl7.png",
     "content/notes/Temporal Difference Learning.md",
     "content/notes/Monte Carlo Learning.md",
-    "content/notes/Bellman Equation.md",
-    "content/notes/Markov Decision Process.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

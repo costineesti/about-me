@@ -33,8 +33,7 @@ Everything I do inside this project is out of passion and constant drive to lear
 
 >[!hint] Currently working on...
 >
-> Real-time comparison of multi-camera 3D pose estimation(code is done, waiting to validate with a good enough experiment).
+> * Extended Kalman Filter (Robot localization from ROS package -- EKF)
+> * Multi camera feature tracking, not just based on the bbox center from each perspective
+> * Ground truth metric based on the metalic grid
 
-TODO: 
-* Kalman Filter (Robot localization din ROS - package -- EKF)
-* Segmentare pe baza tank-ului galben
