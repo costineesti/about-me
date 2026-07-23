@@ -2,7 +2,7 @@
 title: Multi Camera Pose Estimation
 draft: false
 tags:
-date: 2025-12-04
+date: 2026-07-23
 ---
  
 **Related**: [[seaclear|SeaClear]], [[Multiple View Geometry in Computer Vision]], [[SeaClear CNN Detection|SeaClear BlueROV Detection]]
@@ -93,6 +93,14 @@ GoPro sees:           USB camera sees:
 Point A               Point B
 (top center)          (side center)
 ```
+
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/rov1.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/rov2.png" alt="flow 2" width="350" height="300"> </div> </div>
+
+>[!danger] I went with the yellow tank as the smaller feature to detect. 
+>
+>When collecting the streams, I applied compression so the respective rosbags would not explode in size. It leads to an even worse quality in case of the usbcamera, which made it hard to choose a smaller feature.
+>
+>In the two pictures above one can see how the usbcamera would select a point on the yellow tank and the gopro would choose the middle of the robot. It makes for the errors at the edge of the FOV when the two perspectives are entirely different.
 
 ### Why I would usually get wrong measurements from the ArUco marker when I would position it in the corner of the UsbCamera FOV
 
