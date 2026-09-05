@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/seaclear observations.md",
+                "file": "content/notes/Dutch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "seaclear observations"
+              "title": "Dutch"
             }
           },
           {
@@ -220,13 +220,13 @@
   },
   "active": "e521cad04a255d51",
   "lastOpenFiles": [
+    "content/notes/seaclear observations.md",
+    "content/notes/Dutch.md",
     "quartz/static/notes/rov2.png",
     "quartz/static/notes/rov1.png",
     "content/notes/genai3.md",
-    "content/notes/seaclear observations.md",
     "content/seaclear.md",
     "content/twente.md",
-    "content/notes/Untitled.md",
     "content/notes/ai for robotics 11.md",
     "content/notes/ai for robotics 7.md",
     "content/notes/PPO.md",
@@ -255,7 +255,6 @@
     "quartz/static/notes/rl11.png",
     "quartz/static/notes/rl10.png",
     "quartz/static/notes/rl9.png",
-    "quartz/static/notes/rl8.png",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",
