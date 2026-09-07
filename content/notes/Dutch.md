@@ -274,5 +274,158 @@ But: when it precedes the letter _r_, pronounce like the English _oo_ in door
 - vuur (fire), uur (hour), muur (wall), duur (expensive), debuut (debut)
 - ('fiu-ǎr, iu-ǎr, miu-ǎr, diu-ǎr, de-biut')
 
-# Open single vowels
+## Open single vowels
+
+>[!NOTE] If a syllable ends in a vowel, the vowel is always long.
+>
+>Here I should master breaking up a word into its syllables.
+
+**a** — [a]
+
+- ma-ken (to make), wa-ter (water), na (after), dra (soon)
+	- ('ma-kǎn, va-tǎr, na, dra')
+
+**e** — [e]
+
+- we-ten (to know), be-ter (better), we-zen (creature), be-zig (busy)
+	- ('ve-tǎn, be-tǎr, ve-zǎn, be-zǎh')
+
+**i** — [i]
+
+- a-li-bi (alibi), po-li-tie (police), mi-nis-ter (minister), fi-na-le (final)
+	- ('a-li-bi, po-li-ți, mi-nis-tǎr, fi-na-lǎ')
+
+**o** — [o]
+
+- ko-men (to come), dro-gen (to dry), bo-ten (boats)
+	- ('ko-mǎn, dro-hǎn, bo-tǎn')
+- But: when _o_ precedes the letter _r_, it is pronounced as when _oo_ precedes the letter _r_: [as in door] — sto-ren (to disturb), ho-ren (to hear), vo-ri-ge (previous)
+	- ('stoo-rǎn, hoo-rǎn, foo-rǎ-hǎ')
+
+**u** — [y]
+
+- bu-ren (neighbours), Tu-ne-si-e, Tunesië (Tunisia), tri-bu-ne (tribune)
+- ('biu-rǎn, tu-nei-si-ǎ, tri-biu-nǎ')
+
+**y** — [i]
+
+- In originally foreign words: baby, derby, lyceum
+	- ('be-bi, der-bi, li-se-iǎm')
+
+>[!danger] A syllable never ends in a double vowel!
+>
+>No-open-double-vowel rule.
+>
+>Apparently, only the letter 'e' is an exception to this rule.
+
+## Vowel combinations
+
+>[!summary] Vowel combinations consist of two or three different vowels that are pronounced more or less as one vowel. We treat the combination as one syllable (together with one or more consonants).
+
+In Dutch, there's 16 vowel combinations. Some combinations perfectly merge into one new vowel, while the synthesis of other combinations is less perfect. The important thing to understand is that they are all _fixed_ combinations.
+
+> [!tip] Learn them by heart.
+> 
+> ||||||
+> |---|---|---|---|---|
+> |aai|eeu(w)|ie|oe|ui|
+> |ae|ei|ieu(w)|ou||
+> |ai|eu|ij|oi||
+> |au|||ooi||
+> ||||oei|
+
+**Combinations that consist of two vowels**
+
+**ae** — This vowel combination occurs exclusively in old Dutch words. You will only find it in proper names, especially in Flanders. It is pronounced the same way as 'aa': [a]
+
+- meneer Claessen (Mr. Claessen), mevrouw Haenen (Mrs. Haenen)
+	- ('mǎ-nir claa-sǎn, mǎ-frau haa-nǎn')
+
+**ai** — This is a rare vowel combination. Pronounce like English _i_ in wine: [ai] or just like in Romanian.
+
+- hai (hi), mais (corn; also spelled as maïs)
+
+**au** — Pronounce like the English _ou_ in house: [au] -- again just like in Romanian
+
+- gauw (soon), grauw (greyish), lauw (lukewarm)
+
+**ei** — This sound is a bit similar to the German _ei_ in reisen, but pronounced a bit 'flatter': [ɛi] or [æi] -- just like in Romanian
+
+- ei (egg), beleid (policy), bereiden (to prepare), geit (goat), trein (train)
+
+**eu** — Pronounce like French 'eu' in 'feu' or German _ö_ in Köln: [ø]. The French one is accurate.
+
+- leuk (nice, funny), neus (nose), heup (hip), treuzelen (to be slow)
+- But: if it precedes the letter _r_, pronounce like the English _or_ in word: [œ] — geur (smell), kleur (colour), deur (door)
+	- I find no difference. Maybe it's more of a "ǎu" in the first case and a "eo" in the second.
+
+**ie** — Pronounce like _ee_ in the English keep: [i]
+
+- lief (sweet, dear), bier (beer), hier (here), genieten van (to enjoy)
+	- ('lif, bi-ǎr, hi-ǎr, hǎ-ni-tǎn')
+
+**ij*** — Same as _ei_: [ɛi] or [æi]
+
+- wijs (wise), blij (happy, glad), grijs (grey), tijd (time)
+	- ('veis, blei, hreis, teit')
+
+**oe** — Pronounce like English _oo_ in choose: [u] in Romanian.
+
+- voelen (to feel), goed (good), zoet (sweet), voet (foot)
+	- ('fu-lǎn, hut, zut, fut')
+
+**oi** — A combination that you will seldom come across. Pronounce just like in Romanian.
+
+- hoi (hi)
+
+**ou** — Same as _au_ in Romanian.
+
+- zout (salt), vrouw (woman), koud (cold), nou (now), stout (bad, naughty)
+	- ('zaut, frau, kaut, nau, staut')
+
+**ui** — This sound is something between _ou_ and _eu_: [ɐy] -- _au_ in Romanian
+
+- zuid (south), bruin (brown), fluiten (to whistle), buiten (outside)
+	- ('zaut, braun, flautǎn, bautǎn')
+
+**Combinations that consists of three vowels**
+
+There are a few vowel combinations that take three vowels, but again, are pronounced more or less as one:
+
+**Ooi, aai, and oei**
+
+The letter _i_ at the end is pronounced like in Romanian.
+
+**aai** — [ai] in Romanian
+
+- draai-en (to turn), aai-en (to stroke), maai-en (to mow)
+	- ('draai-ǎn, aai-ǎn, maai-ǎn')
+
+**oei** — [ui] in Romanian
+
+- groei-en (to grow), roei-en (to row), ver-moeid (tired)
+	- ('hrui-ǎn, rui-ǎn, fǎr-muit')
+
+**ooi** — [oi] in Romanian
+
+- gooi-en (to throw), mooi (beautiful), ver-strooid (forgetful)
+	- ('hhoi-ǎn, moi, fǎr-stroit')
+
+**Ieu(w) and eeu(w)**
+
+These combinations are always followed by the consonant _w_.
+
+_Ieuw_ is pronounced as English _ee_ followed by an English _w_, and _eeuw_ as English _ay_ followed by _w_.
+
+**eeu** — [eːw]
+
+- leeu-wen (lions), geeu-wen (to yawn)
+	- ('lei-uǎn, hhei-uǎn')
+
+**ieu** — [iːw]
+
+- ver-nieu-wen (to renew), kieu-wen (gills of a fish)
+	- ('fǎr-ni-uǎn, ki-uǎn')
+
+# Short Vowels
 
