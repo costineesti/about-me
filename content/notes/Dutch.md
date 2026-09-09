@@ -431,3 +431,169 @@ _Ieuw_ is pronounced as English _ee_ followed by an English _w_, and _eeuw_
 
 # Short Vowels
 
+Short vowels are single vowels that are followed by one or more consonants within the same syllable.
+
+> Single vowels that are followed by _ch_ but not within the same syllable (in the following one) are also considered short vowels. **lachen** $\rightarrow$ la-chen, where *a* is short, not long!
+
+**Figuring out whether a vowel is short or long**: If the single vowel is somewhere _in the middle_ of a word, you need to divide the word into syllables to see whether the vowel sits at the end of the syllable (long vowel) or whether it is followed by a consonant within the same syllable (short vowel).
+
+>[!example] Example
+>**afmeting** -- af-me-ting ('af-mei-tin')
+>
+>*a* is followed by *f*, therefore a short vowel
+>
+>*e* is an open vowel, which makes it a long vowel.
+>
+>_i_ is followed by the consonants _ng_ and thus a short vowel.
+
+>[!note] A mention on **word stress**
+>
+>in Dutch verb infinitives (which almost all end in **-en**) and many plurals, that final **-en** is basically always pronounced as a schwa + "n" — sometimes the "n" is barely even pronounced at all in casual speech. So "merken" often sounds closer to "MER-k'n" than "MER-ken".
+>
+>I have to internalize it by ear and practice, it's not a rule per-say. 
+>
+>Takeaway: unstressed syllables are often pronounced as 'schwa'.
+>
+>* -en, -e, -el, -er
+
+All vowels are mostly pronounced as in Romanian. Only with 'u' I want to articulate it as in "iu".
+
+# The letter e
+
+Where other vowels that are placed at the end of a syllable are always long, the *e* requires a second look. There are two ways in which it distinguishes itself from the rest:
+
+1. If the letter e is unstressed, it is pronounced neither long nor short: It is a **mute e** (i.e. schwa)
+2. The letter e is the only vowel that is allowed to be doubled at the end of a word. (double ee)
+
+### The mute 'e' (schwa)
+
+'ǎ'
+
+In this section, the stresses of all words that contain open _e_'s will be underlined.
+
+| Word                                                   | Meaning      | Word                              | Meaning                    |
+| ------------------------------------------------------ | ------------ | --------------------------------- | -------------------------- |
+| v<strong>e</strong></u>r<u>ken</u>n<strong>e</strong>n | _to explore_ | <u>wer</u>k<strong>e</strong>lijk | _really_                   |
+| <u>we</u>t<strong>e</strong>nde                        | _knowing_    | <u>re</u>k<strong>e</strong>nen   | _to calculate_             |
+| g<strong>e</strong><u>van</u>g<strong>e</strong>n      | _imprisoned_ | <u>be</u>d<strong>e</strong>len   | _to beg_                   |
+| b<strong>e</strong><u>treu</u>rens<u>waar</u>dig       | _deplorable_ | bed<u>e</u>l<strong>e</strong>n   | _to assign, to distribute_ |
+
+* ('vǎr-ke-nǎn, vei-tǎn-dǎ, hǎ-fan-ǎn, bǎ-treo-rǎn-szvaar-dǎh, ver-kǎ-lǎk, rei-kǎn'n, bei-dǎlǎn, bǎ-dei-lǎn')
+
+> bedelen being two completely separate words based on the stressed syllable is sending me :)
+
+>[!important] a single, open _e_ at the end of a word is _always_ mute.
+
+### Double e (ee)
+
+> the letter 'e' is the only vowel allowed in duplo at the end of a word (ee).
+
+The reason for this is related to the mute _e_. Remember the rule of thumb above that a single _e_ at the end of a word is always a mute _e_. So what if we want a word to end in a long _e_? The only way to establish this is by writing _e_ in duplo, violating the rule that a syllable never ends in two identical vowels. Examples are: mee (along), thee (tea), wee (pain), zee (sea).
+
+* ('mei, tei, vei, zei')
+
+There are (two) situations where _ee_ forms the end of a syllable _within_ a word.
+
+1. **Compound word**: a word is composed of a word that ends in _ee_ plus another word.
+
+|Word|Composition|Meaning|
+|---|---|---|
+|mee-lo-pen|consisting of the words _mee_ and _lopen_|_to go/walk along_|
+|thee-kop|consisting of the words _thee_ and _kop_|_teacup_|
+
+* ('mei-lo-pǎn, tei-kop')
+
+2. The plural form of a noun that ends in _ee_
+
+A plural is normally formed by adding -en to the singular.
+
+|Word|Meaning|Word|Meaning|
+|---|---|---|---|
+|wee-en - weeën|_(labour) pain_|zee-en - zeeën|_seas_|
+
+Note the dieresis.
+
+* ('vei-ǎn', 'zei-ǎn')
+
+# Vowel length
+
+### Keeping vowels long
+
+In general, long vowel words should stay long, regardless of any changes in the word (e.g. a singular noun turning into a plural, or when you conjugate a verb's infinitive). The same goes for short vowel words.
+
+**Plural nouns and the rule that a syllable never ends in a double vowel**
+
+Usually with nouns, we add -en to form the plural.
+
+Let us consider the word _maan_ (moon).
+
+To form the plural, we add _-en_: **maanen**
+
+If we break it up into syllables, we get: **maa-nen**
+
+Following the rule about double vowels at the end of a syllable, **we are not allowed to have the syllable end in double _aa_.**
+
+The reason for this is that a syllable that ends in _one_ _a_ is already considered to be a long-vowel syllable (recall that a short vowel syllable always ends in a consonant). The second _a_ is thus redundant: we will simply omit the second _a_.
+
+> maanen --> ma-nen --> manen
+
+**Keeping a long vowel word long**
+
+Suppose we do the exact opposite: we have a long vowel plural noun, and we have to turn it into a singular noun.
+
+Let us take the plural noun **stenen** (stones).
+
+The first syllable has a long vowel, for if we divide the word into its syllables, we find that the first syllable ends in a vowel (e):
+
+> st<u>e</u>nen
+
+To derive a singular noun from a plural, we need to subtract _-en_:
+
+> sten
+
+Now, the syllable ends in a consonant (n), which would mean the vowel is a short one.
+
+The plural noun was, however, a long vowel word, which generally means that the singular should be long too. In order to keep the singular noun long, we have to add an extra vowel:
+
+> steen
+
+Recall that all double vowels are long vowels!
+
+### Keeping vowels short
+
+**From singular to plural**
+
+Let us look at the singular noun **stuk** (piece). The word has a single, closed vowel: a short vowel word. To turn it into a plural noun, we add _-en_:
+
+> stuken
+
+To determine whether the newly formed plural noun has maintained its short vowel, we divide it into syllables:
+
+> stu-ken $\rightarrow$ the first syllable ends in a vowel
+
+Recall that a vowel at the end of a syllable is always a long vowel.
+
+Apparently, we turned the _short singular_ vowel into a _long plural_ vowel. Because short vowel words must stay short, regardless of any changes (e.g. from plural to singular), we have to make sure that the plural is short too.
+
+In order to establish this, we simply add an extra consonant (k in this case) to the end of the first syllable:
+
+> stuk-ken
+
+The syllable now has a single, closed vowel. In other words: it is a short vowel word.
+
+**From plural to singular**
+
+Now we will do it the other way around. We have a short-vowel plural noun:
+
+> katten (cats)
+
+To turn it into a singular noun, we have to subtract _-en_:
+
+> katt
+
+Recall that a word (or even syllable) never ends in two identical consonants. Therefore, we simply subtract one of the consonants (t) and we get:
+
+> katt -> kat
+
+# Consonants
+

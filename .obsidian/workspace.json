@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ds4all 3.md",
+                "file": "content/notes/Dutch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ds4all 3"
+              "title": "Dutch"
             }
           }
         ],
@@ -223,13 +223,13 @@
   },
   "active": "c13e55bd0759ba2d",
   "lastOpenFiles": [
+    "content/notes/ds4all 3.md",
     "content/notes/ds4all 4.md",
     "content/notes/ds4all.md",
     "content/notes/knn.md",
     "content/notes/principal_component_analysis.md",
     "quartz/static/notes/ds4all_9.png",
     "quartz/static/notes/ds4all_8.png",
-    "content/notes/ds4all 3.md",
     "quartz/static/notes/ds4all_7.png",
     "quartz/static/notes/ds4all_6.png",
     "quartz/static/notes/ds4all_5.png",
