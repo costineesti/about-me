@@ -19,6 +19,9 @@ date: 2025-10-21
 * In the second year my focus will be on finding an internship inside a startup and doing my Master's Thesis.
 
 >[!summary] Courses I took
+>
+>**$1^{st}$ year**
+>
 >* **Q1**
 >	* [[NLP|Natural Language Processing]]
 >	* [[Systems Engineering]]
@@ -35,3 +38,8 @@ date: 2025-10-21
 >	* [[ai for robotics|AI for Robotics]]
 >	* [[foundation models|Foundation Models]]
 >	* [[embedded systems|Embedded Systems Laboratory]]
+>
+>**$2^{nd} year$**
+>
+>* **Q1**
+>	* [[ds4all|Data Science]]

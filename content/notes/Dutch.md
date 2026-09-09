@@ -278,7 +278,9 @@ But: when it precedes the letter _r_, pronounce like the English _oo_ in door
 
 >[!NOTE] If a syllable ends in a vowel, the vowel is always long.
 >
->Here I should master breaking up a word into its syllables.
+>Here I should master breaking up a word into its syllables. The rule that a single vowel letter at the end of an open syllable represents a long vowel applies strictly to **a**, **e**, **o**, and **u**
+>
+>* single open **i** representing a long vowel applies almost exclusively to loanwords (Latin/Romance borrowings), whereas native Dutch uses **ie**.
 
 **a** — [a]
 
