@@ -44,7 +44,7 @@ $$
 
 * where $P(j \mid t)$ is the relative frequency of class $j$ at node $t$.
 * $gini(t) = 0$ means it's perfectly pure (all samples in one class)
-* >> $gini(t)$ means more mixed classes.
+* $>>$ $gini(t)$ means more mixed classes.
 
 >[!example] Node contains 10 samples: 7 positive, 3 negative.
 >

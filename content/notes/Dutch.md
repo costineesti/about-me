@@ -597,3 +597,140 @@ Recall that a word (or even syllable) never ends in two identical consonants. Th
 
 # Consonants
 
+The Dutch have three consonant combinations in which the separate consonants are merged into a new sound: ch, sch, and ng. The rest of the consonants are pronounced roughly the same as in English.
+
+**b** -- if pronounced at the end of a word, it is pronounced as 'p'.
+
+* krab (crab), kwab (lobe), web (web)
+	* ('crap, kvap, vep')
+
+**c** -- before 'i' or 'e', we pronounce it as 's'. We pronounce it as [k] in all other cases.
+
+* centrum, cinema, ceremonie 
+	* ('sen-tr'm, si-ne-ma, si-rǎ-mǎu-ni')
+* caligrafie, cliënt, creatief
+	* ('ca-li-hra-fi, cli-ent, creatif')
+
+**d** -- pronounced as [t] if it appears at the end of the word
+
+* hond(dog), kleed(carpet), land(land)
+	* ('hont, kleit, lant')
+* dame(lady), dief(thief), dwerg(dwarf)
+	* ('da'm, dif, dverh')
+
+**f** -- usually compared to [v] and [w]. Understand the difference:
+
+* fier(proud), vier(four), wier(seaweed)
+	* ('pfi-ǎr, fi-ǎr, vi-ǎr')
+* fout(error), vouw(crease), woud(forrest)
+	* ('pf-aut, fau, va-ut')
+* Fin(Finnish person), vin(fin of a fish), win(as in "I win")
+	* ('pfin, fin, vin')
+* fraai(beautiful), vraag(question), wraak(revenge)
+	* ('pfraai, fraah, vraak')
+
+> so f is "pf", v is "f", w is "v"
+
+**g** -- The famous Dutch guttural sound
+
+* geinig (funny), grap (joke), berg (mountain)
+	* ('hhei-nǎh, hrap, berhh')
+
+Some people find it hard to distinguish between g and h. Compare the following pairs and see if you can hear the difference:
+
+* gaan (to go) / haan (rooster)
+	* ('hhaan, han')
+* goed (good) / hoed (hat)
+	* ('hhut, hut')
+* gier (vulture) / hier (here)
+	* ('hhi-ǎr, hi-ǎr')
+* gek (crazy) / hek (fence)
+	* ('hhek, hek')
+* gang (corridor) / hang (tendency)
+	* ('hhanh, hanh')
+
+> tongue twister: Het gaat heel goed (it is going really well) -- het hhaat heil hhut.
+
+So 'g' is the glutural 'hh' and 'h' is like in Romanian.
+
+**j** -- Pronounce like "i" in Romanian
+
+* jarig (adjective for having one's birthday), spiegeltje (little mirror), jas (coat, jacket)
+	* ('ia-r'h, spi-hhǎl-tiǎ, ias')
+
+**qu** -- the letter 'q' only occurs in originally foreign words. It is _always_ combined with the vowel 'u'. The combination qu is pronounced as 'kv'
+
+* aquarium, quasi (quasi), queeste (quest), quiz (quiz)
+	* ('akv-ari-ǎm, kva-si, kve-st, kves')
+
+**t** -- try to pronounce it like "ț". This is how the Dutch do it.
+
+* taart (cake), trein (train), twaalf (twelve)
+	* ('țaarț, țren, țvaalf')
+
+**v** -- just a reminder to pronounce like 'f'
+
+* vader(father), lever(liver), vent(chap)
+	* ('fa-dǎr, lei-fǎr, fent')
+
+**Consonants combinations**
+
+**ch** -- same as letter 'g' where you have the gluttural 'hh'.
+
+* licht (light), bochel (hunch), stichting (foundation)
+	* ('lihht, bohh'l, stihht'n')
+
+**sch** -- Same as above but preceded by 's'
+
+* schip (ship), waarschijnlijk (probably), schrander (clever)
+	* ('shhip, vaarshhei'n'lk, shhra-n'dr')
+
+**ng** -- pronounce it like in 'king', and not like in 'tango'. the 'n' is very silent. This is where you actually hear 'g'.
+
+* wang(cheek), zingen(to sing), mengen(to mix)
+	* ('va-nng', 'zi-nng'n, menng'n')
+
+>[!danger] a syllable never ends in two identical consonants
+>words like jazz, butt, Swiss are impossible in Dutch. Only in borrowed words.
+
+### Voiced and unvoiced consonants
+
+The Dutch themselves often refer to them as 'hard' (unvoiced) and 'soft' (voiced) consonants. 
+
+* A soft consonant is called 'voiced' because you need to use your voice (vocal cords) to produce a sound. 
+* A hard (unvoiced) consonant can be produced even without using your voice.
+* Each voiced consonant has an unvoiced counterpart. Examples are _b_ and _p_ and _d_ and _t._
+
+> As in many languages, including the English one, voiced consonants are sometimes replaced by their unvoiced counterparts. Take the English word _thief_. In the plural, _f_ turns into _v_: thie**v**es.
+
+A Dutch word never ends in the soft consonants **_z_** or **_v_**. Instead, we use their hard equivalents **_s_** and **_f._**
+
+For example, the word **bazen** (bosses). To get its singular, we subtract _-en_:
+
+> baz
+
+I notice the long vowel turned into a short one(which is incorrect), so we add an extra _a_:
+
+> baaz
+
+Following the rule that a Dutch word never ends in a _z_ or _v_, I replace **z** by **s**:
+
+> baas
+
+**Examples:**
+
+| Plural              | Singular | Plural           | Singular |
+| ------------------- | -------- | ---------------- | -------- |
+| scherven (scatters) | scherf   | druiven (grapes) | druif    |
+| reuzen (giants)     | reus     | leuzen (slogans) | leus     |
+
+* ('shhe-rv'n -- shherf, drau-v'n -- drauf, reo-z'n -- reos, leo-z'n -- leos')
+
+We apply the same principle to verbs. To derive the verb stem from an infinitive, we have to subtract _-en_.
+
+| Infinitive        | Stem | Infinitive        | Stem  |
+| ----------------- | ---- | ----------------- | ----- |
+| durven (to dare)  | durf | blijven (to stay) | blijf |
+| wijzen (to point) | wijs | lezen (to read)   | lees  |
+
+* ('diur-v'n -- diurf, blai-v'n -- blaiff, vei-z'n, veis, lei-z'n, leis')
