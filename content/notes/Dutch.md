@@ -734,3 +734,103 @@ We apply the same principle to verbs. To derive the verb stem from an infinitive
 | wijzen (to point) | wijs | lezen (to read)   | lees  |
 
 * ('diur-v'n -- diurf, blai-v'n -- blaiff, vei-z'n, veis, lei-z'n, leis')
+
+# Irregular Pronunciation
+
+There are a few types of words that deviate from the pronunciation rules:
+
+**Een**
+
+The Dutch indefinite article **_een_** (English _a_ or _an)_ is written with a ee. However, this _ee_ is pronounced as a mute e ('schwa' -- ǎ)
+
+The Dutch word for _one_ is **één** ('ein'), which is pronounced with a long _ee_. To make it a long _ee_, we use an acute accent. Note that this is an exception. Normally, a double _ee_ is pronounced as a long vowel, and does not need accents to make it long.
+
+**All adjectives that end in the suffix -lijk**
+
+In these words _ij_ is pronounced schwa -- 'ǎ':
+
+| Word         | Meaning           | Word         | Meaning          |
+| ------------ | ----------------- | ------------ | ---------------- |
+| fatsoenlijk  | _decent_          | eerlijk      | _fair_           |
+| vrolijk      | _cheerful, happy_ | werkelijk    | _really_         |
+| ongelooflijk | _incredible_      | begrijpelijk | _understandable_ |
+
+* ('fats-un-lǎk, eir-lǎk, fro-lǎk, ver-kǎ-lǎk, onng-hǎlu-flǎk, bǎ-hhrei-pǎ-lǎk')
+
+Sometimes, the -lijk ending is not a suffix, so it is pronounced with the normal (long) _ij_:
+
+| Word           | Meaning         | Word | Meaning  |
+| -------------- | --------------- | ---- | -------- |
+| je hebt gelijk | _you are right_ | lijk | _corpse_ |
+
+* ('ie hept hhǎ-leik', laik')
+
+**All adjectives that end with the suffix -ig**
+
+**i** is pronounced like the mute e (ǎ):
+
+| Word       | Meaning    | Word     | Meaning     |
+| ---------- | ---------- | -------- | ----------- |
+| aardig     | _kind_     | nodig    | _necessary_ |
+| geldig     | _valid_    | zielig   | _pitiful_   |
+| hooghartig | _arrogant_ | geduldig | _patient_   |
+
+* ('aard-ǎh, nou-dǎh, hhel-dǎh, zi-lǎh, ho-hhar-tǎh, hǎ-dul-dǎh')
+* geldig has a clear "e" sound because the stress falls on that syllable. geld = money
+
+**All words that end in the suffix -tie**
+
+This suffix is pronounced as the English **tsee**, or Romanian **ți**:
+
+|Word|Meaning|Word|Meaning|
+|---|---|---|---|
+|politie|_police_|tolerantie|_tolerance_|
+|vakantie|_vacation_|emotie|_emotion_|
+
+* ('po-li-ți, to-le-ran-ți, va-kan-ți, e-mo-ți')
+
+**In the letter combination _chtj_, the letter _t_ is not pronounced**
+
+| Word     | Meaning           | Word    | Meaning                   |
+| -------- | ----------------- | ------- | ------------------------- |
+| zachtjes | _quietly, gently_ | vachtje | _'little' fur_            |
+| zuchtje  | _'little' sigh_   | luchtje | _'little' smell, perfume_ |
+
+* ('zahh-tiǎ, fahh-tiǎ, zuhh-tiǎ, luhh-tiǎ')
+
+**When the word possesses the letter combination _th_, we only pronounce _t_**
+
+| Word      | Meaning    | Word     | Meaning   |
+| --------- | ---------- | -------- | --------- |
+| theologie | _theology_ | empathie | _empathy_ |
+| thee      | _tea_      | thema    | _theme_   |
+
+* ('te-o-lo-hi, em-pa-ti, tei, te-ma')
+
+**All adjectives that end in the suffix _-isch_**
+
+We pronounce 'isch' simply as Romanian 'is'
+
+| Word         | Meaning      | Word        | Meaning   |
+| ------------ | ------------ | ----------- | --------- |
+| Russisch     | _Russian_    | islamitisch | _islamic_ |
+| idealistisch | _idealistic_ | egoïstisch  | _selfish_ |
+
+* ('rus-is, is-la-mi-tis, i-de-a-lis-tis, e-ho-is-tis')
+
+**Terug**
+
+In the word _terug_ (back) **e** is not pronounced. So we say: **t'r'hh**.
+
+### Rode and goede
+
+In the words _rode_ (red) and _goede_ (good) the letter _d_ is pronounced as a Dutch _j_ (or English _y_ in Yankee). This is how it should be pronounced, but not everybody knows that.
+
+In written Dutch, you may come across _rooie_ and _goeie_, but this is only used in informal texts. The same goes for _goeiemorgen_ (good morning), _goeiemiddag_ (good afternoon), _goeienavond_ (good evening), and _goeienacht_ (good night), which should be written as _goedemorgen, goedemiddag, goedenavond_, and _goedenacht_.
+
+> interesting, this one. People most pronounce the 'd'. I did hear some old people pronouncing it as "i".
+
+# Diacritics
+
+### Accents and apostrophes
+
