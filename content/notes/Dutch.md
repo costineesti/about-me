@@ -834,3 +834,112 @@ In written Dutch, you may come across _rooie_ and _goeie_, but this is only u
 
 ### Accents and apostrophes
 
+Basically, the only ones worth discussing about are the acute accent `á` and the apostrophe `a'`. I already covered the dieresis `ä`.
+
+**The acute accent**
+
+It's used for several reasons:
+
+1. **To stress a word in a phrase**
+
+Place the accent above the vowel you want to emphasize. 
+
+>[!summary] If the syllable has two vowels, we place the acute accent on both of them. However, we never put an acute accent over a capital letter.
+>
+>If a vowel combination consists of three vowels we only place accents over the first two vowels.
+
+|Dutch|Meaning|
+|---|---|
+|Dat was háár ijsje.|_That was her ice cream._|
+|Ik wil het nú!|_I want it now!_|
+|Dat is héél mooi.|_That is very nice._|
+|Kán jij dat?|_Can you do that?_|
+|Tóé nou!|_Come on!_|
+|Die fiets is niet óud, hij is níéuw!*|_That bike is not old, it is new!_|
+
+
+* ('dat vas haar ei-jiǎ'), ('ik vil het niu'), ('dat is heil mooi'), ('kan iai dat'), ('tu nou'), ('di fits is nit aud, hai is niu')
+
+The accents tell you that you have to put more stress on the word. In general, this means that you have to stretch the word a bit and use a slightly higher pitch. 
+
+> Do not exaggerate this.
+
+2. **To distinguish een (an) from één (one)**
+
+|Dutch|Meaning|
+|---|---|
+|Hij heeft een boek.|_He has a book._|
+|Hij heeft één boek.|_He has one book._|
+
+* ('hai heift ǎn buk'), ('hai heift ein buk')
+
+Violating all rules, the article _een_ is pronounced as if it had a mute _e_, while we can clearly see it should be a long one (double vowel). The word _één_ (one) is indeed pronounced as a long one.
+
+3. **To indicate different meaning of voor (for)**
+
+We can also use it for the word _voor_ (for, before). If we place two accent over _oo_, the word means _before_, in the sense of time as well as place. If we do not use the accent, the word can mean both _for_ (as in _for you_) and _before_. Note that it is not necessary to use the accent here, it is just often done to avoid misunderstandings.
+
+| Dutch                    | Meaning                     |
+| ------------------------ | --------------------------- |
+| Ik zal vóór jou opstaan. | _I will get up before you._ |
+| Ik zal voor jou opstaan. | _I will get up for you._    |
+
+* ('ik zal voor iau opstaan')
+
+4. **French words**
+
+We use the accent over the letter _e_ in words that are derived from French. The accent turns _e_ into a long vowel, where it otherwise would have been pronounced as a mute _e_ (English _the_).
+
+| Word            | Pronunciation       | Meaning             |
+| --------------- | ------------------- | ------------------- |
+| logé            | pronounce 'lo-jei'  | _(overnight) guest_ |
+| coupé           | pronounce 'coo-pei' | _train compartment_ |
+| paté (or: pâté) | pronounce 'pah-tei' | _paste, pate_       |
+| oké             | pronounce 'o-key'   | _okay_              |
+
+**The apostrophe**
+
+It's used in the following cases:
+
+1. **To show that a letter has been omitted**
+
+|Dutch|Full form|Meaning|
+|---|---|---|
+|zo'n|(zo een)|_such a_|
+|'n|(een)|_a, an_|
+|'t|(het)|_it_|
+|m'n|(mijn)|_my_|
+|z'n|(zijn)|_his_|
+|A'dam|(Amsterdam)|_Amsterdam_|
+|'s avonds|(des avonds*)|_in the evening_|
+|'s winters|(des winters*)|_in the winter_|
+|'s Gravenhage|(des Gravenhage*)|_The Hague_|
+
+> _des_ is an old-fashioned Dutch form of "of the", which they do not use anymore. They still use it in some common expressions, but mostly in abbreviated form with an apostrophe.
+
+2. **To keep a vowel long when adding -s to a noun**
+
+If a noun ends in an unstressed vowel, its plural gets _-s_ at the end. To keep the long vowel long, we use an apostrophe. Recall that if a single vowel sits in a syllable that ends in one or more consonants, it is a short vowel.
+
+|Word|Meaning|Word|Meaning|
+|---|---|---|---|
+|collega's|_colleagues_|alibi's|_alibis_|
+|baby's|_babies_|accu's|_storage batteries_|
+
+* ('co-lei-hhas, a-li-bis, like in english, acus')
+
+Not all vowels need an apostrophe to remain long:
+
+| Word  | Meaning              | Word   | Meaning              |
+| ----- | -------------------- | ------ | -------------------- |
+| logés | _(overnight) guests_ | coupés | _train compartments_ |
+
+* ('lou-jei, cu-peis')
+
+> The acute accent already tells us that the vowel is long — we do not need to keep it long by adding an apostrophe.
+
+| Word      | Meaning          | Word       | Meaning            |
+| --------- | ---------------- | ---------- | ------------------ |
+| schaapjes | _(little) sheep_ | bloemetjes | _(little) flowers_ |
+
+* ('shh-aa-pi-'s, blu-me-ties')
