@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Dutch.md",
+                "file": "content/notes/ml practical.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dutch"
+              "title": "ml practical"
             }
           }
         ]
@@ -208,13 +208,14 @@
   },
   "active": "2b4877d20946e2b9",
   "lastOpenFiles": [
+    "quartz/static/notes/ml5.png",
+    "content/notes/ml1.md",
+    "content/notes/Dutch.md",
     "content/notes/delft.md",
     "content/notes/ml practical.md",
     "quartz/static/notes/ml4.png",
     "content/notes/ai for robotics 5.md",
     "content/notes/ml.md",
-    "content/notes/ml1.md",
-    "content/notes/Dutch.md",
     "content/notes/ds4all 2.md",
     "content/notes/ds4all 3.md",
     "content/notes/ds4all 4.md",
@@ -243,7 +244,6 @@
     "content/notes/Bellman Equation.md",
     "content/notes/asdfr 2.md",
     "content/twente.md",
-    "content/notes/genai3.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",
