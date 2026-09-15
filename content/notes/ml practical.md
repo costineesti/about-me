@@ -2,7 +2,7 @@
 title: A practical on ML basics
 draft: false
 tags:
-date: 2026-09-11
+date: 2026-09-14
 ---
 
 to refresh some knowledge.
@@ -176,4 +176,172 @@ $$
 
 5. Show that:
 
-* 
+* if $x_1$ is positive, then for $w_1 \rightarrow \infty$ and other weights and input constant, $\frac{\partial \sigma}{\partial w_1}(y) \approx 0$
+
+Since $w_0 + w_1x1 + w_2x_2 = y$, with $w_0, w_2, x_1, x_2$ constants and $x_1>0$, as $w_1 \rightarrow \infty$ we get $y \rightarrow \infty$.
+
+I showed in the second subpoint that as $y \rightarrow \infty$, $\sigma'(y) = \sigma(y)(1-\sigma(y)) \approx 0$. The term from above would reduce to $\frac{\partial \sigma}{\partial w_1}(y) = \sigma(y)(1-\sigma(y))x_1$, where $x_1$ is a positive constant, which does not affect the end result of 0.
+
+* if $x_1$ is negative, then for $w_1 \rightarrow \infty$, $\frac{\partial \sigma}{\partial w_1}(y) \approx 0$
+
+Since $w_0 + w_1x1 + w_2x_2 = y$, with $w_0, w_2, x_1, x_2$ constants and $x_1<0$, as $w_1 \rightarrow \infty$ we get $y \rightarrow - \infty$.
+
+From part 2, as $y \rightarrow - \infty$, I showed that $\sigma(y) \approx 0$. So $\sigma ' (y) = \sigma(y)(1-\sigma(y)) \approx 0(1-0) = 0$.
+
+
+# Statistics and Probability theory
+
+Consider $X=\{(1,4), (2,5), (-2,1), (-2,-3)\}$.
+
+1. Compute the sample mean of $X$.
+
+I would ASSUME it's the overall mean over $x$ and $y$ axes: $(\frac{1+2-2-2}{4}, \frac{4+5+1-3}{4}) = (-0.25, 1.75)$ 
+
+2. Compute the covariance matrix of $X$.
+
+Should be a $2 \times 2$ matrix since we have two dimensions. We use the formula:
+
+$$
+\sum = \frac{1}{N} \sum_i (x_i-\mu)(x_i-\mu)^\top
+$$
+
+> Apparently, this is the biased (maximum likelihood estimate) -- on average it slightly underestimates the true variance, because I used the data itself to compute $\mu$. If they said something like "assume this is the full population", or "maximum likelihood estimate of...", then I use $N$.
+
+Therefore, dividing by $N-1$  corrects that bias. Apparently this is the norm in libraries as well.
+
+$$
+\sum = \frac{1}{N-1} \sum_i (x_i-\mu)(x_i-\mu)^\top
+$$
+So the answer is:
+
+$$
+\sum = \begin{pmatrix} 4.25 \quad 6.5833 \\ 6.5733 \quad 12.9167 \end{pmatrix}
+$$
+
+3. Compute, based on the covariance matrix, the correlation between $x_1$ (the first component) and $x_2$.
+
+Covariance tells me direction of the relationship but its size depends on the units/scale of $X_1$ and $X_2$ -- so it's not comparable across datasets. Correlation fixes this by standardizing.
+
+>[!NOTE] correlation = "covariance after removing the scale"
+
+Start with the covariance:
+
+$$
+Cov(X_1,X_2) = E[(X_1-\mu_1)(X_2-\mu_2)]
+$$
+
+This in itself mixes the units of $X_1$ and $X_2$ (e.g. $X_1$ is in meters, $X_2$ is in kg), then we would have a meter-kg meaningless scale. To remove the scale dependence, standardize each variable first -- divide by its own deviation:
+
+$$
+Z_1 = \frac{X_1-\mu_1}{\sigma_1}, \quad Z_2 = \frac{X_2-\mu_2}{\sigma_2}
+$$
+
+Then the correlation is just the covariance of the standardized variables:
+
+By definition, covaiance of any two variables is:
+
+$$
+Cov(Z_1,Z_2) = E[(Z_1-E[Z_1]) \cdot (Z_2-E[Z_2])]
+$$
+
+But I standardized the data. $Z_1 = \frac{X_1-\mu_1}{\sigma}$ has mean 0. Same for $Z_2$. So $E[Z_1] = E[Z_2] = 0$.
+
+$$
+\rho = Cov(Z_1,Z_2) = E[Z_1 \cdot Z_2] = Cov(X_1,X_2) / (\sigma_1 \cdot \sigma_2) = \frac{Cov(X_1,X_2)}{\sqrt{\sigma_1 \cdot \sigma_2}} = \frac{6.5833}{\sqrt{4.25 \times 12.9167}} = 0.8885
+$$
+
+* remember that $\sum = \begin{bmatrix} \text{Var}(X_1), \quad \text{Cov}(X_1,X_2) \\ \text{Cov}(X_1,X_2), \quad \text{Var}(X_2)\end{bmatrix}$. So get them directly from the previous point.
+
+4. Compute the eigenvalues and eigenvectors of the covariance matrix of part b. What is the covariance matrix if we transform the data points into coordinates w.r.t these eigenvectors?
+
+>[!NOTE] From [[ml1|ML Preliminaries]], we call **e** an eigenvector and $\lambda$ the corresponding eigenvalue of matrix **A** if:
+>
+>$$
+>Ae = \lambda e
+>$$
+
+So we start with this formula:
+
+$$
+\begin{aligned}
+Ae &= \lambda e \\
+Ae-\lambda e &= 0 \\
+(A-\lambda I) e &= 0
+\end{aligned}
+$$
+
+I want a _nonzero_ eigenvector $e$. The equation from above has nonzero solutions only when the matrix $A-\lambda I$ is singular (non-invertible) -- otherwise the solution would be $e=0$.
+
+>[!NOTE] A matrix is singular exactly when its determinant is 0. Also called **characteristic equation**.
+>
+>$$
+>det(A-\lambda I)=0
+>$$
+
+So I use it for the covariance matrix $\sum$
+
+$$
+\begin{aligned}
+det(\sum - \lambda I) &= 0 \\
+det(\begin{pmatrix} 4.25 \quad 6.5833 \\ 6.5733 \quad 12.9167 \end{pmatrix} - \begin{pmatrix} \lambda \quad 0 \\ 0 \quad \lambda \end{pmatrix}) &= 0 \\
+i.e. (4.25-\lambda)(12.9167-\lambda) - 6.5833 \cdot 6.5733 &= 0 \\
+\lambda^2 - 17.1667 \lambda + 11.5566 &= 0 \\
+\text{Solving is simply finding the solutions} (\Delta) \\
+\lambda_1 \approx 16.4648, \quad \lambda_2 \approx 0.7018
+\end{aligned}
+$$
+
+Now for the eigenvectors, this gives a system of equations to solve for $e=(e_1,e_2)$. So from the formula above:
+
+$$
+\sum - \lambda_1 I = \begin{bmatrix} -12.2148, \quad 6.5833 \\ 6.5833, \quad -3.5481 \end{bmatrix}
+$$
+
+So the equation $(\sum-\lambda I) e = 0$ becomes:
+
+$$
+\begin{aligned}
+\begin{cases}
+-12.2148 \cdot e_1 + 6.8533 \cdot e_2 &= 0 \\
+6.5833 \cdot e_1 - 3.5481 \cdot e_2 &= 0
+\end{cases}
+\end{aligned}
+$$
+
+These two are just multiples of each other (that's what "singular matrix" means -- determinant 0), so I only need **one** of them. The first yields $e_2 \approx 1.8555 \cdot e_1$
+
+Now I need to **normalize**. It's convention so eigenvectors are comparable/unique:
+
+$$
+|e| = \sqrt{1^2+1.8555^2} \approx 2.1078
+$$
+
+So $e_1$ normalized would be:
+
+$$
+e = (1/2.1078, \quad 1.8555/2.1078) \approx (0.4744, 0.8804)
+$$
+
+> eigenvectors are only defined up to sign; both $e$ and $-e$ are equally valid since $-e$ is also a solution to the equation above.
+
+Doing the same step for $\lambda_2 \approx 0.7018$ yields $e_2 \approx (0.8803, -0.4745)$.
+
+>[!tip] One can see the eigenvectors have the same values inside, just swapped in position, with one sign flipped.
+>
+>Eigenvectors of a symmetric matrix are **orthogonal** -- perpendicular to each other. For a 2D vector, if I have a vector $(a,b)$, a perpendicular vector is always $(-b,a)$ or $(b,-a)$.
+
+* Now the second part: what is the cov matrix if we transform the data points into coordinates w.r.t these eigenvectors?
+
+I build a matrix $E$ whose **columns** are the eigenvectors:
+
+$$
+E = \begin{bmatrix} 0.4744, \quad 0.8803 \\ 0.8804 \quad -0.4745 \end{bmatrix}
+$$
+
+To express a data point $x$ (as a column vector, mean-centered) in the new coordinate system, project it onto each eigenvector using the dot product:
+
+$$
+x' = E^\top x
+$$
+
+complete here...

@@ -12,6 +12,7 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 >* [[ml1|Preliminaries]] (Linear Algebra & Probabilities)
 >	* [[inner product|Inner Product]]
 >	* [[PDF|Probability Density Function]], [[Gaussian distribution]]
+>	* [[ml practical|A practical on ML basics]]
 >* [[ai for robotics 2|Machine Learning Paradigms]]
 >* [[ds4all 4|Data Mining]] -- seems like they reused a lot of info from [[ds4all|Data Science]] in this lecture.
 
