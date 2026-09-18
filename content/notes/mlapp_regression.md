@@ -3,7 +3,6 @@ title: Regression in Machine Learning
 date: 2024-10-06
 draft: false
 tags:
-  - notes
 ---
  
 Regression is just like classification except the response variable is continuous.

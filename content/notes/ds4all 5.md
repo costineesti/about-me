@@ -170,7 +170,25 @@ $$
 
 > **Classify as Young**, since $P(Y\mid a_3,b_2) > P(O\mid a_3,b_2)$.
 
-> Complete with the denominator calculation!!! She wants to see probabilities, not scores.
+However, this is just the score, not the probabilities that the question asked me to compute.
+
+The denominator for both classes is equal -- the total probability of observing this exact combination of features, regardless of class. By the law of total probability ($Y$ and $O$):
+
+$$
+P(A=a_3, B=b_2) = P(Y) \cdot P(a_3 \mid Y) \cdot P(b_2 \mid Y) + P(O) \cdot P(a_3 \mid O) \cdot P(b_2 \mid O) = \text{score}(Y) + \text{score}(O) \approx 0.0853
+$$
+
+Dividing to get the real posteriors:
+
+$$
+P(Y \mid a_3,b_2) = \frac{0.0456}{0.0853} \approx 0.535
+$$
+
+$$
+P(O \mid a_3,b_2) = \frac{0.0397}{0.0853} \approx 0.465
+$$
+
+They add up to 1 and we still get that it's more likely for the customer to be young.
 
 ---
 
@@ -276,7 +294,9 @@ Question c. answers this question: The splitting attribute at the root of the De
 
 ![[Pasted image 20260909154538.png]]
 
-> complete with B.
+> complete with B. (she said the total tree?)
+
+![[Pasted image 20260917155409.png]]
 
 ---
 
