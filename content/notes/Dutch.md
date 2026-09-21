@@ -943,3 +943,129 @@ Not all vowels need an apostrophe to remain long:
 | schaapjes | _(little) sheep_ | bloemetjes | _(little) flowers_ |
 
 * ('shh-aa-pi-'s, blu-me-ties')
+
+---
+
+# Verbs
+
+Technically speaking, there are only two tenses (present, past), but along with 'aspect' and 'modality' we can create other tenses like the perfect, future, or conditional tense. In total, the Dutch use 8 basic tenses.
+
+
+| # | Tense | Nederlands | English |
+|---|---|---|---|
+| 1 | Present | ik werk | *I work* |
+| 2 | Simple past | ik werkte | *I worked* |
+| 3 | Perfect | ik heb gewerkt | *I have worked* |
+| 4 | Pluperfect | ik had gewerkt | *I had worked* |
+| 5 | Future | ik zal werken | *I will work* |
+| 6 | Conditional | ik zou werken | *I would work* |
+| 7 | Future perfect | ik zal hebben gewerkt | *I will have worked* |
+| 8 | Conditional perfect | ik zou hebben gewerkt | *I would have worked* |
+
+* continuous or 'progessive' -- *Ik ben aan het lopen* (I am walking).
+* imperative -- "Eat!"
+* passive voice -- "I am eaten by ..."
+* subjunctive -- "So be it"
+
+And of course verbs can also act as nouns ("the shining") or adjectives ("a shining star").
+
+>[!summary] Irregular Verbs
+> 
+>Must be learned by heart. Also called 'strong' verbs, as opposed to weak verbs (regular), since they refuse to abide by the regular rules of conjugation.
+
+>[!summary] Auxiliary Verbs
+>
+>Use them for the perfect tense
+>
+>* I *have* said, I *want* to say, I *have* to say, I *hope* to say
+>
+>Some auxiliary verbs are always followed by *te*, others by *aan het*, and some require nothing.
+
+>[!summary] Compound Verbs
+>
+>A compound verb consists of a verb and another word, like *ondernemen* (to undertake), or *deelnemen* (to participate, to take part).
+
+### Personal Pronouns (Persoonlijke Voornaamwoorden)
+
+| Person  | Singular                          | Plural         |
+| ------- | --------------------------------- | -------------- |
+| **1st** | ik (*I*)                          | we (*we*)      |
+| **2nd** | je / u (*you*)                    | jullie (*you*) |
+| **3rd** | hij / zij / het (*he / she / it*) | ze (*they*)    |
+
+> [!note] Stressed vs. Unstressed Pronouns
+> Several Dutch pronouns have a stressed (or 'marked') and an unstressed form (*je/jij*, *ze/zij*, *we/wij*).
+> 
+> The unmarked (unstressed) personal pronouns are much more commonly used than their marked equivalents. Most textbooks use the marked forms in tables, but getting accustomed to the unmarked forms is preferable, as using the marked forms too often can sound stiff and unnatural.
+
+### The verb stem
+
+So we have regular and irregular verbs. Regular verbs all follow the same **conjugation**. To conjugate a regular verb, we need to know the stem. Therefore, before I actually learn how to conjugate, I need to be able to derive the stem from an infinitive.
+
+> Dutch infinitives always end in *-en*. worken (to work), zien (to see), weten (to know).
+
+>[!NOTE] The general rule for deriving the crude stem
+>
+>**stem = infinitive minus _'-en'_ **
+>
+
+A few rules regarding the verb stem:
+
+1. **Long vowel infinitives require long vowel stems**
+2. **A stem never ends in two identical consonants**
+3. **A stem never ends in *v* or *z***
+4. **The stem of a _'iën_ verb' ends in _ie_.**
+
+**Stem rule 1**: Regular verbs can have long or short vowels. However you can conjugate the verb, the length of the vowel must stay the same. Same thing to mantaining vowel length in singular, plural nouns I covered earlier.
+
+* Take for example **maken** (to make). Following the rule of deriving the crude stem, we get **mak**. However, 'a' is a short vowel here (a single, closed vowel). To keep it long, add an extra *a*, and the final stem becomes **maak**.
+
+| Infinitive | English    | Crude Stem | Stem  |
+| ---------- | ---------- | ---------- | ----- |
+| nemen      | *to take*  | nem        | neem  |
+| lopen      | *to walk*  | lop        | loop  |
+| leren      | *to learn* | ler        | leer  |
+| koken      | *to cook*  | kok        | kook  |
+| breken     | *to break* | brek       | breek |
+| vuren      | *to shoot* | vur        | vuur  |
+| horen      | *to hear*  | hor        | hoor  |
+| weten      | *to know*  | wet        | weet  |
+
+**Stem rule 2**: If a crude stem ends in two consonants, we subtract one.
+
+Recall that a syllable also never ends in two identical consonants.
+
+| Infinitive | English       | Crude Stem | Stem |
+| ---------- | ------------- | ---------- | ---- |
+| pakken     | *to get*      | pakk       | pak  |
+| missen     | *to miss*     | miss       | mis  |
+| wennen     | *to get used* | wenn       | wen  |
+| lukken     | *to succeed*  | lukk       | luk  |
+| stoppen    | *to stop*     | stopp      | stop |
+| vallen     | *to fall*     | vall       | val  |
+
+**Stem rule 3**: If the stem ends in *v* or *z*, they turn into *f* and *s* respectively.
+
+It's the same concept where voiced consonants *v* and *z* turn into unvoiced *f* and *s*.
+
+| infinitive | english | crude stem | stem |
+|---|---|---|---|
+| leven | *to live* | lev | leef |
+| lozen | *to dump* | loz | loos |
+| werven | *to acquire* | werv | werf |
+| wuiven | *to wave* | wuiv | wuif |
+| beven | *to tremble* | bev | beef |
+| durven | *to dare* | durv | durf |
+| bonzen | *to pound* | bonz | bons |
+
+**Stem rule 4**: There are a few verbs that end in _-iën_. The dieresis over **_e_** indicates that **_e_** is the beginning of a new syllable. 
+
+So we only subtract *-n*. We keep *-e* but we remove the dieresis.
+
+| INFINITIVE | ruziën (to quarrel) | skiën (to ski) | oliën (to oil) |
+|---|---|---|---|
+| STEM | ruzie | skie | olie |
+
+### Conjugation of the simple present tense
+
+page 44.

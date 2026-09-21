@@ -92,7 +92,7 @@ $$
 
 The objective is to minimize the misclassification rate $E(w) = - \sum_{n \in \mathcal{M}} w^\top x_nt_n$, where $\mathcal{M} = \{x_i \mid w^\top x_i t_i \leq 0\}$ is the set of misclassified examples.
 
-We simply update the weights by sgd:
+We simply update the weights by bgd (batch gradient descent):
 
 $$
 \begin{aligned}

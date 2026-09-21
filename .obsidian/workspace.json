@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ml 2.md",
+                "file": "content/notes/Dutch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ml 2"
+              "title": "Dutch"
             }
           }
         ]
@@ -208,12 +208,17 @@
   },
   "active": "03db0adad5d77ea6",
   "lastOpenFiles": [
+    "Pasted image 20260921112418.png",
+    "content/index.md",
+    "content/notes/Dutch.md",
+    "content/notes/delft.md",
+    "content/notes/ml 2.md",
+    "content/notes/ml practical.md",
+    "content/notes/ml.md",
     "quartz/static/notes/ml12.png",
     "quartz/static/notes/ml11.png",
-    "content/notes/ml.md",
     "content/notes/ai for robotics 3.md",
     "content/notes/NLP 6.md",
-    "content/notes/ml 2.md",
     "quartz/static/notes/ml10.png",
     "quartz/static/notes/ml9.png",
     "quartz/static/notes/ml8.png",
@@ -222,18 +227,14 @@
     "content/notes/ds4all 3.md",
     "quartz/static/notes/ml6.png",
     "content/notes/ml1.md",
-    "content/notes/ml practical.md",
     "content/notes/mlapp_regression.md",
     "content/notes/ds4all 5.md",
     "Pasted image 20260917155409.png",
     "content/notes/ds4all 2.md",
     "quartz/static/notes/ml5.png",
-    "content/notes/Dutch.md",
-    "content/notes/delft.md",
     "quartz/static/notes/ml4.png",
     "content/notes/ai for robotics 5.md",
     "content/notes/ds4all 4.md",
-    "quartz/static/notes/ml3.png",
     "content/notes/NLP 3.md",
     "content/notes/inner product.md",
     "content/notes/foundation models 7.md",
@@ -243,7 +244,6 @@
     "content/notes/foundation models 3.md",
     "content/notes/ds4all.md",
     "content/notes/knn.md",
-    "content/notes/principal_component_analysis.md",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",
     "public/static/contentIndex.json",

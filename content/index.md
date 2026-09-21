@@ -83,7 +83,8 @@ Through my notes you can visualize the way I think, the way I reason, the questi
 >
 > - [[twente|University of Twente]] -- I'm currently undertaking a 2-year Master's in Robotics. I aim to specialize in Computer Vision and Multimodal AI as a whole with focus on perception algorithms combined with AI and ML.
 > 	- **Update**: Curious of [[Edge Computing|Edge]] Computer Vision as I believe it's the future.
-> - Currently searching for an internship to write my Master's Thesis.
+> 	- **Update**: Secured an internship with Universum3D in Amsterdam where I will write my thesis.
+> - Spending 1hr/day to learning [[Dutch]].
 
 ### What I've worked on in the past
 
