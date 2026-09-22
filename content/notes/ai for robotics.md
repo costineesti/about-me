@@ -14,6 +14,7 @@ Mandatory course I took in Q4 of my first year while at [[twente|Twente]]. It co
 >* [[MiDaS]]
 >* [[ai for robotics 2|Machine Learning Paradigms]]
 >* [[ai for robotics 3|Deep Learning SfM, SLAM, and VO]]
+>	* [[VGGT]]
 >* [[ai for robotics 4|Single Image Depth Estimation (SIDE)]], [[RPCN 14|Depth Accuracy for Stereo Cameras]], [[RPCN 15|Bundle Adjustment]]
 >* [[ai for robotics 5|Deep Feature Matching]]
 >* [[ai for robotics 6|Reinforcement Learning Basics]], [[Markov Decision Process]]
