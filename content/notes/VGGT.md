@@ -1,5 +1,5 @@
 ---
-title: Visual Ground Geometry Transformer (VGGT)
+title: Visual Geometry Grounded Transformer (VGGT)
 draft: false
 tags:
 date: 2026-09-22

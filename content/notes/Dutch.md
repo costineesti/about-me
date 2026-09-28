@@ -1068,4 +1068,115 @@ So we only subtract *-n*. We keep *-e* but we remove the dieresis.
 
 ### Conjugation of the simple present tense
 
-page 44.
+| Subject | Form       | Subject | Form       |
+| ------- | ---------- | ------- | ---------- |
+| ik      | [stem]     | we      | infinitive |
+| je      | [stem] + t | jullie  | infinitive |
+| hij     | [stem] + t | ze      | infinitive |
+
+The verbs _maken_, _leren_, _huren_ en _koken_ are all subject to the first stem rule: A long vowel infinitive requires a long vowel stem.
+
+_Maken_ (to make), _koken_ (to cook), _leren_ (to learn) and _huren_ (to rent):
+
+| **Subject** | **maken (stem: maak)** | **koken (stem: kook)** | **leren (stem: leer)** | **huren (stem: huur)** |
+| ----------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| ik          | maak                   | kook                   | leer                   | huur                   |
+| je          | maakt                  | kookt                  | leert                  | huurt                  |
+| hij         | maakt                  | kookt                  | leert                  | huurt                  |
+| we          | maken                  | koken                  | leren                  | huren                  |
+| jullie      | maken                  | koken                  | leren                  | huren                  |
+| ze          | maken                  | koken                  | leren                  | huren                  |
+
+Observing the rule that a syllable never ends in two identical consonants: If the stem of a verb ends in –t, (like _rust_ or _blaat_) the stem does not get an extra _t_ in the conjugation of the 2nd and the 3rd person singular.
+
+|Subject|rusten (stem: rust)|blaten (stem: blaat)|praten (stem: praat)|stoten (stem: stoot)|
+|---|---|---|---|---|
+|ik|rust|blaat|praat|stoot|
+|je|rust|blaat|praat|stoot|
+|hij|rust|blaat|praat|stoot|
+|we|rusten|blaten|praten|stoten|
+|jullie|rusten|blaten|praten|stoten|
+|ze|rusten|blaten|praten|stoten|
+
+Pay special attention to the following four verbs where the stem ends in _-d_: even though you cannot hear _-t_ in the second and third person singular, you should not forget to add _-t_!
+
+_Bloeden_ (to bleed), _leiden_ (to lead), _vinden_ (to find), and _vermijden_ (to avoid):
+
+|Subject|bloeden (stem: bloed)|leiden (stem: leid)|vinden (stem: vind)|vermijden (stem: vermijd)|
+|---|---|---|---|---|
+|ik|bloed|leid|vind|vermijd|
+|je|bloedt|leidt|vindt|vermijdt|
+|hij|bloedt|leidt|vindt|vermijdt|
+|we|bloeden|leiden|vinden|vermijden|
+|jullie|bloeden|leiden|vinden|vermijden|
+|ze|bloeden|leiden|vinden|vermijden|
+
+### Using the simple present tense
+
+Dutch are keen users of the present tense. They even use it to refer to the future or hypothetical (conditional) sentences.
+
+The simple present tense is used in **four** cases:
+
+1. **to refer to a momentary action that coincides with the moment we are talking about it**
+
+If I say "I look at the painting", I am looking while mentioning it. We can also (and often do) use the continuous: "I am looking at the painting". ==Exactly like in Romanian==
+
+| Ik neem een hapje.          | *I am taking a bite.*           |
+| --------------------------- | ------------------------------- |
+| Het **regent**.             | *It is raining.*                |
+| Ze **valt** bijna in slaap. | *She is almost falling asleep.* |
+
+2. **to refer to an ongoing, habitual or repetitive action or state**
+
+The action or state is not tied to the moment we are talking about it. ==Exactly like in Romanian==.
+
+| Dutch                          | English                         |
+| ------------------------------ | ------------------------------- |
+| Ze **werkt** bij de overheid.  | *She works for the government.* |
+| Hij **studeert** in Groningen. | *He studies in Groningen.*      |
+| Ik **woon** in Gent.           | *I live in Ghent.*              |
+
+"Ik woon in Gent" implies an ongoing state. It is likely that I also lived in Ghent yesterday and I will still live there tomorrow. It is an enduring state, which is not tied to the moment I mention it. Note that the Dutch *always* use the simple present to refer to a state which is still going on:
+
+| Dutch                                          | English                                                                                      |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Ik **woon** al drie jaar in Gent.              | *I have lived in Ghent for three years.* (Trǎiesc de 3 ani in Ghent)                         |
+| Ik **tennis** al vanaf mijn tiende jaar.       | *I have played tennis ever since I was ten years old.* (Joc tenis de când aveam 10 ani)      |
+| Hij **zorgt** al jaren voor zijn zieke moeder. | *He has been looking after his ill mother for years.* (Are grijǎ de mama lui de ani de zile) |
+
+Where English speakers use the perfect tense, the Dutch use the simple present. If you say “Ik heb drie jaar in Gent gewoond”, it means that you do not live there anymore.
+
+A few more examples of habitual or repetitive actions:
+
+| Dutch | English |
+|---|---|
+| Ze **komt** altijd te laat. | *She is always late.* |
+| Hij **luistert** elke morgen naar de radio. | *He listens to the radio every morning.* |
+| Ik **eet** geen vlees. | *I do not eat meat.* |
+
+The vegetarian who says "Ik eet geen vlees", wants to express that he generally (habitually) does not eat meat.
+
+3. **to refer to a future event (in combination with an adverb of time)**
+
+Although we do have a future tense to refer to actions or events that take place in the future, the Dutch often use the simple present. The speaker uses an adverb of time (tomorrow, next week) to indicate that he is referring to the future. ==Exactly like in Romanian==
+
+| Dutch                                        | English                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------- |
+| We **eten** morgen erwtensoep.               | *We will eat peasoup tomorrow.* (Mâncǎm supǎ mâine)                     |
+| Hij **vliegt** aanstaande vrijdag naar Rome. | *He will fly to Rome coming Friday.*  (Zboarǎ vinerea viitoare la Roma) |
+| Ik **neem** er straks nog een.               | *I will have another one in a moment.* (Mai iau una imediat)            |
+
+4. **to refer to a hypothetical 'if - then' situation**
+
+Where English speakers use the auxiliary verb 'will' after an 'if clause', the Dutch are perfectly happy with the simple present. The Dutch equivalent for 'will' (*zullen*) can be used as well but it will make a sentence sound rather stiff. ==Exactly like in Romanian==
+
+| Dutch | English |
+|---|---|
+| Als je het licht uitdoet, **kun** je de sterren beter **zien**. | *If you switch off the light, you (will) see the stars better.* |
+| Als alles volgens plan verloopt, **komen** ze volgende week **terug** naar Nederland. | *If everything is going according to the plan, they (will) come back to the Netherlands next week.* |
+| Als je te veel cola drinkt, **krijg** je gaatjes in je tanden. | *If you drink too much coke, you (will) get cavities in your teeth.* |
+
+### Conjugation of the simple past tense
+
+page 49
+
