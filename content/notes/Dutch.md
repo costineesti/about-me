@@ -1178,5 +1178,104 @@ Where English speakers use the auxiliary verb 'will' after an 'if clause', the D
 
 ### Conjugation of the simple past tense
 
-page 49
+Here I should know the difference between `t` and `d` verbs. Basically, we speak of a `t-verb` when the crude stem (not the final one) of a verb ends in `c,f,h,k,p,s,t`. 
+
+> Just remember "pocket fish" -- that way you know whether it's a `t` or `d` verb.
+
+| Infinitive | Crude stem | Stem | Last letter crude stem | In pocket fish? | *d*- or *t*-verb? |
+|---|---|---|---|---|---|
+| zweven (to float) | zwev | zweef | v | no | d verb |
+| verven (to paint) | verv | verf | v | no | d verb |
+| lozen (to dump) | loz | loos | z | no | d verb |
+| razen (to rage) | raz | raas | z | no | d verb |
+
+Even though the stem ends in `f` or `s`, the verbs are `d-verbs`, as their crude stems end in `v` and `z` respectively.
+
+So with the simple past tense, a `t-verb` takes *-te(n)* and a `d-verb` takes *-de(n)*.
+
+* **T-verb**
+
+| Subject | Form | Subject | Form |
+|---|---|---|---|
+| ik | [stem] + te | we | [stem] + ten |
+| je | [stem] + te | jullie | [stem] + ten |
+| hij | [stem] + te | ze | [stem] + ten |
+
+* **D-verb**
+
+| Subject | Form | Subject | Form |
+|---|---|---|---|
+| ik | [stem] + de | we | [stem] + den |
+| je | [stem] + de | jullie | [stem] + den |
+| hij | [stem] + de | ze | [stem] + den |
+
+Examples
+
+*Merken* (to notice) and *wensen* (to wish)
+
+| Subject | merken (stem: merk) | wensen (stem: wens) |
+|---|---|---|
+| ik | merkte | wenste |
+| je | merkte | wenste |
+| hij | merkte | wenste |
+| we | merkten | wensten |
+| jullie | merkten | wensten |
+| ze | merkten | wensten |
+
+Note the double *t* in the conjugation of *rusten* and double *d* in the conjugation of *bloeden*. You do not hear the double *d* or *t*, but you do have to write it! *We bloeden* and *we bloedden* are pronounced the same, but the first is the present tense, the latter the past. (lol)
+
+| Subject | luisteren (to listen) | kussen (to kiss) | roeien (to row) | lenen (to lend, to borrow) | rusten (to rest) | bloeden (to bleed) |
+| ------- | --------------------- | ---------------- | --------------- | -------------------------- | ---------------- | ------------------ |
+| ik      | luisterde             | kuste            | roeide          | leende                     | rustte           | bloedde            |
+| je      | luisterde             | kuste            | roeide          | leende                     | rustte           | bloedde            |
+| hij     | luisterde             | kuste            | roeide          | leende                     | rustte           | bloedde            |
+| we      | luisterden            | kusten           | roeiden         | leenden                    | rustten          | bloedden           |
+| jullie  | luisterden            | kusten           | roeiden         | leenden                    | rustten          | bloedden           |
+| ze      | luisterden            | kusten           | roeiden         | leenden                    | rustten          | bloedden           |
+
+Apparently even to Dutchies, the difference between past simple and present perfect is often rather unclear.
+
+**We use simple past**:
+
+1. **to refer to events that took place in the past and that do not have a relation to the present**
+
+If the event is still relevant to the present time, we use the present perfect. 
+
+| Karel de Grote **regeerde** van 800 tot 814. | *Charlemagne reigned from 800 until 814.* |
+|---|---|
+| De Industriële Revolutie **begon** in Engeland. | *The Industrial Revolution began in England.* |
+
+2. **to describe what went on during a certain past event**
+
+Everything is set in the past
+
+| Dat **was** zo'n natte picknick vorig jaar, weet je nog? Het **regende** pijpenstelen! | *That was such a wet picknick last year, do you remember? It was raining cats and dogs!* |
+|---|---|
+| Op zijn verjaardag **feliciteerden** we hem, **zongen** we een verjaardagsliedje en **gaven** we hem een cadeau. | *On his birthday, we congratulated him, sang a birthday song, and gave him a present.* |
+| Tijdens de kabinetscrisis **was** de premier op vakantie. | *During the cabinet crisis, the prime-minister was on vacation.* |
+
+To set the stage in the past, we usually use the present perfect tense (underlined in the examples below). All events and actions that follow are described by the simple past.
+
+| Dutch | English |
+|---|---|
+| We <u>**zijn**</u> gisteren naar de bioscoop <u>**geweest**</u> en raad eens wie we daar **tegenkwamen**? | *We went to the cinema yesterday and guess whom we ran into?* |
+| We <u>**zijn**</u> dit jaar naar Slovenië op vakantie <u>**geweest**</u>. We **verbleven** eerst in een hotel in Ljubljana en daarna **logeerden** we een week bij vrienden in de buurt van het Bledmeer. | *This year, we went on vacation to Slovenia. First, we stayed in a hotel in Ljubljana and then, we stayed a week with friends near Lake Bled.* |
+| Er <u>**is**</u> veel commotie rond <u>**geweest**</u>. Ze **zeiden** dat hij het geld <u>**had** **verduisterd**</u>. | *There has been a lot of commotion about it. They said that he had embezzled the money.* |
+
+The last example already gives you a preview of the **pluperfect** tense (*had verduisterd* or 'had embezzled').
+
+3. **when we introduce a past action or event by 'toen' (when)**
+
+When we point to a past event by using `toen (when)`, we generally use the simple past tense. If we use the perfect tense at all, it must be **pluperfect**.
+
+| Toen ik wakker **werd**, **scheen** de zon volop.                                                                     | *When I woke up, the sun was shining brightly.*                                             |
+| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Toen we **terugkwamen** van vakantie, **schrokken** we ons kapot: er **liepen** allemaal kakkerlakken in de badkamer! | *When got back from vacation, we were really shocked: We had cock-roaches in our bathroom!* |
+| Toen je drie jaar **werd**, **kreeg** je een knuffelbeer met een grote rode hoed.                                     | *When you turned three, you got a teddy bear with a huge red hat.*                          |
+
+Note that we also use *`toen`* as a translation of '`then`'. The above examples of *toen* all mean '`when`'.
+
+### Conjugation of the past principle
+
+page 53
 
