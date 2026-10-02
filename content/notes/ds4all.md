@@ -9,6 +9,7 @@ Elective course I took in Q1 of my second year while at [[twente|Twente]]. It co
 
 >[!summary] Topics covered
 >
+>* [[ds4all 1|Data Exploration & Preprocessing]]
 >* [[ds4all 4|Data Mining]]
 >	* [[ds4all 2|Naive Bayes Approach]]
 >	* [[ds4all 3|Decision Tree Approach]]
