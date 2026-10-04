@@ -297,4 +297,182 @@ Link to benchmarks:
 | $AR(p)$ | decays gradually     | cuts off after lag p |
 | $MA(q)$ | cuts off after lag q | decays gradually     |
 
-page 36.
+>[!danger] Small problem
+>
+>SSE alone cannot pick a model, since adding parameters always lowers it. AIC and BIC are scores that tell you how good a model is while punishing it for being complicated. 
+>
+>$\text{Lower score} = \text{better model}$
+
+$$
+\begin{aligned}
+AIC &= T \cdot \ln(\frac{SSE}{T}) + 2k \\
+BIC &= T \cdot \ln(\frac{SSE}{T}) + k \cdot \log(T)
+\end{aligned}
+$$
+
+* $T$ is the number of observations and $k$ the number of estimated parameters.
+* Basically, it's $score = \text{(how badly the model fits) + (penalty for complexity)}$
+
+So they only differ in how much they punish for complexity. Since both grow with $k$, every extra parameter must reduce SSE enough to pay for itself.
+
+>[!example] Tiny example
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ds4all_31.png" style="max-width: 100%; height: auto;">
+</div>
+
+$T = 143$, so $\ln(T) = \ln(143) \approx 4.96$.
+
+**Step 1: Fit part** $= T \cdot \ln(SSE/T)$
+
+| Model     | k   | SSE   | SSE/T    | ln(SSE/T) | Fit part   |
+| --------- | --- | ----- | -------- | --------- | ---------- |
+| AR(1)     | 2   | 1.548 | 0.010825 | −4.526    | **−647.1** |
+| AR(2)     | 3   | 1.502 | 0.010503 | −4.556    | **−651.5** |
+| MA(1)     | 2   | 1.525 | 0.010664 | −4.541    | **−649.3** |
+| MA(2)     | 3   | 1.472 | 0.010294 | −4.576    | **−654.4** |
+| ARMA(2,2) | 5   | 1.217 | 0.008511 | −4.767    | **−681.7** |
+
+**Step 2: Add the penalties**
+
+| Model     | Fit part | AIC penalty ($2k$) | **AIC**    | BIC penalty ($4.96k$) | **BIC**    |
+| --------- | -------- | ------------------ | ---------- | --------------------- | ---------- |
+| AR(1)     | −647.1   | 4                  | **−643.1** | 9.9                   | **−637.2** |
+| AR(2)     | −651.5   | 6                  | **−645.5** | 14.9                  | **−636.6** |
+| MA(1)     | −649.3   | 4                  | **−645.3** | 9.9                   | **−639.4** |
+| MA(2)     | −654.4   | 6                  | **−648.4** | 14.9                  | **−639.5** |
+| ARMA(2,2) | −681.7   | 10                 | **−671.7** | 24.8                  | **−656.8** |
+
+**Step 3: Rank (lowest wins)**
+
+- AIC: ARMA(2,2) < MA(2) < AR(2) < MA(1) < AR(1)
+- BIC: ARMA(2,2) < MA(2) ≈ MA(1) < AR(1) < AR(2)
+
+**Step 4: Is each extra parameter worth it?**
+
+An extra parameter is worth it only if the fit part improves by more than its price (2 for AIC, 4.96 for BIC).
+
+- **AR(1) → AR(2):** gain 4.4. AIC: yes (4.4 > 2). BIC: no (4.4 < 4.96).
+- **MA(1) → MA(2):** gain 5.1. AIC: yes. BIC: near tie (5.1 vs 4.96).
+- **MA(2) → ARMA(2,2):** two extra parameters, gain 27.3. Cost is 4 (AIC) and 9.9 (BIC), so both say yes by a wide margin.
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ds4all_32.png" style="max-width: 100%; height: auto;">
+</div>
+
+Even in the plot, $ARMA(2,2)$ follows best.
+
+>[!example] What model is it?
+>
+>Consider population of Switzerland from 1960 to 2017. The fitted ARIMA model is:
+>
+>$$
+>\begin{aligned}
+>y_t &= c + y_{t-1} + \phi_1(y_{t-1}-y_{t-2}) + \phi_2(y_{t-2}-y_{t-3}) + \phi_3(y_{t-3}-y_{t-4}) + \epsilon_t \\
+>y_t - y_{t-1} &= c + \phi_1(y_{t-1}-y_{t-2}) + \phi_2(y_{t-2}-y_{t-3}) + \phi_3(y_{t-3}-y_{t-4}) + \epsilon_t
+>\end{aligned}
+>$$
+>
+>Let $\Delta_t = y_t - y_{t-1}$
+>
+>|Year|2013|2014|2015|2016|2017|
+|---|---|---|---|---|---|
+|$y_t$|8.09|8.19|8.28|8.37|8.47|
+|$\Delta_t$|-|0.10|0.09|0.09|0.10|   
+>
+>Then every year bracket is also a change:
+>
+>$$
+>\Delta_t = c + \phi_1 \Delta_{t-1} + \phi_2 \Delta_{t-2} + \phi_3 \Delta_{t-3} + \epsilon_t
+>$$
+>
+>Recall that $ARIMA(p,d,q)$ has three numbers:
+>
+>* $p$ = how many past values are used (the AR part)
+>	* $\Delta_t$ depends on 3 past values ($\phi_1, \phi_2, \phi_3$), so $p=3$
+>* $d$ = how many times the series was differenced
+>	* the equation is about $\Delta$ (the differenced series), so $d=1$ (differenced once)
+>* $q$ = how many past errors are used (the MA part)
+>	* There are no past-error terms ($\epsilon_{t-1}$, etc), only current $\epsilon_t$, so $q=0$.
+>
+>**Answer: ARIMA(3,1,0)**
+>
+>**Question: Calculate forecasts for the next three years (2018–2020)**
+>
+>To forecast, we take the equation and:
+>
+>1. Replace $t$ with $T+h$ ($T$ = last data point, i.e. 2017; and $h$ = how many years ahead)
+>2. Replace future errors $\epsilon$ with 0 (we can't predict random noise, so we assume none)
+>3. Replace future values we don't have yet with their forecasts.
+>
+>This gives:
+>
+>$$
+>\hat\Delta_{T+h} = c + \phi_1 \Delta_{T+h-1} + \phi_2 \Delta_{T+h-2} + \phi_3 \Delta_{T+h-3}
+>$$
+>
+>The estimated parameters are given as $c = 0.0053$, $\phi_1 = 1.64$, $\phi_2 = -1.17$, $\phi_3 = 0.45$.
+>
+>**Forecast 2018** (h=1)
+>
+>**Which changes do we plug in?** The three most recent ones: 2017, 2016, 2015.
+>
+> - $\Delta_{T} = \Delta_{2017} = 0.10$
+> - $\Delta_{T-1} = \Delta_{2016} = 0.09$
+> - $\Delta_{T-2} = \Delta_{2015} = 0.09$
+> 
+>**Compute each term**:
+>
+> - $\phi_1 \times 0.10 = 1.64 \times 0.10 = 0.1640$
+> - $\phi_2 \times 0.09 = -1.17 \times 0.09 = -0.1053$
+> - $\phi_3 \times 0.09 = 0.45 \times 0.09 = 0.0405$
+> 
+> **Add them with $c$:**
+>
+>$$
+>\hat\Delta_{2018} = 0.0053 + 0.1640 - 0.1053 + 0.0405 = 0.1045
+>$$
+>
+>**Turn the change into a population:** last known population + predicted change:
+>
+>$$
+>\hat y_{2018} = 8.47 + 0.1045 = 8.5745 \approx \mathbf{8.57}
+>$$
+>
+>And for the next ones we use the newly calculated forecasts (2018 for 2019 and both for 2020)
+>
+>* 2019 will give 8.67
+>* 2020 will give 8.77
+
+**Windows $\rightarrow$ Supervised Learning**
+
+* Each row = one window of the past; target = what comes next
+
+**Setting A: continuous series** (weekly sales, glucose monitor, hospital admissions)
+
+- No natural boundaries, we cut the windows ourselves
+- One row = a window of the past (e.g. last 8 weeks)
+- Target = next value (a number) → regression/forecasting
+- Split data by **time**: train on past, test on future
+
+**Setting B: designed experiment/event recording** (HAR, ECG, churn)
+
+- Each recording (trial, event, epoch) is already a natural window
+- One row = one trial/event (e.g. 30 s of walking)
+- Target = activity/diagnosis (a class) → classification
+- Split data by **subject**: test people never appear in training
+
+**Sliding windows: 3 design choices**
+
+- **Window length:** how much past each example sees
+- **Step:** overlapping (step = 1) or non-overlapping (step = window length)
+- **Target:** next value (regression) or label for the window (classification)
+
+**Window $\rightarrow$ features** (summarise each window instead of using raw lags)
+
+- Level: mean, median (moving averages)
+- Spread: SD, IQR (stationarity checks)
+- Shape: slope, min, max (trend)
+- Dependence: lag-1 autocorrelation (ACF)
+- Change: mean of successive differences (differencing)
+- Calendar: day of week, month, holiday (seasonality)
