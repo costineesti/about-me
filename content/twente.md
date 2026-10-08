@@ -43,3 +43,6 @@ date: 2025-10-21
 >
 >* **Q1**
 >	* [[ds4all|Data Science]]
+>	* [[ml|Machine Learning 1]]
+>
+

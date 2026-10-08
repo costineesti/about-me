@@ -291,7 +291,82 @@ $$
 We observe that increasing the model complexity $M \rightarrow \infty$, we overfit the noise.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml12.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml13.png" style="max-width: 100%; height: auto;">
 </div>
 
-Complete from slide 37/41.
+So we add a penalty term depending on the model. Typically, we want to penalize the larger parameters values.
+
+$$
+\hat{E}(\mathbf{w}) = \underbrace{\frac{1}{2} \sum_{n=1}^N (y(x_n,\mathbf{w})-t_n)^2}_{\text{Objective function}} + \underbrace{\frac{\lambda}{2}\|\mathbf{w}\|^2}_{\text{Penalty}}
+$$
+
+* $\lambda$ must be set independently, and it basically answers "how much do you trust the data?"
+
+>[!NOTE] Notes about Regularization
+>
+>Leave $w_0$ out of the penalty term. Shifting the data should not affect the model's performance.
+>
+>Square penalty $w^\top w$ or $L_2$-**norm** leads to simple optimization and it's called *ridge regression* (stats), *weight decay* (NNs). It shrinks weights toward zero, spreading influence across correlated features instead of letting one spike.
+>
+>$$
+>\arg \min_w ||A w - z||_2^2 + \lambda||w||_2^2
+>$$
+>
+>Closed form: $\hat{w} = (A^\top A + \lambda I)^{-1} A^\top z$. Always invertible for $\lambda > 0$.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/ml14.png" style="max-width: 100%; height: auto;"> </div>
+>
+>$L_1$ **norm** $\sum_{i=1}^M |w_i|$ cannot be optimized in closed form and it leads to sparse solutions (some $w_i=0$).
+>
+>**Lasso**: penalize $l_1$ norm, prefers sparse solutions.
+>
+>$$
+>\arg \min_w ||A w - z||_2^2 + \lambda||w||_1
+>$$
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/ml15.png" style="max-width: 100%; height: auto;"> </div>
+>
+>The $l_1$ ball has corners on the axes. The squared-loss contours first touch it at a corner (with high probability), and a corner means some coordinates are exactly zero. That is why Lasso does feature selection while ridge does not.
+>
+>$L_q$ **norm** $\sum_{i=1}^M |w_i|^q$
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/ml16.png" style="max-width: 100%; height: auto;"> </div>
+
+**How to read the figures**
+
+- The axes are the two weights, $w_1$ and $w_2$. Every point in the plane is one possible model.
+- The **ellipses** are iso-lines of the error: all points on one ellipse fit the data equally well. The center, $\hat{w}$, is the unregularized best fit. Further out means a worse fit.
+- The **circle/diamond/star** is an iso-line of the penalty: all weight vectors with the same penalty. The penalty is smallest at the origin (all weights zero).
+- $w^*$ is the regularized solution. You want the lowest error (the smallest ellipse) while staying within your penalty budget (inside the shape). That happens where the growing ellipse first touches the penalty shape.
+
+So regularization is a tug-of-war: the error pulls you toward $\hat{w}$, and the penalty pulls you toward the origin. $w^*$ is the compromise.
+
+|q|Shape|Effect|
+|---|---|---|
+|2|circle|shrinks all weights smoothly, closed form|
+|1|diamond|sparse, convex, no closed form|
+|< 1|star|even sparser, non-convex (hard)|
+
+>[!question] And the difference exactly between $L_1$ and $L_2$?
+>
+>The difference comes down to how the penalty treats small weights.
+>
+>$$
+>\begin{aligned}
+>L2&: \lambda \cdot \sum w_i^2 \\
+>L1&: \lambda \cdot \sum |w_i|
+>\end{aligned}
+>$$
+>
+>**Gradient (the "pull" toward zero)**
+>
+> - L2: pull = $2 \lambda w$. It is proportional to the weight, so as w gets small, the pull fades. A weight gets close to zero but never quite reaches it.
+> - L1: pull = $\lambda \cdot \text{sign}(w)$. It is a constant push regardless of how small $w$ is, so it can drive a weight all the way to exactly zero.
+>
+> **Geometry (the figures)**
+>
+> - L2: circle, no corners, so the solution lands at a generic point where all weights are nonzero.
+> - L1: diamond, corners on the axes, so the solution often lands on a corner where some weights are exactly zero.
+> 
+> **Correlated features:** with two nearly identical features, $L_2$ splits the weight between them, while $L_1$ tends to pick one and zero the other.
+
