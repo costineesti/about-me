@@ -16,6 +16,13 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 >* [[ai for robotics 2|Machine Learning Paradigms]]
 >* [[ds4all 4|Data Mining]] -- seems like they reused a lot of info from [[ds4all|Data Science]] in this lecture.
 >* [[ml 2|Linear Discriminants]]
+>* [[ml 3|Decision Trees (CART)]]
+>	* [[ds4all 3|Decision Tree Practical]]
+>	* [[Bagging]]
+>	* [[Random Forest]]
+>* [[ml 4|Linear Regression with Gradient Descent]]
+
+
 
 
 
