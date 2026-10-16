@@ -254,7 +254,7 @@ $$
 
 4. Compute the eigenvalues and eigenvectors of the covariance matrix of part b. What is the covariance matrix if we transform the data points into coordinates w.r.t these eigenvectors?
 
->[!NOTE] From [[ml1|ML Preliminaries]], we call **e** an eigenvector and $\lambda$ the corresponding eigenvalue of matrix **A** if:
+>[!NOTE] From [[ml 1|ML Preliminaries]], we call **e** an eigenvector and $\lambda$ the corresponding eigenvalue of matrix **A** if:
 >
 >$$
 >Ae = \lambda e

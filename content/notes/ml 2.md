@@ -124,7 +124,7 @@ they can deal with missing data, include prior knowledge and uncertainty in our 
 
 **Generative Probabilistic Models**
 
-Learn the point $p(x,C)$, classify via [[ml1|Bayes' rule]]:
+Learn the point $p(x,C)$, classify via [[ml 1|Bayes' rule]]:
 
 $$
 p(\mathcal{C}_i|\mathbf{x}) = \frac{p(\mathbf{x}|\mathcal{C}_i)p(\mathcal{C}_i)}{\sum_k p(\mathbf{x}|\mathcal{C}_k)p(\mathcal{C}_k)}

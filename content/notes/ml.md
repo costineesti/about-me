@@ -9,7 +9,7 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 
 >[!summary] Topics Covered
 >
->* [[ml1|Preliminaries]] (Linear Algebra & Probabilities)
+>* [[ml 1|Preliminaries]] (Linear Algebra & Probabilities)
 >	* [[inner product|Inner Product]]
 >	* [[PDF|Probability Density Function]], [[Gaussian distribution]]
 >	* [[ml practical|A practical on ML basics]]
@@ -21,8 +21,7 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 >	* [[Bagging]]
 >	* [[Random Forest]]
 >* [[ml 4|Linear Regression with Gradient Descent]]
-
-
+>* [[ml 5|Multi Layer Perceptron (MLP)]]
 
 
 

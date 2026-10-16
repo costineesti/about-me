@@ -48,5 +48,23 @@ $$
 
 * Assume convergence when $|| \theta_{new} - \theta_{old}||_2 < \epsilon$
 
+>[!question] What's the problem with high dimensional data?
+>The volume of the space increases exponentially with the number of dimensions such that the data becomes exponentially sparser (the curse of dimensionality).
+>
+>$$
+>\text{Raw Features} \xrightarrow{\text{Feature engineering}} \text{Developed Features} \xrightarrow{\text{Mapping}} \text{Target Separation}
+>$$
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/ml22.png" style="max-width: 100%; height: auto;"> </div>
+>
+>* Feature engineering relies on human ingenuity and expertise
+>* Difficult to achieve
+>* Expensive to scale and automatize
+>
+>Therefore, it gets replaced by [[representation learning|Representation Learning]]
 
-page 53.
+**To make breakthroughs and scale to various applications we want (algorithms that identify) and disentangle the underlying explanatory factors hidden in the observed milieu of low-level sensory data** -- See [[representation learning|Representation Learning]]. It's basically the latent space that gets learned during the unsupervised/self-supervised learning phase.
+
+Read [[NLP 6|Contextual Word Embeddings and Transformers]] until the Transformers part. Understand again the backward pass and computational graph method to update the weights/bias.
+
+At least one question at the exam will come from [this video](https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/index.html).
