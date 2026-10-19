@@ -22,6 +22,7 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 >	* [[Random Forest]]
 >* [[ml 4|Linear Regression with Gradient Descent]]
 >* [[ml 5|Multi Layer Perceptron (MLP)]]
+>* [[ml 7|Support Vector Machine (SVM)]]
 
 
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ml 5.md",
+                "file": "content/notes/ml 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ml 5"
+              "title": "ml 7"
             }
           }
         ]
@@ -208,10 +208,19 @@
   },
   "active": "55ff5ff36cb64c99",
   "lastOpenFiles": [
-    "quartz/static/notes/ml27.png",
+    "quartz/static/notes/ml32.png",
+    "quartz/static/notes/ml31.png",
+    "quartz/static/notes/ml30.png",
+    "quartz/static/notes/ml29.png",
     "content/notes/ml 4.md",
     "content/notes/ml 5.md",
+    "content/notes/ml 7.md",
+    "content/notes/genai4.md",
+    "content/notes/NLP 5.md",
+    "quartz/static/notes/ml28.png",
+    "content/notes/SGD.md",
     "content/notes/ml.md",
+    "quartz/static/notes/ml27.png",
     "content/notes/ml 1.md",
     "quartz/static/notes/ml26.png",
     "quartz/static/notes/ml25.png",
@@ -228,22 +237,13 @@
     "content/notes/barcode detection and decoding.md",
     "content/notes/Bellman Equation.md",
     "content/notes/Bagging.md",
-    "quartz/static/notes/CoMe.png",
     "content/notes/BoQ.md",
     "content/notes/SALAD.md",
     "content/notes/ai for robotics 2.md",
     "content/notes/asdfr 2.md",
-    "quartz/static/notes/salad2.png",
     "content/notes/VGGT.md",
     "content/notes/ai for robotics 6.md",
-    "quartz/static/notes/salad1.png",
-    "quartz/static/notes/ml21.png",
     "content/notes/Random Forest.md",
-    "quartz/static/notes/ml20.png",
-    "content/notes/ds4all 4.md",
-    "content/notes/genai4.md",
-    "content/notes/ai for robotics 3.md",
-    "content/notes/ai for robotics 1.md",
     "quartz/static/notes/VGGT.mp4",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",

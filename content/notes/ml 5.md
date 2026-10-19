@@ -58,4 +58,13 @@ If all neurons are linear, the MLP is linear, which limits the generalization! A
 >
 >Mind the two ideas above, however!
 
-page 45
+# Training
+
+Regarding standard Gradient Descent, we can stop the model from overfitting by applying:
+
+* early stopping, learning rate adaption
+* L1/L2 normalization (ridge regression), Weight decay
+
+See [[SGD]] for continuation on this topic.
+
+page 49. See [these notes](https://stevengong.co/notes/Perceptron) from Steven.
