@@ -2,7 +2,7 @@
 title: Support Vector Machine (SVM)
 draft: false
 tags:
-date: 2026-10-21
+date: 2026-10-19
 ---
 Classification technique. Supervised learning technique. [Watch this 2 min video on SVM](https://youtu.be/_YPScrckx28?si=OAYali5kb4rSVmB-). Of course [Steven's notes](https://stevengong.co/notes/Support-Vector-Machine) are always a form of inspiration.
 
@@ -13,7 +13,7 @@ The SVM is a linear classifier that finds the **max-margin** separating hyperp
 </div>
 
 <div class="encoder-section">
-  <img src="../static/notes/ml29.png" style="width: 200px; height: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
+  <img src="../static/notes/ml29.png" style="width: 400px; height: 200px; margin-bottom: 10px; margin-right: 20px; margin-bottom: 0;">
   <div class="encoder-text">
     <ul>
       <li>It's all about decision boundaries.</li>
@@ -56,7 +56,7 @@ $$
 which satisfy for whatever $x \in [-1,2]$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml32.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml32.png" style="max-width: 50%; height: auto;">
 </div>
 
 # Separating Hyperplanes
@@ -65,7 +65,7 @@ which satisfy for whatever $x \in [-1,2]$
 * Then we also have some unknown $\vec{u}$
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml31.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml31.png" style="max-width: 50%; height: auto;">
 </div>
 
 We are interested if this unknown is on the left part of the street or if it is on the right part of the street.
