@@ -124,3 +124,7 @@ $$
 >
 >Boosting: combine several weak learners to form a stronger one. The main ones are adaptive boosting (Adaboost) or gradient boosting.
 
+Read the following sections from [Trevor Hastie et al., Elements of Statistical Learning, 2017](https://hastie.su.domains/ElemStatLearn/)
+
+* About trees: Section 9.2
+* About random forests: Chapter 15

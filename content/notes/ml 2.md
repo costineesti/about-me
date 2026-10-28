@@ -370,3 +370,4 @@ So regularization is a tug-of-war: the error pulls you toward $\hat{w}$, and the
 > 
 > **Correlated features:** with two nearly identical features, $L_2$ splits the weight between them, while $L_1$ tends to pick one and zero the other.
 
+Bishop, p. 181-182, 192-196, 196-201, 204-206

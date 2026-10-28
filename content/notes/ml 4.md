@@ -67,4 +67,4 @@ $$
 
 Read [[NLP 6|Contextual Word Embeddings and Transformers]] until the Transformers part. Understand again the backward pass and computational graph method to update the weights/bias.
 
-At least one question at the exam will come from [this video](https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/index.html).
+At maximum one question at the exam will come from [this video](https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/index.html).
