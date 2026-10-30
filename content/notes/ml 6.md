@@ -60,7 +60,7 @@ Go through [[Bernoulli Distribution]] before the reading the rest.
 Instead of assuming a single functional representation of the distribution, we can use the training data itself. If we try to evaluate the distribution of data without assuming a parametric form of the density, we can use histograms.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml41.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml41.png" style="max-width: 50%; height: auto;">
 </div>
 
 Disadvantages include:
@@ -88,7 +88,7 @@ $$
 Both methods require a hyperparameter to control the smoothness of the resulting density estimate. In histograms, this is the bin width $\triangle$. In Gaussian Parzen estimators, this is the kernel's standard deviation $h$. The final image demonstrates how sensitive the Parzen estimator is to this value
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml42.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml42.png" style="max-width: 50%; height: auto;">
 </div>
 
 - A very small standard deviation ($h=0.005$) produces an extremely jagged, spiky distribution that overfits to individual data points.
@@ -155,7 +155,7 @@ Before going further, read [[optimal estimation 3|Fundamentals of parameter esti
 We often lack data to train a model well by [[MLE]]. A standard Gaussian classification model with $c$ classes in $d$ dimensions requires calculating $cd^2$ parameters just for the covariance matrices, which naturally produces a complex, curved decision boundary.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml49.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml49.png" style="max-width: 50%; height: auto;">
 </div>
 
 To reduce the number of parameters without losing too much discriminating power, we can apply three levels of simplifying assumptions:
@@ -163,19 +163,19 @@ To reduce the number of parameters without losing too much discriminating power,
 1. **Shared Covariance:** Assuming all classes share the identical covariance matrix ($\Sigma_1=\Sigma_2$​) reduces the parameter count to $d^2$. Because the distributions now have the exact same shape and orientation, the complex curve straightens into a linear decision boundary.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml50.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml50.png" style="max-width: 50%; height: auto;">
 </div>
 
 2. **Diagonal Covariance:** Assuming the covariance matrices are diagonal ($\Sigma_1 \leftarrow \text{diag}(\Sigma_1$)) means treating all input dimensions as statistically independent. This reduces the required parameters down to $cd$. Visually, the contour ellipses are forced to align strictly with the coordinate axes 
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml51.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml51.png" style="max-width: 50%; height: auto;">
 </div>
 
 3. **Spherical Covariance:** The most extreme simplification assumes the covariance is a simple scalar multiple of the identity matrix ($\Sigma_1 = \sigma I$). This reduces the parameter count to just $c$. The distributions become perfect circles, meaning the classifier effectively just measures the straight-line distance from a new data point to each class center to make a decision.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/ml52.png" style="max-width: 100%; height: auto;">
+    <img src="../static/notes/ml52.png" style="max-width: 50%; height: auto;">
 </div>
 
 **Naive Bayes**: Because it only computes 1D probabilities and multiplies them, it scales linearly with the number of features, making it computationally fast. It performs surprisingly well in real-world practice, but if the features are actually highly correlated, the model will output overly confident probability scores.
