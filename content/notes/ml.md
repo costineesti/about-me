@@ -25,6 +25,7 @@ Course I took during Q1 of my second year while at [[twente|UTwente]]. I took th
 >* [[ml 6|Probabilistic Models]]
 >* [[ml 7|Support Vector Machine (SVM)]]
 >* [[Kernel Trick]]
+>* [[ml 8|Dimensionality Reduction]]
 
 
 
