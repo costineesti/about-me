@@ -205,6 +205,32 @@ $$
 
 <div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ml53.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ml54.png" alt="flow 2" width="350" height="300"> </div> </div>
 
-The primary takeaway is the behavior in the small-data regime. When data is extremely scarce, the standard point estimate (red dashed line) drastically overfits to those few points, outputting a peaked, overly confident distribution that misses the true green curve entirely. The Bayesian prediction (blue line) avoids this false confidence; it remains wide, flat, and cautious because it factors in the massive parameter uncertainty shown on the left. However, once you have abundant data, the parameter uncertainty vanishes, and the Bayesian curve, the point estimate, and the true distribution all safely converge into one.
+The primary takeaway is the behavior in the small-data regime. When data is extremely scarce, the standard point estimate (red dashed line) drastically overfits to those few points, outputting a peaked, overly confident distribution that misses the true green curve entirely. The Bayesian prediction (blue line) avoids this false confidence; it remains wide, flat, and cautious because it factors in the massive parameter uncertainty shown on the left. However, once we have abundant data, the parameter uncertainty vanishes, and the Bayesian curve, the point estimate, and the true distribution all safely converge into one.
 
-page 89
+>[!NOTE] We are not interested in knowing the original distribution that generated the data.
+>We can't know that anyway.
+>
+>What we really want to do, is to use the knowledge that we have in an optimal way
+>
+>$$
+>\overbrace{p(t \mid \mathbf{x}, \mathbf{X}, \mathbf{t})}^{\substack{\text{Probability of the} \\ \text{target given the} \\ \text{test datapoint and} \\ \text{the training dataset.}}} = \int \underbrace{p(t \mid \mathbf{x}, \theta)}_{\substack{\text{Probability of the} \\ \text{target given the} \\ \text{test datapoint}}} \overbrace{p(\theta \mid \mathbf{X}, \mathbf{t})}^{\substack{\text{Probability of the} \\ \text{parameters given} \\ \text{the training data} \\ \text{and targets.}}} \underbrace{\mathrm{d}\theta}_{\substack{\text{Integrate with} \\ \text{respect to the} \\ \text{parameters}}}
+>$$
+>
+>In effect, we consider all the models (of the form that we have chosen beforehand) that could have generated the data, and weigh their prediction according to how probable they are.
+
+There is the **sampling solution** which bypasses the impossible calculus (often called Monte Carlo approximation). 
+
+* Instead of computing the true integral $\int f(\mathbf{x}) p(\mathbf{x}) d\mathbf{x}$, we simply draw a large number of random samples ($L$) directly from the probability distribution $p(\mathbf{x})$ and evaluate the function on those specific samples and just calculate their standard average: $\frac{1}{L} \sum f(x^{(l)})$ 
+
+$$
+\begin{aligned}
+\mathbb{E}_p[f] &= \int f(\mathbf{x}) p(\mathbf{x}) \, \mathrm{d}\mathbf{x} \\
+&\approx \frac{1}{L} \sum_{l=1}^L f\left(\mathbf{x}^{(l)}\right) \qquad \text{where } \mathbf{x} \sim p(\mathbf{x})
+\end{aligned}
+$$
+
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <img src="../static/notes/ml55.png" style="max-width: 50%; height: auto;">
+</div>
+
+Read the following sections from Bishop: 1.5, 2.1, 2.3.0, 2.5, 4.2, 4.3

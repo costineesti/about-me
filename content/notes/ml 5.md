@@ -68,7 +68,7 @@ Regarding standard Gradient Descent, we can stop the model from overfitting by a
 
 See [[SGD]] for continuation on this topic.
 
-page 49. See [these notes](https://stevengong.co/notes/Perceptron) from Steven.
+See [these notes](https://stevengong.co/notes/Perceptron) from Steven.
 
 [mandatory watch](https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12b-deep-neural-nets/index.html)
 

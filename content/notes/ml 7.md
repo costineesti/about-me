@@ -193,6 +193,15 @@ Because the problem is [[convex optimization|convex]], this optimization never g
 
 This way, we’re guaranteed any solution found is _the global optimum_, not a potentially-worse local one.
 
+Non-traditional data like strings and trees can be used as input to SVM, instead of feature vectors.
+
+The downside is we need to choose an appropriate kernel function, which is non-trivial. And it does not provide directly probability estimates. For that we perform logistic regression on the SVM output of a set of data (validation set) that is not used for training.
+
+Look over [[Kernel Trick]], since it's a continuation of SVM for cases where the data is non-linearly separable.
+
+Reading material: Bishop book, [Bottou and Lin, Sections 1, 2.1, and 2.2 of Support Vector Machine Solvers](https://leon.bottou.org/publications/pdf/lin-2006.pdf)
+
+
 
 <style>
   .encoder-section {
