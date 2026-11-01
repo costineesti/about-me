@@ -370,4 +370,10 @@ So regularization is a tug-of-war: the error pulls you toward $\hat{w}$, and the
 > 
 > **Correlated features:** with two nearly identical features, $L_2$ splits the weight between them, while $L_1$ tends to pick one and zero the other.
 
+>[!question] What if $\lambda$ is too large?
+>
+>It will cause underfitting regardless of the regularization applied. Because the penalty term in the equation drives the weights towards the origin (0). L1 will actually allow values of 0 while L2 avoids it, but keep them small enough. So that will mean underfitting since overfitting is essentially high values of weights, or that's at least one way to detect it.
+>
+>**Intuitively**, a too small $\lambda$ barely contributes with anything. So the objective function (error term) will grow the weights as large as it needs to fit the training data as closely as possible. It makes absolute sense since they are methods of avoiding overfitting.
+
 Bishop, p. 181-182, 192-196, 196-201, 204-206

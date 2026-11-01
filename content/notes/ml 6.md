@@ -233,4 +233,27 @@ $$
     <img src="../static/notes/ml55.png" style="max-width: 50%; height: auto;">
 </div>
 
+>[!question] Difference between [[MLE]], MAP, and Full Bayesian?
+>
+>* [[MLE]] predicts the output given the observation and parameters $p(y \mid x, \hat{\theta})$. It optimizes the likelihood of the data given the parameters $\rightarrow \hat{\theta} = \arg \max_\theta p(\{x,t\} \mid \theta)$
+>* MAP predicts the same thing as [[MLE]]. However, it optimizes the posterior of the parameters given the data $\rightarrow \hat{\theta} = \arg \max_\theta p(\theta \mid \{x,t\})$
+>* Full Bayesian prediction never commits to one parameter $\theta$ -- it averages the prediction over the entire posterior distribution of $\theta \rightarrow p(y \mid x) = \int p(y \mid x, \theta) \cdot p(\theta \mid \{x,t\}) \cdot d \theta$
+>
+>Read [[likelihood function]] to understand the difference between them.
+
+>[!example] Assume that we have a two-class classification problem in a 3-dimensional space. Consdering the two from below, how many parameters does one need to estimate or learn from the data?
+>
+>1) We apply Bayes' Law to estimate $p(C_k \mid x), k=1,2$
+>2) We assume that the likelihoods $p(x \mid C_k), k=1,2$ are modelled by normal (Gaussian) PDFs with full-rank covariance matrix. 
+>
+>PDFs include mean and variance (or covariance). Each dimension gets its respective mean $\mu_k$ => 3 parameters. The covariance matrix will be $3 \times 3 =9$ entries, but the covariance matrix is constrained to be **symmetric** $\Sigma_{ij} = \Sigma_{ji}$, so we only count the upper triangle (including diagonal) => 6 parameters from here. In total 9 parameters from 2)
+>
+>Multiply by the number of classes: $2 \text{ classes} \times 9 = 18 \text{ parameters}$ for the class-conditional densities.
+>
+>Since we apply Bayes' Law, we need the prior estimate too. With 2 classes, the priors $p(C_1)$ and $p(C_2)$ must sum to 1, so only **1 free parameter** is needed (the other is determined).
+>
+>19 in total. 
+>
+>There were two tricks: 1) a full covariance matrix in $d$ dimensions has $d(d+1)/2$ free parameters since it's symmetric and 2) priors across $k$ classes only contribute $k-1$ free parameters, not $k$ since the last one can be derived.
+
 Read the following sections from Bishop: 1.5, 2.1, 2.3.0, 2.5, 4.2, 4.3

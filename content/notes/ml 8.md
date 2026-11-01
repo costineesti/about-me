@@ -33,7 +33,7 @@ Small peek to how the following methods represent the data:
 * PCA can be used to normalize the dataset so as to make different dimensions decorrelated. (right)
 * The maximal variance does not always correspond to optimal class separation (left)
 
-<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ml58.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ml59.png" alt="flow 2" width="350" height="300"> </div> </div>
+<div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ml59.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ml60.png" alt="flow 2" width="350" height="300"> </div> </div>
 
 One problem with this formulation of PCA is that the covariance matrix becomes huge as the dimensionality of the data increases.
 
@@ -59,7 +59,11 @@ We can replace the covariance matrix $\Sigma$ in [[principal_component_analysis|
     <img src="../static/notes/ml62.png" style="max-width: 50%; height: auto;">
 </div>
 
-[[genai2|Autoencoders]] ensure same dimensionality between the input and the output, but its the latent space that forces compression. Adding hidden layers allows non-linear transformations.
+[[genai2|Autoencoders]] ensure same dimensionality between the input and the output, but its the latent space that forces compression. Adding hidden layers allows non-linear transformations. 
+
+>[!NOTE] Be careful. If you build an autoencoder with **linear activations** and train it to minimize reconstruction error (MSE), it converges to learn the same subspace as PCA (up to rotation/scaling of the latent dimensions) -- this is a known theoretical result (Baldi & Hornik, 1989). So an AE is not mandatory to be nonlinear.
+>
+>It is preferred to use nonlinear activation functions in the AE to get more expressive power.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/ml63.png" style="max-width: 50%; height: auto;">

@@ -15,4 +15,6 @@ Elective course I took in Q1 of my second year while at [[twente|Twente]]. It co
 >	* [[ds4all 3|Decision Tree Approach]]
 >	* [[knn|K-Nearest Neighbors (KNN)]]
 >	* [[ds4all 5|Practical Data Mining]]
+>* [[ds4all 6|Time Series]]
+>* [[ds4all 7|DS Project -- yet to name]]
 
