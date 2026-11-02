@@ -104,6 +104,8 @@ $$
 
 > that's the "stochastic" part -- one misclassified example per update rather than the full batch. It reads as "whenever you hit one that's misclassified, nudge $w$ in the direction of $x_n t_n$ scaled by $\eta$. Repeat until no misclassifications remain."
 
+**Mini-batch gradient descent** minimizes the function by summing the gradient over a subset of datapoints (according to the lectures). Applied to the perceptron learning rule, this means the weights update is calculated using a small sample of the misclassified examples $\mathcal{M}$ , rather than the entire batch or a single occurence. It could provide a more stable error update than SGD while remaining computationally faster than full batch gradient descent
+
 >[!summary] Perceptron Convergence Theorem
 >
 >If the training set is linearly separable, the algorithm is guaranteed to find a solution in a finite number of steps.
@@ -248,7 +250,7 @@ $$
 
 This is equivalent with minimizing the binary cross-entropy *loss*. Taken from [[NLP 6|Contextual Word Embeddings and Transformers]].
 
-# Basic Functions
+# Basis Functions
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/ml11.png" style="max-width: 100%; height: auto;">
