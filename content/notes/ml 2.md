@@ -120,6 +120,8 @@ $$
 - **Stochastic**: approximate with one random point at a time -- fast, avoids bad local optima, handles redundancy; but noisy, messier stopping criterion
 - **Minibatch**: sum over a subset
 
+See [[SGD]].
+
 # Probabilistic Models
 
 they can deal with missing data, include prior knowledge and uncertainty in our parameter values. Confidence comes as a prediction.

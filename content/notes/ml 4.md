@@ -49,7 +49,7 @@ $$
 * Assume convergence when $|| \theta_{new} - \theta_{old}||_2 < \epsilon$
 
 >[!question] What's the problem with high dimensional data?
->The volume of the space increases exponentially with the number of dimensions such that the data becomes exponentially sparser (the curse of dimensionality).
+>The volume of the space increases exponentially with the number of dimensions such that the data becomes exponentially sparser (the [[Curse of Dimensionality]]).
 >
 >$$
 >\text{Raw Features} \xrightarrow{\text{Feature engineering}} \text{Developed Features} \xrightarrow{\text{Mapping}} \text{Target Separation}

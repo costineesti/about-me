@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "f81ad8f3587bdcdb",
+        "id": "9b4fc9ac498ac65b",
         "type": "tabs",
         "children": [
           {
-            "id": "f25efa806e547a6a",
+            "id": "e3f8fe49a8071124",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/ml 2.md",
+                "file": "content/notes/Depth Anything.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ml 2"
-            }
-          },
-          {
-            "id": "b7b2671d7f99f6ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/notes/ml 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ml 2"
+              "title": "Depth Anything"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -221,44 +206,44 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b7b2671d7f99f6ca",
+  "active": "e3f8fe49a8071124",
   "lastOpenFiles": [
-    "content/notes/ml.md",
-    "content/notes/ml 8.md",
+    "quartz/static/notes/depth2.png",
+    "content/notes/CLIP.md",
+    "content/notes/foundation models.md",
+    "content/notes/Depth Anything.md",
+    "quartz/static/notes/depth1.png",
+    "content/notes/Measurement Systems for Mechatronics.md",
+    "Pasted image 20261106090523.png",
+    "Pasted image 20261106090337.png",
+    "Pasted image 20261106090150.png",
+    "Pasted image 20261106090047.png",
+    "Pasted image 20261106085922.png",
+    "Pasted image 20261106085646.png",
+    "Pasted image 20261106085511.png",
+    "Pasted image 20261106085217.png",
+    "Pasted image 20261106084756.png",
+    "content/notes/msfm.md",
     "content/notes/ml 6.md",
+    "content/notes/ml 5.md",
     "content/notes/ml 2.md",
+    "content/notes/ml.md",
+    "content/notes/SGD.md",
+    "content/notes/ml 4.md",
+    "content/notes/ml 8.md",
     "content/notes/ds4all.md",
     "content/notes/ds4all 7.md",
     "content/notes/ds4all 6.md",
     "content/notes/likelihood function.md",
     "content/notes/MLE.md",
-    "quartz/static/notes/ml71.png",
     "content/notes/Curse of Dimensionality.md",
-    "quartz/static/notes/ml70.png",
-    "quartz/static/notes/ml69.png",
-    "quartz/static/notes/ml68.png",
-    "quartz/static/notes/ml67.png",
-    "quartz/static/notes/ml66.png",
-    "quartz/static/notes/ml65.png",
     "content/notes/genai2.md",
-    "quartz/static/notes/ml64.png",
-    "quartz/static/notes/ml63.png",
     "content/notes/genai3.md",
-    "quartz/static/notes/ml62.png",
     "content/notes/principal_component_analysis.md",
     "content/notes/ml 7.md",
     "content/notes/Kernel Trick.md",
     "content/notes/ai for robotics 7.md",
     "content/notes/ai for robotics 5.md",
-    "content/notes/ai for robotics 9.md",
-    "content/notes/ml 5.md",
-    "content/notes/Nadaraya-Watson.md",
-    "content/notes/ml 3.md",
-    "content/notes/ai for robotics 3.md",
-    "content/notes/foundation models 5.md",
-    "content/notes/foundation models 4.md",
-    "content/notes/foundation models 3.md",
-    "content/notes/foundation models 2.md",
     "quartz/static/notes/VGGT.mp4",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",

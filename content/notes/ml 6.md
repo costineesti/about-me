@@ -202,6 +202,7 @@ $$
 
 * In the left image, with only a handful of data points, the glowing distribution is massive and diffuse, indicating that the model is highly uncertain about the true parameters. 
 * In the right image, as the sequence progresses and more data is collected, this posterior distribution rapidly shrinks and concentrates into a tiny, precise point exactly around the true parameter values.
+* [[MLE]] would be simply $\arg\max_\theta p(\mathbf{x} \mid \theta)$, where we are solely maximizing the likelihood of the observed data given the parameters. Instead of treating the parameters ($\theta$) as random variables with their own probability distribution, MLE treats them as fixed but unknown constants.
 
 <div style="display: flex; justify-content: space-around;"> <div> <img src="../static/notes/ml53.png" alt="flow 1" width="350" height="300"> </div> <div> <img src="../static/notes/ml54.png" alt="flow 2" width="350" height="300"> </div> </div>
 

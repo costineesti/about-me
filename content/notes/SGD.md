@@ -9,8 +9,8 @@ Stochastic Gradient Descent samples the gradient. See [very useful implementatio
 
 >[!summary] SGD
 >
->* SGD randomly selects a subset of training data
->* Gradient depends only on selected subset
+>* SGD randomly selects a misclassification of training data (only one!)
+>* Gradient depends only on selected point
 >
 >Helps avoid getting stuck in local minimum.
 
