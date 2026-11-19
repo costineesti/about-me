@@ -7,7 +7,7 @@ date: 2026-11-19
 
 [paper](https://openaccess.thecvf.com/content_cvpr_2017/papers/Halber_Fine-To-Coarse_Global_Registration_CVPR_2017_paper.pdf)
 
-This paper aims at RGB-D scanning of indoor environments.
+From 2017. This paper aims at RGB-D scanning of indoor environments.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
     <img src="../static/notes/fine1.png" style="max-width: 50%; height: auto;">
