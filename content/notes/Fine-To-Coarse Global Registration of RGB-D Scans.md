@@ -32,7 +32,7 @@ During each iteration, closest point and geometric constraints (parallelism, per
 
 >[!question] Would VPR be a good application for detecting the loop closures in this case, I wonder
 >
->Xiao et al.’s Sun3DSfm apparently did this already. Give them a read. Also global BA.
+>Xiao et al.’s [[SUN3D|SUN3DSfM]] apparently did this already. Give them a read. Also global BA.
 >
 >The paper explicitly notes it _fails_ on their corridor sequence due to repetitive/self-similar geometry -- which is the key risk to be aware of.
 
