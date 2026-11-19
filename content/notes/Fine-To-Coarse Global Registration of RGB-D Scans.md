@@ -27,7 +27,7 @@ During each iteration, closest point and geometric constraints (parallelism, per
 >you can't detect a long-range constraint (e.g. far-apart parallel walls) correctly until the geometry leading up to it is already roughly right. The growing window lets the correctness propagate.
 
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/fine2.png" style="max-width: 50%; height: auto;">
+    <img src="../static/notes/fine2.png" style="max-width: 100%; height: auto;">
 </div>
 
 >[!question] Would VPR be a good application for detecting the loop closures in this case, I wonder
