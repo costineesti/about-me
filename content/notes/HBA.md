@@ -19,7 +19,7 @@ From 2023. This paper aims at making large-scale LiDAR maps **globally consisten
 >* With the hierarchical design, they solve multiple BA problems with a much smaller Hessian matrix size.
 >* With the PGO, they smoothly and efficiently update the LiDAR poses.
 >
-><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/HBA1.png" style="max-width: 50%; height: auto;"> </div>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/HBA1.png" style="max-width: 100%; height: auto;"> </div>
 
 > One issue in the bottom-up process is that it neglects features co-visible across different local windows, which could lower the accuracy. To mitigate this issue, the top-down process constructs a pose graph from the top to the bottom layers and distributes the errors by pose graph optimization. The two process iterates until convergence.
 > 
