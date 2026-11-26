@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Selective Token Aggregation in more detail.md",
+                "file": "content/notes/Selective Token Aggregation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Selective Token Aggregation in more detail"
+              "title": "Selective Token Aggregation"
             }
           }
         ]
@@ -208,8 +208,8 @@
   },
   "active": "beaec176edc564f5",
   "lastOpenFiles": [
-    "content/notes/FINDINGS.md",
     "content/notes/Selective Token Aggregation in more detail.md",
+    "content/notes/FINDINGS.md",
     "content/notes/Selective Token Aggregation.md",
     "quartz/static/notes/capita_geometry_rot45.png",
     "quartz/static/notes/capita_arch_method1_2.png",

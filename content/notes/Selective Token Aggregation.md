@@ -151,13 +151,13 @@ This case is even worse. The predictor is capped at 40 degrees and simply predic
     <img src="../static/notes/capita_geometry_head_vs_similarity.png" style="max-width: 100%; height: auto;">
 </div>
 
-| input           | ρ_rot within scene | no-head ρ (1−cos) | ρ_trans within scene | no-head ρ (1−cos) | So the orange line answers one question: "for pairs rotated about this much, what does the model typically predict?" error | ROxford Hard: no head $\rightarrow$ after head |
-| --------------- | ------------------ | ----------------- | -------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| cls224          | 0.16               | ==0.23==          | 0.19                 | 0.14              | 0.24$^\circ$                                                                                                               | 0.43 $\rightarrow$ 0.23                        |
-| cls518          | 0.19               | ==0.25==          | 0.21                 | 0.11              | 0.33$^\circ$                                                                                                               | 0.47 $\rightarrow$ 0.28                        |
-| Method 1 filter | 0.13               | ==0.18==          | 0.11                 | 0.09              | 0.24$^\circ$                                                                                                               | 0.25 $\rightarrow$ 0.11                        |
-| mean            | 0.13               | ==0.17==          | 0.24                 | 0.12              | 0.25$^\circ$                                                                                                               | 0.12 $\rightarrow$ 0.05                        |
-| random          | 0.13               | ==0.17==          | 0.24                 | 0.12              | 0.24$^\circ$                                                                                                               | 0.11 $\rightarrow$ 0.06                        |
+| input           | ρ_rot within scene | no-head ρ (1−cos) | ρ_trans within scene | no-head ρ (1−cos) | cycle error  | ROxford Hard: no head $\rightarrow$ after head |
+| --------------- | ------------------ | ----------------- | -------------------- | ----------------- | ------------ | ---------------------------------------------- |
+| cls224          | 0.16               | ==0.23==          | 0.19                 | 0.14              | 0.24$^\circ$ | 0.43 $\rightarrow$ 0.23                        |
+| cls518          | 0.19               | ==0.25==          | 0.21                 | 0.11              | 0.33$^\circ$ | 0.47 $\rightarrow$ 0.28                        |
+| Method 1 filter | 0.13               | ==0.18==          | 0.11                 | 0.09              | 0.24$^\circ$ | 0.25 $\rightarrow$ 0.11                        |
+| mean            | 0.13               | ==0.17==          | 0.24                 | 0.12              | 0.25$^\circ$ | 0.12 $\rightarrow$ 0.05                        |
+| random          | 0.13               | ==0.17==          | 0.24                 | 0.12              | 0.24$^\circ$ | 0.11 $\rightarrow$ 0.06                        |
 
 * **No rotation is learned beyond similarity.** For every input, plain $1-\cos$ of the inputs orders pairs by true rotation *better* than the trained head (e.g. 0.23 vs 0.16 for CLS 224).
 * **Consistent, not correct.** The cycle $a \rightarrow b \rightarrow c$ vs $a \rightarrow c$ closes to ~0.25$^\circ$ on new triplets, yet the angle error is never better than always guessing the median. Each head has a **ceiling** (≈104$^\circ$, ≈92$^\circ$, ≈40$^\circ$) and a pile of predictions near 0$^\circ$. It squeezes rotations into a range where they're easy to keep consistent.
@@ -166,7 +166,7 @@ This case is even worse. The predictor is capped at 40 degrees and simply predic
 >[!danger] A trap I almost fell into
 >With all scenes pooled, Method 1 looked $2.5 \times$ **better** than the mean for rotation (0.152 vs 0.064). Within each scene the difference is **zero** (0.13 vs 0.13). The descriptor was separating *scenes*, not judging rotation. Always split by group before trusting a correlation.
 >
->| input           | `spearman_rotation` (all scenes pooled) | `spearman_rotation_within_scene` |
+>| input           | $\rho_{rot}$ (all scenes pooled) | $\rho_{rot}$ within scene |
 >| --------------- | --------------------------------------- | -------------------------------- |
 >| Method 1 filter | 0.152                                   | 0.129                            |
 >| mean            | 0.064                                   | 0.132                            |
@@ -206,7 +206,7 @@ Nicola's objection: the plots go up to 180$^\circ$, and two photos taken 180$^\c
 
 He's right, and the data confirms it. Janine's pairs are either 120–179$^\circ$ apart or among the farthest 10% of camera pairs. In 6 of the 8 scenes, the median training pair shares **0** COLMAP 3D points: the two images have nothing in common. The held-out triplet doesn't save this either. Every pair inside the triplet (a–b, b–c, and the uncontrolled a–c) has the same problem.
 
->[!info] Does Janine limit the angle anywhere else?
+>[!question] Does Janine limit the angle anywhere else?
 >No. The only limit is in the data selection (`ROT_MIN=120, ROT_MAX=179` in her `dataset_from_zip.py`). The pose head outputs an unconstrained axis-angle, and nothing in the loss caps it.
 
 **The test (E04):** change *only* the data. Every pair of a triplet, a–c included, must be within **0–45$^\circ$**. Model, loss, training, the 5 inputs × 3 seeds and Method 2 (real vs zero, pooler lr $10^{-3}$) all stay the same.
@@ -224,7 +224,7 @@ The overlap goes up, but not everywhere:
 | 0022  | 20$^\circ$                 | 5 (5)                                   |
 | 0023  | 22$^\circ$                 | 81 (6)                                  |
 
->[!tip] Rotation ≠ overlap
+>[!info] Rotation ≠ overlap
 >Two cameras can face the same direction from opposite ends of a square and see completely different facades. The 45$^\circ$ cap removes pairs that *face away* from each other, but not pairs that are *far apart*. That's why the large scenes (0005, 0015) still share very few points. I didn't add an overlap criterion on purpose: one change at a time, so the result can be attributed to it.
 
 ## Results
