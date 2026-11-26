@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "66b49bec3d1052b6",
+        "id": "6d9ae558108dc7a3",
         "type": "tabs",
         "children": [
           {
-            "id": "fa3a0d8ac547d4cc",
+            "id": "beaec176edc564f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Selective Token Aggregation.md",
+                "file": "content/notes/Selective Token Aggregation in more detail.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Selective Token Aggregation"
+              "title": "Selective Token Aggregation in more detail"
             }
           }
         ]
@@ -206,25 +206,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fa3a0d8ac547d4cc",
+  "active": "beaec176edc564f5",
   "lastOpenFiles": [
+    "content/notes/FINDINGS.md",
+    "content/notes/Selective Token Aggregation in more detail.md",
+    "content/notes/Selective Token Aggregation.md",
+    "quartz/static/notes/capita_geometry_rot45.png",
+    "quartz/static/notes/capita_arch_method1_2.png",
+    "quartz/static/notes/capita_notes.png",
+    "content/notes/CoMe.md",
+    "quartz/static/notes/capita_janine_arch.png",
+    "content/notes/ml 8.md",
+    "content/twente.md",
+    "content/notes/seaclear observations.md",
+    "Pasted image 20261106085646.png",
+    "file:/Users/costinchitic/Documents/UTwente/2027/Q1/Capita Selecta Robotics/Thesis_Code/FINDINGS.md",
+    "Pasted image 20261126100925.png",
     "content/notes/HBA.md",
     "quartz/static/notes/HBA7.png",
     "quartz/static/notes/HBA6.png",
     "quartz/static/notes/HBA5.png",
     "quartz/static/notes/HBA4.png",
-    "quartz/static/notes/HBA3.png",
     "content/notes/pose refinement current pipeline.md",
-    "quartz/static/notes/HBA2.png",
     "content/notes/laser scanning 4.md",
     "content/notes/ai for robotics 3.md",
-    "quartz/static/notes/HBA1.png",
     "content/notes/pose-refinement-math.md",
     "content/notes/Visual Place Recognition.md",
     "content/notes/SALAD.md",
     "content/notes/BoQ.md",
     "content/notes/RPCN 6.md",
-    "content/twente.md",
     "content/seaclear.md",
     "content/index.md",
     "content/notes/NLP 10.md",
@@ -234,16 +244,7 @@
     "content/notes/foundation models 8.md",
     "content/notes/RPCN 8.md",
     "content/notes/SGD.md",
-    "content/notes/Halber PhD.md",
-    "content/notes/ONNX.md",
-    "content/notes/Bagging.md",
-    "content/notes/embedded systems 3.md",
-    "content/notes/cross product.md",
-    "content/notes/Manhattan Frame.md",
     "content/projects",
-    "quartz/static/notes/halber2.png",
-    "quartz/static/notes/halber1.png",
-    "quartz/static/notes/sun3d5.png",
     "quartz/static/notes/VGGT.mp4",
     "public/notes/quartz.layout.ts",
     "public/static/pictures",

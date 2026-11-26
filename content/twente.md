@@ -44,5 +44,8 @@ date: 2025-10-21
 >* **Q1**
 >	* [[ds4all|Data Science]]
 >	* [[ml|Machine Learning 1]]
+>	* [[Selective Token Aggregation|Capita Selecta: Selective Token Aggregation]]
+>	* [[Measurement Systems for Mechatronics]]
+>* **Internship at 3DUniversum in Amsterdam**
 >
 
