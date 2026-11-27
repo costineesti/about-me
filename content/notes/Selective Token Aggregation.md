@@ -2,7 +2,7 @@
 title: Selective Token Aggregation with VGGT
 draft: false
 tags:
-date: 2026-11-25
+date: 2026-11-27
 ---
 
 My Capita Selecta project at [[twente|Twente]], as a warm-up for [[Visual Place Recognition|VPR]]. It builds on a UT master thesis (Ruumpol, 2026) that put a small *geometry head* on top of a frozen [[DINO|DINOv2]] backbone and trained it on MegaDepth without any pose labels. Supervised by Nicola, who is also my thesis supervisor.
@@ -183,12 +183,10 @@ This case is even worse. The predictor is capped at 40 degrees and simply predic
 
 >[!question] Does this mean the reference model looks at the sky?
 >Partly, yes, and it's visible here too. With a head trained on the *structure-filtered* input, the sky becomes the **most** similar region after projection (last column). The projection doesn't preserve "where to look"; filtering the input doesn't fix that.
+>
+><div class="container" style="display: flex; justify-content: center; align-items: center;"> <img src="../static/notes/capita_patches_q00_hard.png" style="max-width: 100%; height: auto;"> </div>
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-    <img src="../static/notes/capita_patches_q00_hard.png" style="max-width: 100%; height: auto;">
-</div>
-
->[!question] My thoughts
+>[!info] My thoughts
 >* Method 1 on this image keeps the **shadowed lower facade on the right** and drops both towers. That's exactly the drawback I suspected in the prototype: VGGT is confident about *close* structure, not about the landmark.
 >* So is VGGT useless here?
 >	* Not useless, **redundant**. It beats random selection when patches are averaged, but DINOv2 already encodes the same information: CLS ignores those patches, and a learned pooler finds them on its own.
@@ -231,13 +229,20 @@ The overlap goes up, but not everywhere:
 
 Held-out pairs, all within $45^\circ$ (9,600 pairs, true median angle $19.7^\circ$), mean of 3 seeds:
 
-| head                                   | $\rho_{rot}$ within scene | full rotation error | cycle error |
-| -------------------------------------- | ------------------------- | ------------------- | ----------- |
-| trained on 0–45$^\circ$ (E04)                 | 0.07–0.13                 | 40–49$^\circ$              | ~0.2$^\circ$       |
-| trained on 120–179$^\circ$ (E02), same test   | 0.13–0.18                 | 27–38$^\circ$              | ~0.2$^\circ$       |
-| Method 2, real / zero confidence       | 0.08 / 0.08               | 34$^\circ$ / 33$^\circ$           | ~0.2$^\circ$       |
-| **no head:** $1-\cos$ of the inputs    | ==0.27–0.30==             | –                   | –           |
-| **always predict "no rotation"**       | –                         | ==19.7$^\circ$==           | –           |
+| head                                        | $\rho_{rot}$ within scene | full rotation error     | cycle error  |
+| ------------------------------------------- | ------------------------- | ----------------------- | ------------ |
+| trained on 0–45$^\circ$ (E04)               | 0.07–0.13                 | 40–49$^\circ$           | ~0.2$^\circ$ |
+| trained on 120–179$^\circ$ (E02), same test | 0.13–0.18                 | 27–38$^\circ$           | ~0.2$^\circ$ |
+| Method 2, real / zero confidence            | 0.08 / 0.08               | 34$^\circ$ / 33$^\circ$ | ~0.2$^\circ$ |
+| **no head:** $1-\cos$ of the inputs         | ==0.27–0.30==             | –                       | –            |
+| **always predict "no rotation"**            | –                         | ==19.7==$^\circ$        | –            |
+
+Zooming in, it reads as:
+
+| tested on the 0–45$^\circ$ pairs       | $\rho$ within scene | full error    |
+| -------------------------------------- | ------------------- | ------------- |
+| old heads (trained on 120–179$^\circ$) | 0.13–0.18           | 27–38$^\circ$ |
+| new heads (trained on 0–45$^\circ$)    | 0.07–0.13           | 40–49$^\circ$ |
 
 Per input (E04 heads):
 
@@ -253,16 +258,21 @@ Per input (E04 heads):
     <img src="../static/notes/capita_geometry_rot45.png" style="max-width: 100%; height: auto;">
 </div>
 
-* **Still no rotation beyond similarity**, now on pairs that *can* be matched. Plain $1-\cos$ is $2-4 \times$ better than the trained head at ordering pairs by rotation.
+* **Still no rotation beyond similarity**, now on pairs that *can* be matched. Plain $1-\cos$ is $2-4 \times$ better than the trained head at ordering pairs by rotation (compare first column with second column).
 * **Worse than predicting nothing.** Every head's full rotation error ($33–49^\circ$) is above the $19.7^\circ$ of always saying "no rotation". Cycles still close to $~0.2^\circ$ -- consistent, not correct.
 * **Narrow training data is worse than wide.** On the *same* $0–45^\circ$ test, the heads trained on $120–179^\circ$ beat the ones trained on $0–45^\circ$.
 * **Method 2: real ≈ zero confidence again.** Retrieval after the head is equal to or lower than before.
 
->[!note] Why the predicted scale is arbitrary
+>[!question] Why the predicted scale is arbitrary
 >The heads predict a median of $32–44^\circ$ when the truth is $20^\circ$. Janine's loss only has a **variance floor**, $\text{ReLU}(0.1 - \text{std})$ per output dimension: the predictions must spread out *at least* this much, never how much. Transitivity holds just as well if every rotation is twice as large. So nothing in the loss fixes the scale, and the head picks one.
 
->[!note] Why 0–45$^\circ$ is the harder test
+>[!question] Why 0–45$^\circ$ is the harder test
 >Two "dumb" predictors that need no training, and their typical (median) error on each test set:
+>
+>**The median true angle explanation**: by computing `median_gt_angle = median(theta)`. Each test pair has a true rotation angle $\theta$ from COLMAP.
+>
+>* $120-179^\circ$ test set gives $54.4^\circ$
+>* $0-45^\circ$ test set gives $19.7^\circ$
 >
 >| always predict…                       | 120–179$^\circ$ test | 0–45$^\circ$ test |
 >| ------------------------------------- | ------------- | ---------- |
@@ -270,13 +280,23 @@ Per input (E04 heads):
 >| "no rotation" (0$^\circ$)                    | 54.4$^\circ$         | **19.7$^\circ$**  |
 >
 >* "No rotation" is off by exactly the true angle, so its error is the median true angle.
+>	* If you always answer $0^\circ$, the error on each pair is $\theta$ itself.
 >* On 0–45$^\circ$, all true angles lie in a narrow range, so both dumb predictors are already close. Every rotation the head invents is measured against that small error.
 >* The E04 heads are worse than both: their angle error is 24–31$^\circ$ (vs 9.1$^\circ$), and their full rotation error is 40–49$^\circ$ (vs 19.7$^\circ$). On the 120–179$^\circ$ test, the same weakness was hidden, because the dumb predictors were off by 39–54$^\circ$ too.
+>
+>**A head is only useful if it beats these lazy guesses! They are the bar.**
+>
+>|                                   | lazy guess                     | E02 heads, old test set (120–179$^\circ$) | E04 heads, new test set (0–45$^\circ$)      |
+>| --------------------------------- | ------------------------------ | ----------------------------------------- | ------------------------------------------- |
+>| angle error vs "say the median"   | 38.6$^\circ$ / 9.1$^\circ$     | 38–49$^\circ$ (about the bar)             | 24–31$^\circ$ (**3$\times$ worse** than 9.1$^\circ$)  |
+>| full error vs "say 0$^\circ$"     | 54.4$^\circ$ / 19.7$^\circ$    | –                                         | 40–49$^\circ$ (**2$\times$ worse** than 19.7$^\circ$) |
 
 >[!note] Why the cross-evaluation settles it
 >Without testing the old (E02) heads on the same 0–45$^\circ$ pairs, a lower $\rho$ could be blamed on a harder test set. Same test, different training data, and the old heads win. So the data was not what held the head back.
+>
+>**For full clarity**: the heads were trained both on the $0-45^\circ$ triplets (E04) and on the old heads (E02, trained on $120-179^\circ$) and both were tested on the same $0-45^\circ$ test pairs.
 
->[!question] My thoughts
+>[!info] My thoughts
 >* Was Nicola right that 180$^\circ$ pairs make no sense?
 >	* Yes: they share no points. But removing them **doesn't help**. The head fails on observable pairs too.
 >* So is it the data or the loss?
